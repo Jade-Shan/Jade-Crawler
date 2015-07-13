@@ -6,7 +6,7 @@
 
 	<groupId>net.jade-dungeon</groupId>
 	<artifactId>crawler-web</artifactId>
-	<version>0.1.3</version>
+	<version>0.1.4-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>webapi Project</name>
 	<inceptionYear>2010</inceptionYear>
@@ -19,7 +19,7 @@
 		<!-- ================================== -->
 		<lift.version>2.5</lift.version>
 		<!-- <lift.majorMinorVersion> @see regex-property executions </lift.majorMinorVersion> -->
-		<scala.version>2.10.2</scala.version>
+		<scala.version>2.10.5</scala.version>
 		<!-- <scala.majorMinorVersion> @see regex-property executions </scala.majorMinorVersion> -->
 		<!-- Common plugin settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
