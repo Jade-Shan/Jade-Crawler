@@ -104,9 +104,10 @@ $wordIpt.on('keydown', function(event) {
 $('#trans').on('click', function(event) {trans()});
 
 $('#login').on('click', function(event) {
-		cookieOperator('username',$('#username').val());
-		cookieOperator('password',$('#password').val());
+		cookieOperator('username', $('#username').val());
+		cookieOperator('password', $('#password').val());
 		$('#logindiv').hide();
+		loadNewWords();
 		});
 
 $('#showlogin').on('click', function(event) {
