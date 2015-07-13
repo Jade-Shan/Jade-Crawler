@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.jade-dungeon</groupId>
+		<artifactId>crawler-parent</artifactId>
+		<relativePath>../pom.xml</relativePath>
+		<version>0.1.3</version>
+	</parent>
+
+	<artifactId>crawler-dto</artifactId>
+	<name>crawler dto</name>
+
+	<dependencies>
+			<dependency>
+				<groupId>net.jade-dungeon</groupId>
+				<artifactId>jadeutils-dao</artifactId>
+			</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- =========================== -->
+			<!--    run scala application    -->
+			<!-- =========================== -->
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<configuration>
+					<scalaVersion>${scala.version}</scalaVersion>
+					<jvmArgs>
+						<jvmArg>-client</jvmArg>
+						<jvmArg>-Xms64m</jvmArg>
+						<jvmArg>-Xmx1024m</jvmArg>
+					</jvmArgs>
+					<launchers>
+						<launcher>
+							<id>foo</id>
+							<mainClass>example.ScalaAppExample</mainClass>
+							<args>
+								<arg>Hello</arg>
+								<arg>World</arg>
+							</args>
+						</launcher>
+					</launchers>
+				</configuration>
+				<executions>
+					<execution><!-- do "scala:compile" when "compile" -->
+						<id>compile-scala</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution><!-- do "scala:testCompile" when "test-compile" -->
+						<id>compile-scala-test</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<!-- filter with: mvn resources:resources -Dparam=value -->
+				<filtering>true</filtering>
+				<includes>
+					<include>example.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+</project>

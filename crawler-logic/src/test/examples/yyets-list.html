@@ -1,0 +1,940 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://js.rrsub.net/style/layout.css" rel="stylesheet" type="text/css" />
+<link href="http://js.rrsub.net/style/style.css" rel="stylesheet" type="text/css" />
+<script src="http://js.rrsub.net/js/jquery-1.7.1.min.js" charset="utf-8"></script>
+<script src="http://js.rrsub.net/js/global.js" charset="utf-8"></script>
+<title>影视列表页|ZiMuZu.tv,字幕组网站,美剧,日剧,韩剧,电影,资讯,下载|字幕下载|美剧下载</title>
+<meta name="keywords" content="美剧,日剧,韩剧,纪录片,高清电影,海外影视,新闻资讯,双语字幕,字幕下载,字幕翻译,RMVB电影,手机电影,HR-HDTV电影,迅雷下载,快车下载,磁力下载,电驴下载,字幕组,公开课">
+<meta name="description" content="ZiMuZu字幕组网站,www.zimuzu.tv是一群由海外留学生于2015年1月1号组建的字幕组分享网站,以翻译最新最快影视剧为兴趣爱好,并且免费分享给广大网友和爱好者，欢迎大家的加入">
+</head>
+<body>
+<div id="floatAD_l" class="couplet couplet_l" style="width:160px;">
+<script type="text/javascript">
+var uri = window.location.pathname;
+if(uri.indexOf('/release/')>=0 || uri.indexOf('/work/')>=0 || uri=='/work') {
+} else {
+document.write('<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-160-left.js?31"> <\/script>');
+}
+</script>
+</div>
+
+<div id="floatAD_r" class="couplet couplet_l" style="width:160px;">
+<script type="text/javascript">
+if(uri.indexOf('/release/')>=0 || uri.indexOf('/work/')>=0 || uri=='/work') {
+} else {
+document.write('<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-160-right.js?31"> <\/script>');
+}
+</script>
+</div>
+
+<style> .couplet{position:fixed;z-index:99999;} </style>
+
+<script type="text/javascript">
+var min_w = 1330;
+GLOBAL.JQUERY.FloatAD(null,null,null,20);
+if($(window).width()<min_w){
+    $('#floatAD_l').hide();
+    $('#floatAD_r').hide();
+}
+$(document).ready(function(){
+    if($(window).width()<min_w || window.location.pathname.indexOf('/release/')>=0){
+	$('#floatAD_l').hide();
+	$('#floatAD_r').hide();
+	$('#floatAD_l').remove();
+	$('#floatAD_r').remove();
+    }
+    $(window).trigger('resize');
+});
+</script>
+
+<script type="text/javascript">
+function is_reg_login(){var u=window.location.pathname;return u.indexOf('/User/Login')>=0 || u.indexOf('/user/reg/agreement')>=0 || u.indexOf('/User/Reg')>=0;}
+//pop
+/*
+if(!GLOBAL.AdUtils.is_index_page() && !GLOBAL.AdUtils.is_inside_man() && !is_reg_login())
+{
+    var ads = new Array();
+    //ads.push('<script type="text/javascript"> u_a_client="11926"; u_a_width="0"; u_a_height="0"; u_a_zones="45766"; u_a_type="1" <\/script> <script src="http://good.ta80.com/i.js"><\/script>');
+    //ads.push('<script src="http://p.fxxgw.com/view.php?uid=28557"><\/script>');
+    //GLOBAL.AdUtils.pop(ads, 'zmz_pop', 8);
+}
+*/
+/*
+//rich
+if(!GLOBAL.AdUtils.is_inside_man() && !is_reg_login())
+{
+    var ads = new Array();
+    //ads.push('<script src="http://u.xcy8.com/m/?pid=203649&show_t=2"><\/script>');
+    GLOBAL.AdUtils.rich(ads, 'zmz_rich');
+}
+*/
+</script>
+
+<div class="top-box">
+    <div class="header">
+  <div class="w">
+      <h1 class="fl"><a href="/"><img id="logo"></a></h1>
+      <form name="search" action="/search/index" method="get" class="fl corner search-box" target="_blank">
+          <input type="text"  size="20" class="keywords" name="keyword" autocomplete='off' placeholder="請輸入搜尋關鍵詞" />
+          <input type="submit" class="submit">
+          <div class="search-list"></div>
+          <ul id="top_search_list" style="display:none;"></ul>
+          <input type="hidden" name="search_type" id="search_type" value="">
+      </form>
+       <div class="fr top-login">
+        <!-- 未登录 -->
+        <div class="top-login-before" style="display:none;"><span class="u"><em class="ico user-ico"></em><a href="/user/login">登入</a>/ <a href="/user/reg">註冊</a></span></div>
+        <!-- 未登录 -->
+        <!-- 已登录 -->
+        <div class="top-login-after" style=" display:none;"><a href="/user/sign" class="qiandao-ico">签到</a><span class="u"><em class="ico user-ico"></em><font id="top_nickname"></font></span> <span id="user_level"></span> <span>（<a id="logout" href="javascript:void();">註銷</a>）</span> <a href='/user/user/mymessage'><span>消息（<font id="navbar_msg"></font>）</span></a>
+        <dl class="user-release"> <dt>我要發佈</dt> <dd> <ul id="post_List"></ul> </dd> </dl> </div>
+        <!-- 已登录 -->
+       </div>
+  </div>
+</div>
+<script>
+$('#logo').attr('src',GLOBAL.CONST.RES_URL+'images/logo.png');
+GLOBAL.JQUERY.SEARCHTIPS(250,function(){$('.search-list').hide()});
+$('#logout').click(function(){
+  GLOBAL.Loading();
+  $.getJSON('/user/logout/ajaxLogout',function(data){
+    if(data.status==1){
+      window.history.go(0);
+    }
+    GLOBAL.Loading('hide');
+  });
+  return false;
+});
+
+$.getJSON(GLOBAL.CONST.WWW_URL+'public/hotkeyword',function(R){
+  var data = R.data;
+  var html = '<li><a href="http://www.6.cn/coop/pub/?src=yyetst" target="_blank" rel="nofollow"><span style="color:#ED8600">1</span>美女在线视频</a></li>\
+';
+  for(key in data){
+    key = parseInt(key);
+    if (typeof data[key].keyword !== 'undefined') html += '<li><a href="/search?keyword='+encodeURIComponent(data[key].keyword)+'"><span '+(key<2?'style="color:#ED8600"':'')+'>'+(key+2)+'</span>'+data[key].keyword+'</a></li>';
+  }
+  $('.search-list').html('<ul>'+html+'</ul>');
+});
+$('form[name=search] .keywords').click(function(){
+  if($('ul#top_search_list').css('display')!='none') return;
+  $('.search-list').show();
+  $(this).parent().click(function(e){
+    e.stopPropagation();
+  });
+  $('body').one('click',function(){
+    $('.search-list').hide();
+  })
+});
+
+var navbar_a,navbar_b,tips;
+$.ajax({
+  url: '/user/login/getCurUserTopInfo',
+  async: false, 
+  dataType: "json",
+  success: function(data){
+    if(data.status==1){
+      var _data = data.data;
+      $('#top_nickname').text(_data.userinfo.nickname).wrap('<a href="/user/user"></a>');
+      $('#user_level').text('等级:'+_data.userinfo.group_name);
+      $('#navbar_msg').text(_data.message_unread_num);
+      $('.top-login-after').show();
+      if(_data.post!='') $('#post_List').html(_data.post);
+      GLOBAL.CONST.USER = _data.userinfo;
+      navbar_a = _data.navbar.a;
+      navbar_b = _data.navbar.b;
+    }else{
+      $('.top-login-before').show();
+    }
+  }
+});
+
+$(document).ready(function(){
+  $('dl.user-release').mouseover(function(){
+    $(this).addClass('user-release-selected');
+  }).mouseout(function(){
+    $(this).removeClass('user-release-selected');
+  })
+});
+</script>    
+    <div style="text-align:center; margin-top:10px;">
+<script type="text/javascript">
+if(window.location.pathname.indexOf('/release/')>=0) {
+}else{
+    document.write('<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-728-t.js?46"> <\/script>');
+}
+</script>
+</div>
+
+    <div class="menu-box">
+  <ul class="w">
+    <li><a href="/">首頁</a></li>
+    <li channel="subtitle"><a href="/subtitle">字幕下載</a></li>
+    <li channel="news"><a href="/news">資訊</a></li>
+    <li channel="resource"><a href="/resourcelist">影視列表</a></li>
+    <li channel='schedule'><a href="/tv/schedule">美劇播出時間表</a></li>
+    <li><a href="http://www.6.cn/coop/pub/?src=yyetst" target="_blank" rel="nofollow">美女視頻</a></li>
+    <li><a href="/Announcement">加入字幕組</a></li>
+    <li><a href="http://weibo.com/zimuzu2015" target="_blank" rel="nofollow">微博</a></li>
+    <li><a href="https://twitter.com/zimuzu2015" target="_blank" rel="nofollow">Twitter</a></li>
+  </ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  if(navbar_a) $('.menu-box li:first').after(navbar_a);
+  if(navbar_b) $('.menu-box li:last').after(navbar_b);
+  var matches = window.location.href.match(/http:\/\/[^/]+(\/.*)/);
+  var group_name = matches==null?'':matches[1].replace(/\/{2,}/m,'/');
+  var groups = {'news':'/news','fav':'/user/fav','subtitle':'/subtitle','resource':'/resourcelist|/resource/|/bbs/','schedule':'/tv/schedule|/html/return|/html/new',};
+  for(key in groups)
+  {
+    regx = new RegExp(groups[key],'i');
+    if(group_name.search(regx)!=-1)
+    {
+      $('.menu-box li[channel='+key+'] a').addClass('cur');
+      return true;
+    }
+  }
+  $('.menu-box li:first a').addClass('cur');
+});
+</script>
+<div style="margin-bottom:10px; text-align:center;">
+<script type="text/javascript">
+var uri = window.location.pathname;
+if(uri.indexOf('/release/')>=0 || uri.indexOf('/work/')>=0 || uri=='/work') {
+} else {
+var cpro_id = "u1934992";
+document.write('<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/f.js"> <\/script>');
+}
+</script>
+</div>
+
+</div>
+
+<div class="middle-box">
+    <div class="w resource-box">
+        <div class="area-right">
+          <div style="text-align:center;">
+<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-300.js?546"> </script>
+</div>
+<div id="ad9" style="display:none;text-align:center;margin:10px 0;overflow:hidden;"><script type="text/javascript" src="http://js.rrsub.net/ad-zmz/bd-300.js"></script></div>
+<script>
+$(function(){
+    $('#ad9').show().insertAfter('div.resource-sidebar li:eq(2)');
+});
+</script>
+
+          
+          <div class="box resource-sidebar">
+              <h2 class="it">全站熱門</h2>
+              <ul>
+                <li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/10733" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0228/s_6e4f6221f3b985db79bd311ad204ad87.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner top">top<b>1</b></strong>
+                          <h3><a href="/resource/10733" target="_blank">《权力的游戏》</a></h3>
+                          <p>類型：战争/剧情/魔幻/历史/古装/史诗</p>
+                          <p>狀態：第5季连载中</p>
+                          <p>年代：2011</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33551" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_45a5d142cf6442c7e9b9f56334236280.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>2</b></strong>
+                          <h3><a href="/resource/33551" target="_blank">《英伦魔法师》</a></h3>
+                          <p>類型：魔幻/悬疑</p>
+                          <p>狀態：第1季连载中</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33575" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_ebd7fd9b79ec818d8a86f42d2f8c577f.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>3</b></strong>
+                          <h3><a href="/resource/33575" target="_blank">《绿巨人》</a></h3>
+                          <p>類型：剧情/科幻</p>
+                          <p>狀態：本剧完结</p>
+                          <p>年代：1978</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33574" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_e2175f2d9b2e6de6f7644f7da44fdd38.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>4</b></strong>
+                          <h3><a href="/resource/33574" target="_blank">《焦点》</a></h3>
+                          <p>類型：剧情/罪案</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33434" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0321/s_c2b0bd4e0a2a9d94d5278667b5cb5235.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>5</b></strong>
+                          <h3><a href="/resource/33434" target="_blank">《王牌特工：特工学院》</a></h3>
+                          <p>類型：动作/剧情/罪案/冒险</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33571" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_d2e8f136c220f782c2d88a7efdc2997e.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>6</b></strong>
+                          <h3><a href="/resource/33571" target="_blank">《年鉴计划》</a></h3>
+                          <p>類型：科幻/惊悚</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/31631" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0420/s_db02888fdb3be758bc780c61dd0a68f5.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>7</b></strong>
+                          <h3><a href="/resource/31631" target="_blank">《低俗怪谈》</a></h3>
+                          <p>類型：魔幻/血腥/恐怖/惊悚/悬疑/古装</p>
+                          <p>狀態：第2季连载中</p>
+                          <p>年代：2014</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33568" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0517/s_448817d4d99422ef730884d5a831ea7f.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>8</b></strong>
+                          <h3><a href="/resource/33568" target="_blank">《在越南最后的日子》</a></h3>
+                          <p>類型：历史/纪录</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2014</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33539" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0509/s_eda6a427caf782221535198d474f772e.png" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>9</b></strong>
+                          <h3><a href="/resource/33539" target="_blank">《恩菲尔德凶宅》</a></h3>
+                          <p>類型：剧情/恐怖/惊悚</p>
+                          <p>狀態：mini剧连载中</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/31801" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0411/s_7230a7be9513a80e2e8848f09c506e24.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>10</b></strong>
+                          <h3><a href="/resource/31801" target="_blank">《硅谷》</a></h3>
+                          <p>類型：喜剧</p>
+                          <p>狀態：第2季连载中</p>
+                          <p>年代：2014</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33570" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0517/s_a987b5cf93060eaefebe392789e63319.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>11</b></strong>
+                          <h3><a href="/resource/33570" target="_blank">《造梦女孩》</a></h3>
+                          <p>類型：剧情/悬疑</p>
+                          <p>狀態：单剧连载中</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33576" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0519/s_d1ddb4ec081b3d5c4eff8d094c609f3e.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>12</b></strong>
+                          <h3><a href="/resource/33576" target="_blank">《快到不行》</a></h3>
+                          <p>類型：喜剧</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33573" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_26cd0818a732d6656743df1844fb66fb.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>13</b></strong>
+                          <h3><a href="/resource/33573" target="_blank">《守坝员》</a></h3>
+                          <p>類型：剧情/动画/幻想</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/10605" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0224/s_469e8e87bfe4ac1e281065f87431e91d.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>14</b></strong>
+                          <h3><a href="/resource/10605" target="_blank">《广告狂人》</a></h3>
+                          <p>類型：剧情</p>
+                          <p>狀態：第7季连载中</p>
+                          <p>年代：2007</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33329" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0301/s_d67b938b883d5bdefd1d428d1ffed894.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>15</b></strong>
+                          <h3><a href="/resource/33329" target="_blank">《错配搭档》</a></h3>
+                          <p>類型：剧情/喜剧/罪案</p>
+                          <p>狀態：第1季连载中</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33572" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/s_f9613364da8d9e03dd399b69bb4aef1d.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>16</b></strong>
+                          <h3><a href="/resource/33572" target="_blank">《丧家之女》</a></h3>
+                          <p>類型：剧情/恐怖/惊悚</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/33467" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0407/s_d41d3bedb765a1cbcb3ecda6bd9fb923.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>17</b></strong>
+                          <h3><a href="/resource/33467" target="_blank">《公元》</a></h3>
+                          <p>類型：历史/古装/史诗</p>
+                          <p>狀態：mini剧连载中</p>
+                          <p>年代：2015</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/11103" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0111/s_04731e1d6e62c18404176d9f6b646e0e.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>18</b></strong>
+                          <h3><a href="/resource/11103" target="_blank">《打工姐妹花》</a></h3>
+                          <p>類型：喜剧</p>
+                          <p>狀態：第4季连载中</p>
+                          <p>年代：2011</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/11005" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0111/s_319e06fced1a0f1a69031714d777fe13.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>19</b></strong>
+                          <h3><a href="/resource/11005" target="_blank">《生活大爆炸》</a></h3>
+                          <p>類型：喜剧</p>
+                          <p>狀態：第8季完结</p>
+                          <p>年代：2007</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/22759" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201003/17/s_252946_1268800345jyeQ.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>20</b></strong>
+                          <h3><a href="/resource/22759" target="_blank">《夏日战争》</a></h3>
+                          <p>類型：喜剧/科幻/冒险/动画</p>
+                          <p>狀態：已上映</p>
+                          <p>年代：2009</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/11010" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0111/s_2b9aa228bb5cdceac630e88bf8ee17b0.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>21</b></strong>
+                          <h3><a href="/resource/11010" target="_blank">《摩登家庭》</a></h3>
+                          <p>類型：喜剧</p>
+                          <p>狀態：第6季连载中</p>
+                          <p>年代：2009</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/28516" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0225/s_cad15ada907eb74944ca518adacea62f.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>22</b></strong>
+                          <h3><a href="/resource/28516" target="_blank">《杀手信徒》</a></h3>
+                          <p>類型：剧情/惊悚/悬疑/罪案</p>
+                          <p>狀態：第3季连载中</p>
+                          <p>年代：2013</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/32018" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0227/s_4286e4c9b95b4ddbeacf8a9a8dd6d624.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>23</b></strong>
+                          <h3><a href="/resource/32018" target="_blank">《塞勒姆》</a></h3>
+                          <p>類型：剧情/惊悚</p>
+                          <p>狀態：第2季连载中</p>
+                          <p>年代：2014</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/26657" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2013/0107/s_6ba157a41fc44ad5dc5676192597b451.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>24</b></strong>
+                          <h3><a href="/resource/26657" target="_blank">《妖女迷行》</a></h3>
+                          <p>類型：动作/魔幻</p>
+                          <p>狀態：第5季连载中</p>
+                          <p>年代：2010</p>
+                      </div>
+                  </li><li class="clearfix">
+                      <div class="fl-img">
+                          <a href="/resource/11009" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0126/s_d9622b35140b545c7212dccff65e34b1.jpg" /></a>
+                      </div>
+                      <div class="fl-info">
+                          <strong class="corner ">top<b>25</b></strong>
+                          <h3><a href="/resource/11009" target="_blank">《疑犯追踪》</a></h3>
+                          <p>類型：动作/科幻/罪案</p>
+                          <p>狀態：第4季完结</p>
+                          <p>年代：2011</p>
+                      </div>
+                  </li>              </ul>
+          </div>
+          <div style="text-align:center; margin-top:10px;">
+<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-300-2.js?546"> </script>
+</div>
+
+        </div>
+        <div class="area-left">
+            <div class="resource-list">
+                <div class="resource-filter" id="current_container">
+                    <span>已選條件：</span>
+                </div>
+                <ul class="box resource-cats">
+                      <li class="options" rel="channel">
+                         <span>类别：</span>
+                         <a>全部</a><a rel='movie'>电影</a><a rel='tv'>电视剧</a><a rel='documentary'>纪录片</a><a rel='openclass'>公开课</a>          
+                      </li>
+                      <li class="options" rel="area">
+                          <span>地区：</span>
+                          <a>全部</a><a rel="美国">美国</a><a rel="大陆">大陆</a><a rel="日本">日本</a><a rel="韩国">韩国</a><a rel="英国">英国</a><a rel="香港">香港</a><a rel="台湾">台湾</a><a rel="印度">印度</a><a rel="法国">法国</a><a rel="加拿大">加拿大</a><a rel="西班牙">西班牙</a><a rel="新加坡">新加坡</a><a rel="泰国">泰国</a><a rel="意大利">意大利</a><a rel="德国">德国</a><a rel="俄罗斯">俄罗斯</a><a rel="越南">越南</a><a rel="澳大利亚">澳大利亚</a><a rel="墨西哥">墨西哥</a><a rel="巴西">巴西</a><a rel="其他">其他</a>                      </li>
+                      <li class="options" rel="category">
+                          <span>类型：</span>
+                          <a>全部</a><a rel="动作">动作</a><a rel="战争">战争</a><a rel="剧情">剧情</a><a rel="喜剧">喜剧</a><a rel="生活">生活</a><a rel="偶像">偶像</a><a rel="青春">青春</a><a rel="魔幻">魔幻</a><a rel="科幻">科幻</a><a rel="历史">历史</a><a rel="纪录">纪录</a><a rel="暴力">暴力</a><a rel="血腥">血腥</a><a rel="歌舞">歌舞</a><a rel="恐怖">恐怖</a><a rel="惊悚">惊悚</a><a rel="悬疑">悬疑</a><a rel="古装">古装</a><a rel="史诗">史诗</a><a rel="丧尸">丧尸</a><a rel="爱情">爱情</a><a rel="医务">医务</a><a rel="律政">律政</a><a rel="真人秀">真人秀</a><a rel="励志">励志</a><a rel="体育">体育</a><a rel="谍战">谍战</a><a rel="罪案">罪案</a><a rel="冒险">冒险</a><a rel="动画">动画</a><a rel="科教">科教</a><a rel="西部">西部</a><a rel="枪战">枪战</a><a rel="灾难">灾难</a><a rel="传记">传记</a><a rel="幽默">幽默</a><a rel="讽刺">讽刺</a><a rel="童话">童话</a><a rel="幻想">幻想</a><a rel="综艺">综艺</a>                      </li>
+                      <li class="options" rel="format">
+                          <span>格式：</span>
+                          <a>全部</a><a rel="RMVB">RMVB</a><a rel="MP4">MP4</a><a rel="HR-HDTV">HR-HDTV</a><a rel="HDTV">HDTV</a><a rel="DVDSCR">DVDSCR</a><a rel="DVD">DVD</a><a rel="720P">720P</a><a rel="1080P">1080P</a><a rel="3D">3D</a><a rel="预告片">预告片</a><a rel="OST">OST</a><a rel="WEB-DL">WEB-DL</a><a rel="BD-720P">BD-720P</a><a rel="BD-1080P">BD-1080P</a><a rel="游戏">游戏</a>                     </li>
+                </ul>
+                
+                <div class="resource-sort options" rel="sort">
+                    <a rel="update">按更新日期<em></em></a><a rel="pubdate">按發布日期<em></em></a><a rel="rank">按排行<em></em></a><a rel="score">按評分<em></em></a><a rel="views">按點擊率<em></em></a>                                                      
+                 </div>
+                 
+                 <div style="text-align:center;">
+<script type="text/javascript" src="http://js.rrsub.net/ad-zmz/ga-728-m.js?546"> </script>
+</div>
+<div id="ad1" style="display:none;text-align:center;margin:10px 0;width:100%;">
+<a target="_blank" href="http://52meiju.taobao.com/"><img src="http://tc.cili001.com/52meiju_728_90.jpg"/></a>
+</div>
+<div id="ad2" style="display:none;text-align:center;margin:10px 0;width:100%;"><script type="text/javascript" src="http://js.rrsub.net/ad-zmz/bd-728.js"></script></div>
+<div id="ad3" style="display:none;text-align:center;margin:10px 0;width:100%;"><script type="text/javascript" src="http://js.rrsub.net/ad-zmz/bd-728.js"></script></div>
+<div id="ad4" style="display:none;text-align:center;margin:10px 0;width:100%;"><script type="text/javascript" src="http://js.rrsub.net/ad-zmz/bd-728.js"></script></div>
+<script>
+$(function(){
+    $('#ad1').show().insertAfter('div.resource-showlist li:eq(2)');
+    $('#ad2').show().insertAfter('div.resource-showlist li:eq(5)');
+    $('#ad3').show().insertAfter('div.resource-showlist li:eq(8)');
+    $('#ad4').show().insertAfter('div.resource-showlist li:eq(11)');
+});
+</script>
+
+                 
+                 <div class="resource-showlist">
+                    <ul>
+                      <li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/29099" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0309/m_5b0a4b82e4d5654c70963022110784f3.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/29099">【加剧】《疑犯动机》(Motive)2013</a></strong><font class="f4">[第3季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 罪案</p> 
+                                        <p>【人气】 375213次浏览 | 295次收藏 | 7.9分</p>                                
+                                        <p>【更新】 <font>2015-05-18 19:46:23</font> <span class="tbg" time="1431949583"></span> | 2013-02-13 23:35:21 | 2013-02-04 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1851</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33329" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0301/m_d67b938b883d5bdefd1d428d1ffed894.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33329">【美剧】《错配搭档》(Battle Creek)2015</a></strong><font class="f4">[第1季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 第一季3月2日开播</p> 
+                                        <p>【类型】 剧情/喜剧/罪案</p> 
+                                        <p>【人气】 60637次浏览 | 1780次收藏 | 8.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 19:01:30</font> <span class="tbg" time="1431946890"></span> | 2015-02-28 11:13:37 | 2015-03-02 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1873</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33551" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0518/m_45a5d142cf6442c7e9b9f56334236280.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33551">【英剧】《英伦魔法师》(Jonathan Strange & Mr Norrell)2015</a></strong><font class="f4">[第1季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 本剧确定制作~北京时间5月18号开播！</p> 
+                                        <p>【类型】 魔幻/悬疑</p> 
+                                        <p>【人气】 11578次浏览 | 975次收藏 | 0.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 19:00:04</font> <span class="tbg" time="1431946804"></span> | 2015-05-14 11:34:49 | 2015-05-18 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">2362</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/20460" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/200908/6/m_216505_1249519363zhYp.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/20460">【电影】《十日拍拖手册》(How To Lose A Guy In 10 Days)2003</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 喜剧/爱情</p> 
+                                        <p>【人气】 33521次浏览 | 17次收藏 | 8.7分</p>                                
+                                        <p>【更新】 <font>2015-05-18 18:43:57</font> <span class="tbg" time="1431945837"></span> | 2009-08-06 08:42:43 | 2003-01-27 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">2610</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/31801" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0411/m_7230a7be9513a80e2e8848f09c506e24.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/31801">【美剧】《硅谷》(Silicon Valley)2014</a></strong><font class="f4">[第2季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 [抱歉201的小错误，精校版会修复]</p> 
+                                        <p>【类型】 喜剧</p> 
+                                        <p>【人气】 832461次浏览 | 1393次收藏 | 9.3分</p>                                
+                                        <p>【更新】 <font>2015-05-18 17:58:15</font> <span class="tbg" time="1431943095"></span> | 2014-03-01 12:19:30 | 2014-04-07 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">558</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/29393" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0227/m_6383a7db3200a4a14301f13570eb621e.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/29393">【美剧】《惊魂序曲》(Bates Motel)2013</a></strong><font class="f4">[第3季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 恐怖/惊悚/悬疑</p> 
+                                        <p>【人气】 997702次浏览 | 1279次收藏 | 8.8分</p>                                
+                                        <p>【更新】 <font>2015-05-18 17:50:11</font> <span class="tbg" time="1431942611"></span> | 2013-03-12 18:19:38 | 2013-03-19 周二</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">995</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/30744" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2013/0924/m_f594c297e0ca3e08eb75ad19da925890.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/30744">【纪录片】《THE 世界遗产》(Heritage)1996</a></strong><font class="f4">[单剧连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 NHK纪录片/欢迎关注我们的微博@诸神字幕组</p> 
+                                        <p>【类型】 纪录/科教</p> 
+                                        <p>【人气】 320327次浏览 | 503次收藏 | 9.5分</p>                                
+                                        <p>【更新】 <font>2015-05-18 16:32:32</font> <span class="tbg" time="1431937952"></span> | 2013-09-24 13:29:28 | 1996-04-07 周日</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">589</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33507" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0510/m_4fb6e8b9f14686eb9dbf3a7919f0984d.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33507">【美剧】《同妻俱乐部》(Grace and Frankie)2015</a></strong><font class="f4">[第1季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 5月9日一次性放出</p> 
+                                        <p>【类型】 喜剧</p> 
+                                        <p>【人气】 26226次浏览 | 538次收藏 | 9.1分</p>                                
+                                        <p>【更新】 <font>2015-05-18 14:08:58</font> <span class="tbg" time="1431929338"></span> | 2015-04-23 09:43:12 | 2015-05-09 周六</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1253</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/26315" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2012/0405/m_6b886a3462d9bc498e5ec93fef5cc36e.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/26315">【美剧】《法律与秩序》(Law And Order)1990</a></strong><font class="f4">[本剧完结]</font></dt>
+                                    <dd>
+                                        <p>【说明】 译制组最新更新中，敬请关注    http://weibo.com/u/5561546480 译制组在招募新组员，qq群：429177342</p> 
+                                        <p>【类型】 罪案</p> 
+                                        <p>【人气】 78274次浏览 | 234次收藏 | 9.5分</p>                                
+                                        <p>【更新】 <font>2015-05-18 13:15:01</font> <span class="tbg" time="1431926101"></span> | 2012-04-05 19:08:41 | 1990-04-18 周三</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">707</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/32018" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0227/m_4286e4c9b95b4ddbeacf8a9a8dd6d624.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/32018">【美剧】《塞勒姆》(Salem)2014</a></strong><font class="f4">[第2季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 剧情/惊悚</p> 
+                                        <p>【人气】 2363238次浏览 | 793次收藏 | 7.4分</p>                                
+                                        <p>【更新】 <font>2015-05-18 13:01:56</font> <span class="tbg" time="1431925316"></span> | 2014-04-11 18:47:44 | 2014-04-21 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1629</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/11033" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0111/m_270c52e49189001546b91dead29460d9.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/11033">【美剧】《辛普森一家》(The Simpsons)1989</a></strong><font class="f4">[第26季连载中]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 动画</p> 
+                                        <p>【人气】 1094461次浏览 | 517次收藏 | 9.7分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:57:29</font> <span class="tbg" time="1431925049"></span> | 2011-10-01 16:38:29 | 1989-12-18 周一</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">104</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22553" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201002/21/m_216505_1266726955L313.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22553">【电影】《麻烦中的女人》(Women in Trouble)2009</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 喜剧</p> 
+                                        <p>【人气】 52210次浏览 | 8次收藏 | 8.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:44:15</font> <span class="tbg" time="1431924255"></span> | 2010-02-21 12:35:55 | 2009-12-13 周日</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">3746</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22729" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201003/12/m_252946_12684141223JVW.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22729">【电影】《 梦精记2》(Wet Dreams 2 )2005</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 喜剧</p> 
+                                        <p>【人气】 36014次浏览 | 6次收藏 | 6.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:42:42</font> <span class="tbg" time="1431924162"></span> | 2010-03-13 01:15:22 | 2005-01-13 周四</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">5726</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22596" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201002/26/m_388359_1267162757JVUs.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22596">【电影】《公主和青蛙》(The Princess and the Frog)2009</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 歌舞/爱情/动画</p> 
+                                        <p>【人气】 25620次浏览 | 20次收藏 | 8.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:42:00</font> <span class="tbg" time="1431924120"></span> | 2010-02-26 13:39:17 | 2009-12-11 周五</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">3873</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22668" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201003/6/m_301020_1267834264XS7I.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22668">【电影】《第四类接触》(The Fourth Kind)2009</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 科幻/恐怖/惊悚/悬疑</p> 
+                                        <p>【人气】 43363次浏览 | 16次收藏 | 6.4分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:41:07</font> <span class="tbg" time="1431924067"></span> | 2010-03-06 08:11:04 | 2009-11-06 周五</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">5549</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22707" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2012/0803/m_c6459b500ce87b63aa520c106771d4f8.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22707">【电影】《罪恶部队》(L'armée du crime)2009</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 战争/剧情/历史</p> 
+                                        <p>【人气】 35563次浏览 | 19次收藏 | 6.5分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:39:47</font> <span class="tbg" time="1431923987"></span> | 2010-03-09 21:22:10 | 2009-09-23 周三</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">5503</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/22759" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/attachment/201003/17/m_252946_1268800345jyeQ.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/22759">【电影】《夏日战争》(Summer wars)2009</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 喜剧/科幻/冒险/动画</p> 
+                                        <p>【人气】 34049次浏览 | 42次收藏 | 9.5分</p>                                
+                                        <p>【更新】 <font>2015-05-18 12:38:57</font> <span class="tbg" time="1431923937"></span> | 2010-03-17 12:32:25 | 2009-08-01 周六</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1176</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33434" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0321/m_c2b0bd4e0a2a9d94d5278667b5cb5235.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33434">【电影】《王牌特工：特工学院》(Kingsman: The Secret Service)2015</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 3月27日中国上映 - IMAX/中国巨幕，欢迎大家到影院支持</p> 
+                                        <p>【类型】 动作/剧情/罪案/冒险</p> 
+                                        <p>【人气】 127959次浏览 | 2438次收藏 | 9.2分</p>                                
+                                        <p>【更新】 <font>2015-05-18 11:14:40</font> <span class="tbg" time="1431918880"></span> | 2015-03-21 11:36:24 | 2015-03-27 周五</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">1641</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33522" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0428/m_65b0f990cddfaf3fc84cf89ffc634700.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33522">【电影】《爱，简单》(The Way He Looks)2014</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 巴西电影</p> 
+                                        <p>【类型】 剧情/爱情</p> 
+                                        <p>【人气】 3090次浏览 | 63次收藏 | 0.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 11:03:30</font> <span class="tbg" time="1431918210"></span> | 2015-04-28 12:20:49 | 2014-04-10 周四</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">7514</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li><li class="clearfix">
+                            <div class="fl-img">
+                                <a href="http://www.zimuzu.tv/resource/33568" target="_blank"><img src="http://tu.rrsub.com:8014/ftp/2015/0517/m_448817d4d99422ef730884d5a831ea7f.jpg" /></a>
+                            </div>
+                            <div class="fl-info">
+                                <dl>
+                                    <dt class="f14"><strong><a href="http://www.zimuzu.tv/resource/33568">【电影】《在越南最后的日子》(Last Days in Vietnam)2014</a></strong><font class="f4">[已上映]</font></dt>
+                                    <dd>
+                                        <p>【说明】 </p> 
+                                        <p>【类型】 历史/纪录</p> 
+                                        <p>【人气】 4337次浏览 | 109次收藏 | 0.0分</p>                                
+                                        <p>【更新】 <font>2015-05-18 11:00:25</font> <span class="tbg" time="1431918025"></span> | 2015-05-17 17:56:48 | 2014-01-17 周五</p> 
+                                        <p class="f14"><strong class="ranking">本站排名 <font class="f5">7464</font></strong></p>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </li>                    </ul>
+                 </div> 
+                 <div class="pages"><div>&nbsp;<a href='?page=1&channel=&area=&category=&format=&year=&sort='>1...<span></span></a>&nbsp;<a href='?page=1&channel=&area=&category=&format=&year=&sort='>上一页<span></span></a>&nbsp;<b><a href='?page=1&channel=&area=&category=&format=&year=&sort='>1<span></span></a><a class='cur' >2<span></span></a><a href='?page=3&channel=&area=&category=&format=&year=&sort='>3<span></span></a><a href='?page=4&channel=&area=&category=&format=&year=&sort='>4<span></span></a><a href='?page=5&channel=&area=&category=&format=&year=&sort='>5<span></span></a><a href='?page=6&channel=&area=&category=&format=&year=&sort='>6<span></span></a><a href='?page=7&channel=&area=&category=&format=&year=&sort='>7<span></span></a></b>&nbsp;<a href='?page=3&channel=&area=&category=&format=&year=&sort='>下一页<span></span></a>&nbsp;<a href='?page=506&channel=&area=&category=&format=&year=&sort='>...506<span></span></a></div></div>
+             </div>
+         </div>
+         <div class="clearfix"></div>
+  </div>
+</div>
+<script>
+var query_string = 'channel=&area=&category=&format=&year=&sort=';
+var condition_html = [];
+$('document').ready(function(){
+  $('.options').each(function(){
+    key = $(this).attr('rel');
+    value = decodeURI(GLOBAL.Util.getParam(key,query_string));
+    target_a = $(this).find('a[rel='+value+']').attr('option',1);
+    if(!GLOBAL.Empty(value)){
+    target_a.addClass(key=='sort'?'selected':'corner');
+    if(key!='sort') condition_html.push('<strong key="'+key+'" value="'+target_a.attr('rel')+'">'+target_a.text()+'<a href="javascript:;" class="close"></a></strong>');
+    }else{
+      $(this).find('a:first').addClass(key=='sort'?'selected':'corner');
+    }
+  }).find('a').click(function(){
+      key = $(this).parents('.options').attr('rel');
+      if($(this).attr('option')==1){
+      value = '';
+    }else{
+      value = $(this).attr('rel');
+      value = value==undefined?'':value;
+    }
+    str = key+'='+encodeURI(value);
+    regx = new RegExp(key+'=[^&]*','i');
+    query_string = query_string.replace(regx,str);
+    window.location.href=GLOBAL.CONST.WWW_URL+'resourcelist?'+query_string;
+  });
+  //当前搜索条件
+  condition_html = condition_html.join('<b>+</b>');
+  if(condition_html!=''){
+  $('#current_container').append(condition_html+'&nbsp;<a href="/resourcelist" class="f11">[撤销全部]</a>').show().find('.close').click(function(){
+  key = $(this).parent().attr('key');
+  value = $(this).parent().attr('value');
+  $('.options[rel='+key+'] a[rel='+value+']').trigger('click');
+  });
+  }
+});
+
+$('.resource-showlist .tbg').each(function(){
+  $(this).text(GLOBAL.Util.formatDate($(this).attr('time'),0,1));
+});
+</script>
+<div style="text-align:center;margin-top:10px;">
+<script src="http://js.rrsub.net/ad-zmz/ad-footer.js" type="text/javascript"></script>
+</div>
+
+<div class="footer">
+  <p class="tc">緊急事務處理郵箱：zimuzu.tv#gmail.com   <a href="/Announcement">加入字幕组</a>  <script src="http://s95.cnzz.com/z_stat.php?id=1254180690&web_id=1254180690" language="JavaScript"></script></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+# scala specific
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# lift database
+crawler-web/lift_proto.db.h2.db
+crawler-web/lift_proto.db.lock.db
+
+# vim specific
+*.swp
+tags
+
+# maven specific
+target/
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# eclipse specific
+.metadata/
+.settings/
+.classpath
+.project
+bin/
+
+# config for this proj
+src/test/resources/local.properties

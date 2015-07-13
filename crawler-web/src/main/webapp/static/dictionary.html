@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jade Dict</title>
+</head>
+<script type="text/javascript" src="/scripts/zepto-1.1.2.min.js"></script>
+<style type="text/css">
+a:link    {text-decoration: none;}
+a:active  {}
+a:visited {text-decoration: none;}
+a:hover   {text-decoration: underline;}
+
+input.word-input  { width: 570px; height: 65px; font-size:45px; }
+input.word-submit { width: 150px; height: 65px; font-size:45px; }
+input.showlogin   { width:  65px; height: 65px; font-size:45px; }
+
+input.username  { width: 300px; height: 65px; font-size:45px; }
+input.password  { width: 300px; height: 65px; font-size:45px; }
+input.login     { width: 180px; height: 65px; font-size:45px; }
+
+div#logindiv { display: none; }
+div#main {
+	display: block; border: 1px solid rgba(102, 102, 153, 0.85); top: 5px;
+	width: 570px; height: 900px; overflow: scroll;}
+div#newword {
+	display: block; border: 1px solid rgba(102, 102, 153, 0.85); top: 5px; 
+	width: 220px; height: 900px; overflow: scroll; font-size: 20px;}
+</style>
+<body>
+<div id="logindiv">
+	<input type="text" id="username" name="username" class="username" value="">
+	<input type="password" id="password" name="password" class="password" value="">
+	<input type="button" id="login" value="login" class="login">
+</div>
+<div>
+	<input type="text" id="word" name="word" class="word-input">
+	<input type="button" id="trans" value="trans" class="word-submit">
+	<input type="button" id="showlogin" value="*" class="showlogin">
+</div>
+<table>
+	<tr>
+		<td><div id="main"></div></td>
+		<td><div id="newword"></div></td>
+	</tr>
+</table>
+
+
+</div>
+</body>
+<script>
+String.prototype.trim=function() { return this.replace(/(^\s*)|(\s*$)/g, "") };
+String.prototype.trimLeft=function() { return this.replace(/(^\s*)/g, "") };
+String.prototype.trimRight=function() { return this.replace(/(\s*$)/g, "") };
+
+var cookieOperator = function (name, value, options) {
+	if (typeof value != 'undefined') {
+		options = options || {};
+		if (value === null) {
+			value = '';
+			options.expires = -1;
+		}
+		var expires = '';
+		if (options.expires
+				&& (typeof options.expires == 'number' || options.expires.toUTCString)) {
+			var date;
+			if (typeof options.expires == 'number') {
+				date = new Date();
+				date.setTime(date.getTime()
+						+ (options.expires * 24 * 60 * 60 * 1000));
+			} else {
+				date = options.expires;
+			}
+			expires = ';expires=' + date.toUTCString();
+		}
+		var path = options.path ? ';path=' + options.path : '';
+		var domain = options.domain ? ';domain=' + options.domain : '';
+		var secure = options.secure ? ';secure' : '';
+		document.cookie = [ name, '=', encodeURIComponent(value), expires,
+				path, domain, secure ].join('');
+	} else {
+		var cookieValue = null;
+		if (document.cookie && document.cookie != '') {
+			var cookies = document.cookie.split(';');
+			for ( var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i].trim();
+				if (cookie.substring(0, name.length + 1) == (name + '=')) {
+					cookieValue = decodeURIComponent(cookie
+							.substring(name.length + 1));
+					break;
+				}
+			}
+		}
+		return cookieValue;
+	}
+}
+
+
+var $wordIpt = $('#word');
+$wordIpt.on('keydown', function(event) {
+		if (13 ==(event.keyCode ? event.keyCode : event.which ? event.which : event.charCode)) {
+		trans()}});
+
+$('#trans').on('click', function(event) {trans()});
+
+$('#login').on('click', function(event) {
+		cookieOperator('username',$('#username').val());
+		cookieOperator('password',$('#password').val());
+		$('#logindiv').hide();
+		});
+
+$('#showlogin').on('click', function(event) {
+		$('#logindiv').show();
+		});
+
+function load(data) {
+	if (data.result) {
+		var cnt = "<h3>" + data.result.word + "</h3>";
+		cnt = cnt + addPronunciations(data.result.pronunciations)
+			cnt = cnt + addExplantions(data.result.explantions)
+			cnt = cnt + addRelatedWords(data.result.relatedWords)
+			cnt = cnt + addExamples(data.result.examples)
+			cnt = cnt + addHomoionyms(data.result.homoionyms)
+			$('#main').html(cnt)
+	}
+};
+
+function addHomoionyms(d) {
+	if (d) {
+		var str = "<h5>近义词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<dl>";
+				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
+				$.each(item.s2dto, function(index, item) {
+					str = str + "<dl>";
+					str = str + "<dt>" + item.str1+ "</dt>";
+					str = str + "<dd>" + item.str2+ "</dd>";
+					str = str + "</dl>";
+					})
+				str = str + "</ol></dd></dl>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addExamples(d) {
+	if (d) {
+		var str = "<h5>例句</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li><dl>";
+				str = str + "<dt>" + item.str1 + "<dt>";
+				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "</dl></li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addRelatedWords(d) {
+	if (d) {
+		var str = "<h5>相关单词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<li>" + item.str1 + ": " + item.str2 + "</li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addExplantions(d) {
+	if (d) {
+		var str = "<h5>释义</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li>" + item.str1 + ": " + item.str2 + "</li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addPronunciations(d) {
+	if (d) {
+		var str = "<h5>发音</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li>" + item.str1 + ": " + item.str2 + "</li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function loadNewWords() {
+	var username = $('#username').val()
+	var password = $('#password').val()
+	if ("" != username) {
+		$.getJSON('/api/dictionary/newwords/' + username + '/' + password, 
+				function (data) {
+					var html = '';
+					if (data.result) {
+					$.each(data.result, function(index, item) {
+						html = html + '[<a href="javascript:removeNewWord(\'' + item.word + 
+							'\')">X</a>]&nbsp;';
+						html = html + '<a href="javascript:transword(\'' + item.word + 
+							'\')">' + item.word + '</a><br/>';
+						})
+					}
+					$('#newword').html(html);
+				})
+	}
+};
+
+function removeNewWord(word) {
+	var username = $('#username').val()
+	var password = $('#password').val()
+	if ("" != word && "" != username) {
+		$.getJSON(
+				'/api/dictionary/removenewword/' + username + '/' + password + '/' + word,
+				function (data) { loadNewWords(); console.log(data.status); })
+	}
+}
+
+function addNewWord(word) {
+	var username = $('#username').val()
+	var password = $('#password').val()
+	if ("" != word && "" != username) {
+		$.getJSON(
+				'/api/dictionary/addnewword/' + username + '/' + password + '/' + word,
+				function (data) { loadNewWords(); console.log(data.status); })
+	}
+};
+
+function trans() {
+	word = $wordIpt.val().replace(/\s+/g,"_");
+	if ('' == word) {
+		//
+	} else {
+		$wordIpt.val('');
+		$.getJSON( '/api/dictionary/eng2chs/' + word, load);
+		addNewWord(word);
+	}
+};
+
+function transword(word) {
+	$('#word').val(word);
+	trans();
+};
+
+$('#username').val(cookieOperator('username'));
+$('#password').val(cookieOperator('password'));
+
+loadNewWords();
+</script>
+</html>
