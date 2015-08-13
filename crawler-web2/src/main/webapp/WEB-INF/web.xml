@@ -23,7 +23,7 @@
 
     <servlet>
       <servlet-name>welcome</servlet-name>
-      <servlet-class>jadecralwer.web2.WelcomeServlet</servlet-class>
+      <servlet-class>jadecralwer.web2.Welcome</servlet-class>
     </servlet>
 
 
