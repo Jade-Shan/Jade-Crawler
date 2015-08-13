@@ -16,6 +16,7 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+		<!-- 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -40,17 +41,19 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
+				 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<!-- =========================== -->
 			<!--    run scala application    -->
@@ -65,6 +68,7 @@
 						<jvmArg>-Xms64m</jvmArg>
 						<jvmArg>-Xmx1024m</jvmArg>
 					</jvmArgs>
+					<!-- 
 					<launchers>
 						<launcher>
 							<id>foo</id>
@@ -75,6 +79,7 @@
 							</args>
 						</launcher>
 					</launchers>
+							 -->
 				</configuration>
 				<executions>
 					<execution><!-- do "scala:compile" when "compile" -->
@@ -92,6 +97,21 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<!-- =========================== -->
+			<!--        jetty plugin         -->
+			<!-- =========================== -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<httpConnector><port>8080</port></httpConnector>
+					<!-- <jettyXml>jetty.xml,jetty-http.xml,jetty-ssl.xml,jetty-https.xml</jettyXml> -->
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppConfig>
+						<contextPath>/crawler-web2</contextPath>
+					</webAppConfig>
+				</configuration>
 			</plugin>
 		</plugins>
 
