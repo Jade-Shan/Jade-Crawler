@@ -25,7 +25,7 @@
 		<junit.version>4.12</junit.version>
 		<!-- -->
 		<jadeutils.version>0.1.4</jadeutils.version>
-		<jadescalautils.version>0.1.4</jadescalautils.version>
+		<jadescalautils.version>0.1.5-json-SNAPSHOT</jadescalautils.version>
 		<crawler-base.version>0.1.4-SNAPSHOT</crawler-base.version>
 		<crawler-dto.version>0.1.4-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.4-SNAPSHOT</crawler-net.version>
@@ -39,8 +39,6 @@
 		<json.version>20140107</json.version>
 		<logback.version>1.0.13</logback.version>
 		<commonscli.version>1.3</commonscli.version>
-		<rhino.version>1.7R4</rhino.version>
-		<javadiffutils.version>1.2.1</javadiffutils.version>
 		<mvn-rec-plg.version>2.6</mvn-rec-plg.version>
 		<mvn-cmp-plg.version>3.0</mvn-cmp-plg.version>
 		<scala-mvn-plg.version>3.2.0</scala-mvn-plg.version>
@@ -177,16 +175,6 @@
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>${logback.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mozilla</groupId>
-				<artifactId>rhino</artifactId>
-				<version>${rhino.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.googlecode.java-diff-utils</groupId>
-				<artifactId>diffutils</artifactId>
-				<version>${javadiffutils.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.scalatest</groupId>

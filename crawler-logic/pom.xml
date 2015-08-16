@@ -17,6 +17,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
+			<artifactId>jade-scala-utils</artifactId>
+			<version>${jadescalautils.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.jade-dungeon</groupId>
 			<artifactId>crawler-base</artifactId>
 		</dependency>
 		<dependency>
@@ -43,14 +48,6 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mozilla</groupId>
-			<artifactId>rhino</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.java-diff-utils</groupId>
-			<artifactId>diffutils</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -111,7 +108,6 @@
 				<includes>
 					<include>example.properties</include>
 					<include>logback.xml</include>
-					<include>js/**/*.js</include>
 				</includes>
 			</resource>
 		</resources>
