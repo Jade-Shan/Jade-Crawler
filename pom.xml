@@ -85,6 +85,11 @@
 			</dependency>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
+				<artifactId>jadeutils-web</artifactId>
+				<version>${jadeutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.jade-dungeon</groupId>
 				<artifactId>jade-scala-utils</artifactId>
 				<version>${jadescalautils.version}</version>
 			</dependency>
