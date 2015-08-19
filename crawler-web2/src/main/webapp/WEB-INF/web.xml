@@ -19,7 +19,7 @@
 
     <servlet>
       <servlet-name>welcome</servlet-name>
-      <servlet-class>jadecralwer.web2.Welcome</servlet-class>
+      <servlet-class>jadecrawler.web2.Welcome</servlet-class>
     </servlet>
     <servlet-mapping>
       <servlet-name>welcome</servlet-name>
@@ -27,11 +27,11 @@
     </servlet-mapping>
 
     <servlet>
-      <servlet-name>dispather</servlet-name>
-      <servlet-class>jadeutils.scala.web.DispatherServlet</servlet-class>
+      <servlet-name>apiDispather</servlet-name>
+      <servlet-class>jadecrawler.web2.ApiDispather</servlet-class>
     </servlet>
     <servlet-mapping>
-      <servlet-name>dispather</servlet-name>
+      <servlet-name>apiDispather</servlet-name>
 			<url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
