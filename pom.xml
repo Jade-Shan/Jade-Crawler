@@ -24,7 +24,7 @@
 		<scalatest.version>1.9.1</scalatest.version>
 		<junit.version>4.12</junit.version>
 		<!-- -->
-		<jadeutils.version>0.1.4</jadeutils.version>
+		<jadeutils.version>0.1.5-SNAPSHOT</jadeutils.version>
 		<jadescalautils.version>0.1.5-json-SNAPSHOT</jadescalautils.version>
 		<crawler-base.version>0.1.4-SNAPSHOT</crawler-base.version>
 		<crawler-dto.version>0.1.4-SNAPSHOT</crawler-dto.version>

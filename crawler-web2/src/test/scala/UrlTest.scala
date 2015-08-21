@@ -74,8 +74,6 @@ class DispatherServletTest extends FunSuite {
 	import jadeutils.web.mock.MockRequest
 	import jadeutils.web.mock.MockResponse
 
-	object MockDspth extends DispatherServlet { }
-
 	class Ctl1 extends BasicController {
 		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/></body></html>"""
 		service("/${username}/${userid}/${nickname}") {
@@ -111,9 +109,11 @@ class DispatherServletTest extends FunSuite {
 		}
 	}
 
+	object MockDspth extends DispatherServlet {
+		val controllers = new Ctl1 :: new Ctl2 :: Nil
+	}
+
 	test("Test-Dispath") {
-		val c1 = new Ctl1;
-		val c2 = new Ctl2;
 
 		val resp = new MockResponse(System.out)
 

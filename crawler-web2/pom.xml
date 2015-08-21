@@ -44,6 +44,10 @@
 				 -->
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
+			<artifactId>jadeutils-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.jade-dungeon</groupId>
 			<artifactId>jadeutils-web</artifactId>
 		</dependency>
 		<dependency>
