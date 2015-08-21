@@ -28,28 +28,34 @@ class RequestPattern(method: Method.Method, pattern: String) {
 
 	// regex for draw param's value in path
 	val valuePtn = java.util.regex.Pattern.compile(
-		RequestPattern.paramPtn.replaceAllIn(pattern, "(.*)"))
+		RequestPattern.paramPtn.replaceAllIn(pattern, "([^/]*)"))
 	// param's name in path
 	val params = RequestPattern.paramPtn.findAllIn(pattern).toList
-	val keys = for (item <- params if item.length > 4)
+	val keys = for (item <- params if item.length > 3)
 		yield item.substring(2, item.length -1)
 
 	def matchPath(method: Method.Method, path: String): 
 		(Boolean, Map[String, String]) = 
 	{
 		/* draw all param's value in url */
+		logger.debug("match path   :" + path)
+		logger.debug("match pattern:" + valuePtn.toString)
 		val m = valuePtn.matcher(path)
 		val isMatch = if (Method.ANY == this.method || this.method == method) 
 				m.matches else false
 		val values = if (isMatch && m.groupCount > 0) {
 			for (i <- 1 to m.groupCount) yield m group i
 		} else Nil
+		logger.debug("param keys : " + keys.toString)
+		logger.debug("param value: " + values.toString)
 		/* make param's key-value map */
 		val items = (Map.empty[String, String] /: (keys zip values)) (
 			(a, b) => (a + (b._1 -> b._2)))
 		(isMatch, items)
 	}
 
+
+	override def toString = "{%s, %s}".format(method, pattern)
 }
 
 object RequestPattern {
@@ -69,7 +75,10 @@ class DispatherInfo(val method: Method.Method,
 
 
 /* abstract of send which kind of repueset pattern to which logic */
-class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit)
+class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit) {
+	override def toString = "{%s, %s}".format(pattern, logic)
+}
+
 object BasicDispather
 
 /* abstract of MVC controller */
