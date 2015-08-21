@@ -83,30 +83,30 @@ class DispatherServletTest extends FunSuite {
 			}
 		}
 
-	//	service("/${username}/${userid}/${nickname}.html") {
-	//		(info) => {
-	//			println(html.format("logic 2", "logic 2", info.request.getRequestURI, 
-	//			info.params.toString))
-	//		}
-	//	}
+		service("/${username}/${userid}/${nickname}.html") {
+			(info) => {
+				println(html.format("logic 2", "logic 2", info.request.getRequestURI, 
+				info.params.toString))
+			}
+		}
 	}
 
 	class Ctl2 extends BasicController {
 		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/>%s<br/></body></html>"""
 
-	//	service("/aaa/${username}/bbb/${userid}/ccc/${nickname}.html") {
-	//		(info) => {
-	//			println(html.format("logic 3", "logic 3", info.request.getRequestURI, 
-	//			info.params.toString))
-	//		}
-	//	}
+		service("/aaa/${username}/bbb/${userid}/ccc/${nickname}.html") {
+			(info) => {
+				println(html.format("logic 3", "logic 3", info.request.getRequestURI, 
+				info.params.toString))
+			}
+		}
 
-	//	service("/aaa/bbb/ccc.html") {
-	//		(info) => {
-	//			println(html.format("logic 4", "logic 4", info.request.getRequestURI, 
-	//			info.params.toString))
-	//		}
-	//	}
+		service("/aaa/bbb/ccc.html") {
+			(info) => {
+				println(html.format("logic 4", "logic 4", info.request.getRequestURI, 
+				info.params.toString))
+			}
+		}
 	}
 
 	object MockDspth extends DispatherServlet {
@@ -118,10 +118,9 @@ class DispatherServletTest extends FunSuite {
 		val resp = new MockResponse(System.out)
 
 		MockDspth.doGet(new MockRequest("/jack/233/skinner"), resp)
-		MockDspth.doGet(new MockRequest("/api/jack/233"), resp)
-		// MockDspth.doGet(new MockRequest("/jack/233/skinner.html"), resp)
-		// MockDspth.doGet(new MockRequest("/aaa/jack/bbb/233/ccc/skinner.html"), resp)
-		// MockDspth.doGet(new MockRequest("/aaa/bbb/ccc.html"), resp)
+		MockDspth.doGet(new MockRequest("/jack/233/skinner.html"), resp)
+		MockDspth.doGet(new MockRequest("/aaa/jack/bbb/233/ccc/skinner.html"), resp)
+		MockDspth.doGet(new MockRequest("/aaa/bbb/ccc.html"), resp)
 		assert(1 == 1)
 	}
 
