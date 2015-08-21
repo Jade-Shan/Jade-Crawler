@@ -40,9 +40,9 @@ class UrlTest extends FunSuite {
 	}
 
 	test("Test-Path-Pattern-valuePtn") {
-		assert(p1.valuePtn.toString == "/(.*)/(.*)/(.*)")
-		assert(p2.valuePtn.toString == "/(.*)/(.*)/(.*).html")
-		assert(p3.valuePtn.toString == "/aaa/(.*)/bbb/(.*)/ccc/(.*).html")
+		assert(p1.valuePtn.toString == "/([^/]*)/([^/]*)/([^/]*)")
+		assert(p2.valuePtn.toString == "/([^/]*)/([^/]*)/([^/]*).html")
+		assert(p3.valuePtn.toString == "/aaa/([^/]*)/bbb/([^/]*)/ccc/([^/]*).html")
 		assert(p4.valuePtn.toString == "/aaa/bbb/ccc.html")
 	}
 
