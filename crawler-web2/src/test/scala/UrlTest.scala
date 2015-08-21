@@ -13,14 +13,6 @@ import java.util.Properties
 @RunWith(classOf[JUnitRunner])
 class UrlTest extends FunSuite {
 
-	test("Test-Url-Prefix") {
-		ExampleTest.logger.debug("test scalatest")
-		val uri = new URI("http://example.com/a%2Fb%3Fc/aaa/bbb/ccc/ddd");
-
-		uri.getRawPath().split("/").foreach(System.err.println(_))
-		assert(2 > 1)
-	}
-
 	val p1 = new RequestPattern("/${username}/${userid}/${nickname}")
 	val u1 = "/jack/233/skinner"
 
@@ -66,7 +58,7 @@ class UrlTest extends FunSuite {
 				"nickname" -> "skinner")))
 		assert(p4.matchPath(Method.ANY, u4) == (true, Map()))
 	}
-
+ 
 }
 
 object ExampleTest { 
@@ -79,8 +71,56 @@ object ExampleTest {
 
 @RunWith(classOf[JUnitRunner])
 class DispatherServletTest extends FunSuite { 
+	import jadeutils.web.mock.MockRequest
+	import jadeutils.web.mock.MockResponse
+
+	object MockDspth extends DispatherServlet { }
+
+	class Ctl1 extends BasicController {
+		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/></body></html>"""
+		service("/${username}/${userid}/${nickname}") {
+			(info) => {
+				println(html.format("logic 1", "logic 1", 
+					info.request.getRequestURI))
+			}
+		}
+
+		service("/${username}/${userid}/${nickname}.html") {
+			(info) => {
+				println(html.format("logic 2", "logic 2", 
+					info.request.getRequestURI))
+			}
+		}
+	}
+
+	class Ctl2 extends BasicController {
+		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/></body></html>"""
+
+		service("/aaa/${username}/bbb/${userid}/ccc/${nickname}.html") {
+			(info) => {
+				println(html.format("logic 3", "logic 3", 
+					info.request.getRequestURI))
+			}
+		}
+
+		service("/aaa/bbb/ccc.html") {
+			(info) => {
+				println(html.format("logic 4", "logic 4", 
+					info.request.getRequestURI))
+			}
+		}
+	}
 
 	test("Test-Dispath") {
+		val c1 = new Ctl1;
+		val c2 = new Ctl2;
+
+		val resp = new MockResponse(System.out)
+
+		MockDspth.doGet(new MockRequest("/jack/233/skinner"), resp)
+		MockDspth.doGet(new MockRequest("/jack/233/skinner.html"), resp)
+		MockDspth.doGet(new MockRequest("/aaa/jack/bbb/233/ccc/skinner.html"), resp)
+		MockDspth.doGet(new MockRequest("/aaa/bbb/ccc.html"), resp)
 		assert(1 == 1)
 	}
 

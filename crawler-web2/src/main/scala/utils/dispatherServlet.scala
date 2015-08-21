@@ -62,15 +62,15 @@ object RequestPattern {
 
 
 /* abstract of HTTP request and response info */
-class DispatherInfo(method: Method.Method, 
-	req: HttpServletRequest, resp: HttpServletResponse, 
-	params: Map[String, String])
+class DispatherInfo(val method: Method.Method, 
+	val request: HttpServletRequest, val response: HttpServletResponse, 
+	val params: Map[String, String])
 
-object DispatherInfo
 
 
 /* abstract of send which kind of repueset pattern to which logic */
 class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit)
+object BasicDispather
 
 /* abstract of MVC controller */
 trait BasicController {
@@ -110,6 +110,47 @@ trait DispatherServlet extends HttpServlet {
 		this.doLogic(Method.POST, request, response)
 	}
 
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	private[this] def doLogic(method: Method.Method, 
+		request: HttpServletRequest, response: HttpServletResponse) 
+	{
+		val path = formalizePath(request)
+		logger.debug("Dispath Req: " + method + " " + path)
+
+		// find a dispather that matchs the http request path
+		// the result matchRec is the format like: (isMatch, logic, params)
+		val matchRec = matchDispathers(method, path, DispatherServlet.dispathers)
+		if (!matchRec._1) {
+			response.setContentType("text/html");
+			val out: PrintWriter = response.getWriter()
+			out.println("<html>")
+			out.println("<head>")
+			out.println("<title>Error !!!</title>")
+			out.println("</head>")
+			out.println("<body>")
+			out.println("<h1>No Match Dispath Pattern</h1>")
+			out.println("path: " + path + "<br/>")
+			out.println("</body>")
+			out.println("</html>")
+			out.flush()
+		} else matchRec._2(new DispatherInfo(method, request, response, matchRec._3))
+		
+	}
+
+	private[this] def matchDispathers(
+		method: Method.Method, path: String, list: List[BasicDispather]): 
+	(Boolean, (DispatherInfo) => Unit, Map[String, String]) = 
+	{
+		if (Nil == list)  {
+			(false, (info) => {}, Map.empty[String, String])
+		} else {
+			val rec = list.head.pattern.matchPath(method, path)
+			if (rec._1) (rec._1, list.head.logic, rec._2)
+			else matchDispathers(method, path, list.tail)
+		}
+	}
+
 	private[this] def formalizePath(request: HttpServletRequest) = {
 		val reqUri = request.getRequestURI
 		val ctxPath = request.getContextPath
@@ -118,28 +159,6 @@ trait DispatherServlet extends HttpServlet {
 		if ((reqUri.indexOf(ctxPath + "/")) == 0) 
 			reqUri.substring(ctxPath.length) else reqUri
 	}
-
-	@throws(classOf[IOException])
-	@throws(classOf[ServletException])
-	private[this] def doLogic(method: Method.Method, 
-		request: HttpServletRequest, response: HttpServletResponse) 
-	{
-		val path = formalizePath(request)
-		DispatherServlet.dispathers.find(_.pattern.matchPath(method, path)._1)
-		logger.debug("Dispath Req: " + method + " " + path)
-		// response.setContentType("text/html");
-		// val out: PrintWriter = response.getWriter()
-		// out.println("<html>")
-		// out.println("<head>")
-		// out.println("<title>Hello World!</title>")
-		// out.println("</head>")
-		// out.println("<body>")
-		// out.println("<h1>Hello! This is a Scala Dispather Servlet!</h1>")
-		// out.println("path: " + path + "<br/>")
-		// out.println("</body>")
-		// out.println("</html>")
-	}
-
 }
 
 object DispatherServlet {
@@ -148,6 +167,7 @@ object DispatherServlet {
 	private var dispathers: List[BasicDispather] = Nil
 
 	def addDisPather(dispather: BasicDispather) {
+		logger.debug("add pattern to dispather list: " + dispather.pattern)
 		dispathers = dispather :: dispathers
 	}
 
