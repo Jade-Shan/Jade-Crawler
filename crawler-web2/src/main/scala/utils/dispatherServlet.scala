@@ -70,7 +70,7 @@ object RequestPattern {
 /* abstract of HTTP request and response info */
 class DispatherInfo(val method: Method.Method, 
 	val request: HttpServletRequest, val response: HttpServletResponse, 
-	val params: Map[String, String])
+	val params: Map[String, Array[String]])
 
 
 
@@ -100,6 +100,8 @@ trait BasicController {
 
 
 trait DispatherServlet extends HttpServlet {
+	import scala.collection.JavaConversions.mapAsScalaMap
+
 	lazy val logger = DispatherServlet.logger
 
 	// def controllers: BasicController
@@ -127,9 +129,13 @@ trait DispatherServlet extends HttpServlet {
 		val path = formalizePath(request)
 		logger.debug("Dispath Req: " + method + " " + path)
 
+		var params = parseParamsFromRequest(request)
+		logger.debug("query params: " + reqParamsAsString(params))
+
 		// find a dispather that matchs the http request path
 		// the result matchRec is the format like: (isMatch, logic, params)
 		val matchRec = matchDispathers(method, path, DispatherServlet.dispathers)
+
 		if (!matchRec._1) {
 			response.setContentType("text/html");
 			val out: PrintWriter = response.getWriter()
@@ -143,8 +149,34 @@ trait DispatherServlet extends HttpServlet {
 			out.println("</body>")
 			out.println("</html>")
 			out.flush()
-		} else matchRec._2(new DispatherInfo(method, request, response, matchRec._3))
-		
+		} else {
+			for ((key, value) <- matchRec._3) {
+				if (params.contains(key))
+					params = params + (key ->  Array.concat(params(key), Array(value)))
+				else
+					params = params + (key -> Array(value))
+			}
+			logger.debug("all params: " + reqParamsAsString(params))
+			matchRec._2(new DispatherInfo(method, request, response, params))
+		}
+	}
+
+	private[this] def reqParamsAsString(params: Map[String, Array[String]]) = {
+		var result = "{"
+		for ((key, value) <- params) {
+			result = result + key + " -> " + "[" + value.mkString + ", " + "], "
+		}
+		result = result + "}"
+		result
+	}
+
+	private[this] def parseParamsFromRequest(request: HttpServletRequest) = {
+		var result = Map.empty[String, Array[String]]
+		if(null != request.getParameterMap) {
+			val m: scala.collection.Map[String, Array[String]] = request.getParameterMap
+			for ((key, value) <- m) { result = result + (key -> value) }
+		}
+		result
 	}
 
 	private[this] def matchDispathers(
