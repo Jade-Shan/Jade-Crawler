@@ -45,10 +45,11 @@ class JsonObject(str: String) {
 		o
 	}
 
-	//def getJsonArray(k: String) = {
-	//	o.value = value.getJSONArray(k)
-	//	o
-	//}
+	def getJsonArray(k: String) = {
+		val o = new JsonArray(null)
+		o.value = value.getJSONArray(k)
+		o
+	}
 
 	override def toString = value.toString
 }
@@ -66,6 +67,12 @@ class JsonArray(str: String) {
 	def ::(o: Double) = { value.put(o); this }
 	def ::(o: JsonObject) = { value.put(o.value); this }
 	def ::(o: JsonArray) =  { value.put(o.value); this }
+
+	def getString(i: Int): String = fromArr[String](i, (i) => { value.getString(i) })
+	def getBoolean(i: Int): Boolean = fromArr[Boolean](i, (i) => { value.getBoolean(i) })
+	def getInt(i: Int): Int = fromArr[Int](i, (i) => { value.getInt(i) })
+	def getLong(i: Int): Long = fromArr[Long](i, (i) => { value.getLong(i) })
+	def getDouble(i: Int): Double = fromArr[Double](i, (i) => { value.getDouble(i) })
 
 	def getJsonObject(i: Int): JsonObject = fromArr[JsonObject](i, (i) => {
 			val o = new JsonObject(null)
@@ -88,10 +95,6 @@ class JsonArray(str: String) {
 			null.asInstanceOf[T]
 		}
 	}
-
-
-
-
 
 	override def toString = value.toString
 }
