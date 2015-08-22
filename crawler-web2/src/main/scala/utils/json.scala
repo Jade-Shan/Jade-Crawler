@@ -3,7 +3,9 @@ package jadeutils.common
 import org.json.JSONObject
 import org.json.JSONArray
 
-class JsonObject(str: String) {
+class Json
+
+class JsonObject(str: String) extends Json {
 	var value: JSONObject = if (null == str) null else new JSONObject(str)
 
 	def this() = this("{}")
@@ -37,18 +39,22 @@ class JsonObject(str: String) {
 	override def toString = value.toString
 }
 
-class JsonArray(str: String) {
+object JsonObject { def JObj = new JsonObject }
+
+
+
+class JsonArray(str: String) extends Json {
 	var value: JSONArray = if (null == str) null else new JSONArray(str)
 
 	def this() = this("[]")
 
-	def ::(o: String) = { value.put(o); this }
-	def ::(o: Boolean) = { value.put(o); this }
-	def ::(o: Int) = { value.put(o); this }
-	def ::(o: Long) = { value.put(o); this }
-	def ::(o: Double) = { value.put(o); this }
-	def ::(o: JsonObject) = { value.put(o.value); this }
-	def ::(o: JsonArray) =  { value.put(o.value); this }
+	def ~~(o: String) = { value.put(o); this }
+	def ~~(o: Boolean) = { value.put(o); this }
+	def ~~(o: Int) = { value.put(o); this }
+	def ~~(o: Long) = { value.put(o); this }
+	def ~~(o: Double) = { value.put(o); this }
+	def ~~(o: JsonObject) = { value.put(o.value); this }
+	def ~~(o: JsonArray) =  { value.put(o.value); this }
 
 	def getString(i: Int): String = fromArr[String](i, (i) => { value.getString(i) })
 	def getBoolean(i: Int): Boolean = fromArr[Boolean](i, (i) => { value.getBoolean(i) })
@@ -81,8 +87,4 @@ class JsonArray(str: String) {
 	override def toString = value.toString
 }
 
-object Json { 
-	def JObj = new JsonObject
-	def JArr = new JsonArray 
-}
-
+object JsonArray { def JArr = new JsonArray }
