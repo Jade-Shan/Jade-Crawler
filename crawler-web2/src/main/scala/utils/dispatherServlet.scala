@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
 import org.slf4j.Logger
 
 
-
+/* abstrict of http method */
 object Method extends Enumeration {
 	type Method = Value
 	val ANY = Value(0,"ANY")
@@ -20,7 +20,7 @@ object Method extends Enumeration {
 }
 
 
-
+/* Pattern of http request want to match */
 class RequestPattern(method: Method.Method, pattern: String) {
 	lazy val logger = RequestPattern.logger
 
@@ -67,45 +67,41 @@ object RequestPattern {
 }
 
 
-/* abstract of HTTP request and response info */
+/* Some information about HTTP request and response */
 class DispatherInfo(val method: Method.Method, 
 	val request: HttpServletRequest, val response: HttpServletResponse, 
 	val params: Map[String, Array[String]])
 
+object DispatherInfo {
+
+	def paramsToString(params: Map[String, Array[String]]) = {
+		var recs = "["
+		for ((key, value) <- params) {
+			var str = value.mkString
+			// str = if (str.length == 0) str else str.substring(0, str.length) 
+			recs = recs + """{%s: "%s"},""".format(key, str)
+		}
+		recs = if (recs.length == 0) recs else recs.substring(0, recs.length - 1)
+		recs + "]"
+	}
+
+}
 
 
-/* abstract of send which kind of repueset pattern to which logic */
+/* mapping from 'request pattern' to 'process logic' */
 class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit) {
 	override def toString = "{%s, %s}".format(pattern, logic)
 }
 
-object BasicDispather
-
-/* abstract of MVC controller */
-trait BasicController {
-
-	def service(method: Method.Method, pattern: String)
-		(logic: (DispatherInfo) => Unit) 
-	{
-		val dpth = new BasicDispather(new RequestPattern(method, pattern), logic)
-		DispatherServlet.addDisPather(dpth)
-	}
-
-	def service(pattern: String) (logic: (DispatherInfo) => Unit) {
-		service(Method.ANY, pattern)(logic)
-	}
-
-}
+// object BasicDispather
 
 
 
+/* Servlet dispather request */
 trait DispatherServlet extends HttpServlet {
 	import scala.collection.JavaConversions.mapAsScalaMap
 
 	lazy val logger = DispatherServlet.logger
-
-	// def controllers: BasicController
-	// def addController(ctler: BasicController)
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
@@ -130,7 +126,7 @@ trait DispatherServlet extends HttpServlet {
 		logger.debug("Dispath Req: " + method + " " + path)
 
 		var params = parseParamsFromRequest(request)
-		logger.debug("query params: " + reqParamsAsString(params))
+		logger.debug("query params: " + DispatherInfo.paramsToString(params))
 
 		// find a dispather that matchs the http request path
 		// the result matchRec is the format like: (isMatch, logic, params)
@@ -156,27 +152,18 @@ trait DispatherServlet extends HttpServlet {
 				else
 					params = params + (key -> Array(value))
 			}
-			logger.debug("all params: " + reqParamsAsString(params))
+			logger.debug("all params: " + DispatherInfo.paramsToString(params))
 			matchRec._2(new DispatherInfo(method, request, response, params))
 		}
 	}
 
-	private[this] def reqParamsAsString(params: Map[String, Array[String]]) = {
-		var result = "{"
-		for ((key, value) <- params) {
-			result = result + key + " -> " + "[" + value.mkString + ", " + "], "
-		}
-		result = result + "}"
-		result
-	}
-
 	private[this] def parseParamsFromRequest(request: HttpServletRequest) = {
-		var result = Map.empty[String, Array[String]]
+		var recs = Map.empty[String, Array[String]]
 		if(null != request.getParameterMap) {
 			val m: scala.collection.Map[String, Array[String]] = request.getParameterMap
-			for ((key, value) <- m) { result = result + (key -> value) }
+			for ((key, value) <- m) { recs = recs + (key -> value) }
 		}
-		result
+		recs
 	}
 
 	private[this] def matchDispathers(
@@ -210,6 +197,24 @@ object DispatherServlet {
 	def addDisPather(dispather: BasicDispather) {
 		logger.debug("add pattern to dispather list: " + dispather.pattern)
 		dispathers = dispather :: dispathers
+	}
+
+}
+
+
+
+/* abstract of MVC controller */
+trait BasicController {
+
+	def service(method: Method.Method, pattern: String)
+		(logic: (DispatherInfo) => Unit) 
+	{
+		val dpth = new BasicDispather(new RequestPattern(method, pattern), logic)
+		DispatherServlet.addDisPather(dpth)
+	}
+
+	def service(pattern: String) (logic: (DispatherInfo) => Unit) {
+		service(Method.ANY, pattern)(logic)
 	}
 
 }

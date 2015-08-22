@@ -3,6 +3,8 @@ package jadecrawler.web2
 import jadeutils.web.DispatherServlet
 import jadeutils.web.BasicController
 
+import jadeutils.web.DispatherInfo.paramsToString
+
 class ApiDispather extends DispatherServlet {
 	ApiDispather.controllers = new IcibaApiController :: Nil
 }
@@ -16,7 +18,7 @@ class IcibaApiController extends BasicController {
 			info.response.setContentType("text/html");
 			val out = info.response.getWriter()
 			out.println(html.format("logic 1", "logic 1", info.request.getRequestURI, 
-				info.params.toString))
+				paramsToString(info.params)))
 		}
 	}
 }
