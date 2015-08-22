@@ -33,6 +33,23 @@ class JsonObject(str: String) {
 	def ~(k: String, v: JsonObject) = { value.put(k, v.value); this }
 	def ~(k: String, v: JsonArray) = { value.put(k, v.value); this }
 
+	def getString(k: String) = value.getString(k)
+	def getBoolean(k: String) = value.getBoolean(k)
+	def getInt(k: String) = value.getInt(k)
+	def getDouble(k: String) = value.getDouble(k)
+	def getLong(k: String) = value.getLong(k)
+
+	def getJsonObject(k: String) = {
+		val o = new JsonObject(null)
+		o.value = value.getJSONObject(k)
+		o
+	}
+
+	//def getJsonArray(k: String) = {
+	//	o.value = value.getJSONArray(k)
+	//	o
+	//}
+
 	override def toString = value.toString
 }
 object JsonObject {}
@@ -44,12 +61,17 @@ class JsonArray(str: String) {
 
 	def ::(o: JsonObject) = { value.put(o.value); this }
 
-	def apply(i: Int): Option[JsonObject] =
+	def apply(i: Int): JsonObject =
 		if (i < value.length) {
 			val o = new JsonObject(null)
 			o.value = value.get(i).asInstanceOf[JSONObject]
-			Some(o)
-		} else None
+			o
+		} else {
+			val n = if (null == value) 0 else value.length
+			throw new java.lang.IndexOutOfBoundsException("%d of %d".format(i, n))
+			null
+		}
+
 
 	override def toString = value.toString
 }
