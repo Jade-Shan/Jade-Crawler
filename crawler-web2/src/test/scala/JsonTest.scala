@@ -23,6 +23,9 @@ class JsonTest extends FunSuite {
 	}
 
 	val a1 = j1 :: j2 :: j3 :: JArr
+	val a2 = j3 :: j2 :: JArr
+	val a3 = j3 :: j1 :: JArr
+	val a4 = a2 :: a3 :: JArr
 
 	test("Test-Json-Arr") {
 		assert(a1.toString == """[{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2},{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999},{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}]""")
@@ -30,6 +33,11 @@ class JsonTest extends FunSuite {
 		assert(a1.getJsonObject(1).toString == """{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999}""")
 		assert(a1.getJsonObject(2).toString == """{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}""")
 		intercept[IndexOutOfBoundsException] { a1.getJsonObject(3) }
+
+		assert(a4.toString                 == """[[{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999},{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2}],[{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999},{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2}]]""")
+		assert(a4.getJsonArray(0).toString == """[{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999},{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2}]"""                                                                                                                   )
+		assert(a4.getJsonArray(1).toString == """[{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999},{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2}]"""                                                                                                              )
+		intercept[IndexOutOfBoundsException] { a1.getJsonArray(2) }
 	}
 
 	val j4 = JObj ~ ("a", "1") ~ ("b", j1) ~ ("c", j2)

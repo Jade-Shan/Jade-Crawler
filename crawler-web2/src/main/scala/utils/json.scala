@@ -60,17 +60,33 @@ class JsonArray(str: String) {
 	def this() = this("[]")
 
 	def ::(o: JsonObject) = { value.put(o.value); this }
+	def ::(o: JsonArray) =  { value.put(o.value); this }
 
-	def apply(i: Int): JsonObject =
-		if (i < value.length) {
+	def getJsonObject(i: Int): JsonObject = fromArr[JsonObject](i, (i) => {
 			val o = new JsonObject(null)
 			o.value = value.get(i).asInstanceOf[JSONObject]
 			o
+		})
+
+
+	def getJsonArray(i: Int): JsonArray = fromArr[JsonArray](i, (i) => {
+			val o = new JsonArray(null)
+			o.value = value.get(i).asInstanceOf[JSONArray]
+			o
+		})
+
+	private[this] def fromArr[T](i: Int, func: (Int) => T): T = {
+		val n = if (null == value) 0 else value.length
+		if (i < n) {
+			func(i)
 		} else {
-			val n = if (null == value) 0 else value.length
 			throw new java.lang.IndexOutOfBoundsException("%d of %d".format(i, n))
-			null
+			null.asInstanceOf[T]
 		}
+	}
+
+
+
 
 
 	override def toString = value.toString
