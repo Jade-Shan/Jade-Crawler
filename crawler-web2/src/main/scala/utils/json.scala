@@ -1,24 +1,7 @@
 package jadeutils.common
 
-
 import org.json.JSONObject
 import org.json.JSONArray
-
-// jobj
-// asInstanceOf    get                     
-// isInstanceOf    isNull          join            length         
-// optInt          optJSONArray    optJSONObject   optLong         optString      
-// toString        write     
-//          
-// opt             optBoolean      optDouble       
-// put             remove          toJSONObject    
-//
-// getString       getBoolean      getInt        getDouble
-// getLong         getJSONArray    getJSONObject   
-//
-//
-//
-// jarray length
 
 class JsonObject(str: String) {
 	var value: JSONObject = if (null == str) null else new JSONObject(str)
@@ -53,7 +36,6 @@ class JsonObject(str: String) {
 
 	override def toString = value.toString
 }
-object JsonObject {}
 
 class JsonArray(str: String) {
 	var value: JSONArray = if (null == str) null else new JSONArray(str)

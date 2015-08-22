@@ -72,16 +72,26 @@ class JsonTest extends FunSuite {
 
 	val j4 = JObj ~ ("a", "1") ~ ("b", j1) ~ ("c", j2)
 	val j5 = JObj ~ ("a", "1") ~ ("b", a1) ~ ("c", a6) ~ ("d", a7)
+	val j6 = JObj ~ ("a", 1 :: 2 :: 3 :: JArr) ~ 
+									("b", JObj ~ ("a", "1") ~ ("b", true) :: 
+												JObj ~ ("c", "2") ~ ("d", true) :: 
+												JObj ~ ("e", "3") ~ ("f", true) :: JArr) ~
+									("c", ("a"  :: "b"   :: JArr) :: 
+												(true :: false :: JArr) :: 
+												(1    :: 2     :: JArr) :: JArr)
 
 	test("Test-Json-Obj-Obj-Arr") {
-		println(j4.getJsonObject("b") == """{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}"""     )
-		println(j4.getJsonObject("c") == """{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999}""")
+		assert(j4.getJsonObject("b").toString == """{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}"""     )
+		assert(j4.getJsonObject("c").toString == """{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999}""")
 
-		println(j5.getJsonArray("b") == """["b","a"]"""                                                                                                                                                       )
-		println(j5.getJsonArray("c") == """[{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2},{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999},{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}]""")
-		println(j5.getJsonArray("d") == """[[2.2,1.1],[false,true],["b","a"]]"""                                                                                                                              )
+		assert(j5.getJsonArray("b").toString == """["b","a"]"""                                                                                                                                                       )
+		assert(j5.getJsonArray("c").toString == """[{"aaa":"1","ccc":8,"bbb":true,"eee":6553599999,"ddd":2.2},{"aa":"1","bb":true,"cc":8,"dd":2.2,"ee":6553599999},{"a":"1","b":true,"c":8,"d":2.2,"e":6553599999}]""")
+		assert(j5.getJsonArray("d").toString == """[[2.2,1.1],[false,true],["b","a"]]"""                                                                                                                              )
+
+		assert(j6.getJsonArray("a").toString == """[3,2,1]"""                                                   )
+		assert(j6.getJsonArray("b").toString == """[{"e":"3","f":true},{"c":"2","d":true},{"a":"1","b":true}]""")
+		assert(j6.getJsonArray("c").toString == """[[2,1],[false,true],["b","a"]]"""                            )
 	}
-
 
 }
 
