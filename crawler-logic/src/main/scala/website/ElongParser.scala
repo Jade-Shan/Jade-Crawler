@@ -17,7 +17,8 @@ import jadecrawler.dto.website.IcibaDto
 import jadecrawler.dto.website.IcibaS2Dto
 import jadecrawler.dto.website.IcibaS3Dto
 import jadecrawler.dto.website.IcibaHomoDto
-import jadecrawler.website.JsoupUtils._
+
+import jadeutils.common.JsoupUtils._
 
 import scala.collection.JavaConversions._
 
