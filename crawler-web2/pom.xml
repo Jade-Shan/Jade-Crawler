@@ -17,6 +17,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.json4s</groupId>
+			<artifactId>json4s-jackson_${scala.version.floor}</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>crawler-dto</artifactId>
 		</dependency>

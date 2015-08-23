@@ -20,7 +20,8 @@
 	<properties>
 		<charset.encoding>UTF-8</charset.encoding>
 		<java.version>1.7</java.version>
-		<scala.version>2.10.5</scala.version>
+		<scala.version.floor>2.10</scala.version.floor>
+		<scala.version>${scala.version.floor}.5</scala.version>
 		<scalatest.version>1.9.1</scalatest.version>
 		<junit.version>4.12</junit.version>
 		<!-- -->
@@ -35,6 +36,7 @@
 		<springframework.version>4.2.0.RELEASE</springframework.version>
 		<commonslang.version>2.6</commonslang.version>
 		<httpcomponents.version>4.3.6</httpcomponents.version>
+		<json4s.version>3.2.11</json4s.version>
 		<jsoup.version>1.8.1</jsoup.version>
 		<json.version>20140107</json.version>
 		<logback.version>1.0.13</logback.version>
@@ -154,6 +156,11 @@
 				<groupId>org.json</groupId>
 				<artifactId>json</artifactId>
 				<version>${json.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.json4s</groupId>
+				<artifactId>json4s-jackson_${scala.version.floor}</artifactId>
+				<version>${json4s.version}</version>
 			</dependency>
 			<!-- -->
 			<dependency>
