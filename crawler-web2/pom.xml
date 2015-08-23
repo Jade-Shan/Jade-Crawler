@@ -16,32 +16,14 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		<!-- 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
+			<groupId>net.jade-dungeon</groupId>
+			<artifactId>crawler-dto</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
+			<groupId>net.jade-dungeon</groupId>
+			<artifactId>crawler-logic</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-				 -->
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>jadeutils-base</artifactId>

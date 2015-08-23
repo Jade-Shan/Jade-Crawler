@@ -12,16 +12,8 @@ import jadeutils.common.JsonObject.JObj
 import jadecrawler.website.IcibaCrawler
 
 
-
-class ApiDispather extends DispatherServlet 
-{ ApiDispather.controllers = new IcibaApiController :: Nil }
-
-object ApiDispather { var controllers: List[IcibaApiController] = Nil }
-
-
-
-class IcibaApiController extends BasicController {
-	lazy val logger = IcibaApiController.logger
+class MyNewController extends BasicController {
+	lazy val logger = .MyNewControllerlogger
 
 	val dbHost = "mongo.local-vm"
 	val dbPort = 27017
@@ -121,24 +113,6 @@ class IcibaApiController extends BasicController {
 
 }
 
-object IcibaApiController { 
+object MyNewController { 
 	lazy val logger = LoggerFactory.getLogger(this.getClass)
 }
-
-/*
-//scripts import word list
-
-import jadecrawler.website.IcibaCrawler
-import scala.io.Source
-
-val dao = IcibaCrawler.getDao(dbHost, dbPort)
-
-def transWord(word: String) {
-if (null == IcibaCrawler.loadLocal(dao, word)) { 
-val rec = jadecrawler.website.IcibaCrawler.process(word)
-if (null != rec) IcibaCrawler.saveLocal(dao, rec)
-}
-}
-
-scala.io.Source.fromFile("/home/morgan/CET-4.txt").getLines.foreach((s) =>{transWord(s);Thread.sleep(200)})
-*/

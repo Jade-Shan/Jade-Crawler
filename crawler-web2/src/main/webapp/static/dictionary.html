@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Jade Dict</title>
 </head>
-<script type="text/javascript" src="/scripts/zepto-1.1.2.min.js"></script>
+<script type="text/javascript" src="/crawler-web2/scripts/zepto-1.1.2.min.js"></script>
 <style type="text/css">
 a:link    {text-decoration: none;}
 a:active  {}
@@ -49,6 +49,7 @@ div#newword {
 </div>
 </body>
 <script>
+var appPath = "/crawler-web2"
 String.prototype.trim=function() { return this.replace(/(^\s*)|(\s*$)/g, "") };
 String.prototype.trimLeft=function() { return this.replace(/(^\s*)/g, "") };
 String.prototype.trimRight=function() { return this.replace(/(\s*$)/g, "") };
@@ -196,16 +197,17 @@ function loadNewWords() {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != username) {
-		$.getJSON('/api/dictionary/newwords/' + username + '/' + password, 
-				function (data) {
+		$.post(appPath + '/api/dictionary/newwords/', 
+				{username: username, password: password}, 
+				function (resp) {
+					resp = JSON.parse(resp)
 					var html = '';
-					if (data.result) {
-					$.each(data.result, function(index, item) {
-						html = html + '[<a href="javascript:removeNewWord(\'' + item.word + 
-							'\')">X</a>]&nbsp;';
-						html = html + '<a href="javascript:transword(\'' + item.word + 
-							'\')">' + item.word + '</a><br/>';
-						})
+					if (resp.result) {
+						$.each(resp.result, function(index, item) {
+							html = html + '[<a href="javascript:removeNewWord(\'' + item.word + 
+								'\')">X</a>]&nbsp;';
+							html = html + '<a href="javascript:transword(\'' + item.word + 
+								'\')">' + item.word + '</a><br/>';})
 					}
 					$('#newword').html(html);
 				})
@@ -216,9 +218,9 @@ function removeNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != word && "" != username) {
-		$.getJSON(
-				'/api/dictionary/removenewword/' + username + '/' + password + '/' + word,
-				function (data) { loadNewWords(); console.log(data.status); })
+		$.post(appPath + '/api/dictionary/removenewword/' + word,
+				{username: username, password: password}, 
+				function (resp) {resp = JSON.parse(resp); loadNewWords(); console.log(resp.status); })
 	}
 }
 
@@ -226,9 +228,9 @@ function addNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != word && "" != username) {
-		$.getJSON(
-				'/api/dictionary/addnewword/' + username + '/' + password + '/' + word,
-				function (data) { loadNewWords(); console.log(data.status); })
+		$.post(appPath + '/api/dictionary/addnewword/' + word, 
+				{username: username, password: password}, 
+				function(resp) {resp = JSON.parse(resp); loadNewWords(); console.log(resp.status)})
 	}
 };
 
@@ -238,7 +240,7 @@ function trans() {
 		//
 	} else {
 		$wordIpt.val('');
-		$.getJSON( '/api/dictionary/eng2chs/' + word, load);
+		$.getJSON(appPath + '/api/dictionary/eng2chs/' + word, load);
 		addNewWord(word);
 	}
 };
