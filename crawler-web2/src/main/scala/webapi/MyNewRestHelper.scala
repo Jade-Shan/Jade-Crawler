@@ -13,7 +13,7 @@ import jadecrawler.website.IcibaCrawler
 
 
 class MyNewController extends BasicController {
-	lazy val logger = .MyNewControllerlogger
+	lazy val logger = MyNewController.logger
 
 	val dbHost = "mongo.local-vm"
 	val dbPort = 27017
