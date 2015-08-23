@@ -6,7 +6,7 @@
 
 	<groupId>net.jade-dungeon</groupId>
 	<artifactId>crawler-web</artifactId>
-	<version>0.1.4-SNAPSHOT</version>
+	<version>0.1.4</version>
 	<packaging>war</packaging>
 	<name>webapi Project</name>
 	<inceptionYear>2010</inceptionYear>
