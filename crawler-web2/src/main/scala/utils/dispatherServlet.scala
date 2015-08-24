@@ -10,6 +10,10 @@ import javax.servlet.ServletException
 import org.slf4j.LoggerFactory
 import org.slf4j.Logger
 
+import org.json4s.JValue
+import org.json4s.jackson.JsonMethods.compact
+import org.json4s.jackson.JsonMethods.render
+
 
 /* abstrict of http method */
 object Method extends Enumeration {
@@ -18,6 +22,9 @@ object Method extends Enumeration {
 	val GET = Value(1,"GET")
 	val POST = Value(2,"POST")
 }
+
+case class Foward(method: Method.Method, url: String)
+case class Redirect(method: Method.Method, url: String)
 
 
 /* Pattern of http request want to match */
@@ -89,7 +96,7 @@ object DispatherInfo {
 
 
 /* mapping from 'request pattern' to 'process logic' */
-class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit) {
+class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Any) {
 	override def toString = "{%s, %s}".format(pattern, logic)
 }
 
@@ -153,7 +160,18 @@ trait DispatherServlet extends HttpServlet {
 					params = params + (key -> Array(value))
 			}
 			logger.debug("all params: " + DispatherInfo.paramsToString(params))
-			matchRec._2(new DispatherInfo(method, request, response, params))
+			matchRec._2(new DispatherInfo(method, request, response, params)) match {
+				case Foward(newMethod, newPath) =>
+					logger.debug("forward: " + newMethod+ " " + newPath)
+				case Redirect(newMethod, newPath) =>
+					logger.debug("redirect: " + newMethod+ " " + newPath)
+				case json: JValue => {
+					response.setContentType("application/json")
+					response.setHeader("Content-disposition", "inline")
+					response.getWriter.println(compact(render(json)))
+				}
+				case _ => logger.error("Unknow Dispath result")
+			}
 		}
 	}
 
@@ -168,7 +186,7 @@ trait DispatherServlet extends HttpServlet {
 
 	private[this] def matchDispathers(
 		method: Method.Method, path: String, list: List[BasicDispather]): 
-	(Boolean, (DispatherInfo) => Unit, Map[String, String]) = 
+	(Boolean, (DispatherInfo) => Any, Map[String, String]) = 
 	{
 		if (Nil == list)  {
 			(false, (info) => {}, Map.empty[String, String])
@@ -207,13 +225,13 @@ object DispatherServlet {
 trait BasicController {
 
 	def service(method: Method.Method, pattern: String)
-		(logic: (DispatherInfo) => Unit) 
+		(logic: (DispatherInfo) => Any) 
 	{
 		val dpth = new BasicDispather(new RequestPattern(method, pattern), logic)
 		DispatherServlet.addDisPather(dpth)
 	}
 
-	def service(pattern: String) (logic: (DispatherInfo) => Unit) {
+	def service(pattern: String) (logic: (DispatherInfo) => Any) {
 		service(Method.ANY, pattern)(logic)
 	}
 
