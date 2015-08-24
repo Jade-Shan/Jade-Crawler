@@ -373,6 +373,10 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<properties>
+				<profiles.scope.compile>compile</profiles.scope.compile>
+				<profiles.scope.runtime>runtime</profiles.scope.runtime>
+			</properties>
 			<build>
 				<filters>
 					<filter>params-dev.properties</filter>
@@ -381,6 +385,10 @@
 		</profile>
 		<profile>
 			<id>prd</id>
+			<properties>
+				<profiles.scope.compile>compile</profiles.scope.compile>
+				<profiles.scope.runtime>runtime</profiles.scope.runtime>
+			</properties>
 			<build>
 				<filters>
 					<filter>params-prd.properties</filter>
@@ -399,6 +407,18 @@
 						</configuration>
 					</plugin>
 				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>rls</id>
+			<properties>
+				<profiles.scope.compile>provided</profiles.scope.compile>
+				<profiles.scope.runtime>provided</profiles.scope.runtime>
+			</properties>
+			<build>
+				<filters>
+					<filter>params-prd.properties</filter>
+				</filters>
 			</build>
 		</profile>
 	</profiles>

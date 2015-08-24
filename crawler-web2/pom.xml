@@ -19,26 +19,57 @@
 		<dependency>
 			<groupId>org.json4s</groupId>
 			<artifactId>json4s-jackson_${scala.version.floor}</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>crawler-dto</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>crawler-logic</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>jadeutils-base</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>jadeutils-web</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>jade-scala-utils</artifactId>
+			<scope>${profiles.scope.compile}</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<scope>${profiles.scope.compile}</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-compiler</artifactId>
+			<scope>${profiles.scope.compile}</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-reflect</artifactId>
+			<scope>${profiles.scope.compile}</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-actors</artifactId>
+			<scope>${profiles.scope.compile}</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
