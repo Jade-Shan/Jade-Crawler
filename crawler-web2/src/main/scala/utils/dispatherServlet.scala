@@ -23,8 +23,8 @@ object Method extends Enumeration {
 	val POST = Value(2,"POST")
 }
 
-case class Foward(method: Method.Method, url: String)
-case class Redirect(method: Method.Method, url: String)
+case class Foward(url: String)
+case class Redirect(url: String)
 
 
 /* Pattern of http request want to match */
@@ -161,10 +161,8 @@ trait DispatherServlet extends HttpServlet {
 			}
 			logger.debug("all params: " + DispatherInfo.paramsToString(params))
 			matchRec._2(new DispatherInfo(method, request, response, params)) match {
-				case Foward(newMethod, newPath) =>
-					logger.debug("forward: " + newMethod+ " " + newPath)
-				case Redirect(newMethod, newPath) =>
-					logger.debug("redirect: " + newMethod+ " " + newPath)
+				case Foward(newPath) => logger.debug("forward: " + newPath)
+				case Redirect(newPath) => logger.debug("redirect: " + newPath)
 				case json: JValue => {
 					response.setContentType("application/json")
 					response.setHeader("Content-disposition", "inline")
