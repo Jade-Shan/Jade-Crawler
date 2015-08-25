@@ -86,11 +86,11 @@ class IcibaApiController extends BasicController {
 	}}
 
 	service("/api/dictionary/removenewword/test") {(info) => {
-		Foward("/test.jsp")
+		Foward("/WEB-INF/pages/test.jsp")
 	}}
 
 	service("/api/dictionary/removenewword/test2") {(info) => {
-		Redirect("/test.jsp")
+		Redirect("/index.html")
 	}}
 }
 

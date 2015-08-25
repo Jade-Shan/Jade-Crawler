@@ -18,10 +18,17 @@ import org.json4s.jackson.JsonMethods.render
 /* abstrict of http method */
 object Method extends Enumeration {
 	type Method = Value
-	val ANY = Value(0,"ANY")
-	val GET = Value(1,"GET")
-	val POST = Value(2,"POST")
+	val ANY     = Value(0, "ANY")
+	val GET     = Value(1, "GET")
+	val POST    = Value(2, "POST")
+	val PUT     = Value(3, "PUT")
+	val DELETE  = Value(4, "DELETE")
+	val HEAD    = Value(5, "HEAD")
+	val OPTIONS = Value(6, "OPTIONS")
+	val TRACE   = Value(7, "TRACE")
 }
+
+
 
 case class Foward(url: String)
 case class Redirect(url: String)
@@ -113,16 +120,37 @@ trait DispatherServlet extends HttpServlet {
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
 	override def doGet(request: HttpServletRequest, response: HttpServletResponse)
-	{
-		this.doLogic(Method.GET, request, response)
-	}
+	{ this.doLogic(Method.GET, request, response) }
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
 	override def doPost(request: HttpServletRequest, response: HttpServletResponse)
-	{
-		this.doLogic(Method.POST, request, response)
-	}
+	{ this.doLogic(Method.POST, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doPut(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.PUT, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doDelete(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.DELETE, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doHead(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.HEAD, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doOptions(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.OPTIONS, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doTrace(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.TRACE, request, response) }
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
@@ -139,30 +167,24 @@ trait DispatherServlet extends HttpServlet {
 		// the result matchRec is the format like: (isMatch, logic, params)
 		val matchRec = matchDispathers(method, path, DispatherServlet.dispathers)
 
-		if (!matchRec._1) {
-			response.setContentType("text/html");
-			val out: PrintWriter = response.getWriter()
-			out.println("<html>")
-			out.println("<head>")
-			out.println("<title>Error !!!</title>")
-			out.println("</head>")
-			out.println("<body>")
-			out.println("<h1>No Match Dispath Pattern</h1>")
-			out.println("path: " + path + "<br/>")
-			out.println("</body>")
-			out.println("</html>")
-			out.flush()
-		} else {
+		if (!matchRec._1)
+			response.sendError(404, "Resource not found: " + path )
+		else {
 			for ((key, value) <- matchRec._3) {
 				if (params.contains(key))
 					params = params + (key ->  Array.concat(params(key), Array(value)))
-				else
-					params = params + (key -> Array(value))
+				else params = params + (key -> Array(value))
 			}
 			logger.debug("all params: " + DispatherInfo.paramsToString(params))
 			matchRec._2(new DispatherInfo(method, request, response, params)) match {
-				case Foward(newPath) => logger.debug("forward: " + newPath)
-				case Redirect(newPath) => logger.debug("redirect: " + newPath)
+				case Foward(newPath) => {
+					logger.debug("forward: " + newPath)
+					request.getRequestDispatcher(newPath).forward(request, response)
+				}
+				case Redirect(newPath) => {
+					logger.debug("redirect: " + request.getContextPath + newPath) 
+					response.sendRedirect(request.getContextPath + newPath)
+				}
 				case json: JValue => {
 					response.setContentType("application/json")
 					response.setHeader("Content-disposition", "inline")
