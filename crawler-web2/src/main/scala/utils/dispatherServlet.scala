@@ -41,8 +41,7 @@ class RequestPattern(method: Method.Method, pattern: String) {
 	def this(pattern: String) = this(Method.ANY, pattern)
 
 	// regex for draw param's value in path
-	val valuePtn = java.util.regex.Pattern.compile(
-		RequestPattern.paramPtn.replaceAllIn(pattern, "([^/]*)"))
+	val valuePtn = pattern.replaceAll(RequestPattern.paramPtnStr, "([^/]*)").r
 	// param's name in path
 	val params = RequestPattern.paramPtn.findAllIn(pattern).toList
 	val keys = for (item <- params if item.length > 3)
@@ -54,9 +53,9 @@ class RequestPattern(method: Method.Method, pattern: String) {
 		/* draw all param's value in url */
 		logger.debug("match path   :" + path)
 		logger.debug("match pattern:" + valuePtn.toString)
-		val m = valuePtn.matcher(path)
+		val m = valuePtn.findAllIn(path)
 		val isMatch = if (Method.ANY == this.method || this.method == method) 
-				m.matches else false
+				m.hasNext else false
 		val values = if (isMatch && m.groupCount > 0) {
 			for (i <- 1 to m.groupCount) yield m group i
 		} else Nil
@@ -76,7 +75,8 @@ object RequestPattern {
 	lazy val logger = LoggerFactory.getLogger(this.getClass)
 
 	// regex for draw param's name in path-pattern
-	private val paramPtn = """\$\{([^${}]+)\}""".r
+	private val paramPtnStr = """\$\{([^${}]+)\}"""
+	private val paramPtn = paramPtnStr.r
 
 }
 
