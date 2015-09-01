@@ -31,6 +31,7 @@ object Method extends Enumeration {
 
 
 case class Foward(url: String)
+
 case class Redirect(url: String)
 
 
@@ -67,7 +68,6 @@ class RequestPattern(method: Method.Method, pattern: String) {
 		(isMatch, items)
 	}
 
-
 	override def toString = "{%s, %s}".format(method, pattern)
 }
 
@@ -77,7 +77,6 @@ object RequestPattern {
 	// regex for draw param's name in path-pattern
 	private val paramPtnStr = """\$\{([^${}]+)\}"""
 	private val paramPtn = paramPtnStr.r
-
 }
 
 
