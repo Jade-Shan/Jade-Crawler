@@ -7,7 +7,9 @@ var musleJson = [
 	{"id": "2-1", "name": "Pectoralis Major", "chs": "胸大肌", "subs": []},
 	{"id": "2-2", "name": "Pectoralis Minor", "chs": "胸小肌", "subs": []}]},
 {"id": "3", "name": "Back", "chs": "背", "subs": [
-	{"id": "3-1", "name": "Trapezius", "chs": "斜方肌", "subs": []},
+	{"id": "3-1", "name": "Trapezius", "chs": "斜方肌", "subs": [
+		{"id": "3-1-1", "name": "Trapezius", "chs": "斜方肌", "subs": []}
+		{"id": "3-1-2", "name": "Trapezius", "chs": "斜方肌", "subs": []}]},
 	{"id": "3-2", "name": "Infraspinatus", "chs": "棘下肌", "subs": []},
 	{"id": "3-3", "name": "Rhomboid Major", "chs": "菱形肌", "subs": []},
 	{"id": "3-4", "name": "Teres Major", "chs": "大圆肌", "subs": []},
@@ -50,8 +52,8 @@ var musleJson = [
 	{"id": "8-2", "name": "Thoracolumbar Fascia", "chs": "胸腰筋膜", "subs": []}]},
 {"id": "9", "name": "Gluters", "chs": "臀", "subs": [
 	{"id": "9-1", "name": "Gluteus Maximus", "chs": "臀大肌", "subs": []},
-	{"id": "9-1", "name": "Gluteus Medius", "chs": "臀中肌", "subs": []},
-	{"id": "9-1", "name": "Gluteus Minimus", "chs": "臀小肌", "subs": []}]}
+	{"id": "9-2", "name": "Gluteus Medius", "chs": "臀中肌", "subs": []},
+	{"id": "9-3", "name": "Gluteus Minimus", "chs": "臀小肌", "subs": []}]}
 {"id": "a", "name": "Thighs", "chs": "大腿", "subs": [
 	{"id": "a-1", "name": "Gracilis", "chs": "股薄肌", "subs": []},
 	{"id": "a-2", "name": "Sartorius", "chs": "缝匠肌", "subs": []},
@@ -65,16 +67,20 @@ var musleJson = [
 		{"id": "a-9-1", "name": "Iliotibial Band", "chs": "髂胫带", "subs": []},
 		{"id": "a-9-2", "name": "Biceps Femoris", "chs": "股二头肌", "subs": []},
 		{"id": "a-9-3", "name": "Semitendinosus", "chs": "半腱肌", "subs": []},
-		{"id": "a-9-6", "name": "Semimembranosus", "chs": "半膜肌", "subs": []},
-		{"id": "a-9-4", "name": "Adductor Magnus", "chs": "内收大肌", "subs": []}]}]},
+		{"id": "a-9-4", "name": "Semimembranosus", "chs": "半膜肌", "subs": []},
+		{"id": "a-9-5", "name": "Adductor Magnus", "chs": "内收大肌", "subs": []}]}]},
 {"id": "b", "name": "Calves", "chs": "小腿", "subs": [
 	{"id": "b-1", "name": "Tibialis Anterior", "chs": "胫骨前肌", "subs": []},
 	{"id": "b-2", "name": "Tibialis Posterior", "chs": "胫骨后肌", "subs": []},
-	{"id": "b-3", "name": "Peroneus Longus", "chs": "腓骨长肌", "subs": []},
+	{"id": "b-3", "name": "Peroneus Longus", "chs": "腓骨长肌", "subs": [
+		{"id": "b-3-1", "name": "Peroneus Longus", "chs": "腓骨长肌", "subs": []},
+		{"id": "b-3-2", "name": "Peroneus Longus", "chs": "腓骨长肌", "subs": []}]},
 	{"id": "b-4", "name": "Peroneus Brevis", "chs": "腓骨短肌", "subs": []},
 	{"id": "b-5", "name": "Extensor Digitorum Longus", "chs": "伸趾长肌", "subs": []},
 	{"id": "b-6", "name": "Gastrocnemius", "chs": "腓肠肌", "subs": []},
-	{"id": "b-7", "name": "Soleus", "chs": "比目鱼肌", "subs": []},
+	{"id": "b-7", "name": "Soleus", "chs": "比目鱼肌", "subs": [
+		{"id": "b-7-1", "name": "Soleus", "chs": "比目鱼肌", "subs": []},
+		{"id": "b-7-2", "name": "Soleus", "chs": "比目鱼肌", "subs": []}]},
 	{"id": "b-8", "name": "Flexor Hallucis Longus", "chs": "屈姆长肌", "subs": []}]}]
 
 
