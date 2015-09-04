@@ -8,7 +8,7 @@ var musleJson = [
 	{"id": "2-2", "name": "Pectoralis Minor", "chs": "胸小肌", "subs": []}]},
 {"id": "3", "name": "Back", "chs": "背", "subs": [
 	{"id": "3-1", "name": "Trapezius", "chs": "斜方肌", "subs": [
-		{"id": "3-1-1", "name": "Trapezius", "chs": "斜方肌", "subs": []}
+		{"id": "3-1-1", "name": "Trapezius", "chs": "斜方肌", "subs": []},
 		{"id": "3-1-2", "name": "Trapezius", "chs": "斜方肌", "subs": []}]},
 	{"id": "3-2", "name": "Infraspinatus", "chs": "棘下肌", "subs": []},
 	{"id": "3-3", "name": "Rhomboid Major", "chs": "菱形肌", "subs": []},
@@ -28,7 +28,7 @@ var musleJson = [
 	{"id": "5-4", "name": "Pronator quadratus", "chs": "旋前方肌", "subs": []},
 	{"id": "5-5", "name": "Triceps Brachialis", "chs": "三头肌", "subs": [
 		{"id": "5-5-1", "name": "Triceps Brachialis Lateral Head", "chs": "三头肌外头", "subs": []},
-		{"id": "5-5-2", "name": "Triceps Brachialis Long Head", "chs": "三头肌长头", "subs": []}
+		{"id": "5-5-2", "name": "Triceps Brachialis Long Head", "chs": "三头肌长头", "subs": []},
 		{"id": "5-5-3", "name": "Triceps Brachialis Medial Head", "chs": "三头肌内头", "subs": []}]}]},
 {"id": "6", "name": "Forearms", "chs": "前臂", "subs": [
 	{"id": "6-1", "name": "Brachioradialis", "chs": "肱桡肌", "subs": []},
@@ -40,7 +40,7 @@ var musleJson = [
 	{"id": "6-7", "name": "Extensor Pollicis Longus", "chs": "拇伸长肌", "subs": []},
 	{"id": "6-8", "name": "Extensor Pollicis Brevis", "chs": "拇伸短肌", "subs": []},
 	{"id": "6-9", "name": "Abductor Pollicis Longus", "chs": "外展拇伸长肌", "subs": []},
-	{"id": "6-a", "name": "Abductor Pollicis Brevis", "chs": "外展拇伸短肌", "subs": []}]}
+	{"id": "6-a", "name": "Abductor Pollicis Brevis", "chs": "外展拇伸短肌", "subs": []}]},
 {"id": "7", "name": "Abs", "chs": "腹肌", "subs": [
 	{"id": "7-1", "name": "Rectus Abdominis", "chs": "腹直肌", "subs": []},
 	{"id": "7-2", "name": "Tendinous Inscriptions", "chs": "腱割肌", "subs": []},
@@ -53,7 +53,7 @@ var musleJson = [
 {"id": "9", "name": "Gluters", "chs": "臀", "subs": [
 	{"id": "9-1", "name": "Gluteus Maximus", "chs": "臀大肌", "subs": []},
 	{"id": "9-2", "name": "Gluteus Medius", "chs": "臀中肌", "subs": []},
-	{"id": "9-3", "name": "Gluteus Minimus", "chs": "臀小肌", "subs": []}]}
+	{"id": "9-3", "name": "Gluteus Minimus", "chs": "臀小肌", "subs": []}]},
 {"id": "a", "name": "Thighs", "chs": "大腿", "subs": [
 	{"id": "a-1", "name": "Gracilis", "chs": "股薄肌", "subs": []},
 	{"id": "a-2", "name": "Sartorius", "chs": "缝匠肌", "subs": []},
