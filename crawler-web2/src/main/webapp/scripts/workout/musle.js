@@ -81,7 +81,17 @@ var musleJson = [
 	{"id": "b-7", "name": "Soleus", "chs": "比目鱼肌", "subs": [
 		{"id": "b-7-1", "name": "Soleus", "chs": "比目鱼肌", "subs": []},
 		{"id": "b-7-2", "name": "Soleus", "chs": "比目鱼肌", "subs": []}]},
-	{"id": "b-8", "name": "Flexor Hallucis Longus", "chs": "屈姆长肌", "subs": []}]}]
+	{"id": "b-8", "name": "Flexor Hallucis Longus", "chs": "屈姆长肌", "subs": []}]}];
 
 
-// {"id": "", "name": "", "chs": "", "subs": []},
+var muscleMap = new jadeUtils.dataStructure.Map();
+
+function addMuscle2Map(muscles, maps) {
+	for (var i in muscles) {
+		var d = muscles[i];
+		maps.put(d.id, d);
+		if (d.subs.length > 0) {addMuscle2Map(d.subs, maps)}
+	}
+};
+addMuscle2Map(musleJson, muscleMap);
+
