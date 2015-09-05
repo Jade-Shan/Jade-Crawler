@@ -95,7 +95,7 @@ workoutApp.muscle.addMuscle2Map = function (muscles, maps) {
 	for (var i in muscles) {
 		var d = muscles[i];
 		maps.put(d.id, d);
-		if (d.subs.length > 0) {workoutApp.muscle.addMuscle2Map(d.subs, maps)}
+		if (d.subs.length > 0) workoutApp.muscle.addMuscle2Map(d.subs, maps);
 	}
 };
 
