@@ -1,3 +1,5 @@
+var appPath = "/crawler-web2"
+
 var jadeUtils = {};
 
 jadeUtils.url = {};

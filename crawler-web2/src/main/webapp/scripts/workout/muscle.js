@@ -1,4 +1,9 @@
-var musleJson = [
+var workoutApp = {};
+workoutApp.muscle = {};
+/**
+ * 肌肉相关数据
+ */
+workoutApp.muscle.muscleJson = [
 {"id": "1", "name": "Neck", "chs": "颈", "subs": [
 	{"id": "1-1", "name": "Omohyoid", "chs": "肩胛舌骨肌", "subs": []},
 	{"id": "1-2", "name": "Sternohyoid", "chs": "胸骨甲状肌", "subs": []},
@@ -83,15 +88,48 @@ var musleJson = [
 		{"id": "b-7-2", "name": "Soleus", "chs": "比目鱼肌", "subs": []}]},
 	{"id": "b-8", "name": "Flexor Hallucis Longus", "chs": "屈姆长肌", "subs": []}]}];
 
-
-var muscleMap = new jadeUtils.dataStructure.Map();
-
-function addMuscle2Map(muscles, maps) {
+/**
+ * 把肌肉json数据转入Map中
+ */
+workoutApp.muscle.addMuscle2Map = function (muscles, maps) {
 	for (var i in muscles) {
 		var d = muscles[i];
 		maps.put(d.id, d);
-		if (d.subs.length > 0) {addMuscle2Map(d.subs, maps)}
+		if (d.subs.length > 0) {workoutApp.muscle.addMuscle2Map(d.subs, maps)}
 	}
 };
-addMuscle2Map(musleJson, muscleMap);
+
+/**
+ * 把肌肉json数据转入Map中
+ */
+workoutApp.muscle.muscleMap = workoutApp.muscle.addMuscle2Map(
+		workoutApp.muscle.muscleJson, new jadeUtils.dataStructure.Map());
+
+
+/**
+ * 初始化肌肉图，绑定点击事件
+ */
+workoutApp.muscle.initMuscleImage = function (item) {
+	$("#" + item +" .muscle-outline").each(function (idx, item) {
+			$(item).on("click", function (e) {
+				var muscleId = $(this).attr("muscle");
+				console.debug(muscleMap.get(muscleId));
+				});
+			});
+};
+
+/**
+ * 加载肌肉图片（Svg格式）
+ */
+workoutApp.muscle.loadMuscleImg = function (cId, width, height, scale, url) {
+	$.get(url, function (data, status, xhr) {
+			if (200 == xhr.status && "success" == status) {
+			var html = '<svg xmlns="http://www.w3.org/2000/svg"' +
+				'width="' + width + '" height="' + height + '">' + 
+				'<g transform="scale(' + scale + ')">' + data + '</g></svg>';
+			$("#"+cId).html(html);
+			workoutApp.muscle.initMuscleImage(cId);
+			}
+			});
+};
 
