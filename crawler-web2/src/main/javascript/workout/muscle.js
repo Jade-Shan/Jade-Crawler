@@ -95,15 +95,16 @@ workoutApp.muscle.addMuscle2Map = function (muscles, maps) {
 	for (var i in muscles) {
 		var d = muscles[i];
 		maps.put(d.id, d);
-		if (d.subs.length > 0) workoutApp.muscle.addMuscle2Map(d.subs, maps);
+		if (d.subs.length > 0) {workoutApp.muscle.addMuscle2Map(d.subs, maps)}
 	}
 };
 
 /**
  * 把肌肉json数据转入Map中
  */
-workoutApp.muscle.muscleMap = workoutApp.muscle.addMuscle2Map(
-		workoutApp.muscle.muscleJson, new jadeUtils.dataStructure.Map());
+workoutApp.muscle.muscleMap = new jadeUtils.dataStructure.Map();
+workoutApp.muscle.addMuscle2Map(workoutApp.muscle.muscleJson, 
+		workoutApp.muscle.muscleMap);
 
 
 /**
@@ -113,7 +114,7 @@ workoutApp.muscle.initMuscleImage = function (item) {
 	$("#" + item +" .muscle-outline").each(function (idx, item) {
 			$(item).on("click", function (e) {
 				var muscleId = $(this).attr("muscle");
-				console.debug(muscleMap.get(muscleId));
+				console.debug(workoutApp.muscle.muscleMap.get(muscleId));
 				});
 			});
 };

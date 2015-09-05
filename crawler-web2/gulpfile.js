@@ -39,7 +39,7 @@ gulp.task('build-less', function() {
 	});
 
 // 合并、压缩、重命名css
-gulp.task('min-styles', ['build-less'], function() {
+gulp.task('min-styles', function() {
 	gulp.src([pathCssWorkout + '*.css'])
 		.pipe(concat('workout.css'))      // 合并文件为all.css
 		.pipe(gulp.dest(pathCss))  // 输出all.css文件
