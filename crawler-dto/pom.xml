@@ -17,7 +17,7 @@
 	<dependencies>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
-				<artifactId>jadeutils-dao</artifactId>
+				<artifactId>jadeutils-mongo</artifactId>
 			</dependency>
 	</dependencies>
 
