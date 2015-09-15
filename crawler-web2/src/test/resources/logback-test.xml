@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<property name="LOG_HOME" value="${user.dir}" />
-	<property name="PRJ_NAME" value="jade-crawler-web2" />
+	<property name="PRJ_NAME" value="jade-crawler" />
 
 	<appender name="errorFile"  class="ch.qos.logback.core.rolling.RollingFileAppender">   
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -74,4 +74,3 @@
 	</root>
 
 </configuration>
-
