@@ -9,19 +9,17 @@ import org.junit.runner.RunWith
 
 import java.util.Properties
 
-import jadeutils.mongo.MongoServer
-
-
 @RunWith(classOf[JUnitRunner])
 class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
 	import scala.collection.JavaConversions._
 
 	val logger = AerobicRecordRecordDaoTest.logger
 
-	val dao = new AerobicRecordDao(new MongoServer("mongo.local-vm", 27017) :: Nil)
+	val dao = new AerobicRecordDao("mongo.local-vm", 27017)
 
 	val recs = for (i <- 0 until 10) yield { 
-		new AerobicRecord("user" + i, "aerobic" + i, i, i, i)
+		new AerobicRecord("user" + (if (i < 5) 0 else 2), "aerobic" + i, i, i, i, 
+			System.currentTimeMillis)
 	}
 
 	test("Test-AeroRec-toString") {
@@ -30,6 +28,12 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
 
 	test("Test-AeroRec-Save") {
 		recs.foreach(dao insert _)
+	}
+
+	test("Test-AeroRec-find") {
+		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442308000000L)
+		assert(ll.size > 0)
+		ll.foreach(logger info _.toString)
 	}
 
 }
@@ -46,10 +50,11 @@ class StrengthRecordDaoIntegrationTest extends FunSuite {
 
 	val logger = StrengthRecordDaoTest.logger
 
-	val dao = new StrengthRecordDao(new MongoServer("mongo.local-vm", 27017) :: Nil)
+	val dao = new StrengthRecordDao("mongo.local-vm", 27017)
 
 	val recs = for (i <- 0 until 10) yield { 
-		new StrengthRecord("user" + i, "strength" + i, i, i)
+		new StrengthRecord("user" + (if (i < 5) 0 else 2), "strength" + i, i, i, 
+			System.currentTimeMillis)
 	}
 
 	test("Test-StnRec-toString") {
@@ -58,6 +63,12 @@ class StrengthRecordDaoIntegrationTest extends FunSuite {
 
 	test("Test-StnRec-Save") {
 		recs.foreach(dao insert _)
+	}
+
+	test("Test-StnRec-find") {
+		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442308000000L)
+		assert(ll.size > 0)
+		ll.foreach(logger info _.toString)
 	}
 
 }
