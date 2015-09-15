@@ -8,7 +8,7 @@
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>crawler-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1.5</version>
+		<version>0.1.6-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>crawler-dto</artifactId>
@@ -17,7 +17,7 @@
 	<dependencies>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
-				<artifactId>jadeutils-dao</artifactId>
+				<artifactId>jadeutils-mongo</artifactId>
 			</dependency>
 	</dependencies>
 

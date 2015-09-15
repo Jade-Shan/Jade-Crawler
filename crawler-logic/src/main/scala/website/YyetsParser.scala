@@ -315,10 +315,10 @@ object YyetsCrawlerApp extends App {
 		logger info ("Start work, {}, {}, {}", cookies.asInstanceOf[Object], 
 			floor.asInstanceOf[Object], cell.asInstanceOf[Object])
 
-	module match {
-		case Module.Crawler => YyetsCrawler.process(floor, cell, cookies, 3)
-		case _ => YyetsCrawler.checkin(cookies)
-	}
+		module match {
+			case Module.Crawler => YyetsCrawler.process(floor, cell, cookies, 3)
+			case _ => YyetsCrawler.checkin(cookies)
+		}
 	}
 
 

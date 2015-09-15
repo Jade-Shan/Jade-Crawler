@@ -7,6 +7,9 @@ import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 
 import jadeutils.web.BasicController
+import jadeutils.web.Method._
+import jadeutils.web.Foward
+import jadeutils.web.Redirect
 import jadeutils.web.DispatherInfo.paramsToString
 import jadeutils.web.DispatherServlet
 
@@ -29,41 +32,29 @@ class IcibaApiController extends BasicController {
 
 	val dao = IcibaCrawler.getDao(dbHost , dbPort)
 
-	service("/api/dictionary/addnewword/${word}") { (info) => {
+	service("/api/dictionary/addnewword/${word}") {(info) => {
 		IcibaCrawler.addNewWord(dbHost, dbPort, info.params("username")(0),
 			info.params("password")(0), info.params("word")(0))
 
-		val result = ("status" -> "success"): JValue
-
-		info.response.setContentType("application/json")
-		info.response.setHeader("Content-disposition", "inline")
-		info.response.getWriter.println(compact(render(result)))
+		("status" -> "success"): JValue
 	}}
 
-	service("/api/dictionary/removenewword/${word}") { (info) => {
+	service("/api/dictionary/removenewword/${word}") {(info) => {
 		IcibaCrawler.removeNewWord(dbHost, dbPort, info.params("username")(0),
 			info.params("password")(0), info.params("word")(0))
 
-		val result = ("status" -> "success"): JValue
-
-		info.response.setContentType("application/json")
-		info.response.setHeader("Content-disposition", "inline")
-		info.response.getWriter.println(compact(render(result)))
+		("status" -> "success"): JValue
 	}}
 
-	service("/api/dictionary/newwords/") { (info) => {
+	service("/api/dictionary/newwords/") {(info) => {
 		val ll = IcibaCrawler.loadNewWords(dbHost, dbPort,
 			info.params("username")(0), info.params("password")(0))
 
-		val result = ("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
+		("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
 			w => ("word" -> w.word))): JValue
-
-		info.response.setContentType("application/json")
-		info.response.setHeader("Content-disposition", "inline")
-		info.response.getWriter.println(compact(render(result)))
 	}}
 
-	service("/api/dictionary/eng2chs/${word}") { (info) => {
+	service("/api/dictionary/eng2chs/${word}") {(info) => {
 		val word = info.params("word")(0)
 		val cache = IcibaCrawler.loadLocal(dao, word)
 
@@ -73,7 +64,7 @@ class IcibaApiController extends BasicController {
 			rec
 		}
 
-		val result = ("result" -> 
+		("result" -> 
 			("word" -> data.word) ~ 
 			("pronunciations" -> (for (i <- 0 until data.pronunciations.size) yield 
 				data.pronunciations.get(i)).map(p => 
@@ -92,13 +83,15 @@ class IcibaApiController extends BasicController {
 				(("str" -> p.str) ~ ("s2dto" -> (for (i <- 0 until p.s2dto.size) yield 
 					p.s2dto.get(i)).map( d => (("str1" -> d.str1) ~ ("str2" -> d.str2)))))))
 			): JValue
+	}}
 
-			info.response.setContentType("application/json")
-			info.response.setHeader("Content-disposition", "inline")
-			info.response.getWriter.println(compact(render(result)))
-		}
-	}
+	service("/api/dictionary/removenewword/test") {(info) => {
+		Foward("/WEB-INF/pages/test.jsp")
+	}}
 
+	service("/api/dictionary/removenewword/test2") {(info) => {
+		Redirect("/index.html")
+	}}
 }
 
 object IcibaApiController { 

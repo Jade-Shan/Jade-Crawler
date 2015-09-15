@@ -71,6 +71,8 @@ object UrlTest {
 
 @RunWith(classOf[JUnitRunner])
 class DispatherServletTest extends FunSuite { 
+	val logger = DispatherServletTest.logger
+
 	import jadeutils.web.mock.MockRequest
 	import jadeutils.web.mock.MockResponse
 
@@ -78,14 +80,14 @@ class DispatherServletTest extends FunSuite {
 		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/>%s<br/></body></html>"""
 		service("/${username}/${userid}/${nickname}") {
 			(info) => {
-				println(html.format("logic 1", "logic 1", info.request.getRequestURI, 
+				logger.info(html.format("logic 1", "logic 1", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
 
 		service("/${username}/${userid}/${nickname}.html") {
 			(info) => {
-				println(html.format("logic 2", "logic 2", info.request.getRequestURI, 
+				logger.info(html.format("logic 2", "logic 2", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
@@ -96,14 +98,14 @@ class DispatherServletTest extends FunSuite {
 
 		service("/aaa/${username}/bbb/${userid}/ccc/${nickname}.html") {
 			(info) => {
-				println(html.format("logic 3", "logic 3", info.request.getRequestURI, 
+				logger.info(html.format("logic 3", "logic 3", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
 
 		service("/aaa/bbb/ccc.html") {
 			(info) => {
-				println(html.format("logic 4", "logic 4", info.request.getRequestURI, 
+				logger.info(html.format("logic 4", "logic 4", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
