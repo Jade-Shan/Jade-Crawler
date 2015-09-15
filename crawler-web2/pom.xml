@@ -47,6 +47,10 @@
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
+			<groupId>net.jade-dungeon</groupId>
+			<artifactId>jadeutils-mongo</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 			<scope>${profiles.scope.compile}</scope>
@@ -66,6 +70,10 @@
 			<artifactId>scala-actors</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+			</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
