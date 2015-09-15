@@ -70,15 +70,6 @@
 			<artifactId>scala-actors</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-			</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<scope>${profiles.scope.compile}</scope>
-		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -166,7 +157,7 @@
 				<!-- filter with: mvn resources:resources -Dparam=value -->
 				<filtering>true</filtering>
 				<includes>
-					<include>example.properties</include>
+					<include>workout.properties</include>
 				</includes>
 			</resource>
 		</resources>

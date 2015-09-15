@@ -1,19 +1,26 @@
 package jadecrawler.web2
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
-
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 
-import java.util.Properties
+import jadeutils.common.Logging
+
+// import java.util.Properties
+// import jadeutils.common.EnvPropsComponent
+// 
+// object TestWorkDaoComonent extends EnvPropsComponent with Logging {
+// 	import java.util.Properties
+// 
+// 	val envProps: Properties = new Properties()
+// 	envProps.load(Thread.currentThread().getContextClassLoader()
+// 		.getResourceAsStream("workout.properties"))
+// 
+// }
+
 
 @RunWith(classOf[JUnitRunner])
-class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
-	import scala.collection.JavaConversions._
-
-	val logger = AerobicRecordRecordDaoTest.logger
+class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 
 	val dao = new AerobicRecordDao("mongo.local-vm", 27017)
 
@@ -31,24 +38,15 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
 	}
 
 	test("Test-AeroRec-find") {
-		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442308000000L)
-		assert(ll.size > 0)
+		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442336317855L)
+//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 
 }
 
-object AerobicRecordRecordDaoTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-
 @RunWith(classOf[JUnitRunner])
-class StrengthRecordDaoIntegrationTest extends FunSuite {
-	import scala.collection.JavaConversions._
-
-	val logger = StrengthRecordDaoTest.logger
+class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 
 	val dao = new StrengthRecordDao("mongo.local-vm", 27017)
 
@@ -66,16 +64,9 @@ class StrengthRecordDaoIntegrationTest extends FunSuite {
 	}
 
 	test("Test-StnRec-find") {
-		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442308000000L)
-		assert(ll.size > 0)
+		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442336317855L)
+//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 
 }
-
-object StrengthRecordDaoTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-

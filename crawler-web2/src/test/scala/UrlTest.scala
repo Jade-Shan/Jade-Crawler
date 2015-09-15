@@ -1,7 +1,6 @@
 package jadeutils.web
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import jadeutils.common.Logging
 
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
@@ -11,7 +10,7 @@ import java.net.URI
 import java.util.Properties
 
 @RunWith(classOf[JUnitRunner])
-class UrlTest extends FunSuite {
+class UrlTest extends FunSuite with Logging {
 
 	val p1 = new RequestPattern("/${username}/${userid}/${nickname}")
 	val u1 = "/jack/233/skinner"
@@ -61,17 +60,10 @@ class UrlTest extends FunSuite {
  
 }
 
-object UrlTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-
 
 
 @RunWith(classOf[JUnitRunner])
-class DispatherServletTest extends FunSuite { 
-	val logger = DispatherServletTest.logger
+class DispatherServletTest extends FunSuite with Logging { 
 
 	import jadeutils.web.mock.MockRequest
 	import jadeutils.web.mock.MockResponse
@@ -128,8 +120,3 @@ class DispatherServletTest extends FunSuite {
 
 }
 
-object DispatherServletTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}

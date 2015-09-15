@@ -7,12 +7,11 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.ServletException
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
-
 import org.json4s.JValue
 import org.json4s.jackson.JsonMethods.compact
 import org.json4s.jackson.JsonMethods.render
+
+import jadeutils.common.Logging
 
 
 /* abstrict of http method */
@@ -36,8 +35,7 @@ case class Redirect(url: String)
 
 
 /* Pattern of http request want to match */
-class RequestPattern(method: Method.Method, pattern: String) {
-	lazy val logger = RequestPattern.logger
+class RequestPattern(method: Method.Method, pattern: String) extends Logging {
 
 	def this(pattern: String) = this(Method.ANY, pattern)
 
@@ -72,8 +70,6 @@ class RequestPattern(method: Method.Method, pattern: String) {
 }
 
 object RequestPattern {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
 	// regex for draw param's name in path-pattern
 	private val paramPtnStr = """\$\{([^${}]+)\}"""
 	private val paramPtn = paramPtnStr.r
@@ -111,10 +107,8 @@ class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => 
 
 
 /* Servlet dispather request */
-trait DispatherServlet extends HttpServlet {
+trait DispatherServlet extends HttpServlet with Logging {
 	import scala.collection.JavaConversions.mapAsScalaMap
-
-	lazy val logger = DispatherServlet.logger
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
@@ -226,9 +220,7 @@ trait DispatherServlet extends HttpServlet {
 	}
 }
 
-object DispatherServlet {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
+object DispatherServlet extends Logging {
 	private var dispathers: List[BasicDispather] = Nil
 
 	def addDisPather(dispather: BasicDispather) {

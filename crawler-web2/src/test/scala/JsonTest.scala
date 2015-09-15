@@ -1,15 +1,11 @@
 package jadeutils.common
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
-
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 
-
 @RunWith(classOf[JUnitRunner])
-class JsonTest extends FunSuite {
+class JsonTest extends FunSuite with Logging {
 	import jadeutils.common.JsonObject.JObj
 	import jadeutils.common.JsonArray.JArr
 
@@ -92,11 +88,5 @@ class JsonTest extends FunSuite {
 		assert(j6.getJsonArray("c").toString == """[["a","b"],[true,false],[1,2]]""")
 	}
 
-}
-
-object JsonTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
 }
 
