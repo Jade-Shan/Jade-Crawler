@@ -6,23 +6,22 @@ import org.junit.runner.RunWith
 
 import jadeutils.common.Logging
 
-// import java.util.Properties
-// import jadeutils.common.EnvPropsComponent
-// 
-// object TestWorkDaoComonent extends EnvPropsComponent with Logging {
-// 	import java.util.Properties
-// 
-// 	val envProps: Properties = new Properties()
-// 	envProps.load(Thread.currentThread().getContextClassLoader()
-// 		.getResourceAsStream("workout.properties"))
-// 
-// }
+object TestDaoComponent extends DaoContext with ServiceContext with Logging {
+
+	val cfgFile = "workout.properties"
+	logger.debug("----------- Loading props: {}", cfgFile)
+
+	val envProps = new java.util.Properties()
+	envProps.load(Thread.currentThread().getContextClassLoader()
+		.getResourceAsStream(cfgFile))
+
+}
 
 
 @RunWith(classOf[JUnitRunner])
 class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 
-	val dao = new AerobicRecordDao("mongo.local-vm", 27017)
+	val dao = TestDaoComponent.DaoCtx.aerobicRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new AerobicRecord("user" + (if (i < 5) 0 else 2), "aerobic" + i, i, i, i, 
@@ -38,8 +37,8 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-AeroRec-find") {
-		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442336317855L)
-//		assert(ll.size > 0)
+		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442394930638L)
+		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 
@@ -48,7 +47,7 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 @RunWith(classOf[JUnitRunner])
 class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 
-	val dao = new StrengthRecordDao("mongo.local-vm", 27017)
+	val dao = TestDaoComponent.DaoCtx.strengthRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new StrengthRecord("user" + (if (i < 5) 0 else 2), "strength" + i, i, i, 
@@ -64,8 +63,8 @@ class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-StnRec-find") {
-		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442336317855L)
-//		assert(ll.size > 0)
+		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442396317855L)
+		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 

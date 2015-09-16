@@ -14,7 +14,7 @@ import jadeutils.mongo.Condition.newCondition
 class AerobicRecordDao(serverList: java.util.List[MongoServer]) 
 extends BaseMongoDao[AerobicRecord](serverList) with Logging 
 {
-	def this(server: (String, Int)) = this(new MongoServer(server._1, server._2) :: Nil)
+	def this(host: String, port: Int) = this(new MongoServer(host, port) :: Nil)
 
 	/**
 		* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}}
