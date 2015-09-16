@@ -21,7 +21,7 @@ do
 			mvn clean compile test-compile
 			;;
 		t)
-			mvn surefire:test -Dtest=StrengthRecordDaoIntegrationTest,AerobicRecordRecordDaoIntegrationTest
+			mvn resources:resources resources:testResources surefire:test -Dtest=StrengthRecordDaoIntegrationTest,AerobicRecordRecordDaoIntegrationTest
 			;;
 		a)
 			ctags -R src --exclude=target --exclude=vendor
