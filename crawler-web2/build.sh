@@ -21,14 +21,15 @@ do
 			mvn clean compile test-compile
 			;;
 		t)
-			mvn resources:resources resources:testResources surefire:test -Dtest=IOTest
+			mvn surefire:test -Dtest=StrengthRecordDaoIntegrationTest,AerobicRecordRecordDaoIntegrationTest
 			;;
 		a)
 			ctags -R src --exclude=target --exclude=vendor
+			mvn compile test-compile resources:resources resources:testResources surefire:test -Dtest=StrengthRecordDaoIntegrationTest,AerobicRecordRecordDaoIntegrationTest
 			# mvn clean compile test-compile resources:resources resources:testResources surefire:test
 			# mvn clean compile test-compile resources:resources resources:testResources surefire:test -Dtest=UrlTest 
 			# mvn clean compile test-compile resources:resources resources:testResources surefire:test -Dtest=DispatherServletTest
-			  mvn clean compile test-compile resources:resources resources:testResources surefire:test -Dtest=JsonTest
+			# mvn clean compile test-compile resources:resources resources:testResources surefire:test -Dtest=JsonTest
 			;;
 		r)
 			# mvn resources:resources scala:run -Dlauncher=foo

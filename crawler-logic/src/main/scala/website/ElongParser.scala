@@ -2,8 +2,7 @@ package jadecrawler.website
 
 import scala.language.postfixOps
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import jadeutils.common.Logging
 
 import org.apache.commons.lang.StringUtils.isNotBlank
 
@@ -22,8 +21,7 @@ import jadeutils.common.JsoupUtils._
 
 import scala.collection.JavaConversions._
 
-object WebElongParser {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
+object WebElongParser extends Logging {
 
 	val inDatePatten = """WebCategory: "([a-zA-Z])",""".r
 
@@ -54,9 +52,7 @@ object WebElongParser {
 
 }
 
-object ElongCrawler {
-
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
+object ElongCrawler extends Logging {
 
 	val site = "ihotel.elong.com"
 

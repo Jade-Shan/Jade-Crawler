@@ -1,7 +1,6 @@
 package jadeutils.web
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import jadeutils.common.Logging
 
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
@@ -11,7 +10,7 @@ import java.net.URI
 import java.util.Properties
 
 @RunWith(classOf[JUnitRunner])
-class UrlTest extends FunSuite {
+class UrlTest extends FunSuite with Logging {
 
 	val p1 = new RequestPattern("/${username}/${userid}/${nickname}")
 	val u1 = "/jack/233/skinner"
@@ -61,16 +60,11 @@ class UrlTest extends FunSuite {
  
 }
 
-object UrlTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-
 
 
 @RunWith(classOf[JUnitRunner])
-class DispatherServletTest extends FunSuite { 
+class DispatherServletTest extends FunSuite with Logging { 
+
 	import jadeutils.web.mock.MockRequest
 	import jadeutils.web.mock.MockResponse
 
@@ -78,14 +72,14 @@ class DispatherServletTest extends FunSuite {
 		val html = """<html><head><title>%s</title></head><body><h1>Hello! This is %s</h1>%s<br/>%s<br/></body></html>"""
 		service("/${username}/${userid}/${nickname}") {
 			(info) => {
-				println(html.format("logic 1", "logic 1", info.request.getRequestURI, 
+				logger.info(html.format("logic 1", "logic 1", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
 
 		service("/${username}/${userid}/${nickname}.html") {
 			(info) => {
-				println(html.format("logic 2", "logic 2", info.request.getRequestURI, 
+				logger.info(html.format("logic 2", "logic 2", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
@@ -96,14 +90,14 @@ class DispatherServletTest extends FunSuite {
 
 		service("/aaa/${username}/bbb/${userid}/ccc/${nickname}.html") {
 			(info) => {
-				println(html.format("logic 3", "logic 3", info.request.getRequestURI, 
+				logger.info(html.format("logic 3", "logic 3", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
 
 		service("/aaa/bbb/ccc.html") {
 			(info) => {
-				println(html.format("logic 4", "logic 4", info.request.getRequestURI, 
+				logger.info(html.format("logic 4", "logic 4", info.request.getRequestURI, 
 				info.params.toString))
 			}
 		}
@@ -126,8 +120,3 @@ class DispatherServletTest extends FunSuite {
 
 }
 
-object DispatherServletTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}

@@ -7,28 +7,40 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.ServletException
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import org.json4s.JValue
+import org.json4s.jackson.JsonMethods.compact
+import org.json4s.jackson.JsonMethods.render
+
+import jadeutils.common.Logging
 
 
 /* abstrict of http method */
 object Method extends Enumeration {
 	type Method = Value
-	val ANY = Value(0,"ANY")
-	val GET = Value(1,"GET")
-	val POST = Value(2,"POST")
+	val ANY     = Value(0, "ANY")
+	val GET     = Value(1, "GET")
+	val POST    = Value(2, "POST")
+	val PUT     = Value(3, "PUT")
+	val DELETE  = Value(4, "DELETE")
+	val HEAD    = Value(5, "HEAD")
+	val OPTIONS = Value(6, "OPTIONS")
+	val TRACE   = Value(7, "TRACE")
 }
 
 
+
+case class Foward(url: String)
+
+case class Redirect(url: String)
+
+
 /* Pattern of http request want to match */
-class RequestPattern(method: Method.Method, pattern: String) {
-	lazy val logger = RequestPattern.logger
+class RequestPattern(method: Method.Method, pattern: String) extends Logging {
 
 	def this(pattern: String) = this(Method.ANY, pattern)
 
 	// regex for draw param's value in path
-	val valuePtn = java.util.regex.Pattern.compile(
-		RequestPattern.paramPtn.replaceAllIn(pattern, "([^/]*)"))
+	val valuePtn = pattern.replaceAll(RequestPattern.paramPtnStr, "([^/]*)").r
 	// param's name in path
 	val params = RequestPattern.paramPtn.findAllIn(pattern).toList
 	val keys = for (item <- params if item.length > 3)
@@ -40,9 +52,9 @@ class RequestPattern(method: Method.Method, pattern: String) {
 		/* draw all param's value in url */
 		logger.debug("match path   :" + path)
 		logger.debug("match pattern:" + valuePtn.toString)
-		val m = valuePtn.matcher(path)
+		val m = valuePtn.findAllIn(path)
 		val isMatch = if (Method.ANY == this.method || this.method == method) 
-				m.matches else false
+				m.hasNext else false
 		val values = if (isMatch && m.groupCount > 0) {
 			for (i <- 1 to m.groupCount) yield m group i
 		} else Nil
@@ -54,16 +66,13 @@ class RequestPattern(method: Method.Method, pattern: String) {
 		(isMatch, items)
 	}
 
-
 	override def toString = "{%s, %s}".format(method, pattern)
 }
 
 object RequestPattern {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
 	// regex for draw param's name in path-pattern
-	private val paramPtn = """\$\{([^${}]+)\}""".r
-
+	private val paramPtnStr = """\$\{([^${}]+)\}"""
+	private val paramPtn = paramPtnStr.r
 }
 
 
@@ -89,7 +98,7 @@ object DispatherInfo {
 
 
 /* mapping from 'request pattern' to 'process logic' */
-class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Unit) {
+class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => Any) {
 	override def toString = "{%s, %s}".format(pattern, logic)
 }
 
@@ -98,24 +107,43 @@ class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => 
 
 
 /* Servlet dispather request */
-trait DispatherServlet extends HttpServlet {
+trait DispatherServlet extends HttpServlet with Logging {
 	import scala.collection.JavaConversions.mapAsScalaMap
-
-	lazy val logger = DispatherServlet.logger
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
 	override def doGet(request: HttpServletRequest, response: HttpServletResponse)
-	{
-		this.doLogic(Method.GET, request, response)
-	}
+	{ this.doLogic(Method.GET, request, response) }
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
 	override def doPost(request: HttpServletRequest, response: HttpServletResponse)
-	{
-		this.doLogic(Method.POST, request, response)
-	}
+	{ this.doLogic(Method.POST, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doPut(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.PUT, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doDelete(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.DELETE, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doHead(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.HEAD, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doOptions(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.OPTIONS, request, response) }
+
+	@throws(classOf[IOException])
+	@throws(classOf[ServletException])
+	override def doTrace(request: HttpServletRequest, response: HttpServletResponse)
+	{ this.doLogic(Method.TRACE, request, response) }
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
@@ -132,28 +160,31 @@ trait DispatherServlet extends HttpServlet {
 		// the result matchRec is the format like: (isMatch, logic, params)
 		val matchRec = matchDispathers(method, path, DispatherServlet.dispathers)
 
-		if (!matchRec._1) {
-			response.setContentType("text/html");
-			val out: PrintWriter = response.getWriter()
-			out.println("<html>")
-			out.println("<head>")
-			out.println("<title>Error !!!</title>")
-			out.println("</head>")
-			out.println("<body>")
-			out.println("<h1>No Match Dispath Pattern</h1>")
-			out.println("path: " + path + "<br/>")
-			out.println("</body>")
-			out.println("</html>")
-			out.flush()
-		} else {
+		if (!matchRec._1)
+			response.sendError(404, "Resource not found: " + path )
+		else {
 			for ((key, value) <- matchRec._3) {
 				if (params.contains(key))
 					params = params + (key ->  Array.concat(params(key), Array(value)))
-				else
-					params = params + (key -> Array(value))
+				else params = params + (key -> Array(value))
 			}
 			logger.debug("all params: " + DispatherInfo.paramsToString(params))
-			matchRec._2(new DispatherInfo(method, request, response, params))
+			matchRec._2(new DispatherInfo(method, request, response, params)) match {
+				case Foward(newPath) => {
+					logger.debug("forward: " + newPath)
+					request.getRequestDispatcher(newPath).forward(request, response)
+				}
+				case Redirect(newPath) => {
+					logger.debug("redirect: " + request.getContextPath + newPath) 
+					response.sendRedirect(request.getContextPath + newPath)
+				}
+				case json: JValue => {
+					response.setContentType("application/json")
+					response.setHeader("Content-disposition", "inline")
+					response.getWriter.println(compact(render(json)))
+				}
+				case _ => logger.error("Unknow Dispath result")
+			}
 		}
 	}
 
@@ -168,7 +199,7 @@ trait DispatherServlet extends HttpServlet {
 
 	private[this] def matchDispathers(
 		method: Method.Method, path: String, list: List[BasicDispather]): 
-	(Boolean, (DispatherInfo) => Unit, Map[String, String]) = 
+	(Boolean, (DispatherInfo) => Any, Map[String, String]) = 
 	{
 		if (Nil == list)  {
 			(false, (info) => {}, Map.empty[String, String])
@@ -189,9 +220,7 @@ trait DispatherServlet extends HttpServlet {
 	}
 }
 
-object DispatherServlet {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
+object DispatherServlet extends Logging {
 	private var dispathers: List[BasicDispather] = Nil
 
 	def addDisPather(dispather: BasicDispather) {
@@ -207,13 +236,13 @@ object DispatherServlet {
 trait BasicController {
 
 	def service(method: Method.Method, pattern: String)
-		(logic: (DispatherInfo) => Unit) 
+		(logic: (DispatherInfo) => Any) 
 	{
 		val dpth = new BasicDispather(new RequestPattern(method, pattern), logic)
 		DispatherServlet.addDisPather(dpth)
 	}
 
-	def service(pattern: String) (logic: (DispatherInfo) => Unit) {
+	def service(pattern: String) (logic: (DispatherInfo) => Any) {
 		service(Method.ANY, pattern)(logic)
 	}
 

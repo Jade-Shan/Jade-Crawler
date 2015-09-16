@@ -13,6 +13,9 @@ crawler-web/lift_proto.db.lock.db
 *.swp
 tags
 
+# glup output
+src/main/webapp/styles/
+
 # maven specific
 target/
 
