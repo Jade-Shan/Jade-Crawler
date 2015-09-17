@@ -6,6 +6,8 @@ import org.json4s._
 import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 
+import jadeutils.common.Logging
+
 import jadeutils.web.BasicController
 import jadeutils.web.Method._
 import jadeutils.web.Foward
@@ -15,7 +17,7 @@ import jadecrawler.website.IcibaCrawler
 
 
 
-class IcibaApiController extends BasicController {
+class IcibaApiController extends BasicController with Logging {
 
 	val dbHost = "mongo.local-vm"
 	val dbPort = 27017
@@ -23,25 +25,43 @@ class IcibaApiController extends BasicController {
 	val dao = IcibaCrawler.getDao(dbHost , dbPort)
 
 	service("/api/dictionary/addnewword/${word}") {(info) => {
-		IcibaCrawler.addNewWord(dbHost, dbPort, info.params("username")(0),
-			info.params("password")(0), info.params("word")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("status" -> "success"): JValue
+		if (auth._1) {
+			IcibaCrawler.addNewWord(dbHost, dbPort, auth._2, auth._3, 
+				info.params("word")(0))
+			("status" -> "success"): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/removenewword/${word}") {(info) => {
-		IcibaCrawler.removeNewWord(dbHost, dbPort, info.params("username")(0),
-			info.params("password")(0), info.params("word")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("status" -> "success"): JValue
+		if (auth._1) {
+			IcibaCrawler.removeNewWord(dbHost, dbPort, auth._2, auth._3, 
+				info.params("word")(0))
+			("status" -> "success"): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/newwords/") {(info) => {
-		val ll = IcibaCrawler.loadNewWords(dbHost, dbPort,
-			info.params("username")(0), info.params("password")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
-			w => ("word" -> w.word))): JValue
+		if (auth._1) {
+			val ll = IcibaCrawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)
+			("status" -> "success") ~ 
+			("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
+				w => ("word" -> w.word))): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/eng2chs/${word}") {(info) => {

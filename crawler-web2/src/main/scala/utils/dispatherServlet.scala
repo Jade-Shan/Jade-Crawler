@@ -154,7 +154,10 @@ trait DispatherServlet extends HttpServlet with Logging {
 		logger.debug("Dispath Req: " + method + " " + path)
 
 		var params = parseParamsFromRequest(request)
-		logger.debug("query params: " + DispatherInfo.paramsToString(params))
+		logger.debug("req params: " + DispatherInfo.paramsToString(params))
+
+		var headers = parseParamsFromHeader(request)
+		logger.debug("req headers: " + DispatherInfo.paramsToString(headers))
 
 		// find a dispather that matchs the http request path
 		// the result matchRec is the format like: (isMatch, logic, params)
@@ -197,6 +200,22 @@ trait DispatherServlet extends HttpServlet with Logging {
 		recs
 	}
 
+	private[this] def parseParamsFromHeader(request: HttpServletRequest) = {
+		var recs = Map.empty[String, Array[String]]
+		val ite = request.getHeaderNames
+		while (ite.hasMoreElements) {
+			val key = ite.nextElement
+			var values: List[String] = Nil 
+			val vite = request.getHeaders(key)
+			while (vite.hasMoreElements) {
+				values = vite.nextElement :: values
+			}
+			recs = recs + (key -> values.toArray)
+		}
+		recs
+	}
+
+
 	private[this] def matchDispathers(
 		method: Method.Method, path: String, list: List[BasicDispather]): 
 	(Boolean, (DispatherInfo) => Any, Map[String, String]) = 
@@ -218,6 +237,7 @@ trait DispatherServlet extends HttpServlet with Logging {
 		if ((reqUri.indexOf(ctxPath + "/")) == 0) 
 			reqUri.substring(ctxPath.length) else reqUri
 	}
+
 }
 
 object DispatherServlet extends Logging {
@@ -244,6 +264,19 @@ trait BasicController {
 
 	def service(pattern: String) (logic: (DispatherInfo) => Any) {
 		service(Method.ANY, pattern)(logic)
+	}
+
+
+	/**
+		* 取得HTTP Basic验证信息
+		*/
+	def decodeHttpBasicAuth(authStr: String): (Boolean, String, String) = {
+		if (authStr.startsWith("Basic ")) {
+			val base64 = authStr.substring(6, authStr.length).trim
+			val arr = new String(java.util.Base64.getDecoder.decode(base64), 
+				"UTF-8").split(":")
+			(true, arr(0), arr(1))
+		} else (false, null, null)
 	}
 
 }

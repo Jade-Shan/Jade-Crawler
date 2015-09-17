@@ -5,6 +5,7 @@
 <title>Jade Dict</title>
 </head>
 <script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
+<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/jadeutils/scripts/jadeutils.js"></script>
 <style type="text/css">
 a:link    {text-decoration: none;}
 a:active  {}
@@ -196,10 +197,13 @@ function addPronunciations(d) {
 function loadNewWords() {
 	var username = $('#username').val()
 	var password = $('#password').val()
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" != username) {
 		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
 				url: appPath + '/api/dictionary/newwords/', 
-				data: {username: username, password: password},
+				headers: {Authorization: auth},
+				data: {},
 				success: function(data, status, xhr) {
 					resp = data;
 					var html = '';
@@ -221,12 +225,15 @@ function loadNewWords() {
 function removeNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" != word && "" != username) {
 		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
 				url: appPath + '/api/dictionary/removenewword/' + word,
-				data: {username: username, password: password},
+				headers: {Authorization: auth},
+				data: {},
 				success: function(data, status, xhr) {
-					loadNewWords(); console.log(status);
+					loadNewWords();
 				},
 				error: function(xhr, errorType, error) { alert("Ajax Error!") },
 				complete: function(xhr, status) {}
@@ -237,12 +244,15 @@ function removeNewWord(word) {
 function addNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" != word && "" != username) {
 		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
 				url: appPath + '/api/dictionary/addnewword/' + word, 
-				data: {username: username, password: password},
+				headers: {Authorization: auth},
+				data: {},
 				success: function(data, status, xhr) {
-					loadNewWords(); console.log(status);
+					loadNewWords();
 				},
 				error: function(xhr, errorType, error) { alert("Ajax Error!") },
 				complete: function(xhr, status) {}
