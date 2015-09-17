@@ -197,20 +197,24 @@ function loadNewWords() {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != username) {
-		$.post(appPath + '/api/dictionary/newwords/', 
-				{username: username, password: password}, 
-				function (resp) {
-					resp = JSON.parse(resp)
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: appPath + '/api/dictionary/newwords/', 
+				data: {username: username, password: password},
+				success: function(data, status, xhr) {
+					resp = data;
 					var html = '';
 					if (resp.result) {
 						$.each(resp.result, function(index, item) {
 							html = html + '[<a href="javascript:removeNewWord(\'' + item.word + 
 								'\')">X</a>]&nbsp;';
 							html = html + '<a href="javascript:transword(\'' + item.word + 
-								'\')">' + item.word + '</a><br/>';})
-					}
+								'\')">' + item.word + '</a><br/>';});
+					};
 					$('#newword').html(html);
-				})
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!") },
+				complete: function(xhr, status) {}
+			})
 	}
 };
 
@@ -218,9 +222,15 @@ function removeNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != word && "" != username) {
-		$.post(appPath + '/api/dictionary/removenewword/' + word,
-				{username: username, password: password}, 
-				function (resp) {resp = JSON.parse(resp); loadNewWords(); console.log(resp.status); })
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: appPath + '/api/dictionary/removenewword/' + word,
+				data: {username: username, password: password},
+				success: function(data, status, xhr) {
+					loadNewWords(); console.log(status);
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!") },
+				complete: function(xhr, status) {}
+			})
 	}
 }
 
@@ -228,9 +238,15 @@ function addNewWord(word) {
 	var username = $('#username').val()
 	var password = $('#password').val()
 	if ("" != word && "" != username) {
-		$.post(appPath + '/api/dictionary/addnewword/' + word, 
-				{username: username, password: password}, 
-				function(resp) {resp = JSON.parse(resp); loadNewWords(); console.log(resp.status)})
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: appPath + '/api/dictionary/addnewword/' + word, 
+				data: {username: username, password: password},
+				success: function(data, status, xhr) {
+					loadNewWords(); console.log(status);
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!") },
+				complete: function(xhr, status) {}
+			})
 	}
 };
 
@@ -240,7 +256,12 @@ function trans() {
 		//
 	} else {
 		$wordIpt.val('');
-		$.getJSON(appPath + '/api/dictionary/eng2chs/' + word, load);
+		$.ajax({ type: 'GET', dataType: 'json', timeout: 3000,
+				url: appPath + '/api/dictionary/eng2chs/' + word,
+				success: function(data, status, xhr) { load(data); },
+				error: function(xhr, errorType, error) { alert("Ajax Error!") },
+				complete: function(xhr, status) {}
+			})
 		addNewWord(word);
 	}
 };
