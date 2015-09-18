@@ -1,4 +1,4 @@
-package jadecrawler.web2
+package net.jadedungeon.dictionary
 
 import org.slf4j.LoggerFactory
 
@@ -19,8 +19,11 @@ import jadecrawler.website.IcibaCrawler
 
 class IcibaApiController extends BasicController with Logging {
 
-	val dbHost = "mongo.local-vm"
-	val dbPort = 27017
+	val envProps = new java.util.Properties()
+	envProps.load(Thread.currentThread().getContextClassLoader()
+		.getResourceAsStream("workout.properties"))
+	val dbHost = envProps.getProperty("mongo.host")
+	val dbPort = Integer.parseInt(envProps.getProperty("mongo.port"))
 
 	val dao = IcibaCrawler.getDao(dbHost , dbPort)
 
@@ -57,8 +60,9 @@ class IcibaApiController extends BasicController with Logging {
 		if (auth._1) {
 			val ll = IcibaCrawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)
 			("status" -> "success") ~ 
-			("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
-				w => ("word" -> w.word))): JValue
+			("result" -> (
+					if (null != ll) for (i <- 0 until ll.size) yield ll.get(i) else Nil
+				).map(w => ("word" -> w.word))): JValue
 		} else {
 			("status" -> "error"): JValue
 		}

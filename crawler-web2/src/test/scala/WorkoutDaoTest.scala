@@ -1,4 +1,4 @@
-package jadecrawler.web2
+package net.jadedungeon.workout
 
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite

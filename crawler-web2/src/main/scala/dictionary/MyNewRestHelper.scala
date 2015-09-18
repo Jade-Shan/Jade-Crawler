@@ -1,4 +1,4 @@
-package jadecrawler.web2
+package net.jadedungeon.dictionary
 
 import org.slf4j.LoggerFactory
 

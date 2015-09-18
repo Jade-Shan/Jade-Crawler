@@ -1,6 +1,7 @@
-package jadecrawler.web2
+package net.jadedungeon
 
 import jadeutils.web.BasicController
+import net.jadedungeon.dictionary.IcibaApiController
 
 class ApiDispather extends jadeutils.web.DispatherServlet 
 { ApiDispather.controllers = new IcibaApiController :: Nil }
