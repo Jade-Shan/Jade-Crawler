@@ -19,6 +19,33 @@ object TestDaoComponent extends DaoContext with ServiceContext with Logging {
 
 
 @RunWith(classOf[JUnitRunner])
+class UserAuthDaoIntegrationTest extends FunSuite with Logging {
+
+	val dao = TestDaoComponent.DaoCtx.userAuthDao
+
+	val recs = for (i <- 0 until 10) yield { 
+		new UserAuth("testuser" + i, "qwer1234",
+			System.currentTimeMillis, System.currentTimeMillis)
+	}
+
+	test("Test-UserAuth-toString") {
+		recs.foreach(logger info _.toString)
+	}
+
+	test("Test-UserAuth-Save") {
+		recs.foreach(dao insert _)
+	}
+
+	test("Test-AeroRec-find") {
+		val ll = dao.findAuth("jade")
+		//		assert(ll.size > 0)
+		ll.foreach(logger info _.toString)
+	}
+
+}
+
+
+@RunWith(classOf[JUnitRunner])
 class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 
 	val dao = TestDaoComponent.DaoCtx.aerobicRecordDao
@@ -37,7 +64,7 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-AeroRec-find") {
-		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442394930638L)
+		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, System.currentTimeMillis)
 		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
@@ -63,7 +90,7 @@ class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-StnRec-find") {
-		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442396317855L)
+		val ll = dao.findItems("user2", "strength8", 1442304500000L, System.currentTimeMillis)
 		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}

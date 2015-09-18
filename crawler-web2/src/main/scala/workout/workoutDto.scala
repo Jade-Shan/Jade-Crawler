@@ -2,6 +2,24 @@ package jadecrawler.web2
 
 import jadeutils.mongo._
 
+@MongoDocument(databaseName="jadedungeon", collectionName="userauth")
+case class UserAuth(
+	usr: String, pwd: String, ts: Long, upt: Long) extends MongoModel
+{
+	def this() = this(null, null, System.currentTimeMillis, 0)
+
+	@MongoField var username = usr
+	@MongoField var password = pwd
+	@MongoField var createTime = ts
+	@MongoField var lastUpdateTime = ts
+
+	override def toString = ("""StrengthRecord: {""" + 
+		"""user: "%s", password: "%s", createTime: %d, lastUpdateTime: %d}""").format (
+		username, password, createTime, lastUpdateTime)
+
+}
+
+
 @MongoDocument(databaseName="workout", collectionName="aerobicrecord")
 case class AerobicRecord(
 	usr: String, itm: String, tim: Int, dst: Int, clrs: Int, ts: Long) extends MongoModel
@@ -38,4 +56,3 @@ case class StrengthRecord(
 		user, item, weight, time, logTime)
 
 }
-
