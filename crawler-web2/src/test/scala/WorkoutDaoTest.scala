@@ -4,9 +4,10 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 
+import jadeutils.common.EnvPropsComponent
 import jadeutils.common.Logging
 
-object TestDaoComponent extends DaoContext with ServiceContext with Logging {
+object TestDaoComponent extends EnvPropsComponent with DaoComponent with Logging {
 
 	val cfgFile = "workout.properties"
 	logger.debug("----------- Loading props: {}", cfgFile)
@@ -64,7 +65,7 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-AeroRec-find") {
-		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, System.currentTimeMillis)
+		val ll = dao.findAerobicRecs("user2", "aerobic9", 1442304500000L, System.currentTimeMillis)
 		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
@@ -90,7 +91,7 @@ class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 	}
 
 	test("Test-StnRec-find") {
-		val ll = dao.findItems("user2", "strength8", 1442304500000L, System.currentTimeMillis)
+		val ll = dao.findStrengthRecs("user2", "strength8", 1442304500000L, System.currentTimeMillis)
 		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}

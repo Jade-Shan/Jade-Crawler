@@ -4,7 +4,7 @@ import jadeutils.common.Logging
 import jadeutils.common.EnvPropsComponent
 
 trait DaoComponent extends Logging {
-	this: DaoContext =>
+	this: EnvPropsComponent =>
 
 	object DaoCtx {
 		val host: String = getProperty("mongo.host")
@@ -20,20 +20,20 @@ trait DaoComponent extends Logging {
 
 }
 
-trait DaoContext extends EnvPropsComponent with DaoComponent
+// trait DaoContext extends EnvPropsComponent with DaoComponent
 
 
 
 trait ServiceComponent extends Logging {
-	this: ServiceContext =>
+	this: DaoComponent =>
 
 	object ServiceCtx {
-		val host: String = getProperty("mongo.host")
-		val port: Int    = Integer.parseInt(getProperty("mongo.port"))
+		// val host: String = getProperty("mongo.host")
+		// val port: Int    = Integer.parseInt(getProperty("mongo.port"))
 
 	}
 
 }
 
 
-trait ServiceContext extends EnvPropsComponent with ServiceComponent
+// trait ServiceContext extends ServiceComponent
