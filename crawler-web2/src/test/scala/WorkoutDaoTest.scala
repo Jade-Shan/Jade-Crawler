@@ -7,7 +7,9 @@ import org.junit.runner.RunWith
 import jadeutils.common.EnvPropsComponent
 import jadeutils.common.Logging
 
-object TestDaoComponent extends EnvPropsComponent with DaoComponent with Logging {
+object TestDaoComponent extends EnvPropsComponent with WorkoutRecDaoComponent 
+with Logging 
+{
 
 	val cfgFile = "workout.properties"
 	logger.debug("----------- Loading props: {}", cfgFile)
@@ -22,7 +24,7 @@ object TestDaoComponent extends EnvPropsComponent with DaoComponent with Logging
 @RunWith(classOf[JUnitRunner])
 class UserAuthDaoIntegrationTest extends FunSuite with Logging {
 
-	val dao = TestDaoComponent.DaoCtx.userAuthDao
+	val dao = TestDaoComponent.RecDaos.userAuthDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new UserAuth("testuser" + i, "qwer1234",
@@ -49,7 +51,7 @@ class UserAuthDaoIntegrationTest extends FunSuite with Logging {
 @RunWith(classOf[JUnitRunner])
 class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 
-	val dao = TestDaoComponent.DaoCtx.aerobicRecordDao
+	val dao = TestDaoComponent.RecDaos.aerobicRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new AerobicRecord("user" + (if (i < 5) 0 else 2), "aerobic" + i, i, i, i, 
@@ -75,7 +77,7 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
 @RunWith(classOf[JUnitRunner])
 class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 
-	val dao = TestDaoComponent.DaoCtx.strengthRecordDao
+	val dao = TestDaoComponent.RecDaos.strengthRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new StrengthRecord("user" + (if (i < 5) 0 else 2), "strength" + i, i, i, 

@@ -3,10 +3,10 @@ package net.jadedungeon.workout
 import jadeutils.common.Logging
 import jadeutils.common.EnvPropsComponent
 
-trait DaoComponent extends Logging {
+trait WorkoutRecDaoComponent extends Logging {
 	this: EnvPropsComponent =>
 
-	object DaoCtx {
+	object RecDaos {
 		val host: String = getProperty("mongo.host")
 		val port: Int    = Integer.parseInt(getProperty("mongo.port"))
 
@@ -24,16 +24,16 @@ trait DaoComponent extends Logging {
 
 
 
-trait ServiceComponent extends Logging {
-	this: DaoComponent =>
-
-	object ServiceCtx {
-		// val host: String = getProperty("mongo.host")
-		// val port: Int    = Integer.parseInt(getProperty("mongo.port"))
-
-	}
-
-}
+// trait ServiceComponent extends Logging {
+// 	this: DaoComponent =>
+// 
+// 	object ServiceCtx {
+// 		// val host: String = getProperty("mongo.host")
+// 		// val port: Int    = Integer.parseInt(getProperty("mongo.port"))
+// 
+// 	}
+// 
+// }
 
 
 // trait ServiceContext extends ServiceComponent
