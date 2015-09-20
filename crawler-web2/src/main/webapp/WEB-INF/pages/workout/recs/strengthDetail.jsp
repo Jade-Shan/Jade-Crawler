@@ -43,8 +43,17 @@
 			<input type="button" id="record" value="record" class="sbmt-normal">
 		</li>
 		<li>
-			<div id="muscle-front-data"></div>
-			<div id="muscle-back-data" ></div>
+		<table>
+			<tr>
+				<td>
+			<div id="muscle-front-data" style="width: 210; display: block"></div>
+				</td>
+				<td>
+			<div id="muscle-back-data"  style="width: 210; display: block"></div>
+				</td>
+			</tr>
+		</table>
+
 		</li>
 	</ul>
 </body>
