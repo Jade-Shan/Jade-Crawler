@@ -16,12 +16,12 @@ trait BaseWorkoutController extends BasicController with WorkoutAppCtx
 object WorkoutRecController extends BaseWorkoutController with Logging 
 {
 	service("/page/workout/StrengtWorkout/details/${workoutId}"){(info) => {
-		info.request.setAttribute("workoutId", info.request.params("workoutId"))
+		info.request.setAttribute("workoutId", info.params("workoutId"))
 		Foward("/WEB-INF/pages/workout/recs/strengthDetail.jsp")
 	}}
 
 	service("/page/workout/AerobicWorkout/details/${workoutId}"){(info) => {
-		info.request.setAttribute("workoutId", info.request.params("workoutId"))
+		info.request.setAttribute("workoutId", info.params("workoutId"))
 		Foward("/WEB-INF/pages/workout/recs/areobicDetail.jsp")
 	}}
 

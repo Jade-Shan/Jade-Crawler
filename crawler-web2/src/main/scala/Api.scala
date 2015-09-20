@@ -26,6 +26,7 @@ class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 		request.setAttribute("cdnjadeutils", cdnjadeutils)
 		request.setAttribute("cdnworkout", cdnworkout)
 		super.doLogic(method, request, response)
+		response.addHeader("Access-Control-Allow-Origin", "http://localhost:8091")
 	}
 }
 
