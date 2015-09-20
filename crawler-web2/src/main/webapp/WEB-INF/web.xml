@@ -35,6 +35,15 @@
 			<url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+      <servlet-name>pageDispather</servlet-name>
+      <servlet-class>net.jadedungeon.ApiDispather</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>pageDispather</servlet-name>
+			<url-pattern>/page/*</url-pattern>
+    </servlet-mapping>
+
 		<filter>
 			<filter-name>encodingFilter</filter-name>
 			<filter-class>jadeutils.web.HttpEncodingFilter</filter-class>

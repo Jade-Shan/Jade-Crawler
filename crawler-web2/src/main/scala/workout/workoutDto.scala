@@ -41,18 +41,18 @@ case class AerobicRecord(
 
 @MongoDocument(databaseName="workout", collectionName="strengthrecord")
 case class StrengthRecord(
-	usr: String, itm: String, wet: Int, tim: Int, ts: Long) extends MongoModel
+	usr: String, itm: String, wet: Int, rpt: Int, ts: Long) extends MongoModel
 {
 	def this() = this(null, null, 0, 0, 0)
 
 	@MongoField var user = usr       /* 用户 */
 	@MongoField var item = itm       /* 运动项目 */
 	@MongoField var weight = wet     /* 重量 */
-	@MongoField var time = tim       /* 时间或次数 */
+	@MongoField var repeat = rpt       /* 时间或次数 */
 	@MongoField var logTime = ts
 
 	override def toString = ("""StrengthRecord: {""" + 
-		"""user: "%s", item: "%s", weight: %d, time: %d, logTime: %d}""").format (
-		user, item, weight, time, logTime)
+		"""user: "%s", item: "%s", weight: %d, repeat: %d, logTime: %d}""").format (
+		user, item, weight, repeat, logTime)
 
 }

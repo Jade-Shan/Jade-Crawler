@@ -17,7 +17,7 @@ import jadecrawler.website.IcibaCrawler
 
 
 
-class IcibaApiController extends BasicController with Logging {
+object IcibaApiController extends BasicController with Logging {
 
 	val envProps = new java.util.Properties()
 	envProps.load(Thread.currentThread().getContextClassLoader()

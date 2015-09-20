@@ -147,7 +147,7 @@ trait DispatherServlet extends HttpServlet with Logging {
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
-	private[this] def doLogic(method: Method.Method, 
+	protected[this] def doLogic(method: Method.Method, 
 		request: HttpServletRequest, response: HttpServletResponse) 
 	{
 		val path = formalizePath(request)

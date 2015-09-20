@@ -2,7 +2,7 @@ package net.jadedungeon.workout
 
 import jadeutils.common.Logging
 
-trait workoutRecService {
+trait WorkoutRecService {
 	this: WorkoutRecDaoComponent =>
 
 	def findAerobicRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 

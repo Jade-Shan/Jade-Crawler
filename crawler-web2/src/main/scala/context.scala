@@ -20,20 +20,20 @@ trait WorkoutRecDaoComponent extends Logging {
 
 }
 
-// trait DaoContext extends EnvPropsComponent with DaoComponent
 
 
+trait WorkoutAppCtx extends EnvPropsComponent with WorkoutRecDaoComponent 
+// with WorkoutRecService 
+with Logging {
 
-// trait ServiceComponent extends Logging {
-// 	this: DaoComponent =>
-// 
-// 	object ServiceCtx {
-// 		// val host: String = getProperty("mongo.host")
-// 		// val port: Int    = Integer.parseInt(getProperty("mongo.port"))
-// 
-// 	}
-// 
-// }
+	val cfgFile = "workout.properties"
+	logger.debug("----------- Loading props: {}", cfgFile)
 
+	val envProps = new java.util.Properties()
+	envProps.load(Thread.currentThread().getContextClassLoader()
+		.getResourceAsStream(cfgFile))
 
-// trait ServiceContext extends ServiceComponent
+	val cdnjadeutils = getProperty("cdn.jadeutils")
+	val cdnworkout = getProperty("cdn.workout")
+
+}
