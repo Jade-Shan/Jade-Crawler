@@ -2,8 +2,7 @@ package jadecrawler.website
 
 import scala.language.postfixOps
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import jadeutils.common.Logging
 
 import org.apache.commons.lang.StringUtils.isNotBlank
 
@@ -16,10 +15,8 @@ import org.jsoup.select.Elements
 import jadeutils.common.JsoupUtils._
 
 
-object YyetsRecListParser {
+object YyetsRecListParser extends Logging {
 	import jadecrawler.dto.website.YyetsRecListDto
-
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
 
 	def parse(htmlStr: String): List[YyetsRecListDto] = {
 		val doc = Jsoup parse htmlStr
@@ -38,11 +35,9 @@ object YyetsRecListParser {
 
 }
 
-object YyetsRecInfoParser {
+object YyetsRecInfoParser extends Logging{
 	import jadecrawler.dto.website.YyetsRecInfoDto
 	import jadecrawler.dto.website.YyetsLink
-
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
 
 	def parse(htmlStr: String, id: String, name: String): List[YyetsRecInfoDto] = {
 		val doc = Jsoup parse htmlStr
@@ -77,8 +72,7 @@ object YyetsRecInfoParser {
 
 }
 
-object YyetsCrawler {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
+object YyetsCrawler extends Logging {
 
 	val site = "www.zimuzu.tv"
 
@@ -252,8 +246,7 @@ class YyetsCrawlerApp(val msg: String)
 /*
  * mvn clean scala:run -Dexec.mainClass=jadecrawler.website.YyetsCrawlerApp -DaddArgs="-u|username|-p|password|-m|checkin|-s|1|-e|1"
  */
-object YyetsCrawlerApp extends App {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
+object YyetsCrawlerApp extends App with Logging {
 
 	object Module extends Enumeration {
 		val Checkin = Value(10,"checkin")

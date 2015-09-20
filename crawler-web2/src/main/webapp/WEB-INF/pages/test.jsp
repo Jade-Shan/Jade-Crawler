@@ -9,7 +9,8 @@
 </head>
 <body>
 <form action="<c:url value="/user.html" />">
-	<input type="text" name="userName" />
+	<input type="text" name="userName" value="${cdnjadeutils}"/>
+	<input type="text" name="userName" value="${cdnworkout}"/>
 </form>
 <table>
 	<tr><th>Value</th><th>Square</th></tr>

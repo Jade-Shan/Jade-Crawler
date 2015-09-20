@@ -1,4 +1,4 @@
-package jadecrawler.web2
+package net.jadedungeon.dictionary
 
 import org.slf4j.LoggerFactory
 
@@ -6,52 +6,66 @@ import org.json4s._
 import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 
+import jadeutils.common.Logging
+
 import jadeutils.web.BasicController
 import jadeutils.web.Method._
 import jadeutils.web.Foward
 import jadeutils.web.Redirect
-import jadeutils.web.DispatherInfo.paramsToString
-import jadeutils.web.DispatherServlet
 
 import jadecrawler.website.IcibaCrawler
 
 
 
-class ApiDispather extends DispatherServlet 
-{ ApiDispather.controllers = new IcibaApiController :: Nil }
+object IcibaApiController extends BasicController with Logging {
 
-object ApiDispather { var controllers: List[IcibaApiController] = Nil }
-
-
-
-class IcibaApiController extends BasicController {
-	lazy val logger = IcibaApiController.logger
-
-	val dbHost = "mongo.local-vm"
-	val dbPort = 27017
+	val envProps = new java.util.Properties()
+	envProps.load(Thread.currentThread().getContextClassLoader()
+		.getResourceAsStream("workout.properties"))
+	val dbHost = envProps.getProperty("mongo.host")
+	val dbPort = Integer.parseInt(envProps.getProperty("mongo.port"))
 
 	val dao = IcibaCrawler.getDao(dbHost , dbPort)
 
 	service("/api/dictionary/addnewword/${word}") {(info) => {
-		IcibaCrawler.addNewWord(dbHost, dbPort, info.params("username")(0),
-			info.params("password")(0), info.params("word")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("status" -> "success"): JValue
+		if (auth._1) {
+			IcibaCrawler.addNewWord(dbHost, dbPort, auth._2, auth._3, 
+				info.params("word")(0))
+			("status" -> "success"): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/removenewword/${word}") {(info) => {
-		IcibaCrawler.removeNewWord(dbHost, dbPort, info.params("username")(0),
-			info.params("password")(0), info.params("word")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("status" -> "success"): JValue
+		if (auth._1) {
+			IcibaCrawler.removeNewWord(dbHost, dbPort, auth._2, auth._3, 
+				info.params("word")(0))
+			("status" -> "success"): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/newwords/") {(info) => {
-		val ll = IcibaCrawler.loadNewWords(dbHost, dbPort,
-			info.params("username")(0), info.params("password")(0))
+		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+		logger.debug("after auth check: {}", auth)
 
-		("result" -> (for (i <- 0 until ll.size) yield ll.get(i)).map(
-			w => ("word" -> w.word))): JValue
+		if (auth._1) {
+			val ll = IcibaCrawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)
+			("status" -> "success") ~ 
+			("result" -> (
+					if (null != ll) for (i <- 0 until ll.size) yield ll.get(i) else Nil
+				).map(w => ("word" -> w.word))): JValue
+		} else {
+			("status" -> "error"): JValue
+		}
 	}}
 
 	service("/api/dictionary/eng2chs/${word}") {(info) => {
@@ -92,10 +106,6 @@ class IcibaApiController extends BasicController {
 	service("/api/dictionary/removenewword/test2") {(info) => {
 		Redirect("/index.html")
 	}}
-}
-
-object IcibaApiController { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
 }
 
 /*

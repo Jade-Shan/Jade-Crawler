@@ -1,21 +1,57 @@
-package jadecrawler.web2
-
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+package net.jadedungeon.workout
 
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 
-import java.util.Properties
+import jadeutils.common.EnvPropsComponent
+import jadeutils.common.Logging
+
+object TestDaoComponent extends EnvPropsComponent with WorkoutRecDaoComponent 
+with Logging 
+{
+
+	val cfgFile = "workout.properties"
+	logger.debug("----------- Loading props: {}", cfgFile)
+
+	val envProps = new java.util.Properties()
+	envProps.load(Thread.currentThread().getContextClassLoader()
+		.getResourceAsStream(cfgFile))
+
+}
+
 
 @RunWith(classOf[JUnitRunner])
-class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
-	import scala.collection.JavaConversions._
+class UserAuthDaoIntegrationTest extends FunSuite with Logging {
 
-	val logger = AerobicRecordRecordDaoTest.logger
+	val dao = TestDaoComponent.RecDaos.userAuthDao
 
-	val dao = new AerobicRecordDao("mongo.local-vm", 27017)
+	val recs = for (i <- 0 until 10) yield { 
+		new UserAuth("testuser" + i, "qwer1234",
+			System.currentTimeMillis, System.currentTimeMillis)
+	}
+
+	test("Test-UserAuth-toString") {
+		recs.foreach(logger info _.toString)
+	}
+
+	test("Test-UserAuth-Save") {
+		recs.foreach(dao insert _)
+	}
+
+	test("Test-AeroRec-find") {
+		val ll = dao.findAuth("jade")
+		//		assert(ll.size > 0)
+		ll.foreach(logger info _.toString)
+	}
+
+}
+
+
+@RunWith(classOf[JUnitRunner])
+class AerobicRecordRecordDaoIntegrationTest extends FunSuite with Logging {
+
+	val dao = TestDaoComponent.RecDaos.aerobicRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new AerobicRecord("user" + (if (i < 5) 0 else 2), "aerobic" + i, i, i, i, 
@@ -31,26 +67,17 @@ class AerobicRecordRecordDaoIntegrationTest extends FunSuite {
 	}
 
 	test("Test-AeroRec-find") {
-		val ll = dao.findItems("user2", "aerobic9", 1442304500000L, 1442308000000L)
-		assert(ll.size > 0)
+		val ll = dao.findAerobicRecs("user2", "aerobic9", 1442304500000L, System.currentTimeMillis)
+		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 
 }
 
-object AerobicRecordRecordDaoTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-
 @RunWith(classOf[JUnitRunner])
-class StrengthRecordDaoIntegrationTest extends FunSuite {
-	import scala.collection.JavaConversions._
+class StrengthRecordDaoIntegrationTest extends FunSuite with Logging {
 
-	val logger = StrengthRecordDaoTest.logger
-
-	val dao = new StrengthRecordDao("mongo.local-vm", 27017)
+	val dao = TestDaoComponent.RecDaos.strengthRecordDao
 
 	val recs = for (i <- 0 until 10) yield { 
 		new StrengthRecord("user" + (if (i < 5) 0 else 2), "strength" + i, i, i, 
@@ -66,16 +93,9 @@ class StrengthRecordDaoIntegrationTest extends FunSuite {
 	}
 
 	test("Test-StnRec-find") {
-		val ll = dao.findItems("user2", "strength8", 1442304500000L, 1442308000000L)
-		assert(ll.size > 0)
+		val ll = dao.findStrengthRecs("user2", "strength8", 1442304500000L, System.currentTimeMillis)
+		//		assert(ll.size > 0)
 		ll.foreach(logger info _.toString)
 	}
 
 }
-
-object StrengthRecordDaoTest { 
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
-	def getLoggerByName(name: String) = LoggerFactory.getLogger(name)
-}
-

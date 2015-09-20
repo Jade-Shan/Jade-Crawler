@@ -8,13 +8,17 @@
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>crawler-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1.6-SNAPSHOT</version>
+		<version>0.1.6</version>
 	</parent>
 
 	<artifactId>crawler-dto</artifactId>
 	<name>crawler dto</name>
 
 	<dependencies>
+		<dependency>
+			<groupId>net.jade-dungeon</groupId>
+			<artifactId>jade-scala-utils</artifactId>
+		</dependency>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
 				<artifactId>jadeutils-mongo</artifactId>

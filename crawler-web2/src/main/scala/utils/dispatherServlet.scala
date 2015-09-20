@@ -7,12 +7,11 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.ServletException
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
-
 import org.json4s.JValue
 import org.json4s.jackson.JsonMethods.compact
 import org.json4s.jackson.JsonMethods.render
+
+import jadeutils.common.Logging
 
 
 /* abstrict of http method */
@@ -36,8 +35,7 @@ case class Redirect(url: String)
 
 
 /* Pattern of http request want to match */
-class RequestPattern(method: Method.Method, pattern: String) {
-	lazy val logger = RequestPattern.logger
+class RequestPattern(method: Method.Method, pattern: String) extends Logging {
 
 	def this(pattern: String) = this(Method.ANY, pattern)
 
@@ -72,8 +70,6 @@ class RequestPattern(method: Method.Method, pattern: String) {
 }
 
 object RequestPattern {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
 	// regex for draw param's name in path-pattern
 	private val paramPtnStr = """\$\{([^${}]+)\}"""
 	private val paramPtn = paramPtnStr.r
@@ -111,10 +107,8 @@ class BasicDispather(val pattern: RequestPattern, val logic: (DispatherInfo) => 
 
 
 /* Servlet dispather request */
-trait DispatherServlet extends HttpServlet {
+trait DispatherServlet extends HttpServlet with Logging {
 	import scala.collection.JavaConversions.mapAsScalaMap
-
-	lazy val logger = DispatherServlet.logger
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
@@ -153,14 +147,17 @@ trait DispatherServlet extends HttpServlet {
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
-	private[this] def doLogic(method: Method.Method, 
+	protected[this] def doLogic(method: Method.Method, 
 		request: HttpServletRequest, response: HttpServletResponse) 
 	{
 		val path = formalizePath(request)
 		logger.debug("Dispath Req: " + method + " " + path)
 
 		var params = parseParamsFromRequest(request)
-		logger.debug("query params: " + DispatherInfo.paramsToString(params))
+		logger.debug("req params: " + DispatherInfo.paramsToString(params))
+
+		var headers = parseParamsFromHeader(request)
+		logger.debug("req headers: " + DispatherInfo.paramsToString(headers))
 
 		// find a dispather that matchs the http request path
 		// the result matchRec is the format like: (isMatch, logic, params)
@@ -203,6 +200,22 @@ trait DispatherServlet extends HttpServlet {
 		recs
 	}
 
+	private[this] def parseParamsFromHeader(request: HttpServletRequest) = {
+		var recs = Map.empty[String, Array[String]]
+		val ite = request.getHeaderNames
+		while (ite.hasMoreElements) {
+			val key = ite.nextElement
+			var values: List[String] = Nil 
+			val vite = request.getHeaders(key)
+			while (vite.hasMoreElements) {
+				values = vite.nextElement :: values
+			}
+			recs = recs + (key -> values.toArray)
+		}
+		recs
+	}
+
+
 	private[this] def matchDispathers(
 		method: Method.Method, path: String, list: List[BasicDispather]): 
 	(Boolean, (DispatherInfo) => Any, Map[String, String]) = 
@@ -224,11 +237,10 @@ trait DispatherServlet extends HttpServlet {
 		if ((reqUri.indexOf(ctxPath + "/")) == 0) 
 			reqUri.substring(ctxPath.length) else reqUri
 	}
+
 }
 
-object DispatherServlet {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
-
+object DispatherServlet extends Logging {
 	private var dispathers: List[BasicDispather] = Nil
 
 	def addDisPather(dispather: BasicDispather) {
@@ -252,6 +264,19 @@ trait BasicController {
 
 	def service(pattern: String) (logic: (DispatherInfo) => Any) {
 		service(Method.ANY, pattern)(logic)
+	}
+
+
+	/**
+		* 取得HTTP Basic验证信息
+		*/
+	def decodeHttpBasicAuth(authStr: String): (Boolean, String, String) = {
+		if (authStr.startsWith("Basic ")) {
+			val base64 = authStr.substring(6, authStr.length).trim
+			val arr = new String(java.util.Base64.getDecoder.decode(base64), 
+				"UTF-8").split(":")
+			(true, arr(0), arr(1))
+		} else (false, null, null)
 	}
 
 }

@@ -8,7 +8,7 @@
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>crawler-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1.6-SNAPSHOT</version>
+		<version>0.1.6</version>
 	</parent>
 
 	<artifactId>crawler-web2</artifactId>
@@ -68,15 +68,6 @@
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-actors</artifactId>
-			<scope>${profiles.scope.compile}</scope>
-		</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-			</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
@@ -166,10 +157,32 @@
 				<!-- filter with: mvn resources:resources -Dparam=value -->
 				<filtering>true</filtering>
 				<includes>
-					<include>example.properties</include>
+					<include>workout.properties</include>
 				</includes>
 			</resource>
 		</resources>
 	</build>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <filters>
+          <filter>params-dev.properties</filter>
+        </filters>
+      </build>
+    </profile>
+    <profile>
+      <id>prd</id>
+      <build>
+        <filters>
+          <filter>params-prd.properties</filter>
+        </filters>
+      </build>
+    </profile>
+  </profiles>
 
 </project>

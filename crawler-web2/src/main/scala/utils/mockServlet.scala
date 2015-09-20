@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 class MockRequest(requestURI: String) extends HttpServletRequest {
+	import java.util.Vector
+
+
 	override def getRequestURI = requestURI
 	override def getContextPath = ""
 
@@ -14,9 +17,41 @@ class MockRequest(requestURI: String) extends HttpServletRequest {
 	override def getAuthType(): String = null
 	override def getCookies(): Array[javax.servlet.http.Cookie] = null
 	override def getDateHeader(x$1: String): Long = 0
-	override def getHeader(x$1: String): String = null
-	override def getHeaderNames(): java.util.Enumeration[String] = null
-	override def getHeaders(x$1: String): java.util.Enumeration[String] = null
+
+	override def getHeader(name: String): String = name match {
+		case "Host" => "www.jade-dungeon.net"
+		case "User-Agent" => "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0"
+		case "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+		case _ => ""
+	}
+
+	override def getHeaderNames(): java.util.Enumeration[String] = {
+		val cc = new Vector[String]
+		cc add "Host"
+		cc add "User-Agent"
+		cc add "Accept"
+		cc.elements
+	}
+
+	override def getHeaders(name: String): java.util.Enumeration[String] =  name match {
+		case "Host" => {
+			val cc = new Vector[String]
+			cc add "www.jade-dungeon.net"
+			cc.elements
+		}
+		case "User-Agent" =>  {
+			val cc = new Vector[String]
+			cc add "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0"
+			cc.elements
+		}
+		case "Accept" =>  {
+			val cc = new Vector[String]
+			cc add "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+			cc.elements
+		}
+		case _ => (new Vector[String]).elements
+	}
+
 	override def getIntHeader(x$1: String): Int = 0
 	override def getMethod(): String = null
 	override def getPart(x$1: String): javax.servlet.http.Part = null

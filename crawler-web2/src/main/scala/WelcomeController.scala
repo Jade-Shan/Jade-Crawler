@@ -1,4 +1,4 @@
-package jadecrawler.web2
+package net.jadedungeon
 
 import java.io.IOException
 import java.io.PrintWriter

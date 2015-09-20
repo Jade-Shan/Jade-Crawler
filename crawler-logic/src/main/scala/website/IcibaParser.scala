@@ -2,8 +2,7 @@ package jadecrawler.website
 
 import scala.language.postfixOps
 
-import org.slf4j.LoggerFactory
-import org.slf4j.Logger
+import jadeutils.common.Logging
 
 import org.apache.commons.lang.StringUtils.isNotBlank
 
@@ -22,8 +21,7 @@ import jadeutils.common.JsoupUtils._
 
 import scala.collection.JavaConversions._
 
-object WebIcibaParser {
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
+object WebIcibaParser extends Logging {
 
 	def parse(htmlStr: String): Option[IcibaDto] = {
 		import scala.collection.JavaConversions._
@@ -103,10 +101,8 @@ object WebIcibaParser {
 
 }
 
-object IcibaCrawler {
+object IcibaCrawler extends Logging {
 	import scala.collection.JavaConversions._
-
-	lazy val logger = LoggerFactory.getLogger(this.getClass)
 
 	val site = "www.iciba.com"
 
