@@ -50,38 +50,11 @@
 </body>
 <script>
 
-workoutApp.workoutRec.recordAerobicRec = function () {
-	var username = $('#username').val();
-	var password = $('#password').val();
-	var workoutId = $('#workoutId').val();
-	var time = $('#time').val();
-	var distance = $('#distance').val();
-	var calories = $('#calories').val();
-	var auth = 'Basic ' + jadeUtils.string.base64encode(
-			jadeUtils.string.utf16to8(username + ':' + password)); 
-	if ("" !== username) {
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
-				url: workoutApp.appPath + '/api/workout/recordAerobicRec', 
-				headers: {Authorization: auth},
-				data: {
-					username: username,
-					password: password,
-					workoutId: workoutId,
-					time: time,
-					distance: distance,
-					calories: calories},
-				success: function(data, status, xhr) {
-					console.debug(data);
-				},
-				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
-				complete: function(xhr, status) {}
-			});
-	}
-};
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
-		var rec = workoutApp.workout.AerobicItemMap.get($("#workoutId").val());
+		var workoutId = $("#workoutId").val();
+
+		var rec = workoutApp.workout.AerobicItemMap.get(workoutId);
 		$("#itm-name").html(rec.name);
 		$("#itm-ename").html("(" + rec.ename + ")");
 		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
@@ -90,6 +63,11 @@ $(document).ready(function() {
 		$('#record').on('click', function(event) {
 			workoutApp.workoutRec.recordAerobicRec();
 			});
+
+		$('#time'    ).val(jadeUtils.cookieOperator('time'     + workoutId));
+		$('#distance').val(jadeUtils.cookieOperator('distance' + workoutId));
+		$('#calories').val(jadeUtils.cookieOperator('calories' + workoutId));
+
 		});
 </script>
 </html>

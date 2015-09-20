@@ -15,17 +15,29 @@ trait BaseWorkoutController extends BasicController with WorkoutAppCtx
 
 object WorkoutRecController extends BaseWorkoutController with Logging 
 {
-	service("/page/workout/strengthWorkout/details/${workoutId}"){(info) => {
+	service("/page/workout/index.html") {(info) => {
+		Foward("/WEB-INF/pages/workout/index.jsp")
+	}}
+
+	service("/page/workout/strengthWorkout/list") {(info) => {
+		Foward("/WEB-INF/pages/workout/recs/strengthList.jsp")
+	}}
+
+	service("/page/workout/aerobicWorkout/list") {(info) => {
+		Foward("/WEB-INF/pages/workout/recs/areobicList.jsp")
+	}}
+
+	service("/page/workout/strengthWorkout/details/${workoutId}") {(info) => {
 		info.request.setAttribute("workoutId", info.params("workoutId")(0))
 		Foward("/WEB-INF/pages/workout/recs/strengthDetail.jsp")
 	}}
 
-	service("/page/workout/aerobicWorkout/details/${workoutId}"){(info) => {
+	service("/page/workout/aerobicWorkout/details/${workoutId}") {(info) => {
 		info.request.setAttribute("workoutId", info.params("workoutId")(0))
 		Foward("/WEB-INF/pages/workout/recs/areobicDetail.jsp")
 	}}
 
-	service("/api/workout/recordAerobicRec"){(info) => {
+	service("/api/workout/recordAerobicRec") {(info) => {
 		try {
 			val user     = info.params("username")(0)
 			val item     = info.params("workoutId")(0)
@@ -45,7 +57,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		}
 	}}
 
-	service("/api/workout/recordStrengthRec"){(info) => {
+	service("/api/workout/recordStrengthRec") {(info) => {
 		try {
 			val user    = info.params("username")(0)
 			val item    = info.params("workoutId")(0)

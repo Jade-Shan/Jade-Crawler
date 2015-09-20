@@ -61,8 +61,9 @@
 
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
+		var workoutId = $("#workoutId").val();
 
-		var rec = workoutApp.workout.StrengthItemMap.get($("#workoutId").val());
+		var rec = workoutApp.workout.StrengthItemMap.get(workoutId);
 		$("#itm-name").html(rec.name);
 		$("#itm-ename").html("(" + rec.ename + ")");
 		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
@@ -75,8 +76,8 @@ $(document).ready(function() {
 			workoutApp.workoutRec.recordStrengthRec();
 			});
 
-		$('#weight').val(jadeUtils.cookieOperator('weight'));
-		$('#repeat').val(jadeUtils.cookieOperator('repeat'));
+		$('#weight').val(jadeUtils.cookieOperator('weight' + workoutId));
+		$('#repeat').val(jadeUtils.cookieOperator('repeat' + workoutId));
 });
 </script>
 </html>
