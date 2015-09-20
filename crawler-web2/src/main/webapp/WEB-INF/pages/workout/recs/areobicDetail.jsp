@@ -16,6 +16,7 @@
 		<input type="text" id="username" name="username" class="ipt-normal" value="">
 		<input type="password" id="password" name="password" class="ipt-normal" value="">
 		<input type="button" id="login" value="login" class="sbmt-normal">
+		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
 	</div>
 	<div id="userinfodiv">
 		<em class="lb-ipt">Welcome !</em>
@@ -23,18 +24,24 @@
 		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
 	</div>
 	<ul id="workoutinfo">
+		<li id="w-img"></li>
 		<li>
 			<em class="lb-ipt">Name：</em>
-			<em class="lb-ipt" id="lb-itemname">item name</em>
-			<input type="hidden" id="item" name="item" class="ipt-normal" value="sth-2-1">
+			<em class="lb-ipt" id="itm-name"></em>
+			<em class="lb-ipt" id="itm-ename"></em>
+			<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
 		</li>
 		<li>
-			<em class="lb-ipt">Weight：</em>
-			<input type="text" id="weight" name="weight" class="ipt-normal" value="60">
+			<em class="lb-ipt">Time：</em>
+			<input type="text" id="time" name="time" class="ipt-normal" value="">min
 		</li>
 		<li>
-			<em class="lb-ipt">Repeat：</em>
-			<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
+			<em class="lb-ipt">Distance：</em>
+			<input type="text" id="distance" name="distance" class="ipt-normal" value="15">
+		</li>
+		<li>
+			<em class="lb-ipt">Calories：</em>
+			<input type="text" id="calories" name="calories" class="ipt-normal" value="15">
 		</li>
 		<li>
 			<input type="button" id="record" value="record" class="sbmt-normal">
@@ -42,13 +49,46 @@
 	</ul>
 </body>
 <script>
+
+workoutApp.workoutRec.recordAerobicRec = function () {
+	var username = $('#username').val();
+	var password = $('#password').val();
+	var workoutId = $('#workoutId').val();
+	var time = $('#time').val();
+	var distance = $('#distance').val();
+	var calories = $('#calories').val();
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
+	if ("" !== username) {
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: workoutApp.appPath + '/api/workout/recordAerobicRec', 
+				headers: {Authorization: auth},
+				data: {
+					username: username,
+					password: password,
+					workoutId: workoutId,
+					time: time,
+					distance: distance,
+					calories: calories},
+				success: function(data, status, xhr) {
+					console.debug(data);
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
+				complete: function(xhr, status) {}
+			});
+	}
+};
+
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
-		$('#weight').val(jadeUtils.cookieOperator('weight'));
-		$('#repeat').val(jadeUtils.cookieOperator('repeat'));
+		var rec = workoutApp.workout.AerobicItemMap.get($("#workoutId").val());
+		$("#itm-name").html(rec.name);
+		$("#itm-ename").html("(" + rec.ename + ")");
+		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
+			"images/workout/" + rec.id + ".svg' />")
 
 		$('#record').on('click', function(event) {
-			// workoutApp.workoutRec.recordStrengthRec();
+			workoutApp.workoutRec.recordAerobicRec();
 			});
 		});
 </script>

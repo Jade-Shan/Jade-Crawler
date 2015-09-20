@@ -29,7 +29,7 @@
 			<em class="lb-ipt">Name：</em>
 			<em class="lb-ipt" id="itm-name"></em>
 			<em class="lb-ipt" id="itm-ename"></em>
-			<input type="hidden" id="item" name="item" class="ipt-normal" value="sth-2-1">
+			<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
 		</li>
 		<li>
 			<em class="lb-ipt">Weight：</em>
@@ -59,66 +59,10 @@
 </body>
 <script>
 
-workoutApp.muscle.MuscleDataFpath = $("#cdnworkout").val() + "datas/muscle-front.data";
-workoutApp.muscle.MuscleDataBpath = $("#cdnworkout").val() + "datas/muscle-back.data";
-
-/**
- * 加载肌肉图片（Svg格式）
- */
-workoutApp.muscle.loadMuscleImg = function (cId, width, height, scale, url, callback) {
-	$.get(url, function (data, status, xhr) {
-		if (200 == xhr.status && "success" == status) {
-			var html = '<svg xmlns="http://www.w3.org/2000/svg"' +
-		'width="' + width + '" height="' + height + '">' + 
-		'<g transform="scale(' + scale + ')">' + data + '</g></svg>';
-	$("#"+cId).html(html);
-	workoutApp.muscle.initMuscleImage(cId);
-	callback();
-		}
-	});
-};
-
-workoutApp.muscle.markMusclesPrimary = function (ids) {
-	if(ids.length > 0)
-	$.each(ids, function(index, item){
-			$("." + item).attr("class","muscle-primary");
-			});
-};
-workoutApp.muscle.markMusclesMinor = function (ids) {
-	if(ids.length > 0)
-	$.each(ids, function(index, item){
-			$("." + item).attr("class","muscle-minor");
-			});
-};
-workoutApp.muscle.markMusclesExtra = function (ids) {
-	if(ids.length > 0)
-	$.each(ids, function(index, item){
-			$("." + item).attr("class","muscle-extra");
-			});
-};
-
-workoutApp.muscle.loadMarkedMuscles = function (fid, bid, width, height, scale, marks) {
-	workoutApp.muscle.loadMuscleImg(fid, width, height, scale,
-			workoutApp.muscle.MuscleDataFpath, function() {
-				workoutApp.muscle.loadMuscleImg(bid, width, height, scale, 
-					workoutApp.muscle.MuscleDataBpath, function () {
-						workoutApp.muscle.markMusclesExtra(marks.ext);
-						workoutApp.muscle.markMusclesPrimary(marks.pim);
-						workoutApp.muscle.markMusclesMinor(marks.min);
-					});
-			});
-};
-
-
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 
-		$('#record').on('click', function(event) {
-			workoutApp.workoutRec.recordStrengthRec();
-			});
-
-		var rec = workoutApp.workout.StrengthItemMap.get($("#item").val());
+		var rec = workoutApp.workout.StrengthItemMap.get($("#workoutId").val());
 		$("#itm-name").html(rec.name);
 		$("#itm-ename").html("(" + rec.ename + ")");
 		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
@@ -126,6 +70,10 @@ $(document).ready(function() {
 
 		workoutApp.muscle.loadMarkedMuscles(
 			"muscle-front-data", "muscle-back-data", 270, 500, 0.5, rec);
+
+		$('#record').on('click', function(event) {
+			workoutApp.workoutRec.recordStrengthRec();
+			});
 
 		$('#weight').val(jadeUtils.cookieOperator('weight'));
 		$('#repeat').val(jadeUtils.cookieOperator('repeat'));
