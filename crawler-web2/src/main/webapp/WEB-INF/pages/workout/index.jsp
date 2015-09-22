@@ -21,6 +21,7 @@
 	<div id="userinfodiv">
 		<em class="lb-ipt">Welcome !</em>
 		<em id="lb-username" class="lb-ipt">username</em>
+		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
 	</div>
 	<div>
 		<input type="button" id="strength" value="Strength Workout" class="sbmt-normal">
