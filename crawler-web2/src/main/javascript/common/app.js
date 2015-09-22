@@ -32,9 +32,7 @@ workoutApp.userAuth.checkLogin = function (
 };
 
 workoutApp.userAuth.barinit = function () {
-	$('#login').on('click', function(event) {
-		var username = $('#username').val();
-		var password = $('#password').val();
+	var login = function (username, password) {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
 			$('#logindiv').hide();
 			$('#lb-username').html($('#username').val());
@@ -45,6 +43,11 @@ workoutApp.userAuth.barinit = function () {
 		}, function (data) {
 			alert("Ajax Error");
 		});
+	};
+	$('#login').on('click', function(event) {
+		var username = $('#username').val();
+		var password = $('#password').val();
+		login(username, password);
 	});
 
 	$('#logout').on('click', function(event) {
@@ -58,15 +61,6 @@ workoutApp.userAuth.barinit = function () {
 	var password = jadeUtils.cookieOperator('password');
 	$('#username').val(username);
 	$('#password').val(password);
-	workoutApp.userAuth.checkLogin(username, password, function(data) {
-		$('#logindiv').hide();
-		$('#lb-username').html($('#username').val());
-		$('#userinfodiv').show();
-	}, function (data) {
-		console.debug(data.reason);
-		alert(data.reason);
-	}, function (data) {
-		alert("Ajax Error");
-	});
+	login(username, password);
 };
 
