@@ -13,6 +13,36 @@ import jadeutils.web.Redirect
 
 trait BaseWorkoutController extends BasicController with WorkoutAppCtx
 
+object WorkoutAuthController extends BaseWorkoutController with Logging
+{
+	service("/api/workout/user/auth") {(info) => {
+		try {
+			val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
+			logger.debug("after auth check: {}", auth)
+			val username = auth._2
+			val password = auth._3
+			if (auth._1 && null != username && username.trim.length > 0) {
+				val rec = RecDaos.userAuthDao.findAuth(username)
+				logger.debug(rec.toString)
+				if (rec.size > 0 && password == rec(0).password) {
+					("status" -> "success") ~ ("auth" -> "success"): JValue
+				} else {
+					("status" -> "success") ~ ("auth" -> "fail") ~
+					("reason" -> "not match"): JValue
+				}
+			} else {
+				("status" -> "success") ~ ("auth" -> "fail") ~
+				("reason" -> "no username"): JValue
+			}
+		} catch {
+			case e: Exception => {
+				logger.error(e.toString)
+				("status" -> "error") ~ ("err" -> e.toString): JValue
+			}
+		}
+	}}
+}
+
 object WorkoutRecController extends BaseWorkoutController with Logging 
 {
 	service("/page/workout/index.html") {(info) => {

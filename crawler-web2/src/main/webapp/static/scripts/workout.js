@@ -5,22 +5,46 @@ workoutApp.appPath = "/crawler-web2";
 
 workoutApp.userAuth = { };
 
-workoutApp.userAuth.checkLogin = function (username, password) {
+workoutApp.userAuth.checkLogin = function (
+		username, password, successCallback, failCallback, errorCallback) 
+{
 	if ('' !== username && '' !== password) {
-		return true;
+		var auth = 'Basic ' + jadeUtils.string.base64encode(
+				jadeUtils.string.utf16to8(username + ':' + password)); 
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: workoutApp.appPath + '/api/workout/user/auth', 
+				headers: {Authorization: auth},
+				data: { },
+				success: function(data, status, xhr) {
+					console.debug(status);
+					if ('success' == data.status && 'success' == data.auth) {
+						successCallback(data);
+					} else {
+						failCallback(data);
+					}
+				},
+				error: function(xhr, errorType, error) { errorCallback(data); },
+				complete: function(xhr, status) {}
+			});
 	} else {
-		return false;
+		console.debug("no username or password");
 	}
 };
 
 workoutApp.userAuth.barinit = function () {
 	$('#login').on('click', function(event) {
-		jadeUtils.cookieOperator('username', $('#username').val());
-		jadeUtils.cookieOperator('password', $('#password').val());
-		console.debug($('#username').val());
-		$('#logindiv').hide();
-		$('#lb-username').html($('#username').val());
-		$('#userinfodiv').show();
+		var username = $('#username').val();
+		var password = $('#password').val();
+		workoutApp.userAuth.checkLogin(username, password, function(data) {
+			$('#logindiv').hide();
+			$('#lb-username').html($('#username').val());
+			$('#userinfodiv').show();
+		}, function (data) {
+			console.debug(data.reason);
+			alert(data.reason);
+		}, function (data) {
+			alert("Ajax Error");
+		});
 	});
 
 	$('#logout').on('click', function(event) {
@@ -34,11 +58,16 @@ workoutApp.userAuth.barinit = function () {
 	var password = jadeUtils.cookieOperator('password');
 	$('#username').val(username);
 	$('#password').val(password);
-	if (workoutApp.userAuth.checkLogin(username, password)) {
+	workoutApp.userAuth.checkLogin(username, password, function(data) {
 		$('#logindiv').hide();
 		$('#lb-username').html($('#username').val());
-			$('#userinfodiv').show();
-	}
+		$('#userinfodiv').show();
+	}, function (data) {
+		console.debug(data.reason);
+		alert(data.reason);
+	}, function (data) {
+		alert("Ajax Error");
+	});
 };
 
 
