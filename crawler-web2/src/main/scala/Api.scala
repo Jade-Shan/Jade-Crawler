@@ -12,21 +12,23 @@ import jadeutils.web.Method
 import net.jadedungeon.dictionary.IcibaApiController
 
 import net.jadedungeon.workout.WorkoutAppCtx
+import net.jadedungeon.workout.WorkoutAuthController
 import net.jadedungeon.workout.WorkoutRecController
 
 class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 { 
-	ApiDispather.controllers = IcibaApiController :: WorkoutRecController :: Nil 
+	ApiDispather.controllers = IcibaApiController :: WorkoutRecController :: 
+		WorkoutAuthController :: Nil 
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
 	override protected[this] def doLogic(method: Method.Method, 
 		request: HttpServletRequest, response: HttpServletResponse) 
 	{
+		request.setAttribute("cdn3rd", cdn3rd)
 		request.setAttribute("cdnjadeutils", cdnjadeutils)
 		request.setAttribute("cdnworkout", cdnworkout)
 		super.doLogic(method, request, response)
-		response.addHeader("Access-Control-Allow-Origin", "http://localhost:8091")
 	}
 }
 

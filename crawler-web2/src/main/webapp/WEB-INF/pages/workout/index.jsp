@@ -6,9 +6,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>训练记录</title>
-	<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
-	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
+	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
 </head>
 <body>
@@ -21,6 +21,7 @@
 	<div id="userinfodiv">
 		<em class="lb-ipt">Welcome !</em>
 		<em id="lb-username" class="lb-ipt">username</em>
+		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
 	</div>
 	<div>
 		<input type="button" id="strength" value="Strength Workout" class="sbmt-normal">

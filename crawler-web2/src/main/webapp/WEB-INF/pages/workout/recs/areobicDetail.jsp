@@ -6,7 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>记录有氧运动</title>
-	<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
@@ -33,7 +34,8 @@
 		</li>
 		<li>
 			<em class="lb-ipt">Time：</em>
-			<input type="text" id="time" name="time" class="ipt-normal" value="">min
+			<input type="text" id="time" name="time" class="ipt-normal" value="">
+			<em class="lb-ipt">min</em>
 		</li>
 		<li>
 			<em class="lb-ipt">Distance：</em>
@@ -45,6 +47,9 @@
 		</li>
 		<li>
 			<input type="button" id="record" value="record" class="sbmt-normal">
+		</li>
+		<li>
+		<ul id="historyRec" class="lb-ipt"></ul>
 		</li>
 	</ul>
 </body>
@@ -68,6 +73,31 @@ $(document).ready(function() {
 		$('#distance').val(jadeUtils.cookieOperator('distance' + workoutId));
 		$('#calories').val(jadeUtils.cookieOperator('calories' + workoutId));
 
+		var timeArea = jadeUtils.time.getTimeArea(new Date(), -1);
+		console.debug(timeArea.floor);
+		console.debug(timeArea.ceil);
+		console.debug(timeArea.floor.getTime());
+		console.debug(timeArea.ceil.getTime());
+
+		workoutApp.workoutRec.findAerobicRec($('#username').val(), $('#password').val(), 
+				$('#workoutId').val(), 
+				0,
+				// timeArea.floor.getTime(),
+				(new Date()).getTime(),
+				// timeArea.ceil.getTime(), 
+				function (data) {
+				var html = "";
+				$.each(data.result, function (idx, item) {
+						var t = new Date();
+						t.setTime(item.logTime);
+	
+						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
+							'<ul><li>Time: ' + item.time + 
+							'</li><li>Distance: ' + item.distance + 
+							'</li><li>Caliories: ' + item.calories + '</li></ul></li>';
+					});
+					$('#historyRec').html(html);
+				});
 		});
 </script>
 </html>

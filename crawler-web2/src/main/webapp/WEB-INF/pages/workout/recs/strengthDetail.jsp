@@ -6,7 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>记录力量运动</title>
-	<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
@@ -43,22 +44,23 @@
 			<input type="button" id="record" value="record" class="sbmt-normal">
 		</li>
 		<li>
-		<table>
-			<tr>
-				<td>
-			<div id="muscle-front-data" style="width: 210; display: block"></div>
-				</td>
-				<td>
-			<div id="muscle-back-data"  style="width: 210; display: block"></div>
-				</td>
-			</tr>
-		</table>
-
+			<ul id="historyRec" class="lb-ipt"></ul>
+		</li>
+		<li>
+			<table>
+				<tr>
+					<td>
+				<div id="muscle-front-data" style="width: 210; display: block"></div>
+					</td>
+					<td>
+				<div id="muscle-back-data"  style="width: 210; display: block"></div>
+					</td>
+				</tr>
+			</table>
 		</li>
 	</ul>
 </body>
 <script>
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 		var workoutId = $("#workoutId").val();
@@ -78,6 +80,32 @@ $(document).ready(function() {
 
 		$('#weight').val(jadeUtils.cookieOperator('weight' + workoutId));
 		$('#repeat').val(jadeUtils.cookieOperator('repeat' + workoutId));
+
+		var timeArea = jadeUtils.time.getTimeArea(new Date(), -1);
+		console.debug(timeArea.floor);
+		console.debug(timeArea.ceil);
+		console.debug(timeArea.floor.getTime());
+		console.debug(timeArea.ceil.getTime());
+
+		workoutApp.workoutRec.findStrengthRec($('#username').val(), $('#password').val(), 
+				$('#workoutId').val(), 
+				0,
+				// timeArea.floor.getTime(),
+				(new Date()).getTime(),
+				// timeArea.ceil.getTime(), 
+				function (data) {
+					var html = "";
+					$.each(data.result, function (idx, item) {
+						console.debug(item);
+						var t = new Date();
+						t.setTime(item.logTime);
+						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
+							'<ul><li>Weight: ' + item.weight + 
+							'</li><li>Repeat: ' + item.repeat + 
+							'</li></ul></li>';
+					});
+					$('#historyRec').html(html);
+				});
 });
 </script>
 </html>

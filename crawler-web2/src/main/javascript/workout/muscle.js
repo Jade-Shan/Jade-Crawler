@@ -1,4 +1,3 @@
-var workoutApp = {};
 workoutApp.muscle = {};
 /**
  * 肌肉相关数据
@@ -10,7 +9,8 @@ workoutApp.muscle.muscleJson = [
 	{"id": "1-3", "name": "Sternocleidomastoid", "chs": "胸锁乳突肌", "subs": []}]},
 {"id": "2", "name": "Chest", "chs": "胸", "subs": [
 	{"id": "2-1", "name": "Pectoralis Major", "chs": "胸大肌", "subs": []},
-	{"id": "2-2", "name": "Pectoralis Minor", "chs": "胸小肌", "subs": []}]},
+	{"id": "2-2", "name": "Pectoralis Minor", "chs": "胸小肌", "subs": []},
+	{"id": "2-3", "name": "Serratus Anterior", "chs": "前锯肌", "subs": []}]},
 {"id": "3", "name": "Back", "chs": "背", "subs": [
 	{"id": "3-1", "name": "Trapezius", "chs": "斜方肌", "subs": [
 		{"id": "3-1-1", "name": "Trapezius", "chs": "斜方肌", "subs": []},
@@ -49,8 +49,7 @@ workoutApp.muscle.muscleJson = [
 {"id": "7", "name": "Abs", "chs": "腹肌", "subs": [
 	{"id": "7-1", "name": "Rectus Abdominis", "chs": "腹直肌", "subs": []},
 	{"id": "7-2", "name": "Tendinous Inscriptions", "chs": "腱割肌", "subs": []},
-	{"id": "7-3", "name": "Serratus Anterior", "chs": "前锯肌", "subs": []},
-	{"id": "7-4", "name": "Serratus Anterior", "chs": "前锯肌", "subs": []},
+	{"id": "7-4", "name": "Flank muscle", "chs": "肋间肌", "subs": []},
 	{"id": "7-5", "name": "External Oblique", "chs": "腹外斜肌", "subs": []}]},
 {"id": "8", "name": "Waist", "chs": "腰", "subs": [
 	{"id": "8-1", "name": "Erector Spinae", "chs": "竖脊肌", "subs": []},
@@ -82,7 +81,9 @@ workoutApp.muscle.muscleJson = [
 		{"id": "b-3-2", "name": "Peroneus Longus", "chs": "腓骨长肌", "subs": []}]},
 	{"id": "b-4", "name": "Peroneus Brevis", "chs": "腓骨短肌", "subs": []},
 	{"id": "b-5", "name": "Extensor Digitorum Longus", "chs": "伸趾长肌", "subs": []},
-	{"id": "b-6", "name": "Gastrocnemius", "chs": "腓肠肌", "subs": []},
+	{"id": "b-6", "name": "Gastrocnemius", "chs": "腓肠肌", "subs": [
+		{"id": "b-6-1", "name": "Gastrocnemius", "chs": "腓肠肌", "subs": []},
+		{"id": "b-6-2", "name": "Gastrocnemius", "chs": "腓肠肌", "subs": []}]},
 	{"id": "b-7", "name": "Soleus", "chs": "比目鱼肌", "subs": [
 		{"id": "b-7-1", "name": "Soleus", "chs": "比目鱼肌", "subs": []},
 		{"id": "b-7-2", "name": "Soleus", "chs": "比目鱼肌", "subs": []}]},
@@ -95,7 +96,7 @@ workoutApp.muscle.addMuscle2Map = function (muscles, maps) {
 	for (var i in muscles) {
 		var d = muscles[i];
 		maps.put(d.id, d);
-		if (d.subs.length > 0) {workoutApp.muscle.addMuscle2Map(d.subs, maps)}
+		if (d.subs.length > 0) {workoutApp.muscle.addMuscle2Map(d.subs, maps);}
 	}
 };
 
@@ -106,6 +107,8 @@ workoutApp.muscle.muscleMap = new jadeUtils.dataStructure.Map();
 workoutApp.muscle.addMuscle2Map(workoutApp.muscle.muscleJson, 
 		workoutApp.muscle.muscleMap);
 
+workoutApp.muscle.MuscleDataFpath = cdnworkout + "datas/muscle-front.data";
+workoutApp.muscle.MuscleDataBpath = cdnworkout + "datas/muscle-back.data" ;
 
 /**
  * 初始化肌肉图，绑定点击事件
@@ -119,18 +122,52 @@ workoutApp.muscle.initMuscleImage = function (item) {
 			});
 };
 
+
 /**
  * 加载肌肉图片（Svg格式）
  */
-workoutApp.muscle.loadMuscleImg = function (cId, width, height, scale, url) {
+workoutApp.muscle.loadMuscleImg = function (cId, width, height, scale, url, callback) {
 	$.get(url, function (data, status, xhr) {
-			if (200 == xhr.status && "success" == status) {
+		if (200 == xhr.status && "success" == status) {
 			var html = '<svg xmlns="http://www.w3.org/2000/svg"' +
 				'width="' + width + '" height="' + height + '">' + 
 				'<g transform="scale(' + scale + ')">' + data + '</g></svg>';
 			$("#"+cId).html(html);
 			workoutApp.muscle.initMuscleImage(cId);
-			}
+			callback();
+		}
+	});
+};
+
+workoutApp.muscle.markMusclesPrimary = function (ids) {
+	if(ids.length > 0)
+	$.each(ids, function(index, item){
+			$("." + item).attr("class","muscle-primary");
 			});
 };
+workoutApp.muscle.markMusclesMinor = function (ids) {
+	if(ids.length > 0)
+	$.each(ids, function(index, item){
+			$("." + item).attr("class","muscle-minor");
+			});
+};
+workoutApp.muscle.markMusclesExtra = function (ids) {
+	if(ids.length > 0)
+	$.each(ids, function(index, item){
+			$("." + item).attr("class","muscle-extra");
+			});
+};
+
+workoutApp.muscle.loadMarkedMuscles = function (fid, bid, width, height, scale, marks) {
+	workoutApp.muscle.loadMuscleImg(fid, width, height, scale,
+			workoutApp.muscle.MuscleDataFpath, function() {
+				workoutApp.muscle.loadMuscleImg(bid, width, height, scale, 
+					workoutApp.muscle.MuscleDataBpath, function () {
+						workoutApp.muscle.markMusclesExtra(marks.ext);
+						workoutApp.muscle.markMusclesPrimary(marks.pim);
+						workoutApp.muscle.markMusclesMinor(marks.min);
+					});
+			});
+};
+
 
