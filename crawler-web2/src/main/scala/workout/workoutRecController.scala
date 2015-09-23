@@ -17,8 +17,8 @@ trait BaseWorkoutController extends BasicController with WorkoutAppCtx
 object WorkoutAuthController extends BaseWorkoutController with Logging
 {
 	/**
-	 * (isAuth, isSuccess)
-	 */
+		* (isAuth, isSuccess)
+		*/
 	def auth(info: DispatherInfo): (Boolean, Boolean) = {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
 		logger.debug("after auth check: {}", auth)
@@ -69,7 +69,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		info.request.setAttribute("workoutId", info.params("workoutId")(0))
 		Foward("/WEB-INF/pages/workout/recs/strengthDetail.jsp")
 	}}
-
+	
 	service("/page/workout/aerobicWorkout/details/${workoutId}") {(info) => {
 		info.request.setAttribute("workoutId", info.params("workoutId")(0))
 		Foward("/WEB-INF/pages/workout/recs/areobicDetail.jsp")
@@ -119,5 +119,63 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 			case _ => ("status" -> "error") ~ ("err" -> "need login"): JValue
 		}
 	}}
-	
+
+	service("/api/workout/findAerobicRec") {(info) => {
+		WorkoutAuthController.auth(info) match {
+			case (true, true) => try {
+				val user     = info.params("username")(0)
+				val item     = info.params("workoutId")(0)
+				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
+				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
+
+				val recs = findAerobicRecs(user, item, logTimeFloor, logTimeCeil)
+				logger.debug("query result: {}", recs)
+				("status" -> "success") ~ ("result" -> 
+					(if (null != recs) { 
+							var oRecs = recs.sortWith(_.logTime < _.logTime)
+							for (i <- 0 until oRecs.size) yield oRecs(i) 
+							} else Nil).map(
+						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("time" -> r.time) ~ 
+						("distance" -> r.distance) ~ ("calories" -> r.calories) ~ 
+						("logTime" -> r.logTime)
+					)) : JValue 
+			} catch {
+				case e: Exception => {
+					logger.error(e.toString)
+					("status" -> "error") ~ ("err" -> e.toString): JValue
+				}
+			}
+			case _ => ("status" -> "error") ~ ("err" -> "need login"): JValue
+		}
+	}}
+
+	service("/api/workout/findStrengthRec") {(info) => {
+		WorkoutAuthController.auth(info) match {
+			case (true, true) => try {
+				val user    = info.params("username")(0)
+				val item    = info.params("workoutId")(0)
+				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
+				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
+
+				val recs = findStrengthRecs(user, item, logTimeFloor, logTimeCeil)
+				logger.debug("query result: {}", recs)
+				("status" -> "success") ~ ("result" -> 
+					(if (null != recs) {
+							var oRecs = recs.sortWith(_.logTime < _.logTime)
+							for (i <- 0 until oRecs.size) yield oRecs(i) 
+							} else Nil).map(
+						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("weight" -> r.weight) ~ 
+						("repeat" -> r.repeat) ~ ("logTime" -> r.logTime)
+					)) : JValue 
+			} catch {
+				case e: Exception => {
+					logger.error(e.toString)
+					e.printStackTrace
+					("status" -> "error") ~ ("err" -> e.toString): JValue
+				}
+			}
+			case _ => ("status" -> "error") ~ ("err" -> "need login"): JValue
+		}
+	}}
+
 }

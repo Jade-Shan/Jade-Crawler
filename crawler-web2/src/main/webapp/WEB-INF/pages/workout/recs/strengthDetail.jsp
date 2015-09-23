@@ -44,22 +44,23 @@
 			<input type="button" id="record" value="record" class="sbmt-normal">
 		</li>
 		<li>
-		<table>
-			<tr>
-				<td>
-			<div id="muscle-front-data" style="width: 210; display: block"></div>
-				</td>
-				<td>
-			<div id="muscle-back-data"  style="width: 210; display: block"></div>
-				</td>
-			</tr>
-		</table>
-
+			<ul id="historyRec" class="lb-ipt"></ul>
+		</li>
+		<li>
+			<table>
+				<tr>
+					<td>
+				<div id="muscle-front-data" style="width: 210; display: block"></div>
+					</td>
+					<td>
+				<div id="muscle-back-data"  style="width: 210; display: block"></div>
+					</td>
+				</tr>
+			</table>
 		</li>
 	</ul>
 </body>
 <script>
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 		var workoutId = $("#workoutId").val();
@@ -79,6 +80,32 @@ $(document).ready(function() {
 
 		$('#weight').val(jadeUtils.cookieOperator('weight' + workoutId));
 		$('#repeat').val(jadeUtils.cookieOperator('repeat' + workoutId));
+
+		var timeArea = jadeUtils.time.getTimeArea(new Date(), -1);
+		console.debug(timeArea.floor);
+		console.debug(timeArea.ceil);
+		console.debug(timeArea.floor.getTime());
+		console.debug(timeArea.ceil.getTime());
+
+		workoutApp.workoutRec.findStrengthRec($('#username').val(), $('#password').val(), 
+				$('#workoutId').val(), 
+				0,
+				// timeArea.floor.getTime(),
+				(new Date()).getTime(),
+				// timeArea.ceil.getTime(), 
+				function (data) {
+					var html = "";
+					$.each(data.result, function (idx, item) {
+						console.debug(item);
+						var t = new Date();
+						t.setTime(item.logTime);
+						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
+							'<ul><li>Weight: ' + item.weight + 
+							'</li><li>Repeat: ' + item.repeat + 
+							'</li></ul></li>';
+					});
+					$('#historyRec').html(html);
+				});
 });
 </script>
 </html>

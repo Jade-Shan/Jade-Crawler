@@ -23,7 +23,7 @@ trait WorkoutRecDaoComponent extends Logging {
 
 
 trait WorkoutAppCtx extends EnvPropsComponent with WorkoutRecDaoComponent 
-// with WorkoutRecService 
+with WorkoutRecService 
 with Logging {
 
 	val cfgFile = "workout.properties"

@@ -23,7 +23,7 @@ workoutApp.userAuth.checkLogin = function (
 						failCallback(data);
 					}
 				},
-				error: function(xhr, errorType, error) { errorCallback(data); },
+				error: function(xhr, errorType, error) { errorCallback(error); },
 				complete: function(xhr, status) {}
 			});
 	} else {
@@ -383,4 +383,66 @@ workoutApp.workoutRec.recordAerobicRec = function () {
 	}
 };
 
+
+
+workoutApp.workoutRec.findAerobicRec = function (
+		username, password, workoutId, logTimeFloor, logTimeCeil, 
+		callbackSuccess, callbackFail, callbackError)
+{
+	var time = $('#time').val();
+	var distance = $('#distance').val();
+	var calories = $('#calories').val();
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
+	if ("" !== username) {
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: workoutApp.appPath + '/api/workout/findAerobicRec', 
+				headers: {Authorization: auth},
+				data: {
+					username: username,
+					password: password,
+					workoutId: workoutId,
+					logTimeFloor: logTimeFloor,
+					logTimeCeil: logTimeCeil
+				},
+				success: function(data, status, xhr) {
+					console.debug(data);
+					callbackSuccess(data);
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
+				complete: function(xhr, status) {}
+			});
+	}
+};
+
+
+workoutApp.workoutRec.findStrengthRec = function (
+		username, password, workoutId, logTimeFloor, logTimeCeil, 
+		callbackSuccess, callbackFail, callbackError)
+{
+	var time = $('#time').val();
+	var distance = $('#distance').val();
+	var calories = $('#calories').val();
+	var auth = 'Basic ' + jadeUtils.string.base64encode(
+			jadeUtils.string.utf16to8(username + ':' + password)); 
+	if ("" !== username) {
+		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+				url: workoutApp.appPath + '/api/workout/findStrengthRec', 
+				headers: {Authorization: auth},
+				data: {
+					username: username,
+					password: password,
+					workoutId: workoutId,
+					logTimeFloor: logTimeFloor,
+					logTimeCeil: logTimeCeil
+				},
+				success: function(data, status, xhr) {
+					console.debug(data);
+					callbackSuccess(data);
+				},
+				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
+				complete: function(xhr, status) {}
+			});
+	}
+};
 

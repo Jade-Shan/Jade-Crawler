@@ -23,7 +23,7 @@ workoutApp.userAuth.checkLogin = function (
 						failCallback(data);
 					}
 				},
-				error: function(xhr, errorType, error) { errorCallback(data); },
+				error: function(xhr, errorType, error) { errorCallback(error); },
 				complete: function(xhr, status) {}
 			});
 	} else {
