@@ -34,8 +34,10 @@ workoutApp.userAuth.checkLogin = function (
 workoutApp.userAuth.barinit = function () {
 	var login = function (username, password) {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
+			jadeUtils.cookieOperator('username', username);
+			jadeUtils.cookieOperator('password', password);
 			$('#logindiv').hide();
-			$('#lb-username').html($('#username').val());
+			$('#lb-username').html(username);
 			$('#userinfodiv').show();
 		}, function (data) {
 			console.debug(data.reason);
@@ -51,8 +53,6 @@ workoutApp.userAuth.barinit = function () {
 	});
 
 	$('#logout').on('click', function(event) {
-		jadeUtils.cookieOperator('username', '');
-		jadeUtils.cookieOperator('password', '');
 		$('#userinfodiv').hide();
 		$('#logindiv').show();
 	});
