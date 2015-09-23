@@ -33,6 +33,7 @@ with Logging {
 	envProps.load(Thread.currentThread().getContextClassLoader()
 		.getResourceAsStream(cfgFile))
 
+	val cdn3rd = getProperty("cdn.3rd")
 	val cdnjadeutils = getProperty("cdn.jadeutils")
 	val cdnworkout = getProperty("cdn.workout")
 

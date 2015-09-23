@@ -6,7 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>记录有氧运动</title>
-	<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />

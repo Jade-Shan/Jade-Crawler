@@ -25,6 +25,7 @@ class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 	override protected[this] def doLogic(method: Method.Method, 
 		request: HttpServletRequest, response: HttpServletResponse) 
 	{
+		request.setAttribute("cdn3rd", cdn3rd)
 		request.setAttribute("cdnjadeutils", cdnjadeutils)
 		request.setAttribute("cdnworkout", cdnworkout)
 		super.doLogic(method, request, response)
