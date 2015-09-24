@@ -57,17 +57,35 @@
 
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
-		var workoutId = $("#workoutId").val();
+
+		$('#record').on('click', function(event) {
+			var username = $('#username').val();
+			var password = $('#password').val();
+			var workoutId= $('#workoutId').val();
+			var time     = $('#time').val();
+			var distance = $('#distance').val();
+			var calories = $('#calories').val();
+			workoutApp.workoutRec.recordAerobicRec(username, password, workoutId, 
+				time, distance, calories, function (data, status, xhr) {
+					console.debug(data);
+					jadeUtils.cookieOperator('time'     + workoutId, time    );
+					jadeUtils.cookieOperator('distance' + workoutId, distance);
+					jadeUtils.cookieOperator('calories' + workoutId, calories);
+					workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
+						0, (new Date()).getTime(),
+						workoutApp.workoutRec.renderStrengthRecDetailPage);
+			});
+		});
+
+		var username  = $('#username').val();
+		var password  = $('#password').val();
+		var workoutid = $('#workoutId').val();
 
 		var rec = workoutApp.workout.AerobicItemMap.get(workoutId);
 		$("#itm-name").html(rec.name);
 		$("#itm-ename").html("(" + rec.ename + ")");
 		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
 			"images/workout/" + rec.id + ".svg' />")
-
-		$('#record').on('click', function(event) {
-			workoutApp.workoutRec.recordAerobicRec();
-			});
 
 		$('#time'    ).val(jadeUtils.cookieOperator('time'     + workoutId));
 		$('#distance').val(jadeUtils.cookieOperator('distance' + workoutId));
@@ -79,26 +97,10 @@ $(document).ready(function() {
 		console.debug(timeArea.floor.getTime());
 		console.debug(timeArea.ceil.getTime());
 
-		workoutApp.workoutRec.findAerobicRec($('#username').val(), $('#password').val(), 
-				$('#workoutId').val(), 
-				0,
-				// timeArea.floor.getTime(),
-				(new Date()).getTime(),
-				// timeArea.ceil.getTime(), 
-				function (data) {
-				var html = "";
-				$.each(data.result, function (idx, item) {
-						var t = new Date();
-						t.setTime(item.logTime);
-	
-						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-							'<ul><li>Time: ' + item.time + 
-							'</li><li>Distance: ' + item.distance + 
-							'</li><li>Caliories: ' + item.calories + '</li></ul></li>';
-					});
-					$('#historyRec').html(html);
-				});
-		});
+		workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
+				0, (new Date()).getTime(),
+				workoutApp.workoutRec.renderStrengthRecDetailPage);
+});
 </script>
 </html>
 

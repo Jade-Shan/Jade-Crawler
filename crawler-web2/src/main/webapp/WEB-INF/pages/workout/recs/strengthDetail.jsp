@@ -63,6 +63,26 @@
 <script>
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
+
+		$('#record').on('click', function(event) {
+			var username = $('#username').val();
+			var password = $('#password').val();
+			var workoutId= $('#workoutId').val();
+			var weight   = $('#weight').val();
+			var repeat   = $('#repeat').val();
+			workoutApp.workoutRec.recordStrengthRec(username, password, workoutId, 
+				weight, repeat, function (data, status, xhr) {
+					console.debug(data);
+					jadeUtils.cookieOperator('weight' + workoutId, weight);
+					jadeUtils.cookieOperator('repeat' + workoutId, repeat);
+					workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
+						0, (new Date()).getTime(),
+						workoutApp.workoutRec.renderStrengthRecDetailPage);
+			});
+		});
+
+		var username  = $('#username').val();
+		var password  = $('#password').val();
 		var workoutId = $("#workoutId").val();
 
 		var rec = workoutApp.workout.StrengthItemMap.get(workoutId);
@@ -74,10 +94,6 @@ $(document).ready(function() {
 		workoutApp.muscle.loadMarkedMuscles(
 			"muscle-front-data", "muscle-back-data", 270, 500, 0.5, rec);
 
-		$('#record').on('click', function(event) {
-			workoutApp.workoutRec.recordStrengthRec();
-			});
-
 		$('#weight').val(jadeUtils.cookieOperator('weight' + workoutId));
 		$('#repeat').val(jadeUtils.cookieOperator('repeat' + workoutId));
 
@@ -87,25 +103,9 @@ $(document).ready(function() {
 		console.debug(timeArea.floor.getTime());
 		console.debug(timeArea.ceil.getTime());
 
-		workoutApp.workoutRec.findStrengthRec($('#username').val(), $('#password').val(), 
-				$('#workoutId').val(), 
-				0,
-				// timeArea.floor.getTime(),
-				(new Date()).getTime(),
-				// timeArea.ceil.getTime(), 
-				function (data) {
-					var html = "";
-					$.each(data.result, function (idx, item) {
-						console.debug(item);
-						var t = new Date();
-						t.setTime(item.logTime);
-						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-							'<ul><li>Weight: ' + item.weight + 
-							'</li><li>Repeat: ' + item.repeat + 
-							'</li></ul></li>';
-					});
-					$('#historyRec').html(html);
-				});
+		workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
+				0, (new Date()).getTime(),
+				workoutApp.workoutRec.renderStrengthRecDetailPage);
 });
 </script>
 </html>

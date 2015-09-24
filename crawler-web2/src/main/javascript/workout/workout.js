@@ -80,12 +80,9 @@ workoutApp.workout.AerobicItemMap = workoutApp.workout.addItems2Map(
 
 workoutApp.workoutRec = {};
 
-workoutApp.workoutRec.recordStrengthRec = function () {
-	var username = $('#username').val();
-	var password = $('#password').val();
-	var workoutId = $('#workoutId').val();
-	var weight = $('#weight').val();
-	var repeat = $('#repeat').val();
+workoutApp.workoutRec.recordStrengthRec = function (
+		username, password, workoutId, weight, repeat, successCallback) 
+{
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
@@ -98,9 +95,7 @@ workoutApp.workoutRec.recordStrengthRec = function () {
 					weight  : weight,
 					repeat  : repeat},
 				success: function(data, status, xhr) {
-					console.debug(data);
-					jadeUtils.cookieOperator('weight' + workoutId, weight);
-					jadeUtils.cookieOperator('repeat' + workoutId, repeat);
+					successCallback(data, status, xhr);
 				},
 				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
 				complete: function(xhr, status) {}
@@ -109,13 +104,9 @@ workoutApp.workoutRec.recordStrengthRec = function () {
 };
 
 
-workoutApp.workoutRec.recordAerobicRec = function () {
-	var username = $('#username').val();
-	var password = $('#password').val();
-	var workoutId = $('#workoutId').val();
-	var time = $('#time').val();
-	var distance = $('#distance').val();
-	var calories = $('#calories').val();
+workoutApp.workoutRec.recordAerobicRec = function (
+		username, password, workoutId, time, distance, calories, successCallback)
+{
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
@@ -129,10 +120,7 @@ workoutApp.workoutRec.recordAerobicRec = function () {
 					distance: distance,
 					calories: calories},
 				success: function(data, status, xhr) {
-					console.debug(data);
-					jadeUtils.cookieOperator('time'     + workoutId, time    );
-					jadeUtils.cookieOperator('distance' + workoutId, distance);
-					jadeUtils.cookieOperator('calories' + workoutId, calories);
+					successCallback(data, status, xhr);
 				},
 				error: function(xhr, errorType, error) { alert("Ajax Error!"); },
 				complete: function(xhr, status) {}
@@ -146,9 +134,6 @@ workoutApp.workoutRec.findAerobicRec = function (
 		username, password, workoutId, logTimeFloor, logTimeCeil, 
 		callbackSuccess, callbackFail, callbackError)
 {
-	var time = $('#time').val();
-	var distance = $('#distance').val();
-	var calories = $('#calories').val();
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
@@ -176,9 +161,6 @@ workoutApp.workoutRec.findStrengthRec = function (
 		username, password, workoutId, logTimeFloor, logTimeCeil, 
 		callbackSuccess, callbackFail, callbackError)
 {
-	var time = $('#time').val();
-	var distance = $('#distance').val();
-	var calories = $('#calories').val();
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
@@ -201,3 +183,31 @@ workoutApp.workoutRec.findStrengthRec = function (
 	}
 };
 
+workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
+	var html = "";
+	$.each(data.result, function (idx, item) {
+		var t = new Date();
+		t.setTime(item.logTime);
+
+		html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
+		'<ul><li>Time: ' + item.time + 
+		'</li><li>Distance: ' + item.distance + 
+		'</li><li>Caliories: ' + item.calories + '</li></ul></li>';
+	});
+	$('#historyRec').html(html);
+};
+
+
+workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
+	var html = "";
+	$.each(data.result, function (idx, item) {
+		console.debug(item);
+		var t = new Date();
+		t.setTime(item.logTime);
+		html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
+		'<ul><li>Weight: ' + item.weight + 
+		'</li><li>Repeat: ' + item.repeat + 
+		'</li></ul></li>';
+	});
+	$('#historyRec').html(html);
+};
