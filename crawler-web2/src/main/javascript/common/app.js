@@ -2,6 +2,7 @@ var cdnworkout = "http://7xldv2.com1.z0.glb.clouddn.com/workout/";
 
 var workoutApp = {};
 workoutApp.appPath = "/crawler-web2";
+workoutApp.connTimeout= 8000;
 
 workoutApp.userAuth = { };
 
@@ -11,7 +12,7 @@ workoutApp.userAuth.checkLogin = function (
 	if ('' !== username && '' !== password) {
 		var auth = 'Basic ' + jadeUtils.string.base64encode(
 				jadeUtils.string.utf16to8(username + ':' + password)); 
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/user/auth', 
 				headers: {Authorization: auth},
 				data: { },

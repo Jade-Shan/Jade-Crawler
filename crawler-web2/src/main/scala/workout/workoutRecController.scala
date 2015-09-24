@@ -19,7 +19,7 @@ object WorkoutAuthController extends BaseWorkoutController with Logging
 	/**
 		* (isAuth, isSuccess)
 		*/
-	def auth(info: DispatherInfo): (Boolean, Boolean) = {
+	def auth(info: DispatherInfo): (Boolean, Boolean, String) = {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
 		logger.debug("after auth check: {}", auth)
 		val username = auth._2
@@ -28,19 +28,19 @@ object WorkoutAuthController extends BaseWorkoutController with Logging
 			val rec = RecDaos.userAuthDao.findAuth(username)
 			logger.debug(rec.toString)
 			if (rec.size > 0 && password == rec(0).password) {
-				(true, true)
-			} else (true, false)
+				(true, true, username)
+			} else (true, false, username)
 		} catch {
 			case e: Exception => {
 				logger.error(e.toString)
-				(true, false)
+				(true, false, username)
 			}
-		} else (false, false)
+		} else (false, false, username)
 	}
 
 	service("/api/workout/user/auth") {(info) => {
 		auth(info) match {
-			case (true, true) => {
+			case (true, true, _) => {
 				("status" -> "success") ~ ("auth" -> "success"): JValue
 			}
 			case _ => {
@@ -77,8 +77,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 
 	service("/api/workout/recordAerobicRec") {(info) => {
 		WorkoutAuthController.auth(info) match {
-			case (true, true) => try {
-				val user     = info.params("username")(0)
+			case (true, true, user) => try {
 				val item     = info.params("workoutId")(0)
 				val time     = Integer.parseInt(info.params("time")(0))
 				val distance = Integer.parseInt(info.params("distance")(0))
@@ -100,8 +99,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 
 	service("/api/workout/recordStrengthRec") {(info) => {
 		WorkoutAuthController.auth(info) match {
-			case (true, true) => try {
-				val user    = info.params("username")(0)
+			case (true, true, user) => try {
 				val item    = info.params("workoutId")(0)
 				val weight  = Integer.parseInt(info.params("weight")(0))
 				val repeat  = Integer.parseInt(info.params("repeat")(0))
@@ -122,8 +120,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 
 	service("/api/workout/findAerobicRec") {(info) => {
 		WorkoutAuthController.auth(info) match {
-			case (true, true) => try {
-				val user     = info.params("username")(0)
+			case (true, true, user) => try {
 				val item     = info.params("workoutId")(0)
 				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
 				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
@@ -132,7 +129,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				logger.debug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) { 
-							var oRecs = recs.sortWith(_.logTime < _.logTime)
+							var oRecs = recs.sortWith(_.logTime > _.logTime)
 							for (i <- 0 until oRecs.size) yield oRecs(i) 
 							} else Nil).map(
 						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("time" -> r.time) ~ 
@@ -151,8 +148,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 
 	service("/api/workout/findStrengthRec") {(info) => {
 		WorkoutAuthController.auth(info) match {
-			case (true, true) => try {
-				val user    = info.params("username")(0)
+			case (true, true, user) => try {
 				val item    = info.params("workoutId")(0)
 				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
 				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
@@ -161,7 +157,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				logger.debug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) {
-							var oRecs = recs.sortWith(_.logTime < _.logTime)
+							var oRecs = recs.sortWith(_.logTime > _.logTime)
 							for (i <- 0 until oRecs.size) yield oRecs(i) 
 							} else Nil).map(
 						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("weight" -> r.weight) ~ 

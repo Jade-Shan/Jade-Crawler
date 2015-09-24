@@ -89,12 +89,11 @@ workoutApp.workoutRec.recordStrengthRec = function () {
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/recordStrengthRec', 
 				headers: {Authorization: auth},
 				data: {
 					username: username,
-					password: password,
 					workoutId: workoutId,
 					weight  : weight,
 					repeat  : repeat},
@@ -120,12 +119,11 @@ workoutApp.workoutRec.recordAerobicRec = function () {
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/recordAerobicRec', 
 				headers: {Authorization: auth},
 				data: {
 					username: username,
-					password: password,
 					workoutId: workoutId,
 					time: time,
 					distance: distance,
@@ -154,12 +152,11 @@ workoutApp.workoutRec.findAerobicRec = function (
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/findAerobicRec', 
 				headers: {Authorization: auth},
 				data: {
 					username: username,
-					password: password,
 					workoutId: workoutId,
 					logTimeFloor: logTimeFloor,
 					logTimeCeil: logTimeCeil
@@ -185,12 +182,11 @@ workoutApp.workoutRec.findStrengthRec = function (
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
 	if ("" !== username) {
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/findStrengthRec', 
 				headers: {Authorization: auth},
 				data: {
 					username: username,
-					password: password,
 					workoutId: workoutId,
 					logTimeFloor: logTimeFloor,
 					logTimeCeil: logTimeCeil
