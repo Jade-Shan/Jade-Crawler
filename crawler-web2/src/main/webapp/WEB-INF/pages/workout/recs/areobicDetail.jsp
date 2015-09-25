@@ -73,13 +73,13 @@ $(document).ready(function() {
 					jadeUtils.cookieOperator('calories' + workoutId, calories);
 					workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
 						0, (new Date()).getTime(),
-						workoutApp.workoutRec.renderStrengthRecDetailPage);
+						workoutApp.workoutRec.renderAerobicRecDetailPage);
 			});
 		});
 
 		var username  = $('#username').val();
 		var password  = $('#password').val();
-		var workoutid = $('#workoutId').val();
+		var workoutId = $('#workoutId').val();
 
 		var rec = workoutApp.workout.AerobicItemMap.get(workoutId);
 		$("#itm-name").html(rec.name);
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 		workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
 				0, (new Date()).getTime(),
-				workoutApp.workoutRec.renderStrengthRecDetailPage);
+				workoutApp.workoutRec.renderAerobicRecDetailPage);
 });
 </script>
 </html>

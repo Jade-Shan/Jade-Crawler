@@ -80,7 +80,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 			case (true, true, user) => try {
 				val item     = info.params("workoutId")(0)
 				val time     = Integer.parseInt(info.params("time")(0))
-				val distance = Integer.parseInt(info.params("distance")(0))
+				val distance = (info.params("distance")(0)).toDouble
 				val calories = Integer.parseInt(info.params("calories")(0))
 				val rec = new AerobicRecord(user, item, time, distance, calories, 
 					System.currentTimeMillis)
@@ -89,6 +89,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				("status" -> "success"): JValue
 			} catch {
 				case e: Exception => {
+					e.printStackTrace
 					logger.error(e.toString)
 					("status" -> "error") ~ ("err" -> e.toString): JValue
 				}
@@ -122,8 +123,8 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		WorkoutAuthController.auth(info) match {
 			case (true, true, user) => try {
 				val item     = info.params("workoutId")(0)
-				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
-				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
+				val logTimeFloor = (info.params("logTimeFloor")(0)).toLong
+				val logTimeCeil  = (info.params("logTimeCeil")(0)).toLong
 
 				val recs = findAerobicRecs(user, item, logTimeFloor, logTimeCeil)
 				logger.debug("query result: {}", recs)
@@ -150,8 +151,8 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		WorkoutAuthController.auth(info) match {
 			case (true, true, user) => try {
 				val item    = info.params("workoutId")(0)
-				val logTimeFloor = java.lang.Long.parseLong(info.params("logTimeFloor")(0))
-				val logTimeCeil  = java.lang.Long.parseLong(info.params("logTimeCeil")(0))
+				val logTimeFloor = (info.params("logTimeFloor")(0)).toLong
+				val logTimeCeil  = (info.params("logTimeCeil")(0)).toLong
 
 				val recs = findStrengthRecs(user, item, logTimeFloor, logTimeCeil)
 				logger.debug("query result: {}", recs)
