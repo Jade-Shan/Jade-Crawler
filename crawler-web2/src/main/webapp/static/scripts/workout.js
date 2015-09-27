@@ -337,7 +337,7 @@ workoutApp.workout.StrengthItems = [
 		pim: ["2-3"], min: [], ext: []},
 	{part: "胸部", epart: "Chest", type: "free", id: "sth-2-24", name: "悬垂前锯肌卷腹", ename: "", 
 		pim: ["2-3"], min: [], ext: []},
-	{part: "胸部", epart: "Back", type: "fixed", id: "sth-2-25", name: "窄握高位下拉", ename: "", 
+	{part: "胸部", epart: "Chest", type: "fixed", id: "sth-2-25", name: "窄握高位下拉", ename: "", 
 		pim: ["3-6", "2-3"], min: ["5-2-1", "5-2-2"], ext: []},
 
 	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-1", name: "器械划船", ename: "Row", 
@@ -532,6 +532,130 @@ workoutApp.workout.AerobicItemMap = workoutApp.workout.addItems2Map(
 
 
 workoutApp.workoutRec = {};
+
+workoutApp.workoutRec.showStrengthItems = function () {
+	var shoulder1 = [];
+	var chest1 = [];
+	var back1 = [];
+	var waist1 = [];
+	var upperarm1 = [];
+	var formearm1 = [];
+	var thigh1 = [];
+	var calve1 = [];
+	var abs1 = [];
+
+	var shoulder2 = [];
+	var chest2 = [];
+	var back2 = [];
+	var waist2 = [];
+	var upperarm2 = [];
+	var formearm2 = [];
+	var thigh2 = [];
+	var calve2 = [];
+	var abs2 = [];
+
+	$.each(workoutApp.workout.StrengthItems, function(index, item) {
+			if ("Shoulder" == item.epart && "fixed" == item.type) {
+				shoulder1.push(item);
+			} else if ("Shoulder" == item.epart && "free" == item.type) {
+				shoulder2.push(item);
+			} else if ("Chest" == item.epart && "fixed" == item.type) {
+				chest1.push(item);
+			} else if ("Chest" == item.epart && "free" == item.type) {
+				chest2.push(item);
+			} else if ("Back" == item.epart && "fixed" == item.type) {
+				back1.push(item);
+			} else if ("Back" == item.epart && "free" == item.type) {
+				back2.push(item);
+			} else if ("Waist" == item.epart && "fixed" == item.type) {
+				waist1.push(item);
+			} else if ("Waist" == item.epart && "free" == item.type) {
+				waist2.push(item);
+			} else if ("Upper Arms" == item.epart && "fixed" == item.type) {
+				upperarm1.push(item);
+			} else if ("Upper Arms" == item.epart && "free" == item.type) {
+				upperarm2.push(item);
+			} else if ("Forme Arms" == item.epart && "fixed" == item.type) {
+				formearm1.push(item);
+			} else if ("Forme Arms" == item.epart && "free" == item.type) {
+				formearm2.push(item);
+			} else if ("Thighs" == item.epart && "fixed" == item.type) {
+				thigh1.push(item);
+			} else if ("Thighs" == item.epart && "free" == item.type) {
+				thigh2.push(item);
+			} else if ("Calves" == item.epart && "fixed" == item.type) {
+				calve1.push(item);
+			} else if ("Calves" == item.epart && "free" == item.type) {
+				calve2.push(item);
+			} else if ("Abs" == item.epart && "fixed" == item.type) {
+				abs1.push(item);
+			} else if ("Abs" == item.epart && "free" == item.type) {
+				abs2.push(item);
+			}
+	});
+
+	var addFunc = function (itemlist, listId) {
+		var html = '';
+		$.each(itemlist, function(index, item) {
+				html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
+				'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
+				item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
+				'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>'
+				});
+		$("#" + listId).html(html);
+		$("#tit-" + listId).on("click", function(e) {
+				$(".dtlitms").attr("style", "display:none");
+				$("#" + listId).attr("style", "display:block");
+				});
+	};
+
+	addFunc(shoulder1, "shoulder1");
+	addFunc(chest1   , "chest1");
+	addFunc(back1    , "back1");
+	addFunc(waist1   , "waist1");
+	addFunc(upperarm1, "upperarm1");
+	addFunc(formearm1, "formearm1");
+	addFunc(thigh1   , "thigh1");
+	addFunc(calve1   , "calve1");
+	addFunc(abs1     , "abs1");
+	addFunc(shoulder2, "shoulder2");
+	addFunc(chest2   , "chest2");
+	addFunc(back2    , "back2");
+	addFunc(waist2   , "waist2");
+	addFunc(upperarm2, "upperarm2");
+	addFunc(formearm2, "formearm2");
+	addFunc(thigh2   , "thigh2");
+	addFunc(calve2   , "calve2");
+	addFunc(abs2     , "abs2");
+
+	$(".go-detail").each(function (idx, item) {
+			$(item).on("click", function (e) {
+				jadeUtils.url.goUrl(workoutApp.appPath + 
+					"/page/workout/strengthWorkout/details/" + $(this).attr("item"));
+				});
+			});
+};
+
+
+workoutApp.workoutRec.showAeroboicItems = function () {
+	var html = '';
+	$.each(workoutApp.workout.AerobicItems, function(index, item) {
+		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
+			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
+		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
+		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
+	});
+	$("#workoutinfo").html(html);
+
+	$(".go-detail").each(function (idx, item) {
+			$(item).on("click", function (e) {
+				jadeUtils.url.goUrl(workoutApp.appPath + 
+					"/page/workout/aerobicWorkout/details/" + $(this).attr("item"));
+				});
+			});
+};
+
+
 
 workoutApp.workoutRec.recordStrengthRec = function (
 		username, password, workoutId, weight, repeat, successCallback) 

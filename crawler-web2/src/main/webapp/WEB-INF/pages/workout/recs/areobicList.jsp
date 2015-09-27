@@ -27,24 +27,6 @@
 	</ul>
 </body>
 <script>
-workoutApp.workoutRec.showAeroboicItems = function () {
-	var html = '';
-	$.each(workoutApp.workout.AerobicItems, function(index, item) {
-		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
-			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
-		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>'
-	});
-	$("#workoutinfo").html(html);
-
-	$(".go-detail").each(function (idx, item) {
-			$(item).on("click", function (e) {
-				jadeUtils.url.goUrl(workoutApp.appPath + 
-					"/page/workout/aerobicWorkout/details/" + $(this).attr("item"));
-				});
-			});
-};
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 		workoutApp.workoutRec.showAeroboicItems();

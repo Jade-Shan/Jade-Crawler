@@ -24,27 +24,91 @@
 		<em id="lb-username" class="lb-ipt">username</em>
 		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
 	</div>
-	<ul id="workoutinfo"></ul>
+	<div class="workoutrecs">
+		<dl>
+			<dt>肩膀</dt>
+			<dd>
+			<dl>
+				<dt id="tit-shoulder1">器械</dt><dd><ul id="shoulder1" class="dtlitms"></ul></dd>
+				<dt id="tit-shoulder2">重量</dt><dd><ul id="shoulder2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>胸部</dt>
+			<dd>
+			<dl>
+				<dt id="tit-chest1">器械</dt><dd><ul id="chest1" class="dtlitms"></ul></dd>
+				<dt id="tit-chest2">重量</dt><dd><ul id="chest2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>背部</dt>
+			<dd>
+			<dl>
+				<dt id="tit-back1">器械</dt><dd><ul id="back1" class="dtlitms"></ul></dd>
+				<dt id="tit-back2">重量</dt><dd><ul id="back2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>腰部</dt>
+			<dd>
+			<dl>
+				<dt id="tit-waist1">器械</dt><dd><ul id="waist1" class="dtlitms"></ul></dd>
+				<dt id="tit-waist2">重量</dt><dd><ul id="waist2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>大臂</dt>
+			<dd>
+			<dl>
+				<dt id="tit-upperarm1">器械</dt><dd><ul id="upperarm1" class="dtlitms"></ul></dd>
+				<dt id="tit-upperarm2">重量</dt><dd><ul id="upperarm2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>小臂</dt>
+			<dd>
+			<dl>
+				<dt id="tit-formearm1">器械</dt><dd><ul id="formearm1" class="dtlitms"></ul></dd>
+				<dt id="tit-formearm2">重量</dt><dd><ul id="formearm2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>大腿</dt>
+			<dd>
+			<dl>
+				<dt id="tit-thigh1">器械</dt><dd><ul id="thigh1" class="dtlitms"></ul></dd>
+				<dt id="tit-thigh2">重量</dt><dd><ul id="thigh2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>小腿</dt>
+			<dd>
+			<dl>
+				<dt id="tit-calve1">器械</dt><dd><ul id="calve1" class="dtlitms"></ul></dd>
+				<dt id="tit-calve2">重量</dt><dd><ul id="calve2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt>腹部</dt>
+			<dd>
+			<dl>
+				<dt id="tit-abs1">器械</dt><dd><ul id="abs1" class="dtlitms"></ul></dd>
+				<dt id="tit-abs2">重量</dt><dd><ul id="abs2" class="dtlitms"></ul></dd>
+			</dl>
+			</dd>
+		</dl>
+	</div>
 </body>
 <script>
-workoutApp.workoutRec.showStrengthItems = function () {
-	var html = '';
-	$.each(workoutApp.workout.StrengthItems, function(index, item) {
-		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
-			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
-		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>'
-	});
-	$("#workoutinfo").html(html);
-
-	$(".go-detail").each(function (idx, item) {
-			$(item).on("click", function (e) {
-				jadeUtils.url.goUrl(workoutApp.appPath + 
-					"/page/workout/strengthWorkout/details/" + $(this).attr("item"));
-				});
-			});
-};
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 		workoutApp.workoutRec.showStrengthItems();
