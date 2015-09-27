@@ -472,7 +472,7 @@ workoutApp.workout.StrengthItems = [
 		pim: ["9-1", "9-2"], min: [], ext: []},
 
 	{part: "小腿", epart: "Calves", type: "fixed", id: "sth-8-1", name: "站姿提踵", ename: "", 
-		pim: ["b-6-1", "b-6-2", "b-7-1"], min: [], ext: []},
+		pim: ["b-6-1", "b-6-2", "b-7-1", "b-7-2"], min: [], ext: []},
 
 	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-1", name: "卷腹", ename: "", 
 		pim: ["7-1"], min: [], ext: []},
@@ -600,7 +600,7 @@ workoutApp.workoutRec.showStrengthItems = function () {
 				html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 				'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 				item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-				'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>'
+				'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
 				});
 		$("#" + listId).html(html);
 		$("#tit-" + listId).on("click", function(e) {
