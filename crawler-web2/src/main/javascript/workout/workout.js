@@ -123,11 +123,12 @@ workoutApp.workout.StrengthItems = [
 		pim: ["3-6", "2-3"], min: ["5-2-1", "5-2-2"], ext: []},
 	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-14", name: "器械上拉", ename: "", 
 		pim: ["3-6", "2-3"], min: [], ext: []},
-	{part: "背部", epart: "Back", type: "free", id: "sth-3-15", name: "硬拉", ename: "", 
+
+	{part: "腰部", epart: "Waist", type: "free", id: "sth-4-1", name: "硬拉", ename: "", 
 		pim: ["3-6", "2-3", "8-1", "9-1", "9-2"], min: [], ext: []},
-	{part: "背部", epart: "Back", type: "free", id: "sth-3-16", name: "负重体前屈", ename: "", 
+	{part: "腰部", epart: "Waist", type: "free", id: "sth-4-2", name: "负重体前屈", ename: "", 
 		pim: ["8-1"], min: [], ext: []},
-	{part: "背部", epart: "Back", type: "free", id: "sth-3-16", name: "俯卧挺身", ename: "", 
+	{part: "腰部", epart: "Waist", type: "free", id: "sth-4-3", name: "俯卧挺身", ename: "", 
 		pim: ["8-1"], min: [], ext: []},
 
 	{part: "大臂", epart: "Upper Arms", type: "fixed", id: "sth-5-1", name: "器械弯举", ename: "Arm Curl", 
@@ -179,7 +180,6 @@ workoutApp.workout.StrengthItems = [
 	{part: "大臂", epart: "Upper Arms", type: "free", id: "sth-5-24", name: "固定杠屈臂撑", ename: "", 
 		pim: ["5-5-1", "5-5-2","5-5-3"], min: [], ext: []},
 
-
 	{part: "前臂", epart: "Forme Arms", type: "free", id: "sth-6-1", name: "杠铃腕弯举", ename: "", 
 		pim: ["6-2"], min: [], ext: []},
 	{part: "前臂", epart: "Forme Arms", type: "free", id: "sth-6-2", name: "单臂哑铃腕弯举", ename: "", 
@@ -192,49 +192,79 @@ workoutApp.workout.StrengthItems = [
 		pim: ["6-1"], min: [], ext: []},
 	{part: "前臂", epart: "Forme Arms", type: "free", id: "sth-6-6", name: "反握杠铃弯举", ename: "", 
 		pim: ["5-2-1", "5-2-2", "6-1", "6-3"], min: [], ext: []},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	{part: "腰部", epart: "Waist", type: "fixed", id: "sth-4-1", name: "", ename: "Lower Back", 
-		pim: ["8-1"], min: [], ext: []},
-
+	{part: "前臂", epart: "Forme Arms", type: "free", id: "sth-6-7", name: "反握斜托杠铃弯举", ename: "", 
+		pim: ["5-2-1", "5-2-2", "6-1", "6-3"], min: [], ext: []},
+	{part: "前臂", epart: "Forme Arms", type: "fixed", id: "sth-6-7", name: "反握器械弯举", ename: "", 
+		pim: ["5-2-1", "5-2-2", "6-1", "6-3"], min: [], ext: []},
+	{part: "前臂", epart: "Forme Arms", type: "fixed", id: "sth-6-7", name: "单臂反握拉力器弯举", ename: "", 
+		pim: ["5-2-1", "5-2-2", "6-1", "6-3"], min: [], ext: []},
 
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-1", name: "", ename: "Leg Press", 
-		pim: ["a-6", "a-7", "a-8", "9-1"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
+		pim: ["a-6", "a-7", "a-8", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-2", name: "", ename: "Adductor", 
 		pim: ["a-1", "a-5"], min: [], ext: []},
-	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-3", name: "", ename: "Leg Extension", 
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-3", name: "腿屈伸", ename: "Leg Extension", 
 		pim: ["a-6", "a-7", "a-8"], min: [], ext: []},
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-4", name: "", ename: "Abductor", 
-		pim: ["9-1"], min: [], ext: []}
+		pim: ["9-1"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "free", id: "sth-7-5", name: "深蹲", ename: "Leg Press", 
+		pim: ["a-6", "a-7", "a-8", "8-1", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-6", name: "器械深蹲", ename: "Leg Press", 
+		pim: ["a-6", "a-7", "a-8", "8-1", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-7", name: "腿举", ename: "", 
+		pim: ["a-6", "a-7", "a-8", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-8", name: "弓步", ename: "", 
+		pim: ["a-6", "a-7", "a-8", "9-1", "9-2"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-9", name: "腿弯举", ename: "", 
+		pim: ["a-9-2", "a-9-3", "a-9-4"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-10", name: "站姿腿弯举", ename: "", 
+		pim: ["a-9-2", "a-9-3", "a-9-4"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "free", id: "sth-7-11", name: "直腿硬拉", ename: "", 
+		pim: ["a-9-2", "a-9-3", "a-9-4", "8-1", "9-1", "9-2"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "free", id: "sth-7-12", name: "跪姿后踢腿", ename: "", 
+		pim: ["9-1", "9-2"], min: [], ext: []},
+	{part: "大腿", epart: "Thighs", type: "free", id: "sth-7-13", name: "背后剪腿", ename: "", 
+		pim: ["9-1", "9-2"], min: [], ext: []},
 
-	// {part: "肩部", epart: "Shoulder", type: "fixed", id: "sth-1-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "胸部", epart: "Chest", type: "fixed", id: "sth-2-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "背部", epart: "Back", type: "fixed", id: "sth-3-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "腰部", epart: "Waist", type: "fixed", id: "sth-4-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "大臂", epart: "Upper Arms", type: "fixed", id: "sth-5-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "前臂", epart: "Forearms", type: "fixed", id: "sth-6-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "前臂", epart: "Forearms", type: "fixed", id: "sth-6-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "小腿", epart: "Calves", type: "fixed", id: "sth-8-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "小腿", epart: "Calves", type: "fixed", id: "sth-8-", name: "", ename: "", pim: [], min: [], ext: []},
-	// {part: "腹部", epart: "Abs", type: "fixed", id: "sth-9-", name: "", ename: "", pim: [], min: [], ext: []}
-	// {part: "腹部", epart: "Abs", type: "fixed", id: "sth-9-", name: "", ename: "", pim: [], min: [], ext: []}
+	{part: "小腿", epart: "Calves", type: "fixed", id: "sth-8-1", name: "站姿提踵", ename: "", 
+		pim: ["b-6-1", "b-6-2", "b-7-1"], min: [], ext: []},
 
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-1", name: "卷腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-2", name: "转体卷腹", ename: "", 
+		pim: ["7-1", "7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-3", name: "反向卷腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-4", name: "悬垂卷腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-4", name: "悬垂抬腿", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-4", name: "悬垂转体抬腿", ename: "", 
+		pim: ["7-1", "7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "fixed", id: "sth-9-5", name: "器械卷腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "fixed", id: "sth-9-6", name: "拉力器卷腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-7", name: "坐姿屈膝上举", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-8", name: "坐姿转体", ename: "", 
+		pim: ["7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-9", name: "俯身转体", ename: "", 
+		pim: ["7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-10", name: "仰卧抬腿", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-11", name: "仰卧屈膝抬腿", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-12", name: "上斜屈膝抬腿", ename: "", 
+		pim: ["7-1"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-12", name: "侧卧侧抬腿", ename: "", 
+		pim: ["7-4", "7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-12", name: "侧卧屈膝侧抬腿", ename: "", 
+		pim: ["7-4", "7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-12", name: "侧卧前踢腿", ename: "", 
+		pim: ["7-4", "7-5"], min: [], ext: []},
+	{part: "腹部", epart: "Abs", type: "free", id: "sth-9-12", name: "完全吸腹", ename: "", 
+		pim: ["7-1"], min: [], ext: []}
 ];
 
 /**
