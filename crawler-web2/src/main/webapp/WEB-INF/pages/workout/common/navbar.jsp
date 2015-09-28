@@ -25,7 +25,7 @@
 			<ul id="div-userinfo" class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					Signed in as <b id="lb-username">Thomas</b> <b class="caret"></b>
+					Signed in as <b id="lb-username"></b> <b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a href="#">testing</a></li>
