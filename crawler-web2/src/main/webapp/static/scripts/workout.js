@@ -347,9 +347,9 @@ workoutApp.workout.StrengthItems = [
 
 	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-1", name: "器械划船", ename: "Row", 
 		pim: ["3-1-1", "3-1-2", "4-3", "3-6", "5-2-1", "5-2-2"], min: [], ext: []},
-	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-2", name: "器械低位划船", ename: "Low Row", 
+	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-3", name: "器械低位划船", ename: "Low Row", 
 		pim: ["3-6"], min: ["3-1-1", "3-1-2", "5-2-1", "5-2-2"], ext: []},
-	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-3", name: "宽握高位下拉", ename: "", 
+	{part: "背部", epart: "Back", type: "fixed", id: "sth-3-2", name: "宽握高位下拉", ename: "", 
 		pim: ["3-6", "5-2-1", "5-2-2"], min: [], ext: []},
 	{part: "背部", epart: "Back", type: "free", id: "sth-3-4", name: "宽握颈后引体向上", ename: "", 
 		pim: ["3-6", "5-2-1", "5-2-2"], min: [], ext: []},
