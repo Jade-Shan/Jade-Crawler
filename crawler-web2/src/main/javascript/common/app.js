@@ -34,6 +34,8 @@ workoutApp.userAuth.checkLogin = function (
 };
 
 workoutApp.userAuth.barinit = function () {
+		//	$('#mu-workoutrec').hide();
+
 	var login = function (username, password) {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
 			jadeUtils.cookieOperator('username', username);
@@ -42,9 +44,10 @@ workoutApp.userAuth.barinit = function () {
 			$('#div-userlogin').hide();
 			$('#lb-username').html(username);
 			$('#div-userinfo').show();
+			$('#mu-workoutrec').show();
 		}, function (data) {
 			console.debug(data.reason);
-			$("#logindiv").addClass("has-error");
+			$("#div-userlogin").addClass("has-error");
 		}, function (data) {
 			alert("Ajax Error");
 		});
@@ -56,6 +59,7 @@ workoutApp.userAuth.barinit = function () {
 	});
 
 	$('#logout').on('click', function(event) {
+		$('#mu-workoutrec').hide();
 		$('#div-userinfo').hide();
 		$('#div-userlogin').show();
 	});
