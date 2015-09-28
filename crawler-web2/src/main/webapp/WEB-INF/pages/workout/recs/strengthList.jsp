@@ -15,92 +15,215 @@
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
+
 	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+
 	<div class="container">
-		<div class="workoutrecs">
-			<dl>
-				<dt>肩膀</dt>
-				<dd>
-				<dl>
-					<dt id="tit-shoulder1">器械</dt><dd><ul id="shoulder1" class="dtlitms"></ul></dd>
-					<dt id="tit-shoulder2">重量</dt><dd><ul id="shoulder2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>胸部</dt>
-				<dd>
-				<dl>
-					<dt id="tit-chest1">器械</dt><dd><ul id="chest1" class="dtlitms"></ul></dd>
-					<dt id="tit-chest2">重量</dt><dd><ul id="chest2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>背部</dt>
-				<dd>
-				<dl>
-					<dt id="tit-back1">器械</dt><dd><ul id="back1" class="dtlitms"></ul></dd>
-					<dt id="tit-back2">重量</dt><dd><ul id="back2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>腰部</dt>
-				<dd>
-				<dl>
-					<dt id="tit-waist1">器械</dt><dd><ul id="waist1" class="dtlitms"></ul></dd>
-					<dt id="tit-waist2">重量</dt><dd><ul id="waist2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>大臂</dt>
-				<dd>
-				<dl>
-					<dt id="tit-upperarm1">器械</dt><dd><ul id="upperarm1" class="dtlitms"></ul></dd>
-					<dt id="tit-upperarm2">重量</dt><dd><ul id="upperarm2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>小臂</dt>
-				<dd>
-				<dl>
-					<dt id="tit-formearm1">器械</dt><dd><ul id="formearm1" class="dtlitms"></ul></dd>
-					<dt id="tit-formearm2">重量</dt><dd><ul id="formearm2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>大腿</dt>
-				<dd>
-				<dl>
-					<dt id="tit-thigh1">器械</dt><dd><ul id="thigh1" class="dtlitms"></ul></dd>
-					<dt id="tit-thigh2">重量</dt><dd><ul id="thigh2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>小腿</dt>
-				<dd>
-				<dl>
-					<dt id="tit-calve1">器械</dt><dd><ul id="calve1" class="dtlitms"></ul></dd>
-					<dt id="tit-calve2">重量</dt><dd><ul id="calve2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
-			<dl>
-				<dt>腹部</dt>
-				<dd>
-				<dl>
-					<dt id="tit-abs1">器械</dt><dd><ul id="abs1" class="dtlitms"></ul></dd>
-					<dt id="tit-abs2">重量</dt><dd><ul id="abs2" class="dtlitms"></ul></dd>
-				</dl>
-				</dd>
-			</dl>
+		<div class="panel-group" id="accordion">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse1">肩膀 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse in">
+					<div id="shoulder1"  class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse2">肩膀 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse">
+					<div id="shoulder2" class="panel-body"></div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse3">胸部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse">
+					<div id="chest1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse4">胸部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse">
+					<div id="chest2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse5">背部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse">
+					<div id="back1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse6">背部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse">
+					<div id="back2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse7">腰部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse">
+					<div id="waist1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse8">腰部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse">
+					<div id="waist2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse9">大臂 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse">
+					<div id="upperarm1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse10">大臂 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse">
+					<div id="upperarm2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse11">小臂 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse">
+					<div id="formearm1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse12">小臂 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse">
+					<div id="formearm2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse13">大腿 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse">
+					<div id="thigh1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse14">大腿 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse">
+					<div id="thigh2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse15">小腿 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse">
+					<div id="calve1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse16">小腿 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse">
+					<div id="calve2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse17">腹部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse">
+					<div id="abs1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse18">腹部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse">
+					<div id="abs2" class="panel-body"></div>
+				</div>
+			</div>
+
 		</div>
 	</div>
+
 </body>
 <script>
 $(document).ready(function() {

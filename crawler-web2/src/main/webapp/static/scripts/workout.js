@@ -451,6 +451,8 @@ workoutApp.workout.StrengthItems = [
 
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-1", name: "", ename: "Leg Press", 
 		pim: ["a-6", "a-7", "a-8", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
+	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-14", name: "", ename: "Leg Press", 
+		pim: ["a-6", "a-7", "a-8", "9-1", "9-2"], min: ["a-9-2", "a-9-3", "a-1", "a-5"], ext: []},
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-2", name: "", ename: "Adductor", 
 		pim: ["a-1", "a-5"], min: [], ext: []},
 	{part: "大腿", epart: "Thighs", type: "fixed", id: "sth-7-3", name: "腿屈伸", ename: "Leg Extension", 
@@ -608,10 +610,10 @@ workoutApp.workoutRec.showStrengthItems = function () {
 				'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 				});
 		$("#" + listId).html(html);
-		$("#tit-" + listId).on("click", function(e) {
-				$(".dtlitms").attr("style", "display:none");
-				$("#" + listId).attr("style", "display:block");
-				});
+		// $("#tit-" + listId).on("click", function(e) {
+		// 		$(".dtlitms").attr("style", "display:none");
+		// 		$("#" + listId).attr("style", "display:block");
+		// 		});
 	};
 
 	addFunc(shoulder1, "shoulder1");
