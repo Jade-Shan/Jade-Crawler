@@ -352,14 +352,14 @@ workoutApp.workoutRec.showStrengthItems = function () {
 	});
 
 	var addFunc = function (itemlist, listId) {
-		var html = '';
+		var html = '<ul class="list-unstyled">';
 		$.each(itemlist, function(index, item) {
 				html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 				'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 				item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
 				'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 				});
-		$("#" + listId).html(html);
+		$("#" + listId).html(html + '</ul>');
 		// $("#tit-" + listId).on("click", function(e) {
 		// 		$(".dtlitms").attr("style", "display:none");
 		// 		$("#" + listId).attr("style", "display:block");
@@ -517,31 +517,81 @@ workoutApp.workoutRec.findStrengthRec = function (
 	}
 };
 
-workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
-	var html = "";
-	$.each(data.result, function (idx, item) {
-		var t = new Date();
-		t.setTime(item.logTime);
-
-		html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-		'<ul><li>Time: ' + item.time + 
-		'</li><li>Distance: ' + item.distance + 
-		'</li><li>Caliories: ' + item.calories + '</li></ul></li>';
-	});
-	$('#historyRec').html(html);
-};
-
-
 workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
-	var html = "";
+	var maxIndex = 0;
+	var recMap = new jadeUtils.dataStructure.Map();
+
 	$.each(data.result, function (idx, item) {
+		if (idx > maxIndex) {maxIndex = idx;}
 		console.debug(item);
 		var t = new Date();
 		t.setTime(item.logTime);
-		html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-		'<ul><li>Weight: ' + item.weight + 
-		'</li><li>Repeat: ' + item.repeat + 
-		'</li></ul></li>';
+		var timeString = jadeUtils.time.getLocalTimeStr(t);
+		var key = timeString.split(" ")[0];
+		var recArr = [];
+		if (recMap.containsKey(key)) { recArr = recMap.get(key); } 
+		else { recMap.put(key, recArr); }
+		recArr.push(item);
 	});
-	$('#historyRec').html(html);
+
+	var titles = "";
+	for (var i = 0; i < recMap.size(); i++) 
+	{ titles = titles + "<th>" + recMap.element(i).key + "</th>"; }
+	$('#recTitles').html(titles);
+
+	var recs = "";
+	for (var l = 0; l <= maxIndex; l++) {
+		recs = recs + '<tr>';
+		for (var i = 0; i < recMap.size(); i++) {
+			recs = recs + '<td>';
+			var eArr = recMap.element(i).value;
+			if (l < eArr.length) 
+			{ var e = eArr[l]; recs = recs + e.weight + " kg * " + e.repeat; }
+			recs = recs + '</td>';
+		}
+		recs = recs + '</tr>';
+	}
+	$('#recs').html(recs);
 };
+
+workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
+	var maxIndex = 0;
+	var recMap = new jadeUtils.dataStructure.Map();
+
+	$.each(data.result, function (idx, item) {
+		if (idx > maxIndex) {maxIndex = idx;}
+		console.debug(item);
+		var t = new Date();
+		t.setTime(item.logTime);
+		var timeString = jadeUtils.time.getLocalTimeStr(t);
+		var key = timeString.split(" ")[0];
+		var recArr = [];
+		if (recMap.containsKey(key)) { recArr = recMap.get(key); } 
+		else { recMap.put(key, recArr); }
+		recArr.push(item);
+	});
+
+	var titles = "";
+	for (var i = 0; i < recMap.size(); i++) 
+	{ titles = titles + "<th>" + recMap.element(i).key + "</th>"; }
+	$('#recTitles').html(titles);
+
+	var recs = "";
+	for (var l = 0; l <= maxIndex; l++) {
+		recs = recs + '<tr>';
+		for (var i = 0; i < recMap.size(); i++) {
+			recs = recs + '<td>';
+			var eArr = recMap.element(i).value;
+			if (l < eArr.length) { 
+				var e = eArr[l]; 
+				recs = recs + e.time + " mins " + e.distance + " km " + e.calories +" cals" ;
+			}
+			recs = recs + '</td>';
+		}
+		recs = recs + '</tr>';
+	}
+	$('#recs').html(recs);
+};
+
+
+

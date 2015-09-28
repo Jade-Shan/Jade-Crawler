@@ -17,7 +17,7 @@
 <body>
 	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
 	<div class="container">
-		<ul id="workoutinfo">
+		<ul id="workoutinfo" class="list-unstyled">
 			<li id="w-img"></li>
 			<li>
 				<em class="lb-ipt">Name：</em>
@@ -37,7 +37,13 @@
 				<input type="button" id="record" value="record" class="sbmt-normal">
 			</li>
 			<li>
-				<ul id="historyRec" class="lb-ipt"></ul>
+				<table class="table table-striped">
+					<caption>历史记录</caption>
+					<thead>
+						<tr id="recTitles"></tr>
+					</thead>
+					<tbody id="recs"></tbody>
+				</table>
 			</li>
 			<li>
 				<table>

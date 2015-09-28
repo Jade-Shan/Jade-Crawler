@@ -130,7 +130,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				logger.debug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) { 
-							var oRecs = recs.sortWith(_.logTime > _.logTime)
+							var oRecs = recs.sortWith(_.logTime < _.logTime)
 							for (i <- 0 until oRecs.size) yield oRecs(i) 
 							} else Nil).map(
 						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("time" -> r.time) ~ 
@@ -158,7 +158,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				logger.debug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) {
-							var oRecs = recs.sortWith(_.logTime > _.logTime)
+							var oRecs = recs.sortWith(_.logTime < _.logTime)
 							for (i <- 0 until oRecs.size) yield oRecs(i) 
 							} else Nil).map(
 						r => ("user" -> r.user) ~ ("item" -> r.item) ~ ("weight" -> r.weight) ~ 
