@@ -38,12 +38,13 @@ workoutApp.userAuth.barinit = function () {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
 			jadeUtils.cookieOperator('username', username);
 			jadeUtils.cookieOperator('password', password);
-			$('#logindiv').hide();
+			$("#div-userlogin").removeClass("has-error");
+			$('#div-userlogin').hide();
 			$('#lb-username').html(username);
-			$('#userinfodiv').show();
+			$('#div-userinfo').show();
 		}, function (data) {
 			console.debug(data.reason);
-			alert(data.reason);
+			$("#logindiv").addClass("has-error");
 		}, function (data) {
 			alert("Ajax Error");
 		});
@@ -55,8 +56,8 @@ workoutApp.userAuth.barinit = function () {
 	});
 
 	$('#logout').on('click', function(event) {
-		$('#userinfodiv').hide();
-		$('#logindiv').show();
+		$('#div-userinfo').hide();
+		$('#div-userlogin').show();
 	});
 
 	var username = jadeUtils.cookieOperator('username');
@@ -600,7 +601,7 @@ workoutApp.workoutRec.showStrengthItems = function () {
 				html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 				'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 				item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-				'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
+				'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 				});
 		$("#" + listId).html(html);
 		$("#tit-" + listId).on("click", function(e) {
@@ -643,7 +644,7 @@ workoutApp.workoutRec.showAeroboicItems = function () {
 		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
+		 	'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 	});
 	$("#workoutinfo").html(html);
 

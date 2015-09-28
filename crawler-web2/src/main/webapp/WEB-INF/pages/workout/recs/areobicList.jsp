@@ -5,26 +5,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>有氧训练</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
+	<div class="container">
+		<ul id="workoutinfo"></ul>
 	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<ul id="workoutinfo">
-	</ul>
 </body>
 <script>
 $(document).ready(function() {

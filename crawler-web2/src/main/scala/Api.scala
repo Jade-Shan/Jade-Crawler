@@ -28,6 +28,7 @@ class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 		request.setAttribute("cdn3rd", cdn3rd)
 		request.setAttribute("cdnjadeutils", cdnjadeutils)
 		request.setAttribute("cdnworkout", cdnworkout)
+		request.setAttribute("appbasepath", appbasepath)
 		super.doLogic(method, request, response)
 	}
 }

@@ -5,60 +5,54 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>记录力量运动</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+	<div class="container">
+		<ul id="workoutinfo">
+			<li id="w-img"></li>
+			<li>
+				<em class="lb-ipt">Name：</em>
+				<em class="lb-ipt" id="itm-name"></em>
+				<em class="lb-ipt" id="itm-ename"></em>
+				<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
+			</li>
+			<li>
+				<em class="lb-ipt">Weight：</em>
+				<input type="text" id="weight" name="weight" class="ipt-normal" value="60">
+			</li>
+			<li>
+				<em class="lb-ipt">Repeat：</em>
+				<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
+			</li>
+			<li>
+				<input type="button" id="record" value="record" class="sbmt-normal">
+			</li>
+			<li>
+				<ul id="historyRec" class="lb-ipt"></ul>
+			</li>
+			<li>
+				<table>
+					<tr>
+						<td>
+					<div id="muscle-front-data" style="width: 210; display: block"></div>
+						</td>
+						<td>
+					<div id="muscle-back-data"  style="width: 210; display: block"></div>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
 	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<ul id="workoutinfo">
-		<li id="w-img"></li>
-		<li>
-			<em class="lb-ipt">Name：</em>
-			<em class="lb-ipt" id="itm-name"></em>
-			<em class="lb-ipt" id="itm-ename"></em>
-			<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
-		</li>
-		<li>
-			<em class="lb-ipt">Weight：</em>
-			<input type="text" id="weight" name="weight" class="ipt-normal" value="60">
-		</li>
-		<li>
-			<em class="lb-ipt">Repeat：</em>
-			<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
-		</li>
-		<li>
-			<input type="button" id="record" value="record" class="sbmt-normal">
-		</li>
-		<li>
-			<ul id="historyRec" class="lb-ipt"></ul>
-		</li>
-		<li>
-			<table>
-				<tr>
-					<td>
-				<div id="muscle-front-data" style="width: 210; display: block"></div>
-					</td>
-					<td>
-				<div id="muscle-back-data"  style="width: 210; display: block"></div>
-					</td>
-				</tr>
-			</table>
-		</li>
-	</ul>
 </body>
 <script>
 $(document).ready(function() {

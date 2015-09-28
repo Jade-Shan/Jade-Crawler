@@ -355,7 +355,7 @@ workoutApp.workoutRec.showStrengthItems = function () {
 				html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 				'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 				item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-				'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
+				'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 				});
 		$("#" + listId).html(html);
 		$("#tit-" + listId).on("click", function(e) {
@@ -398,7 +398,7 @@ workoutApp.workoutRec.showAeroboicItems = function () {
 		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
 			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
 		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>';
+		 	'<input type="button" item="' + item.id + '" value="record" class="btn btn-default go-detail" /></em></li>';
 	});
 	$("#workoutinfo").html(html);
 

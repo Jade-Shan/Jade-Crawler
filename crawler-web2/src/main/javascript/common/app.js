@@ -38,12 +38,13 @@ workoutApp.userAuth.barinit = function () {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
 			jadeUtils.cookieOperator('username', username);
 			jadeUtils.cookieOperator('password', password);
-			$('#logindiv').hide();
+			$("#div-userlogin").removeClass("has-error");
+			$('#div-userlogin').hide();
 			$('#lb-username').html(username);
-			$('#userinfodiv').show();
+			$('#div-userinfo').show();
 		}, function (data) {
 			console.debug(data.reason);
-			alert(data.reason);
+			$("#logindiv").addClass("has-error");
 		}, function (data) {
 			alert("Ajax Error");
 		});
@@ -55,8 +56,8 @@ workoutApp.userAuth.barinit = function () {
 	});
 
 	$('#logout').on('click', function(event) {
-		$('#userinfodiv').hide();
-		$('#logindiv').show();
+		$('#div-userinfo').hide();
+		$('#div-userlogin').show();
 	});
 
 	var username = jadeUtils.cookieOperator('username');

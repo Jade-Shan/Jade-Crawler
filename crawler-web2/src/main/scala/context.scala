@@ -36,5 +36,6 @@ with Logging {
 	val cdn3rd = getProperty("cdn.3rd")
 	val cdnjadeutils = getProperty("cdn.jadeutils")
 	val cdnworkout = getProperty("cdn.workout")
+	val appbasepath = getProperty("app.basepath")
 
 }

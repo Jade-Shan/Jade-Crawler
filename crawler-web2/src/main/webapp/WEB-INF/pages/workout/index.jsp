@@ -5,40 +5,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>训练记录</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
-	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<div>
-		<input type="button" id="strength" value="Strength Workout" class="sbmt-normal">
-		<input type="button" id="aerobic" value="Aerobic Workout" class="sbmt-normal">
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+	<div class="container">
 	</div>
 </body>
 <script>
-$(document).ready(function() {
-		workoutApp.userAuth.barinit();
-		$("#strength").on("click", function (e) {
-			jadeUtils.url.goUrl(workoutApp.appPath + 
-				"/page/workout/strengthWorkout/list");
-			});
-		$("#aerobic").on("click", function (e) {
-			jadeUtils.url.goUrl(workoutApp.appPath + 
-				"/page/workout/aerobicWorkout/list");
-			});
-});
+$(document).ready(function() { workoutApp.userAuth.barinit(); });
 </script>
 </html>
