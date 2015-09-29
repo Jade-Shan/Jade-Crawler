@@ -542,7 +542,7 @@ workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
 	var recs = "";
 	for (var l = 0; l <= maxIndex; l++) {
 		recs = recs + '<tr>';
-		for (var i = 0; i < recMap.size(); i++) {
+		for (i = 0; i < recMap.size(); i++) {
 			recs = recs + '<td>';
 			var eArr = recMap.element(i).value;
 			if (l < eArr.length) 
@@ -579,7 +579,7 @@ workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
 	var recs = "";
 	for (var l = 0; l <= maxIndex; l++) {
 		recs = recs + '<tr>';
-		for (var i = 0; i < recMap.size(); i++) {
+		for (i = 0; i < recMap.size(); i++) {
 			recs = recs + '<td>';
 			var eArr = recMap.element(i).value;
 			if (l < eArr.length) { 

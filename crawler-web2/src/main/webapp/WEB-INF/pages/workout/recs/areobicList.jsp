@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
 	<div class="container">
 		<ul id="workoutinfo"></ul>
 	</div>

@@ -34,7 +34,6 @@ workoutApp.userAuth.checkLogin = function (
 };
 
 workoutApp.userAuth.barinit = function () {
-		//	$('#mu-workoutrec').hide();
 
 	var login = function (username, password) {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
