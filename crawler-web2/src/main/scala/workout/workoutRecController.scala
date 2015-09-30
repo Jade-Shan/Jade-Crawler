@@ -79,9 +79,9 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		WorkoutAuthController.auth(info) match {
 			case (true, true, user) => try {
 				val item     = info.params("workoutId")(0)
-				val time     = Integer.parseInt(info.params("time")(0))
-				val distance = (info.params("distance")(0)).toDouble
-				val calories = Integer.parseInt(info.params("calories")(0))
+				val time     = info.params("time")(0).toInt
+				val distance = info.params("distance")(0).toDouble
+				val calories = info.params("calories")(0).toInt
 				val rec = new AerobicRecord(user, item, time, distance, calories, 
 					System.currentTimeMillis)
 				logger.debug(rec.toString)
@@ -102,8 +102,8 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 		WorkoutAuthController.auth(info) match {
 			case (true, true, user) => try {
 				val item    = info.params("workoutId")(0)
-				val weight  = Integer.parseInt(info.params("weight")(0))
-				val repeat  = Integer.parseInt(info.params("repeat")(0))
+				val weight  = info.params("weight")(0).toDouble
+				val repeat  = info.params("repeat")(0).toInt
 				val rec = new StrengthRecord(user, item, weight, repeat, 
 					System.currentTimeMillis)
 				logger.debug(rec.toString)
