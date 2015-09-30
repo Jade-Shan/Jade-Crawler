@@ -518,7 +518,6 @@ workoutApp.workoutRec.findStrengthRec = function (
 };
 
 workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
-	var maxIndex = 0;
 	var recMap = new jadeUtils.dataStructure.Map();
 
 	$.each(data.result, function (idx, item) {
@@ -534,8 +533,13 @@ workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
 		recArr.push(item);
 	});
 
-	var titles = "";
+	var maxIndex = 0;
 	for (var i = 0; i < recMap.size(); i++) 
+	{ if (recMap.element(i).value.length > maxIndex) 
+		{maxIndex = recMap.element(i).value.length;} }
+
+	var titles = "";
+	for (i = 0; i < recMap.size(); i++) 
 	{ titles = titles + "<th>" + recMap.element(i).key + "</th>"; }
 	$('#recTitles').html(titles);
 
@@ -555,11 +559,9 @@ workoutApp.workoutRec.renderStrengthRecDetailPage = function (data) {
 };
 
 workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
-	var maxIndex = 0;
 	var recMap = new jadeUtils.dataStructure.Map();
 
 	$.each(data.result, function (idx, item) {
-		if (idx > maxIndex) {maxIndex = idx;}
 		console.debug(item);
 		var t = new Date();
 		t.setTime(item.logTime);
@@ -571,8 +573,13 @@ workoutApp.workoutRec.renderAerobicRecDetailPage = function (data) {
 		recArr.push(item);
 	});
 
-	var titles = "";
+	var maxIndex = 0;
 	for (var i = 0; i < recMap.size(); i++) 
+	{ if (recMap.element(i).value.length > maxIndex) 
+		{maxIndex = recMap.element(i).value.length;} }
+
+	var titles = "";
+	for (i = 0; i < recMap.size(); i++) 
 	{ titles = titles + "<th>" + recMap.element(i).key + "</th>"; }
 	$('#recTitles').html(titles);
 
