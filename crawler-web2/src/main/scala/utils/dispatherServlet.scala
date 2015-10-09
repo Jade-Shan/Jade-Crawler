@@ -50,16 +50,16 @@ class RequestPattern(method: Method.Method, pattern: String) extends Logging {
 		(Boolean, Map[String, String]) = 
 	{
 		/* draw all param's value in url */
-		logger.debug("match path   :" + path)
-		logger.debug("match pattern:" + valuePtn.toString)
+		logDebug("match path   :" + path)
+		logDebug("match pattern:" + valuePtn.toString)
 		val m = valuePtn.findAllIn(path)
 		val isMatch = if (Method.ANY == this.method || this.method == method) 
 				m.hasNext else false
 		val values = if (isMatch && m.groupCount > 0) {
 			for (i <- 1 to m.groupCount) yield m group i
 		} else Nil
-		logger.debug("param keys : " + keys.toString)
-		logger.debug("param value: " + values.toString)
+		logDebug("param keys : " + keys.toString)
+		logDebug("param value: " + values.toString)
 		/* make param's key-value map */
 		val items = (Map.empty[String, String] /: (keys zip values)) (
 			(a, b) => (a + (b._1 -> b._2)))
@@ -151,13 +151,13 @@ trait DispatherServlet extends HttpServlet with Logging {
 		request: HttpServletRequest, response: HttpServletResponse) 
 	{
 		val path = formalizePath(request)
-		logger.debug("Dispath Req: " + method + " " + path)
+		logDebug("Dispath Req: " + method + " " + path)
 
 		var params = parseParamsFromRequest(request)
-		logger.debug("req params: " + DispatherInfo.paramsToString(params))
+		logDebug("req params: " + DispatherInfo.paramsToString(params))
 
 		var headers = parseParamsFromHeader(request)
-		logger.debug("req headers: " + DispatherInfo.paramsToString(headers))
+		logDebug("req headers: " + DispatherInfo.paramsToString(headers))
 
 		// find a dispather that matchs the http request path
 		// the result matchRec is the format like: (isMatch, logic, params)
@@ -171,14 +171,14 @@ trait DispatherServlet extends HttpServlet with Logging {
 					params = params + (key ->  Array.concat(params(key), Array(value)))
 				else params = params + (key -> Array(value))
 			}
-			logger.debug("all params: " + DispatherInfo.paramsToString(params))
+			logDebug("all params: " + DispatherInfo.paramsToString(params))
 			matchRec._2(new DispatherInfo(method, request, response, params)) match {
 				case Foward(newPath) => {
-					logger.debug("forward: " + newPath)
+					logDebug("forward: " + newPath)
 					request.getRequestDispatcher(newPath).forward(request, response)
 				}
 				case Redirect(newPath) => {
-					logger.debug("redirect: " + request.getContextPath + newPath) 
+					logDebug("redirect: " + request.getContextPath + newPath) 
 					response.sendRedirect(request.getContextPath + newPath)
 				}
 				case json: JValue => {
@@ -186,7 +186,7 @@ trait DispatherServlet extends HttpServlet with Logging {
 					response.setHeader("Content-disposition", "inline")
 					response.getWriter.println(compact(render(json)))
 				}
-				case _ => logger.error("Unknow Dispath result")
+				case _ => logError("Unknow Dispath result")
 			}
 		}
 	}
@@ -232,8 +232,8 @@ trait DispatherServlet extends HttpServlet with Logging {
 	private[this] def formalizePath(request: HttpServletRequest) = {
 		val reqUri = request.getRequestURI
 		val ctxPath = request.getContextPath
-		logger.debug("reqUri: " + reqUri);
-		logger.debug("ctxPath: " + ctxPath);
+		logDebug("reqUri: " + reqUri);
+		logDebug("ctxPath: " + ctxPath);
 		if ((reqUri.indexOf(ctxPath + "/")) == 0) 
 			reqUri.substring(ctxPath.length) else reqUri
 	}
@@ -244,7 +244,7 @@ object DispatherServlet extends Logging {
 	private var dispathers: List[BasicDispather] = Nil
 
 	def addDisPather(dispather: BasicDispather) {
-		logger.debug("add pattern to dispather list: " + dispather.pattern)
+		logDebug("add pattern to dispather list: " + dispather.pattern)
 		dispathers = dispather :: dispathers
 	}
 

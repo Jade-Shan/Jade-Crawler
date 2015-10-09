@@ -39,7 +39,9 @@ extends BaseMongoDao[AerobicRecord](serverList) with Logging
 	def findAerobicRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 
 	List[AerobicRecord] = 
 	{
-		logger.debug("findAerobicRecs: " +  user  + ", " + item   + ", " + logTimeFloor   + ", " + logTimeCeil);
+		logger.debug(
+			"findAerobicRecs, user: {}, item: {}, logTimeFloor: {}, logTimeCeil: {}", 
+			user, item, logTimeFloor, logTimeCeil)
 		val cu = newCondition("user", user)
 		val ct = newCondition("logTime", newCondition(GTE,logTimeFloor).append(
 			AND, newCondition(LT, logTimeCeil))).append(AND, cu)
@@ -61,7 +63,9 @@ extends BaseMongoDao[StrengthRecord](serverList) with Logging
 	def findStrengthRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 
 	List[StrengthRecord] = 
 	{
-		logger.debug("findStrengthRecs: " +  user  + ", " + item   + ", " + logTimeFloor   + ", " + logTimeCeil);
+		logger.debug(
+			"findStrengthRecs, user: {}, item: {}, logTimeFloor: {}, logTimeCeil: {}", 
+			user, item, logTimeFloor, logTimeCeil)
 		val cu = newCondition("user", user)
 		val ct = newCondition("logTime", newCondition(GTE,logTimeFloor).append(
 			AND, newCondition(LT, logTimeCeil))).append(AND, cu)

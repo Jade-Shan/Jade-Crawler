@@ -29,7 +29,7 @@ object IcibaApiController extends BasicController with Logging {
 
 	service("/api/dictionary/addnewword/${word}") {(info) => {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
-		logger.debug("after auth check: {}", auth)
+		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
 			IcibaCrawler.addNewWord(dbHost, dbPort, auth._2, auth._3, 
@@ -42,7 +42,7 @@ object IcibaApiController extends BasicController with Logging {
 
 	service("/api/dictionary/removenewword/${word}") {(info) => {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
-		logger.debug("after auth check: {}", auth)
+		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
 			IcibaCrawler.removeNewWord(dbHost, dbPort, auth._2, auth._3, 
@@ -55,7 +55,7 @@ object IcibaApiController extends BasicController with Logging {
 
 	service("/api/dictionary/newwords/") {(info) => {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
-		logger.debug("after auth check: {}", auth)
+		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
 			val ll = IcibaCrawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)

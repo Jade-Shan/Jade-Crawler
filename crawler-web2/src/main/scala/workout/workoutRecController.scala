@@ -21,18 +21,18 @@ object WorkoutAuthController extends BaseWorkoutController with Logging
 		*/
 	def auth(info: DispatherInfo): (Boolean, Boolean, String) = {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
-		logger.debug("after auth check: {}", auth)
+		logDebug("after auth check: {}", auth)
 		val username = auth._2
 		val password = auth._3
 		if (auth._1 && null != username && username.trim.length > 0) try {
 			val rec = RecDaos.userAuthDao.findAuth(username)
-			logger.debug(rec.toString)
+			logDebug("match user: {}", rec)
 			if (rec.size > 0 && password == rec(0).password) {
 				(true, true, username)
 			} else (true, false, username)
 		} catch {
 			case e: Exception => {
-				logger.error(e.toString)
+				logError(e.toString)
 				(true, false, username)
 			}
 		} else (false, false, username)
@@ -84,13 +84,12 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val calories = info.params("calories")(0).toInt
 				val rec = new AerobicRecord(user, item, time, distance, calories, 
 					System.currentTimeMillis)
-				logger.debug(rec.toString)
+				logDebug("record aero rec: {}", rec)
 				RecDaos.aerobicRecordDao.insert(rec)
 				("status" -> "success"): JValue
 			} catch {
 				case e: Exception => {
-					e.printStackTrace
-					logger.error(e.toString)
+					logError(e.toString)
 					("status" -> "error") ~ ("err" -> e.toString): JValue
 				}
 			}
@@ -106,12 +105,12 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val repeat  = info.params("repeat")(0).toInt
 				val rec = new StrengthRecord(user, item, weight, repeat, 
 					System.currentTimeMillis)
-				logger.debug(rec.toString)
+				logDebug("record strength rec: {}" + rec)
 				RecDaos.strengthRecordDao.insert(rec)
 				("status" -> "success"): JValue
 			} catch {
 				case e: Exception => {
-					logger.error(e.toString)
+					logError(e.toString)
 					("status" -> "error") ~ ("err" -> e.toString): JValue
 				}
 			}
@@ -127,7 +126,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val logTimeCeil  = (info.params("logTimeCeil")(0)).toLong
 
 				val recs = findAerobicRecs(user, item, logTimeFloor, logTimeCeil)
-				logger.debug("query result: {}", recs)
+				logDebug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) { 
 							var oRecs = recs.sortWith(_.logTime < _.logTime)
@@ -139,7 +138,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 					)) : JValue 
 			} catch {
 				case e: Exception => {
-					logger.error(e.toString)
+					logError(e.toString)
 					("status" -> "error") ~ ("err" -> e.toString): JValue
 				}
 			}
@@ -155,7 +154,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val logTimeCeil  = (info.params("logTimeCeil")(0)).toLong
 
 				val recs = findStrengthRecs(user, item, logTimeFloor, logTimeCeil)
-				logger.debug("query result: {}", recs)
+				logDebug("query result: {}", recs)
 				("status" -> "success") ~ ("result" -> 
 					(if (null != recs) {
 							var oRecs = recs.sortWith(_.logTime < _.logTime)
@@ -166,8 +165,7 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 					)) : JValue 
 			} catch {
 				case e: Exception => {
-					logger.error(e.toString)
-					e.printStackTrace
+					logError(e.toString)
 					("status" -> "error") ~ ("err" -> e.toString): JValue
 				}
 			}
