@@ -76,7 +76,7 @@ $(document).ready(function() {
 					jadeUtils.cookieOperator('weight' + workoutId, weight);
 					jadeUtils.cookieOperator('repeat' + workoutId, repeat);
 					workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
-						0, (new Date()).getTime(),
+						(new Date()).getTime() - 604800000, (new Date()).getTime(),
 						workoutApp.workoutRec.renderStrengthRecDetailPage);
 			});
 		});
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		console.debug(timeArea.ceil.getTime());
 
 		workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
-				0, (new Date()).getTime(),
+				(new Date()).getTime() - 604800000, (new Date()).getTime(),
 				workoutApp.workoutRec.renderStrengthRecDetailPage);
 });
 </script>
