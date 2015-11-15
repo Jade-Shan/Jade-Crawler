@@ -72,3 +72,9 @@ workoutApp.userAuth.barinit = function () {
 	login(username, password);
 };
 
+function parseDate(str) {
+	var d = new Date();
+	d.setFullYear( str.substring(0,4) - 0, str.substring(5,7) - 1, 
+			str.substring(8,10) - 0);
+	return d;
+}

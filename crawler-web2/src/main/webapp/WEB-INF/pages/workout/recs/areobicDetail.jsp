@@ -9,9 +9,11 @@
 	<title>记录有氧运动</title>
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
 	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
@@ -42,6 +44,10 @@
 				<input type="button" id="record" value="record" class="sbmt-normal">
 			</li>
 			<li>
+				<em class="lb-ipt">Date：</em>
+				<input id="dateIpt" data-provide="datepicker" data-date-format="yyyy/mm/dd" >
+			</li>
+			<li>
 				<table class="table table-striped">
 					<caption>历史记录</caption>
 					<thead>
@@ -65,8 +71,9 @@ $(document).ready(function() {
 			var time     = $('#time').val();
 			var distance = $('#distance').val();
 			var calories = $('#calories').val();
+			var logTime  = parseDate($('#dateIpt').val()).getTime();
 			workoutApp.workoutRec.recordAerobicRec(username, password, workoutId, 
-				time, distance, calories, function (data, status, xhr) {
+				time, distance, calories, logTime, function (data, status, xhr) {
 					console.debug(data);
 					jadeUtils.cookieOperator('time'     + workoutId, time    );
 					jadeUtils.cookieOperator('distance' + workoutId, distance);

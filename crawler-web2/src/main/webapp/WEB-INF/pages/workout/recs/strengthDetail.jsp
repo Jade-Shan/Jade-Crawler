@@ -9,9 +9,11 @@
 	<title>记录力量运动</title>
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
 	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
 	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
@@ -32,6 +34,10 @@
 			<li>
 				<em class="lb-ipt">Repeat：</em>
 				<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
+			</li>
+			<li>
+				<em class="lb-ipt">Date：</em>
+				<input id="dateIpt" data-provide="datepicker" data-date-format="yyyy/mm/dd" >
 			</li>
 			<li>
 				<input type="button" id="record" value="record" class="sbmt-normal">
@@ -70,8 +76,9 @@ $(document).ready(function() {
 			var workoutId= $('#workoutId').val();
 			var weight   = $('#weight').val();
 			var repeat   = $('#repeat').val();
+			var logTime  = parseDate($('#dateIpt').val()).getTime();
 			workoutApp.workoutRec.recordStrengthRec(username, password, workoutId, 
-				weight, repeat, function (data, status, xhr) {
+				weight, repeat, logTime, function (data, status, xhr) {
 					console.debug(data);
 					jadeUtils.cookieOperator('weight' + workoutId, weight);
 					jadeUtils.cookieOperator('repeat' + workoutId, repeat);
@@ -108,6 +115,8 @@ $(document).ready(function() {
 				0, (new Date()).getTime(),
 				// (new Date()).getTime() - 604800000, (new Date()).getTime(),
 				workoutApp.workoutRec.renderStrengthRecDetailPage);
+
+		$('.datepicker').datepicker();
 });
 </script>
 </html>

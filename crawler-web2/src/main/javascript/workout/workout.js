@@ -415,7 +415,7 @@ workoutApp.workoutRec.showAeroboicItems = function () {
 
 
 workoutApp.workoutRec.recordStrengthRec = function (
-		username, password, workoutId, weight, repeat, successCallback) 
+		username, password, workoutId, weight, repeat, logTime, successCallback) 
 {
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
@@ -425,6 +425,7 @@ workoutApp.workoutRec.recordStrengthRec = function (
 				headers: {Authorization: auth},
 				data: {
 					username: username,
+					logTime : logTime,
 					workoutId: workoutId,
 					weight  : weight,
 					repeat  : repeat},
@@ -439,7 +440,8 @@ workoutApp.workoutRec.recordStrengthRec = function (
 
 
 workoutApp.workoutRec.recordAerobicRec = function (
-		username, password, workoutId, time, distance, calories, successCallback)
+		username, password, workoutId, time, distance, calories, logTime, 
+		successCallback)
 {
 	var auth = 'Basic ' + jadeUtils.string.base64encode(
 			jadeUtils.string.utf16to8(username + ':' + password)); 
@@ -448,11 +450,12 @@ workoutApp.workoutRec.recordAerobicRec = function (
 				url: workoutApp.appPath + '/api/workout/recordAerobicRec', 
 				headers: {Authorization: auth},
 				data: {
-					username: username,
+					username : username,
+					logTime  : logTime,
 					workoutId: workoutId,
-					time: time,
-					distance: distance,
-					calories: calories},
+					time     : time,
+					distance : distance,
+					calories : calories},
 				success: function(data, status, xhr) {
 					successCallback(data, status, xhr);
 				},

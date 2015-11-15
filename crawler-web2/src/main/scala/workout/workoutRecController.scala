@@ -82,8 +82,10 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val time     = info.params("time")(0).toInt
 				val distance = info.params("distance")(0).toDouble
 				val calories = info.params("calories")(0).toInt
+				val logTime = info.params("logTime")(0).toLong
 				val rec = new AerobicRecord(user, item, time, distance, calories, 
-					System.currentTimeMillis)
+					// System.currentTimeMillis
+					logTime)
 				logDebug("record aero rec: {}", rec)
 				RecDaos.aerobicRecordDao.insert(rec)
 				("status" -> "success"): JValue
@@ -103,8 +105,10 @@ object WorkoutRecController extends BaseWorkoutController with Logging
 				val item    = info.params("workoutId")(0)
 				val weight  = info.params("weight")(0).toDouble
 				val repeat  = info.params("repeat")(0).toInt
+				val logTime = info.params("logTime")(0).toLong
 				val rec = new StrengthRecord(user, item, weight, repeat, 
-					System.currentTimeMillis)
+					// System.currentTimeMillis
+					logTime)
 				logDebug("record strength rec: {}" + rec)
 				RecDaos.strengthRecordDao.insert(rec)
 				("status" -> "success"): JValue
