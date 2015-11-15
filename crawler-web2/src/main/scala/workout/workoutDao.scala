@@ -47,7 +47,7 @@ extends BaseMongoDao[AerobicRecord](serverList) with Logging
 			AND, newCondition(LT, logTimeCeil))).append(AND, cu)
 		val cdt = if (null == item) ct else ct.append(AND, newCondition("item", item))
 
-		this.findByCondition(cdt).toList.toList
+		this.findByCondition(cdt).sort(newCondition("logTime",-1)).toList.toList
 	}
 }
 
@@ -71,7 +71,7 @@ extends BaseMongoDao[StrengthRecord](serverList) with Logging
 			AND, newCondition(LT, logTimeCeil))).append(AND, cu)
 		val cdt = if (null == item) ct else ct.append(AND, newCondition("item", item))
 
-		this.findByCondition(ct).toList.toList
+		this.findByCondition(ct).sort(newCondition("logTime",-1)).toList.toList
 	}
 
 }
