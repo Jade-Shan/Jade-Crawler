@@ -41,11 +41,11 @@
 				<input type="text" id="calories" name="calories" class="ipt-normal" value="15">
 			</li>
 			<li>
-				<input type="button" id="record" value="record" class="sbmt-normal">
-			</li>
-			<li>
 				<em class="lb-ipt">Date：</em>
 				<input id="dateIpt" data-provide="datepicker" data-date-format="yyyy/mm/dd" >
+			</li>
+			<li>
+				<input type="button" id="record" value="record" class="sbmt-normal">
 			</li>
 			<li>
 				<table class="table table-striped">
