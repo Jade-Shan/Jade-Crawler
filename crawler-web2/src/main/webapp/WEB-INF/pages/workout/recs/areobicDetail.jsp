@@ -72,7 +72,8 @@ $(document).ready(function() {
 					jadeUtils.cookieOperator('distance' + workoutId, distance);
 					jadeUtils.cookieOperator('calories' + workoutId, calories);
 					workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
-						(new Date()).getTime() - 604800000, (new Date()).getTime(),
+						0, (new Date()).getTime(),
+						// (new Date()).getTime() - 604800000, (new Date()).getTime(),
 						workoutApp.workoutRec.renderAerobicRecDetailPage);
 			});
 		});
@@ -98,7 +99,8 @@ $(document).ready(function() {
 		console.debug(timeArea.ceil.getTime());
 
 		workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
-				(new Date()).getTime() - 604800000, (new Date()).getTime(),
+				0, (new Date()).getTime(),
+				// (new Date()).getTime() - 604800000, (new Date()).getTime(),
 				workoutApp.workoutRec.renderAerobicRecDetailPage);
 });
 </script>
