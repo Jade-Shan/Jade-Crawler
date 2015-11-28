@@ -29,18 +29,18 @@ object K1Parser extends Logging {
 	def parseBook(bookId: String, bookPage: String) = {
 		val doc = Jsoup parse bookPage
 		val title = (doc select "div.sy_k21>h1").text + (doc select "div.sy_k21>h1").text
-		println("...........******************" + title)
+		logger debug ("title:{}", title)
 		val lines = doc select "div#cp_a1>ul.sy_nr1:nth-child(8)>li"
 		val vols = for (line <- lines; item = genVolFromBook(line) if item != None) yield item
 		(bookId, title, vols)
 	}
 
-	def genVolFromBook(line: Element) = {
+	def genVolFromBook(line: Element): (String, String, Int) = {
 		val volId = line.select("a").attr("href").replaceAll("/","")
 		val recStr = line.text
 		val g = """(.*) *（(\d+)页）""".r.findAllIn(recStr)
 		if (g.hasNext)
-			(volId, g.group(1), g.group(2)) else None
+			(volId, g.group(1), Integer.parseInt(g.group(2))) else null
 	}
 
 	def parseCid(volData: String) = {
@@ -94,8 +94,8 @@ object K1Crawler extends Logging {
 	def processVol(bookId: String, bookName: String, vol: (String, String, Int)) {
 		// mkdir for val
 		makeDir(new File(localVolPath))
-		makeDir(new File(localVolPath + bookId + "/"))
-		val volPath = localVolPath + bookId + "/" + vol._1 + "/"
+		makeDir(new File(localVolPath + bookName + "/"))
+		val volPath = localVolPath + bookName + "/" + vol._2 + "/"
 		makeDir(new File(volPath))
 
 		val volData = fetchVol(vol._1)

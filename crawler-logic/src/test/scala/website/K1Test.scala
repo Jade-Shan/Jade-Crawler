@@ -22,9 +22,9 @@ class K1Test extends FunSuite with Logging{
 	import scala.io.Source
 
 	test("Test-scalatest") {
-		val bookStr = K1Crawler.fetchBook("manhua8354")
-		val book = K1Parser.parseBook("manhua8354", bookStr)
-		logInfo("{}", book)
+		// val bookStr = K1Crawler.fetchBook("manhua8354")
+		// val book = K1Parser.parseBook("manhua8354", bookStr)
+		// logInfo("{}", book)
 
 		// val volDatas = for (vol <- book._3) yield {
 		// 	val volData = K1Crawler.fetchVol(vol._1)
@@ -44,7 +44,7 @@ class K1Test extends FunSuite with Logging{
 		// 	urls
 		// }
 
-		// K1Crawler.processBook("manhua8354")
+		K1Crawler.processBook("manhua8354")
 
 
 	}
