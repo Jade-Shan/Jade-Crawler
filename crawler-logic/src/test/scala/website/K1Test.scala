@@ -46,6 +46,10 @@ class K1Test extends FunSuite with Logging{
 
 		K1Crawler.processBook("manhua8354")
 
+// import java.io.File
+// import sys.process.Process
+// val p = Process("""bash ./aa.sh aaa bbb""", new File("books"), ("LANG", "en_US"))
+// p!
 
 	}
 

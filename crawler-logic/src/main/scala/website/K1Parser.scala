@@ -3,7 +3,9 @@ package jadecrawler.website
 import java.io.File
 import java.io.FileOutputStream
 
+
 import scala.language.postfixOps
+import sys.process.Process
 
 import jadeutils.common.Logging
 
@@ -28,7 +30,7 @@ object K1Parser extends Logging {
 	 */
 	def parseBook(bookId: String, bookPage: String) = {
 		val doc = Jsoup parse bookPage
-		val title = (doc select "div.sy_k21>h1").text + (doc select "div.sy_k21>h1").text
+		val title = (doc select "div.sy_k21>h1").text + "-" + (doc select "div.sy_k21>h2").text
 		logger debug ("title:{}", title)
 		val lines = doc select "div#cp_a1>ul.sy_nr1:nth-child(8)>li"
 		val vols = for (line <- lines; item = genVolFromBook(line) if item != None) yield item
@@ -93,9 +95,10 @@ object K1Crawler extends Logging {
 
 	def processVol(bookId: String, bookName: String, vol: (String, String, Int)) {
 		// mkdir for val
-		makeDir(new File(localVolPath))
-		makeDir(new File(localVolPath + bookName + "/"))
-		val volPath = localVolPath + bookName + "/" + vol._2 + "/"
+		val bookDir = new File(localVolPath)
+		makeDir(bookDir)
+		makeDir(new File(localVolPath + bookId + "/"))
+		val volPath = localVolPath + bookId + "/" + vol._1 + "/"
 		makeDir(new File(volPath))
 
 		val volData = fetchVol(vol._1)
@@ -107,10 +110,15 @@ object K1Crawler extends Logging {
 		for(i <- 0 until urls.size) {
 			val url = urls(i)
 			val g = """http://manhua.+\.cdndm5.com.+(\.[0-9a-zA-Z])\?cid=.+""".r.findAllIn(url)
-			val postfix = if (g.hasNext) g.group(1) else ".jpg"
+			val postfix = ".jpg"//if (g.hasNext) g.group(1) else ".jpg"
 			saveImage(volPath + "%03d".format(i + 1) + postfix, 
 				loadImage(url, vol._1))
 		}
+		// genPdf
+		val pdfFileName = bookName + "-" + vol._2
+		val p = Process("""bash ./genPdf.sh %s %s """.format(bookId + "/" + vol._1 + "/", pdfFileName), 
+			bookDir, ("LANG", "en_US"))
+		p!
 	}
 
 	def fetchVol(volId: String) = {
