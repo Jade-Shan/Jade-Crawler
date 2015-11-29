@@ -44,19 +44,13 @@ class K1Test extends FunSuite with Logging{
 		// 	urls
 		// }
 
-//		K1Crawler.processBook("manhua8242")
+		// K1Crawler.processBook("manhua6427")
 
-		K1Crawler.processBook("manhua1549")
-		K1Crawler.processBook("manhua4109")
-		K1Crawler.processBook("manhua13384")
-		K1Crawler.processBook("manhua6427")
-		K1Crawler.processBook("manhua7221")
-		K1Crawler.processBook("manhua4116")
-		K1Crawler.processBook("manhua19023")
-		K1Crawler.processBook("manhua16618")
-		K1Crawler.processBook("manhua7612")
-		// K1Crawler.processBook("")
-		//
+		// K1Crawler.processVol("manhua6427", "至黑之夜", ("ch6-71691", "第6话", 33))
+		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch7-73379", "第7话", 26))
+		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp4-75022", "外传：第4话", 28))
+		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp5-76719", "外传：第5话", 26))
+		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch8-86053", "第8话", 35))
 
 // import java.io.File
 // import sys.process.Process

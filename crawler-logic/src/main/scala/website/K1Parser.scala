@@ -30,9 +30,10 @@ object K1Parser extends Logging {
 	 */
 	def parseBook(bookId: String, bookPage: String) = {
 		val doc = Jsoup parse bookPage
-		val title = (doc select "div.sy_k21>h1").text + "-" + (doc select "div.sy_k21>h2").text
+		val title = ((doc select "div.sy_k21>h1").text + "-" + 
+			(doc select "div.sy_k21>h2").text).replaceAll(""" ""","-")
 		logger debug ("title:{}", title)
-		val lines = doc select "div#cp_a1>ul.sy_nr1:nth-child(8)>li"
+		val lines = doc select "div#cp_a1>ul.sy_nr1>li"
 		val vols = for (line <- lines; item = genVolFromBook(line) if item != None) yield item
 		(bookId, title, vols)
 	}
@@ -42,7 +43,7 @@ object K1Parser extends Logging {
 		val recStr = line.text
 		val g = """(.*) *（(\d+)页）""".r.findAllIn(recStr)
 		if (g.hasNext)
-			(volId, g.group(1), Integer.parseInt(g.group(2))) else null
+			(volId, g.group(1).replaceAll(""" ""","-"), Integer.parseInt(g.group(2))) else null
 	}
 
 	def parseCid(volData: String) = {
@@ -114,8 +115,7 @@ object K1Crawler extends Logging {
 			val url = urls(i)
 			val g = """http://manhua.+\.cdndm5.com.+(\.[0-9a-zA-Z])\?cid=.+""".r.findAllIn(url)
 			val postfix = ".jpg"//if (g.hasNext) g.group(1) else ".jpg"
-			saveImage(volPath + "%03d".format(i + 1) + postfix, 
-				loadImage(url, vol._1))
+			saveImage(volPath + "%03d".format(i + 1) + postfix, loadImage(url, vol._1))
 		}
 		// genPdf
 		makeDir(new File(localBookPath + "pdf/"))
