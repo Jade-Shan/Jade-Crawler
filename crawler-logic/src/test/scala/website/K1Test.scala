@@ -44,7 +44,19 @@ class K1Test extends FunSuite with Logging{
 		// 	urls
 		// }
 
-		K1Crawler.processBook("manhua8354")
+//		K1Crawler.processBook("manhua8242")
+
+		K1Crawler.processBook("manhua1549")
+		K1Crawler.processBook("manhua4109")
+		K1Crawler.processBook("manhua13384")
+		K1Crawler.processBook("manhua6427")
+		K1Crawler.processBook("manhua7221")
+		K1Crawler.processBook("manhua4116")
+		K1Crawler.processBook("manhua19023")
+		K1Crawler.processBook("manhua16618")
+		K1Crawler.processBook("manhua7612")
+		// K1Crawler.processBook("")
+		//
 
 // import java.io.File
 // import sys.process.Process

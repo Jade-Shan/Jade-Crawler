@@ -67,7 +67,7 @@ object K1Parser extends Logging {
 
 object K1Crawler extends Logging {
 	val site = "tel.1kkk.com"
-	val localVolPath = "books/"
+	val localBookPath = "books/"
 
 	/* 取得一本书
 	 */
@@ -95,10 +95,13 @@ object K1Crawler extends Logging {
 
 	def processVol(bookId: String, bookName: String, vol: (String, String, Int)) {
 		// mkdir for val
-		val bookDir = new File(localVolPath)
+		val bookDir = new File(localBookPath)
 		makeDir(bookDir)
-		makeDir(new File(localVolPath + bookId + "/"))
-		val volPath = localVolPath + bookId + "/" + vol._1 + "/"
+
+		val bookImgDir = localBookPath + "img/"
+		makeDir(new File(bookImgDir))
+		makeDir(new File(bookImgDir + bookId + "/"))
+		val volPath = bookImgDir + bookId + "/" + vol._1 + "/"
 		makeDir(new File(volPath))
 
 		val volData = fetchVol(vol._1)
@@ -115,9 +118,10 @@ object K1Crawler extends Logging {
 				loadImage(url, vol._1))
 		}
 		// genPdf
-		val pdfFileName = bookName + "-" + vol._2
-		val p = Process("""bash ./genPdf.sh %s %s """.format(bookId + "/" + vol._1 + "/", pdfFileName), 
-			bookDir, ("LANG", "en_US"))
+		makeDir(new File(localBookPath + "pdf/"))
+		val p = Process("""bash ./genPdf.sh %s %s """.format(
+			"img/" + bookId + "/" + vol._1 + "/", 
+			"pdf/" + bookName + "-" + vol._2), bookDir, ("LANG", "en_US"))
 		p!
 	}
 
