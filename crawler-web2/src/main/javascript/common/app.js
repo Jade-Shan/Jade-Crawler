@@ -1,7 +1,9 @@
 var cdnworkout = "http://7xldv2.com1.z0.glb.clouddn.com/workout/";
+// var cdnworkout = "http://localhost:8080/crawler-web2/static/";
 
 var workoutApp = {};
 workoutApp.appPath = "/crawler-web2";
+workoutApp.connTimeout= 8000;
 
 workoutApp.userAuth = { };
 
@@ -11,7 +13,7 @@ workoutApp.userAuth.checkLogin = function (
 	if ('' !== username && '' !== password) {
 		var auth = 'Basic ' + jadeUtils.string.base64encode(
 				jadeUtils.string.utf16to8(username + ':' + password)); 
-		$.ajax({ type: 'POST', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'POST', dataType: 'json', timeout: workoutApp.connTimeout,
 				url: workoutApp.appPath + '/api/workout/user/auth', 
 				headers: {Authorization: auth},
 				data: { },
@@ -32,16 +34,21 @@ workoutApp.userAuth.checkLogin = function (
 };
 
 workoutApp.userAuth.barinit = function () {
+	$('#div-userinfo').hide();
+	$('#mu-workoutrec').hide();
+
 	var login = function (username, password) {
 		workoutApp.userAuth.checkLogin(username, password, function(data) {
 			jadeUtils.cookieOperator('username', username);
 			jadeUtils.cookieOperator('password', password);
-			$('#logindiv').hide();
+			$("#div-userlogin").removeClass("has-error");
+			$('#div-userlogin').hide();
 			$('#lb-username').html(username);
-			$('#userinfodiv').show();
+			$('#div-userinfo').show();
+			$('#mu-workoutrec').show();
 		}, function (data) {
 			console.debug(data.reason);
-			alert(data.reason);
+			$("#div-userlogin").addClass("has-error");
 		}, function (data) {
 			alert("Ajax Error");
 		});
@@ -53,8 +60,9 @@ workoutApp.userAuth.barinit = function () {
 	});
 
 	$('#logout').on('click', function(event) {
-		$('#userinfodiv').hide();
-		$('#logindiv').show();
+		$('#mu-workoutrec').hide();
+		$('#div-userinfo').hide();
+		$('#div-userlogin').show();
 	});
 
 	var username = jadeUtils.cookieOperator('username');
@@ -64,3 +72,9 @@ workoutApp.userAuth.barinit = function () {
 	login(username, password);
 };
 
+function parseDate(str) {
+	var d = new Date();
+	d.setFullYear( str.substring(0,4) - 0, str.substring(5,7) - 1, 
+			str.substring(8,10) - 0);
+	return d;
+}

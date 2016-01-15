@@ -5,46 +5,227 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>记录训练</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="http://7xldv2.com1.z0.glb.clouddn.com/3rd/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
-	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
+	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
+
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+
+	<div class="container">
+		<div class="panel-group" id="accordion">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse1">肩膀 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse in">
+					<div id="shoulder1"  class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse2">肩膀 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse">
+					<div id="shoulder2" class="panel-body"></div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse3">胸部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse">
+					<div id="chest1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse4">胸部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse">
+					<div id="chest2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse5">背部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse">
+					<div id="back1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse6">背部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse">
+					<div id="back2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse7">腰部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse">
+					<div id="waist1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse8">腰部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse">
+					<div id="waist2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse9">大臂 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse">
+					<div id="upperarm1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse10">大臂 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse">
+					<div id="upperarm2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse11">小臂 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse">
+					<div id="formearm1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse12">小臂 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse">
+					<div id="formearm2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse13">大腿 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse">
+					<div id="thigh1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse14">大腿 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse">
+					<div id="thigh2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse15">小腿 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse">
+					<div id="calve1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse16">小腿 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse">
+					<div id="calve2" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse17">腹部 - 器械</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse">
+					<div id="abs1" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapse18">腹部 - 重量</a>
+					</h4>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse">
+					<div id="abs2" class="panel-body"></div>
+				</div>
+			</div>
+
+		</div>
 	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<ul id="workoutinfo"></ul>
+
 </body>
 <script>
-workoutApp.workoutRec.showStrengthItems = function () {
-	var html = '';
-	$.each(workoutApp.workout.StrengthItems, function(index, item) {
-		html = html + '<li><img class="img-w-lst" src="' + $("#cdnworkout").val() + 
-			'images/workout/' + item.id + '.svg" /><em class="lst-ipt">' + 
-		 	item.name + '</em><em class="lst-ipt">(' + item.ename + ')</em><em>' + 
-		 	'<input type="button" item="' + item.id + '" value="record" class="sbmt-normal go-detail" /></em></li>'
-	});
-	$("#workoutinfo").html(html);
-
-	$(".go-detail").each(function (idx, item) {
-			$(item).on("click", function (e) {
-				jadeUtils.url.goUrl(workoutApp.appPath + 
-					"/page/workout/strengthWorkout/details/" + $(this).attr("item"));
-				});
-			});
-};
-
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
 		workoutApp.workoutRec.showStrengthItems();

@@ -30,5 +30,18 @@ class ExampleTest extends FunSuite with Logging {
 		// assert("127.0.0.1" == server)
 	}
 
+	test("Test-exec-javascript") {
+		import scala.io.Source
+		import org.mozilla.javascript.Context
+		import org.mozilla.javascript.Scriptable
+
+	val ctx = Context.enter
+		val scope = ctx.initStandardObjects()
+		val scripts = "3 + 2"
+		val res = ctx.evaluateString(scope, scripts, null, 0, null)
+		logger.debug(res.toString)
+
+	}
+
 }
 

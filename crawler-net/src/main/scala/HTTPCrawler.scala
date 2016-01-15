@@ -5,38 +5,38 @@ case class JadeHTTPResponse(cookies: List[Map[String, String]], content: Array[B
 
 object HTTPUtil {
 
-	import java.io.ByteArrayInputStream
-	import java.io.ByteArrayOutputStream
-	import java.io.IOException
-	import java.io.InputStream
-	import java.net.InetSocketAddress
-	import java.util.zip.GZIPInputStream
-	import java.util.zip.GZIPOutputStream
+//	import java.io.ByteArrayInputStream
+//	import java.io.ByteArrayOutputStream
+//	import java.io.IOException
+//	import java.io.InputStream
+		import java.net.InetSocketAddress
+//	import java.util.zip.GZIPInputStream
+//	import java.util.zip.GZIPOutputStream
 
 	import org.apache.http.client.methods.HttpGet
-	import org.apache.http.client.ClientProtocolException
+//	import org.apache.http.client.ClientProtocolException
 	import org.apache.http.client.entity.UrlEncodedFormEntity
-	import org.apache.http.client.methods.CloseableHttpResponse
+//	import org.apache.http.client.methods.CloseableHttpResponse
 	import org.apache.http.client.methods.HttpPost;
 	import org.apache.http.client.protocol.HttpClientContext
-	import org.apache.http.conn.DnsResolver
+//	import org.apache.http.conn.DnsResolver
 	import org.apache.http.conn.socket.ConnectionSocketFactory
-	import org.apache.http.conn.socket.PlainConnectionSocketFactory
-	import org.apache.http.conn.ssl.SSLConnectionSocketFactory
+//	import org.apache.http.conn.socket.PlainConnectionSocketFactory
+//	import org.apache.http.conn.ssl.SSLConnectionSocketFactory
 	import org.apache.http.conn.ssl.SSLContexts
-	import org.apache.http.config.Registry
+//	import org.apache.http.config.Registry
 	import org.apache.http.config.RegistryBuilder
 	import org.apache.http.cookie.Cookie
 	import org.apache.http.HttpResponse
 	import org.apache.http.HttpEntity
-	import org.apache.http.impl.client.BasicResponseHandler
+//	import org.apache.http.impl.client.BasicResponseHandler
 	import org.apache.http.impl.client.CloseableHttpClient
 	import org.apache.http.impl.client.DefaultHttpClient
 	import org.apache.http.impl.client.HttpClients
 	import org.apache.http.impl.conn.PoolingHttpClientConnectionManager
 	import org.apache.http.message.BasicNameValuePair
-	import org.apache.http.NameValuePair
-	import org.apache.http.protocol.HttpContext
+//	import org.apache.http.NameValuePair
+//	import org.apache.http.protocol.HttpContext
 	import org.apache.http.util.EntityUtils
 
 	import jadeutils.base.FileOperater

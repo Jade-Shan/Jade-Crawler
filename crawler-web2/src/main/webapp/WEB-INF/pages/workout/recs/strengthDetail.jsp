@@ -5,64 +5,92 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>记录力量运动</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
-	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
-	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
+	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+	<div class="container">
+		<ul id="workoutinfo" class="list-unstyled">
+			<li id="w-img"></li>
+			<li>
+				<em class="lb-ipt">Name：</em>
+				<em class="lb-ipt" id="itm-name"></em>
+				<em class="lb-ipt" id="itm-ename"></em>
+				<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
+			</li>
+			<li>
+				<em class="lb-ipt">Weight：</em>
+				<input type="text" id="weight" name="weight" class="ipt-normal" value="60">
+			</li>
+			<li>
+				<em class="lb-ipt">Repeat：</em>
+				<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
+			</li>
+			<li>
+				<em class="lb-ipt">Date：</em>
+				<input id="dateIpt" data-provide="datepicker" data-date-format="yyyy/mm/dd" >
+			</li>
+			<li>
+				<input type="button" id="record" value="record" class="sbmt-normal">
+			</li>
+			<li>
+				<table class="table table-striped">
+					<caption>历史记录</caption>
+					<thead>
+						<tr id="recTitles"></tr>
+					</thead>
+					<tbody id="recs"></tbody>
+				</table>
+			</li>
+			<li>
+				<table>
+					<tr>
+						<td>
+					<div id="muscle-front-data" style="width: 210; display: block"></div>
+						</td>
+						<td>
+					<div id="muscle-back-data"  style="width: 210; display: block"></div>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
 	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<ul id="workoutinfo">
-		<li id="w-img"></li>
-		<li>
-			<em class="lb-ipt">Name：</em>
-			<em class="lb-ipt" id="itm-name"></em>
-			<em class="lb-ipt" id="itm-ename"></em>
-			<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
-		</li>
-		<li>
-			<em class="lb-ipt">Weight：</em>
-			<input type="text" id="weight" name="weight" class="ipt-normal" value="60">
-		</li>
-		<li>
-			<em class="lb-ipt">Repeat：</em>
-			<input type="text" id="repeat" name="repeat" class="ipt-normal" value="15">
-		</li>
-		<li>
-			<input type="button" id="record" value="record" class="sbmt-normal">
-		</li>
-		<li>
-			<ul id="historyRec" class="lb-ipt"></ul>
-		</li>
-		<li>
-			<table>
-				<tr>
-					<td>
-				<div id="muscle-front-data" style="width: 210; display: block"></div>
-					</td>
-					<td>
-				<div id="muscle-back-data"  style="width: 210; display: block"></div>
-					</td>
-				</tr>
-			</table>
-		</li>
-	</ul>
 </body>
 <script>
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
+
+		$('#record').on('click', function(event) {
+			var username = $('#username').val();
+			var password = $('#password').val();
+			var workoutId= $('#workoutId').val();
+			var weight   = $('#weight').val();
+			var repeat   = $('#repeat').val();
+			var logTime  = parseDate($('#dateIpt').val()).getTime();
+			workoutApp.workoutRec.recordStrengthRec(username, password, workoutId, 
+				weight, repeat, logTime, function (data, status, xhr) {
+					console.debug(data);
+					jadeUtils.cookieOperator('weight' + workoutId, weight);
+					jadeUtils.cookieOperator('repeat' + workoutId, repeat);
+					workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
+						0, (new Date()).getTime(),
+						// (new Date()).getTime() - 604800000, (new Date()).getTime(),
+						workoutApp.workoutRec.renderStrengthRecDetailPage);
+			});
+		});
+
+		var username  = $('#username').val();
+		var password  = $('#password').val();
 		var workoutId = $("#workoutId").val();
 
 		var rec = workoutApp.workout.StrengthItemMap.get(workoutId);
@@ -74,10 +102,6 @@ $(document).ready(function() {
 		workoutApp.muscle.loadMarkedMuscles(
 			"muscle-front-data", "muscle-back-data", 270, 500, 0.5, rec);
 
-		$('#record').on('click', function(event) {
-			workoutApp.workoutRec.recordStrengthRec();
-			});
-
 		$('#weight').val(jadeUtils.cookieOperator('weight' + workoutId));
 		$('#repeat').val(jadeUtils.cookieOperator('repeat' + workoutId));
 
@@ -87,25 +111,12 @@ $(document).ready(function() {
 		console.debug(timeArea.floor.getTime());
 		console.debug(timeArea.ceil.getTime());
 
-		workoutApp.workoutRec.findStrengthRec($('#username').val(), $('#password').val(), 
-				$('#workoutId').val(), 
-				0,
-				// timeArea.floor.getTime(),
-				(new Date()).getTime(),
-				// timeArea.ceil.getTime(), 
-				function (data) {
-					var html = "";
-					$.each(data.result, function (idx, item) {
-						console.debug(item);
-						var t = new Date();
-						t.setTime(item.logTime);
-						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-							'<ul><li>Weight: ' + item.weight + 
-							'</li><li>Repeat: ' + item.repeat + 
-							'</li></ul></li>';
-					});
-					$('#historyRec').html(html);
-				});
+		workoutApp.workoutRec.findStrengthRec(username, password, workoutId, 
+				0, (new Date()).getTime(),
+				// (new Date()).getTime() - 604800000, (new Date()).getTime(),
+				workoutApp.workoutRec.renderStrengthRecDetailPage);
+
+		$('.datepicker').datepicker();
 });
 </script>
 </html>

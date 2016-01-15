@@ -1,0 +1,31 @@
+#!/bin/bash
+cp unknow.svg sth-9-1.svg
+cp unknow.svg sth-9-2.svg
+cp unknow.svg sth-9-3.svg
+cp unknow.svg sth-9-4.svg
+cp unknow.svg sth-9-5.svg
+cp unknow.svg sth-9-6.svg
+cp unknow.svg sth-9-7.svg
+cp unknow.svg sth-9-8.svg
+cp unknow.svg sth-9-9.svg
+cp unknow.svg sth-9-10.svg
+cp unknow.svg sth-9-11.svg
+cp unknow.svg sth-9-12.svg
+cp unknow.svg sth-9-13.svg
+cp unknow.svg sth-9-14.svg
+cp unknow.svg sth-9-15.svg
+cp unknow.svg sth-9-16.svg
+cp unknow.svg sth-9-17.svg
+cp unknow.svg sth-9-18.svg
+cp unknow.svg sth-9-19.svg
+cp unknow.svg sth-9-20.svg
+cp unknow.svg sth-9-21.svg
+cp unknow.svg sth-9-22.svg
+cp unknow.svg sth-9-23.svg
+cp unknow.svg sth-9-24.svg
+cp unknow.svg sth-9-25.svg
+cp unknow.svg sth-9-26.svg
+cp unknow.svg sth-9-27.svg
+cp unknow.svg sth-9-28.svg
+cp unknow.svg sth-9-29.svg
+

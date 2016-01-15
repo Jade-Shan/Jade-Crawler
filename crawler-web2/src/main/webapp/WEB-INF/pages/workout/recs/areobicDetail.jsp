@@ -5,69 +5,95 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>记录有氧运动</title>
-	<script type="text/javascript" src="${cdn3rd}/zepto-1.1.2.min.js"></script>
-	<script type="text/javascript" src="${cdn3rd}/d3.min.js"></script>
-	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.min.js"></script>
-	<script type="text/javascript" src="${cdnworkout}scripts/workout.min.js"></script>
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
+	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<div id="logindiv">
-		<input type="text" id="username" name="username" class="ipt-normal" value="">
-		<input type="password" id="password" name="password" class="ipt-normal" value="">
-		<input type="button" id="login" value="login" class="sbmt-normal">
-		<input type="hidden" id="cdnworkout" name="cdnworkout" value="${cdnworkout}">
+	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+	<div class="container">
+		<ul id="workoutinfo" class="list-unstyled">
+			<li id="w-img"></li>
+			<li>
+				<em class="lb-ipt">Name：</em>
+				<em class="lb-ipt" id="itm-name"></em>
+				<em class="lb-ipt" id="itm-ename"></em>
+				<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
+			</li>
+			<li>
+				<em class="lb-ipt">Time：</em>
+				<input type="text" id="time" name="time" class="ipt-normal" value="">
+				<em class="lb-ipt">min</em>
+			</li>
+			<li>
+				<em class="lb-ipt">Distance：</em>
+				<input type="text" id="distance" name="distance" class="ipt-normal" value="15">
+			</li>
+			<li>
+				<em class="lb-ipt">Calories：</em>
+				<input type="text" id="calories" name="calories" class="ipt-normal" value="15">
+			</li>
+			<li>
+				<em class="lb-ipt">Date：</em>
+				<input id="dateIpt" data-provide="datepicker" data-date-format="yyyy/mm/dd" >
+			</li>
+			<li>
+				<input type="button" id="record" value="record" class="sbmt-normal">
+			</li>
+			<li>
+				<table class="table table-striped">
+					<caption>历史记录</caption>
+					<thead>
+						<tr id="recTitles"></tr>
+					</thead>
+					<tbody id="recs"></tbody>
+				</table>
+			</li>
+		</ul>
 	</div>
-	<div id="userinfodiv">
-		<em class="lb-ipt">Welcome !</em>
-		<em id="lb-username" class="lb-ipt">username</em>
-		<input type="button" id="logout" value="Login Out" class="sbmt-normal">
-	</div>
-	<ul id="workoutinfo">
-		<li id="w-img"></li>
-		<li>
-			<em class="lb-ipt">Name：</em>
-			<em class="lb-ipt" id="itm-name"></em>
-			<em class="lb-ipt" id="itm-ename"></em>
-			<input type="hidden" id="workoutId" name="workoutId" class="ipt-normal" value="${workoutId}">
-		</li>
-		<li>
-			<em class="lb-ipt">Time：</em>
-			<input type="text" id="time" name="time" class="ipt-normal" value="">
-			<em class="lb-ipt">min</em>
-		</li>
-		<li>
-			<em class="lb-ipt">Distance：</em>
-			<input type="text" id="distance" name="distance" class="ipt-normal" value="15">
-		</li>
-		<li>
-			<em class="lb-ipt">Calories：</em>
-			<input type="text" id="calories" name="calories" class="ipt-normal" value="15">
-		</li>
-		<li>
-			<input type="button" id="record" value="record" class="sbmt-normal">
-		</li>
-		<li>
-		<ul id="historyRec" class="lb-ipt"></ul>
-		</li>
-	</ul>
 </body>
 <script>
 
 $(document).ready(function() {
 		workoutApp.userAuth.barinit();
-		var workoutId = $("#workoutId").val();
+
+		$('#record').on('click', function(event) {
+			var username = $('#username').val();
+			var password = $('#password').val();
+			var workoutId= $('#workoutId').val();
+			var time     = $('#time').val();
+			var distance = $('#distance').val();
+			var calories = $('#calories').val();
+			var logTime  = parseDate($('#dateIpt').val()).getTime();
+			workoutApp.workoutRec.recordAerobicRec(username, password, workoutId, 
+				time, distance, calories, logTime, function (data, status, xhr) {
+					console.debug(data);
+					jadeUtils.cookieOperator('time'     + workoutId, time    );
+					jadeUtils.cookieOperator('distance' + workoutId, distance);
+					jadeUtils.cookieOperator('calories' + workoutId, calories);
+					workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
+						0, (new Date()).getTime(),
+						// (new Date()).getTime() - 604800000, (new Date()).getTime(),
+						workoutApp.workoutRec.renderAerobicRecDetailPage);
+			});
+		});
+
+		var username  = $('#username').val();
+		var password  = $('#password').val();
+		var workoutId = $('#workoutId').val();
 
 		var rec = workoutApp.workout.AerobicItemMap.get(workoutId);
 		$("#itm-name").html(rec.name);
 		$("#itm-ename").html("(" + rec.ename + ")");
 		$("#w-img").html("<img class='img-w-exp' src='" + $("#cdnworkout").val() +
 			"images/workout/" + rec.id + ".svg' />")
-
-		$('#record').on('click', function(event) {
-			workoutApp.workoutRec.recordAerobicRec();
-			});
 
 		$('#time'    ).val(jadeUtils.cookieOperator('time'     + workoutId));
 		$('#distance').val(jadeUtils.cookieOperator('distance' + workoutId));
@@ -79,26 +105,11 @@ $(document).ready(function() {
 		console.debug(timeArea.floor.getTime());
 		console.debug(timeArea.ceil.getTime());
 
-		workoutApp.workoutRec.findAerobicRec($('#username').val(), $('#password').val(), 
-				$('#workoutId').val(), 
-				0,
-				// timeArea.floor.getTime(),
-				(new Date()).getTime(),
-				// timeArea.ceil.getTime(), 
-				function (data) {
-				var html = "";
-				$.each(data.result, function (idx, item) {
-						var t = new Date();
-						t.setTime(item.logTime);
-	
-						html = html + '<li>' + jadeUtils.time.getLocalTimeStr(t) + 
-							'<ul><li>Time: ' + item.time + 
-							'</li><li>Distance: ' + item.distance + 
-							'</li><li>Caliories: ' + item.calories + '</li></ul></li>';
-					});
-					$('#historyRec').html(html);
-				});
-		});
+		workoutApp.workoutRec.findAerobicRec(username, password, workoutId, 
+				0, (new Date()).getTime(),
+				// (new Date()).getTime() - 604800000, (new Date()).getTime(),
+				workoutApp.workoutRec.renderAerobicRecDetailPage);
+});
 </script>
 </html>
 
