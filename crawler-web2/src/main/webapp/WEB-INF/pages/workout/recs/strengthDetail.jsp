@@ -4,20 +4,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>记录力量运动</title>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<%@ include file="/WEB-INF/pages/workout/common/commhead.jsp" %>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
-	<script type="text/javascript" src="${cdnjadeutils}scripts/jadeutils.js"></script>
-	<script type="text/javascript" src="${cdnworkout}scripts/workout.js"></script>
-	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
-	<link rel="stylesheet" href="${cdnworkout}styles/workout.min.css"/>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/pages/workout/common/navbar.jsp"/>
+	<%@ include file="/WEB-INF/pages/workout/common/navbar.jsp" %>
 	<div class="container">
 		<ul id="workoutinfo" class="list-unstyled">
 			<li id="w-img"></li>
