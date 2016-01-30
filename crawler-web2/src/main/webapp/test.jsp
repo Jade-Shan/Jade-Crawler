@@ -8,7 +8,7 @@
 <title>test page</title>
 </head>
 <body>
-<form action="<c:url value="/api/journal/recordJournal" />" method="post">
+<form action="<c:url value="/api/blog/recordJournal" />" method="post">
 	<input type="text" name="auth" value="Jade Shan"/><br/>
 	<input type="text" name="title" value=""/><br/>
 	<textarea name="text" rows="10" cols="30"></textarea><br/>

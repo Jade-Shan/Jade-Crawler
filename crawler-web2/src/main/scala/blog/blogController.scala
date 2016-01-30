@@ -18,8 +18,8 @@ object BlogRecController extends BaseBlogController with Logging {
 
 	service("/api/blog/findJournal/${auth}/${page}") {(info) => {
 		info.response.setHeader("Access-Control-Allow-Origin", "*")
-		var auth = info.params("auth")(0)
-		var page = info.params("page")(0).toInt
+		val auth = java.net.URLDecoder.decode(info.params("auth")(0), "UTF-8")
+		val page = info.params("page")(0).toInt
 		try {
 			val recs = findJournal(auth, page)
 			logDebug("query reault: {}", recs)
@@ -38,10 +38,10 @@ object BlogRecController extends BaseBlogController with Logging {
 
 	service("/api/blog/recordJournal") {(info) => {
 		try {
-			var auth = info.params("auth")(0)
-			var title = info.params("title")(0)
-			var time = System.currentTimeMillis //(info.params("time")(0)).toLong
-			var text = info.params("text")(0)
+			val auth = info.params("auth")(0)
+			val title = info.params("title")(0)
+			val time = System.currentTimeMillis //(info.params("time")(0)).toLong
+			val text = info.params("text")(0)
 
 			val rec = new Journal(title, auth, time, text)
 			logDebug("record Journal rec: {}" + rec)
