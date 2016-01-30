@@ -15,10 +15,12 @@ import net.jadedungeon.workout.WorkoutAppCtx
 import net.jadedungeon.workout.WorkoutAuthController
 import net.jadedungeon.workout.WorkoutRecController
 
+import net.jadedungeon.blog.BlogRecController
+
 class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 { 
 	ApiDispather.controllers = IcibaApiController :: WorkoutRecController :: 
-		WorkoutAuthController :: Nil 
+		WorkoutAuthController :: BlogRecController :: Nil 
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
