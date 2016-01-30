@@ -21,7 +21,8 @@ case class Journal(
 		"""time: "%d", text: "%s"}""").format(title, auth, time, text)
 }
 
-case class Pic(s: String, u: String, tit: String, dsc: String) {
+case class Pic(s: String, u: String, tit: String, dsc: String) 
+{
 	def this() = this (null, null, null, null)
 
 	@MongoField var id = s
@@ -44,7 +45,7 @@ extends MongoModel
 	@MongoField var auth = auh
 	@MongoField var time = ts
 	@MongoField var text = tx
-	@MongoField var images = ms
+	@MongoField(ElemType = classOf[Pic]) var images = ms
 
 	override def toString = ("""JournalRecord: {title: "%s", auth: "%s", """ + 
 		"""time: "%d", text: "%s", images:[%s]}""").format(title, auth, time, 
