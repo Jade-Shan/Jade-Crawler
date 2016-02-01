@@ -50,16 +50,16 @@ class RequestPattern(method: Method.Method, pattern: String) extends Logging {
 		(Boolean, Map[String, String]) = 
 	{
 		/* draw all param's value in url */
-		logDebug("match path   :" + path)
-		logDebug("match pattern:" + valuePtn.toString)
+		logTrace("match path   :" + path)
+		logTrace("match pattern:" + valuePtn.toString)
 		val m = valuePtn.findAllIn(path)
 		val isMatch = if (Method.ANY == this.method || this.method == method) 
 				m.hasNext else false
 		val values = if (isMatch && m.groupCount > 0) {
 			for (i <- 1 to m.groupCount) yield m group i
 		} else Nil
-		logDebug("param keys : " + keys.toString)
-		logDebug("param value: " + values.toString)
+		logTrace("param keys : " + keys.toString)
+		logTrace("param value: " + values.toString)
 		/* make param's key-value map */
 		val items = (Map.empty[String, String] /: (keys zip values)) (
 			(a, b) => (a + (b._1 -> b._2)))
