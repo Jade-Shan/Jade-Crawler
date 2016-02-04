@@ -35,10 +35,17 @@
 		<crawler-logic.version>0.1.9-20160202-SNAPSHOT</crawler-logic.version>
 		<crawler-web2.version>0.0.9-20160202-SNAPSHOT</crawler-web2.version>
 		<!-- -->
+		<jstl.version>1.2.5</jstl.version>
+		<jsp.version>2.3.1</jsp.version>
+		<servlet.version>3.1.0</servlet.version>
+		<greenmail.version>1.3.1b</greenmail.version>
+		<javamail.version>1.4.1</javamail.version>
 		<springframework.version>4.2.0.RELEASE</springframework.version>
 		<commonslang.version>2.6</commonslang.version>
 		<httpcomponents.version>4.3.6</httpcomponents.version>
+		<!--
 		<comm-pool.version>2.2</comm-pool.version>
+				 -->
 		<json4s.version>3.2.11</json4s.version>
 		<jsoup.version>1.8.1</jsoup.version>
 		<json.version>20140107</json.version>
@@ -134,7 +141,7 @@
 			<dependency>
 				<groupId>javax.mail</groupId>
 				<artifactId>mail</artifactId>
-				<version>1.4.1</version>
+				<version>${javamail.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-lang</groupId>
@@ -146,11 +153,13 @@
 				<artifactId>commons-cli</artifactId>
 				<version>${commonscli.version}</version>
 			</dependency>
+			<!--
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-pool2</artifactId>
 				<version>${comm-pool.version}</version>
 			</dependency>
+					 -->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
@@ -217,30 +226,30 @@
 			<dependency>
 				<groupId>com.icegreen</groupId>
 				<artifactId>greenmail</artifactId>
-				<version>1.3.1b</version>
+				<version>${greenmail}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
-				<version>3.1.0</version>
+				<version>${servlet.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>javax.servlet.jsp</groupId>
 				<artifactId>javax.servlet.jsp-api</artifactId>
-				<version>2.3.1</version>
+				<version>${jsp.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.taglibs</groupId>
 				<artifactId>taglibs-standard-spec</artifactId>
-				<version>1.2.5</version>
+				<version>${jstl.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.taglibs</groupId>
 				<artifactId>taglibs-standard-impl</artifactId>
-				<version>1.2.5</version>
+				<version>${jstl.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

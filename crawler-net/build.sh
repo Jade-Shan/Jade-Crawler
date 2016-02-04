@@ -15,12 +15,12 @@ do
 			mvn compile test-compile
 			;;
 		t)
-			mvn resources:resources resources:testResources surefire:test -Dtest=ClientTest
+			mvn resources:resources resources:testResources surefire:test -Dtest=ClientIntegrationTest
 			;;
 		a)
 			ctags -R src --exclude=target --exclude=vendor
-			 mvn compile test-compile resources:resources resources:testResources surefire:test
-			# mvn compile test-compile resources:resources resources:testResources surefire:test -Dtest=ClientTest
+			# mvn compile test-compile resources:resources resources:testResources surefire:test
+			mvn compile test-compile resources:resources resources:testResources surefire:test -Dtest=ClientIntegrationTest
 			;;
 		r)
 			# mvn resources:resources scala:run -Dlauncher=foo
