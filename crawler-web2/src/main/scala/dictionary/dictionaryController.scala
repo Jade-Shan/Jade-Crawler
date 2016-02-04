@@ -10,8 +10,8 @@ import jadeutils.common.Logging
 
 import jadeutils.web.BasicController
 import jadeutils.web.Method._
-import jadeutils.web.Foward
-import jadeutils.web.Redirect
+import jadeutils.web.DispatherServlet.Foward
+import jadeutils.web.DispatherServlet.Redirect
 
 import jadecrawler.website.IcibaCrawler
 

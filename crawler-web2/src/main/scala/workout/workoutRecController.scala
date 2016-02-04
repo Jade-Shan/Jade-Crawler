@@ -8,9 +8,9 @@ import jadeutils.common.Logging
 
 import jadeutils.web.BasicController
 import jadeutils.web.DispatherInfo
-import jadeutils.web.Foward
+import jadeutils.web.DispatherServlet.Foward
+import jadeutils.web.DispatherServlet.Redirect
 import jadeutils.web.Method._
-import jadeutils.web.Redirect
 
 trait BaseWorkoutController extends BasicController with WorkoutAppCtx
 

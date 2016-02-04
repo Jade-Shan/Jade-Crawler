@@ -10,9 +10,9 @@ import jadeutils.common.Logging
 
 import jadeutils.web.BasicController
 import jadeutils.web.DispatherInfo
-import jadeutils.web.Foward
+import jadeutils.web.DispatherServlet.Foward
+import jadeutils.web.DispatherServlet.Redirect
 import jadeutils.web.Method._
-import jadeutils.web.Redirect
 
 trait BaseBlogController extends BasicController with BlogAppCtx
 
@@ -71,8 +71,9 @@ object BlogRecController extends BaseBlogController with Logging {
 			("articles" -> (if (null != recs._2) { recs._2 } else Nil).map(
 				r => ("time" -> r.time) ~("auth" -> r.auth) ~ ("title" -> r.title) ~
 				("text" -> r.text) ~ ("ablum" -> 
-					(for (k <- 0 until r.images.size) yield r.images.get(k)).map(p => (("id" -> p.id) ~ ("title" -> p.title) ~ ("desc" -> p.desc) ~ ("url" -> p.url)))
-		))) : JValue
+					(for (k <- 0 until r.images.size) yield r.images.get(k)).map(p => (
+						("id" -> p.id) ~ ("title" -> p.title) ~ ("desc" -> p.desc) ~ 
+						("url"-> p.url)))))) : JValue
 		} catch {
 			case e: Exception => {
 				e.printStackTrace()

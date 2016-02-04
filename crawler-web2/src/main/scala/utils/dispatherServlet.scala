@@ -38,16 +38,6 @@ object Method extends Enumeration {
 	val TRACE   = Value(7, "TRACE")
 }
 
-/**
-	* As the case of HTTP forward action.
-	*/
-case class Foward(url: String)
-
-/**
-	* As the case of HTTP forward action.
-	*/
-case class Redirect(url: String)
-
 
 /** 
 	* Define the pattern of http request
@@ -228,11 +218,11 @@ trait DispatherServlet extends HttpServlet with Logging {
 			}
 			logDebug("all params: " + DispatherInfo.paramsToString(params))
 			matchRec._2(new DispatherInfo(method, request, response, params)) match {
-				case Foward(newPath) => {
+				case DispatherServlet.Foward(newPath) => {
 					logDebug("forward: " + newPath)
 					request.getRequestDispatcher(newPath).forward(request, response)
 				}
-				case Redirect(newPath) => {
+				case DispatherServlet.Redirect(newPath) => {
 					logDebug("redirect: " + request.getContextPath + newPath) 
 					response.sendRedirect(request.getContextPath + newPath)
 				}
@@ -295,6 +285,17 @@ trait DispatherServlet extends HttpServlet with Logging {
 }
 
 object DispatherServlet extends Logging {
+
+	/**
+		* As the case of HTTP forward action.
+		*/
+	case class Foward(url: String)
+
+	/**
+		* As the case of HTTP forward action.
+		*/
+	case class Redirect(url: String)
+
 	private var dispathers: List[BasicDispather] = Nil
 
 	/**
