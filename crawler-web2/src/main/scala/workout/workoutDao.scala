@@ -16,9 +16,7 @@ extends BaseMongoDao[UserAuth](serverList) with Logging
 {
 	def this(host: String, port: Int) = this(new MongoServer(host, port) :: Nil)
 
-	/**
-		* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}}
-		*/
+	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findAuth(user: String): List[UserAuth] = {
 		val cdt = newCondition("username", user)
 
@@ -33,9 +31,7 @@ extends BaseMongoDao[AerobicRecord](serverList) with Logging
 {
 	def this(host: String, port: Int) = this(new MongoServer(host, port) :: Nil)
 
-	/**
-		* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}}
-		*/
+	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findAerobicRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 
 	List[AerobicRecord] = 
 	{
@@ -57,9 +53,7 @@ extends BaseMongoDao[StrengthRecord](serverList) with Logging
 
 	def this(server: (String, Int)) = this(new MongoServer(server._1, server._2) :: Nil)
 
-	/**
-		* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}}
-		*/
+	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findStrengthRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 
 	List[StrengthRecord] = 
 	{
