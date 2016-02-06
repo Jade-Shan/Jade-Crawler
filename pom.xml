@@ -360,6 +360,7 @@
 				</executions>
 				<configuration>
 					<scalaVersion>${scala.version}</scalaVersion>
+					<scalaCompatVersion>${scala.version.floor}</scalaCompatVersion>
 					<jvmArgs>
 						<jvmArg>-Xms64m</jvmArg>
 						<jvmArg>-Xmx1024m</jvmArg>
