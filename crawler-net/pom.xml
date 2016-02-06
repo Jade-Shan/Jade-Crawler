@@ -17,10 +17,6 @@
 	<dependencies>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
-				<artifactId>crawler-base</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>net.jade-dungeon</groupId>
 				<artifactId>crawler-dto</artifactId>
 			</dependency>
 			<dependency>
