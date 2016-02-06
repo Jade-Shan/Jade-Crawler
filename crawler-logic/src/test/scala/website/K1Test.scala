@@ -44,12 +44,24 @@ class K1Test extends FunSuite with Logging{
 		// 	urls
 		// }
 
-		// K1Crawler.processBook("manhua6427")
+//		K1Crawler.processBook("manhua6427")
 
-//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch6-71691", "第6话", 33))
-//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch7-73379", "第7话", 26))
-//		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp4-75022", "外传：第4话", 28))
-//		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp5-76719", "外传：第5话", 26))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("other65772", "第0话", 23))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch1-66226", "第1话", 39))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch2-66727", "第2话", 29))
+
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch3-68215", "第3话", 31))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch4-68768", "第4话", 30))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch5-70185", "第5话", 27))
+
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp1-70186", "外传：第1话", 29))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp2-70187", "外传：第2话", 32))
+//		K1Crawler.processVol("manhua6427", "至黑之夜", ("sp3-70382", "外传：第3话", 23))
+
+	//	K1Crawler.processVol("manhua6427", "至黑之夜", ("ch6-71691", "第6话", 33))
+	//	K1Crawler.processVol("manhua6427", "至黑之夜", ("ch7-73379", "第7话", 26))
+	//	K1Crawler.processVol("manhua6427", "至黑之夜", ("sp4-75022", "外传：第4话", 28))
+	//	K1Crawler.processVol("manhua6427", "至黑之夜", ("sp5-76719", "外传：第5话", 26))
 //		K1Crawler.processVol("manhua6427", "至黑之夜", ("ch8-86053", "第8话", 35))
 
 // import java.io.File
