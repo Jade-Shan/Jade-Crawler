@@ -27,49 +27,46 @@ object WebIcibaParser extends Logging {
 		import scala.collection.JavaConversions._
 
 		val doc = Jsoup parse htmlStr
-		val word = (doc select "html>body>div#layout>div#center>div#main_box" + 
-			">div#dict_main>div.dictbar>div.dict_title>div.title>span" + 
-			">h1#word_name_h1").text
+
+		val word = (doc select "div.in-base>div>h1.keywork").text
 		logger trace word
 
-		val prons = doc select "html>body>div#layout>div#center>div#main_box" + 
-			">div#dict_main>div.dictbar>div.dict_title>div.prons>span"
+		val prons = doc select "div.in-base>div>div>div.base-speak>span"
 		val pronuctions = (for (p <- prons; rec = genPron(p) if rec != None) 
 					yield { rec.getOrElse(null) }) toList;
 		logger trace pronuctions.toString
 		
-		val exps = doc select "html>body>div#layout>div#center>div#main_box" + 
-			">div#dict_main>div.dictbar>div.group_prons>div.group_pos>p"
+		val exps = doc select "div.in-base>ul.base-list>li"
 		val explations = (for (e <- exps; rec = genExps(e)) yield rec) toList;
 		logger trace explations.toString
 		
-		val rlts = doc select "html>body>div#layout>div#center>div#main_box" + 
-			">div#dict_main>div.dictbar>div.group_prons>div.group_inf>ul>li"
-		val relatedWords = (for (r <- rlts; rec = genRelated(r) if null != rec) 
-			yield rec) toList;
+		val rlts1 = (for (r <- (doc select "li.change>p>span"); rec = r.text if null != rec) yield rec) toList;
+		val rlts2 = (for (r <- (doc select "li.change>p>a"   ); rec = r.text if null != rec) yield rec) toList;
+		val relatedWords = (for (r <- (rlts1 zip rlts2); rec = new IcibaS2Dto(r._1, r._2) if null != rec) yield rec) toList;
 		logger trace relatedWords.toString
 
-		val examps = doc select "div#dict_content_104>dl.vDef_list"
+		val examps = doc select "div.article-section>div.section-p"
 		val examples = (for (r <- examps; rec = genExamps(r)) yield rec) toList;
 		logger trace examples.toString
 
-		val homos = doc select "div#dict_content_5>dl.def_list>dd"
-		val homoionyms = (for (r <- homos; rec = genHomo(r) if null != rec) 
-			yield rec) toList;
-		logger trace homoionyms.toString
+		// val homos = doc select "div#dict_content_5>dl.def_list>dd"
+		// val homoionyms = (for (r <- homos; rec = genHomo(r) if null != rec) 
+		// 	yield rec) toList;
+		// logger trace homoionyms.toString
+		val homoionyms: List[IcibaHomoDto] = Nil
 
 		Some(new IcibaDto(word, pronuctions, explations, relatedWords, examples,
 			homoionyms))
 	}
 
 	val pronPattern = """^(\S+)\s?\[(.+)\]$""".r
-	def genPron(e: Element) = (e select "span>span").text match {
+	def genPron(e: Element) = e.text match {
 		case pronPattern(a, b) => Some(new IcibaS3Dto(a, b, ""))
 		case _ => None
 	}
 
-	def genExps(e: Element) = new IcibaS2Dto((e select "p>strong.fl").text, 
-		(e select "p>span").text)
+	def genExps(e: Element) = new IcibaS2Dto((e select "span.prop").text, 
+		(e select "p").text)
 
 	def genRelated(e: Element) = {
 		val wordType = e.ownText.replace("：","")
@@ -83,9 +80,9 @@ object WebIcibaParser extends Logging {
 	}
 
 	def genExamps(e: Element) = {
-		val chs = (e select "dl>dd").text
-		val all = e.text.replaceAll((e select "dl>p").text, "").replaceAll(chs, "")
-		new IcibaS3Dto(all.replaceAll("""^\s*\d+\s*\.\s*""", ""), chs, "")
+		val chs = (e select "div.p-container>p.p-chinese").text
+		val eng = (e select "div.p-container>p.p-english").text
+		new IcibaS3Dto(eng, chs, "")
 	}
 
 	def genHomo(e: Element) = {
