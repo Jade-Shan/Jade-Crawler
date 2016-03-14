@@ -38,5 +38,9 @@ project/plugins/project/
 .project
 bin/
 
+.cache-main
+.cache-tests
+
+
 # config for this proj
 src/test/resources/local.properties

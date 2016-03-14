@@ -1,0 +1,831 @@
+ABQAAGI	Hilton Garden Inn Albuquerque Airport
+ABQAPHW	Homewood Suites by Hilton Albuquerque Airport
+ABQCOHX	Hampton Inn and Suites Albuquerque-Coors Rd, NM
+ABQDUHT	Home2 Suites by Hilton Albuquerque/Downtown-University, NM
+ABQEMES	Embassy Suites by Hilton Albuquerque
+ABQHWHW	Homewood Suites by Hilton Albuquerque Uptown
+ABQMTHX	Hampton Inn Albuquerque-University
+ABQNJHX	Hampton Inn and Suites Albuquerque North/I-25
+ABQRRGI	Hilton Garden Inn Albuequerque North/Rio Rancho
+ABQUPGI	Hilton Garden Inn Albuquerque Uptown, NM
+ABRSDHX	Hampton Inn and Suites Aberdeen, SD
+ABZACGI	Hilton Garden Inn Aberdeen City Centre
+ABZCRGV	Hilton Grand Vacations at Craigendarroch Suites
+ABZDTDI	DoubleTree by Hilton Aberdeen City Centre
+ABZTTHN	Hilton Aberdeen Treetops
+ACYHWHW	Homewood Suites by Hilton Atlantic City/Egg Harbor Township
+ACYVIHX	Hampton Inn and Suites Vineland, NJ
+ADLHITW	Hilton Adelaide
+AIKGIGI	Hilton Garden Inn Aiken
+AIKSCHX	Hampton Inn Aiken
+AKLHIHI	Hilton Auckland
+AKLLTHI	Hilton Lake Taupo
+ALBAHGI	Hilton Garden Inn Albany Airport
+ALBAPHX	Hampton Inn & Suites Albany-Airport+++
+ALBCPGI	Hilton Garden Inn Clifton Park+++
+ALBESES	Embassy Suites by Hilton Saratoga Springs
+ALBHHHF	Hilton Albany
+ALBHSHX	Hampton Inn & Suites Albany-Downtown+++
+ALBHWHW	Homewood Suites by Hilton Albany+++
+ALBJCGI	Hilton Garden Inn Albuquerque/Journal Center
+ALBMCGI	Hilton Garden Inn Albany Medical Center+++
+ALBSAHF	The Saratoga Hilton
+ALBSMDT	DoubleTree by Hilton Albuquerque
+ALBSSGI	Hilton Garden Inn Saratoga Springs
+ALBSUGI	Hilton Garden Inn Albany/Suny Area
+ALBSYHX	Hampton Inn Schenectady+++
+ALBTYGI	Hilton Garden Inn Troy+++
+ALBUAHX	Hampton Inn Albany-Western Ave/University Area, NY
+ALBULHX	Hampton Inn Albany-Wolf Road+++
+ALMHHHX	Hampton Inn Alamogordo
+ANDGIGI	Hilton Garden Inn Anderson, SC
+ANDNOHX	Hampton Inn Anderson/Alliance Business Park, SC
+ANDSCHX	Hampton Inn Anderson, SC
+ARTGIGI	Hilton Garden Inn Watertown/Thousand Islands
+ARTNYHX	Hampton Inn Watertown, NY
+ARXNPHX	Hampton Inn Neptune/Wall, NJ
+ASBNCHX	Hampton Inn Asheboro
+ASHNHHX	Hampton Inn Nashua, NH
+ASPDADI	DoubleTree by Hilton Alice Springs
+ATYSDHX	Hampton Inn and Suites Watertown, SD
+AVLAPHX	Hampton Inn and Suites Asheville Airport
+AVLBMDT	DoubleTree by Hilton Biltmore Hotel-Asheville
+AVLBPHF	Hilton Asheville Biltmore Park
+AVLHNHX	Hampton Inn Hendersonville
+AVLHWHW	Homewood Suites by Hilton Asheville-Tunnel Road, NC
+AVLMRHX	Hampton Inn Marion
+AVLRRHX	Hampton Inn Asheville
+AVLTUHX	Hampton Inn Asheville Tunnel Road
+BASINHN	Hilton Basingstoke
+BATHNHN	Hilton Bath City
+BDGNJHX	Hampton Inn Philadelphia/Bridgeport
+BDTNJHX	Hampton Inn Bordentown
+BEKWVHX	Hampton Inn Beckley
+BFNSCHX	Hampton Inn and Suites Bluffton Sun City
+BFSHITW	Hilton Belfast
+BFSTPHN	Hilton Belfast Templepatrick Golf & Country Club
+BFTSCHX	Hampton Inn Beaufort
+BGMHSHX	Hampton Inn and Suites Binghamton/Vestal
+BGMNYHX	Hampton Inn Binghamton/Johnson City
+BGMOWHX	Hampton Inn Owego, NY
+BGMVEHW	Homewood Suites by Hilton Binghamton/Vestal, NY
+BGMWSDT	DoubleTree by Hilton Binghamton
+BHNWVHX	Hampton Inn Buckhannor
+BHXBNHX	Hampton Inn - Birmingham City North - GHE,UK
+BHXBPGI	Hilton Garden Inn Birmingham Brindleyplace
+BHXBRHN	Hilton Birmingham Bromsgrove
+BHXBSHX	Hampton Inn Birmingham Broad Street
+BHXMETW	Hilton Birmingham Metropole
+BHXPHHN	Hilton Puckrup Hall, Tewkesbury
+BISMKHX	Hampton Inn Bismarck, ND
+BISNWHX	Hampton Inn and Suites Bismarck/Northwest, ND
+BKXSDHX	Hampton Inn and Suites Brookings, SD
+BLKBLTW	Hilton Blackpool
+BNJHIHI	Hilton Bonn
+BOHCCHX	Hampton by Hilton Bournemouth
+BOHTMHI	Hilton Bournemouth, UK
+BRAHNHN	Hilton Bracknell
+BRASATW	Hilton St Anne's Manor Bracknell
+BRSBCHX	Hampton By Hilton Bristol City Center
+BRSCCGI	Hilton Garden Inn Bristol City Centre
+BRSDTDI	DoubleTree by Hilton Bristol South - Cadbury South
+BRSNEHX	Hampton Inn Newport East
+BRSRWDI	DoubleTree by Hilton Bristol City Centre
+BSHAPHN	Hilton Avisford Park, Arundel
+BSHMETW	Hilton Brighton Metropole
+BSTBRHN	Hilton Bristol
+BTANYHX	Hampton Inn Batavia
+BUFAGGI	Hilton Garden Inn Buffalo Airport
+BUFAPHW	Homewood Suites by Hilton Buffalo/Airport
+BUFARHX	Hampton Inn Buffalo Airport
+BUFATHX	Hampton Inn and Suites Buffalo/Airport, NY
+BUFDTHX	Hampton Inn and Suites Buffalo Downtown
+BUFEAHX	Hampton Inn East Aurora, NY
+BUFESES	Embassy Suites by Hilton Buffalo
+BUFFLDT	DoubleTree by Hilton Buffalo-Amherst
+BUFHWHW	Homewood Suites by Hilton Buffalo/Amherst, NY
+BUFMSGI	Hilton Garden Inn Buffalo - Downtown, Ny
+BUFNYDT	DoubleTree Club by Hilton Buffalo Downtown
+BUFWSHX	Hampton Inn Buffalo South
+BUFWVHX	Hampton Inn Williamsville
+BVDNCHX	Hampton Inn Brevard
+CAECCHF	Hilton Columbia Center
+CAECLHX	Hampton Inn and Suites Columbia I-20/Clemson Road, SC
+CAECOGI	Hilton Garden Inn Columbia/Harbison
+CAECSDT	DoubleTree by Hilton Columbia,SC
+CAEDTHX	Hampton Inn Columbia Downtown Historic District
+CAEFJHX	Hampton Inn and Suites Columbia Southeast Ft. Jackson, SC
+CAEGSES	Embassy Suites by Hilton Columbia-Greystone
+CAEHWHW	Homewood Suites by Hilton Columbia, SC
+CAELXHX	Hampton Inn Columbia/Lexington
+CAENEHX	Hampton Inn Columbia Northeast - Fort Jackson, SC
+CAENOGI	Hilton Garden Inn Columbia/Northeast, SC
+CAENWHX	Hampton Inn Columbia Harrison Blvd.
+CAEWEHX	Hampton Inn Columbia Airport
+CASNCHX	Hampton Inn and Suites Cashiers/Sapphire Valley, NC
+CCDNHHX	Hampton Inn Concord/Bow
+CEUSCHX	Hampton Inn Clemson-University Area, SC
+CFDNJHW	Homewood Suites Cranford
+CGNHIHI	Hilton Cologne
+CHRKEHX	Hampton Inn Cherokee
+CHSACHX	Hampton Inn Charleston Airport
+CHSAHGI	Hilton Garden Inn Charleston Airport
+CHSCCHT	Home2 Suites by Hilton Charleston Airport/Convention Center
+CHSCODT	DoubleTree by Hilton Charleston North Convention Center
+CHSCSDT	DoubleTree Suites by Hilton Charleston-Historic District
+CHSDIHX	Hampton Inn Charleston/Daniel Island
+CHSDWGI	Hilton Garden Inn Charleston Waterfront/Downtown
+CHSEMES	Embassy Suites by Hilton North Charleston Airport
+CHSESES	Embassy Suites by Hilton Charleston, S.C.
+CHSHDHX	Hampton Inn Charleston Historic District
+CHSHMHW	Homewood Suites by Hilton North Charleston/Airport, SC
+CHSHWHW	Homewood Suites by Hilton Charleston - Mt. Pleasant
+CHSMPHX	Hampton Inn and Suites Charleston/Mount Pleasant
+CHSMTHX	Hampton Inn Charleston/Mount Pleasant
+CHSNCDT	DoubleTree by Hilton North Charleston
+CHSNOHX	Hampton Inn North Charleston
+CHSPLGI	Hilton Garden Inn Mount Pleasant
+CHSUBHX	Hampton Inn and Suites North Charleston/University Blvd, SC
+CHSWAHX	Hampton Inn and Suites Charleston/West Ashley
+CKBGIGI	Hilton Garden Inn Clarksburg
+CKBWVHX	Hampton Inn Bridgeport/Clarksburg
+CLDNJHX	Hampton Inn Carlstadt
+CLNNJHX	Hampton Inn Clinton
+CLONMHX	Hampton Inn Clovis
+CLTALHW	Homewood Suites by Hilton Charlotte/Ayrsley, NC
+CLTAPDT	DoubleTree by Hilton Charlotte Airport
+CLTATHX	Hampton Inn and Suites Charlotte-Airport, NC
+CLTAYGI	Hilton Garden Inn Charlotte/Ayrsley, NC
+CLTBAHW	Homewood Suites by Hilton Charlotte Ballantyne Area, NC
+CLTBLHX	Hampton Inn and Suites Belmont, NC
+CLTCCES	Embassy Suites by Hilton Charlotte Concord
+CLTCDHX	Hampton Inn Concord/Kannapolis
+CLTCOGI	Hilton Garden Inn Charlotte/Concord, NC
+CLTCRHX	Hampton Inn Charlotte/Lake Norman
+CLTDSHW	Homewood Suites by Hilton Davidson, NC
+CLTDTDT	DoubleTree Suites by Hilton Charlotte-Southpark
+CLTEPHF	Hilton Charlotte-Executive Park
+CLTHHHF	Hilton Charlotte City Center
+CLTHSHX	Hampton Inn and Suites Charlotte/Arrowood Road
+CLTHUHF	Hilton Charlotte University Place, NC
+CLTHVHX	Hampton Inn and Suites Charlotte/Huntersville, NC
+CLTHWHW	Homewood Suites Charlotte-Airport, NC
+CLTKGHX	Hampton Inn and Suites Charlotte @ Concord Hills
+CLTLCHX	Hampton Inn Lincolnton, NC
+CLTMHHX	Hampton Inn Charlotte/Matthews
+CLTMOGI	Hilton Garden Inn Charlotte/Mooresville
+CLTNHGI	Hilton Garden Inn Charlotte - North
+CLTPHGI	Hilton Garden Inn Charlotte Pineville
+CLTPKHW	Homewood Suites by Hilton Charlotte North-Univ Research
+CLTRTGI	Hilton Garden Inn Charlotte Airport, NC
+CLTSHHX	Hampton Inn and Suites Shelby, NC
+CLTSPHX	Hampton Inn and Suites Charlotte/SouthPark @ Phillips Pl, NC
+CLTTBES	Embassy Suites by Hilton Charlotte/Ayrsley
+CLTTGHT	Home2 Suites by Hilton Charlotte I-77 South, NC
+CLTTYES	Embassy Suites by Hilton Charlotte
+CLTUPGI	Hilton Garden Inn Charlotte - Uptown
+CLTUTHX	Hampton Inn Charlotte Uptown
+CLTUVHX	Hampton Inn Charlotte @ University Place
+CLTWCDT	DoubleTree by Hilton Charlotte-Gateway Village
+CNMNMHX	Hampton Inn and Suites Carlsbad, NM
+CNTSCHX	Hampton Inn and Suites Clinton, SC
+COBHNHN	Hilton Cobham
+COLHITW	Hilton Colombo
+COLJTTW	Hilton Colombo Residence
+COMNYHX	Hampton Inn Long Island/Commack
+CONTNHX	Hampton Inn and Suites Tilton, NH
+COSPDT	DoubleTree by Hilton Colorado Springs - World Arena, CO
+CPKNYHX	Hampton Inn Clifton Park
+CPTCCHI	Hilton Cape Town City Centre
+CPTUEDI	DoubleTree by Hilton Cape Town - Upper Eastside Hotel
+CROHNHN	Hilton London Croydon
+CROHXHX	Hampton Inn Croydon
+CRWEMES	Embassy Suites by Hilton Charleston, W.V.
+CRWSOHX	Hampton Inn Charleston/Southbridge
+CRWWVHX	Hampton Inn Charleston Downtown. WV
+CRYHSHW	Homewood Suites by Hilton Raleigh/Cary
+CRYNCHX	Hampton Inn Raleigh.Cary
+CTACDT	DoubleTree by Hilton Seattle Airport
+CTDNYHX	Hampton Inn Cortland
+CVTHNHN	Hilton Coventry
+CVTRADI	DoubleTree by Hilton at the Ricoh Arena - Coventry
+CVTRIHX	Hampton Inn Coventry
+CWLHITW	Hilton Cardiff
+DANNCHX	Hampton Inn Eden
+DCACHGI	Hilton Garden Inn Washington DC Downtown
+DCANMGI	Hilton Garden Inn Washington, DC/US Capitol
+DCASHHH	The Capital Hilton
+DCAWHHH	Washington Hilton
+DHAAUDI	DoubleTree by Hilton Dhahran, Saudi Arabia
+DNCHHHX	Hampton Inn Dunn, NC
+DNDKWDI	DoubleTree by Hilton Dundee
+DORPRES	Embassy Suites by Hilton Dorado Del Mar Beach
+DRWDDDI	DoubleTree by Hilton Darwin
+DRWEDDI	DoubleTree by Hilton Esplanade Darwin, NT
+DRWHDHI	Hilton Darwin
+DSASHHX	Hampton By Hilton Sheffield
+DSTODT	DoubleTree by Hilton Modesto
+DURHITW	Hilton Durban
+DUSHITW	Hilton Dusseldorf
+DVLNJHX	Hampton Inn Denville/Rockaway/Parsippany, NJ
+DWDSDHX	Hampton Inn Deadwood
+ECGNCHX	Hampton Inn Elizabeth City
+EDIAPHN	Hilton Edinburgh Airport
+EDICCDI	DoubleTree by Hilton Edinburgh City Centre, UK
+EDIDHHN	Hilton Dunkeld House
+EDIDUDI	DoubleTree by Hilton Dunblane Hydro
+EDIQCDI	The Queensferry Hotel
+EDNCHWA	Waldorf Astoria Edinburgh - The Caledonian
+EDNGRHN	Hilton Edinburgh Grosvenor
+EDNNCHX	Hampton Inn Edenton
+EKNWVHX	Hampton Inn Elkins, WV
+ELMGIGI	Hilton Garden Inn Elmira/Corning
+ELMHHHX	Hampton Inn Elmira, NY
+ELMNYHX	Hampton Inn White Plaines/Tarrytown
+ELMPPHX	Hampton Inn Corning/Painted Post, NY
+EMABTHI	Hilton at St George's Park, Burton Upon Trent
+EMAHNHN	Hilton East Midlands Airport
+EMALEHN	Hilton Leicester
+EMANOHN	Hilton Nottingham
+EMANUDI	DoubleTree by Hilton Nottingham - Gateway
+EWNMSDT	DoubleTree by Hilton New Bern
+EWRAHHH	Hilton Newark Airport
+EWRBHHF	Hilton East Brunswick
+EWRBRGI	Hilton Garden Inn Bridgewater
+EWRDADT	DoubleTree by Hilton Somerset
+EWRELES	Embassy Suites by Hilton Newark Airport
+EWRETHW	Homewood Suites by Hilton Eatontown, NJ
+EWREWHW	Homewood Suites by Hilton Edgewater (NYC Area), NJ
+EWRHGHF	Hilton Newark-Gateway
+EWRHHHF	Hilton Hasbrouck Heights-Meadowlands
+EWRLWGI	Hilton Garden Inn Lakewood, NJ
+EWRMLHW	Homewood Suites by Hilton Philadelphia/Mt. Laurel
+EWRNADT	DoubleTree by Hilton Newark Airport
+EWRNBHX	Hampton Inn North Brunswick/New Brunswick, NJ
+EWRPHHF	Hilton Parsippany
+EWRRCGI	Hilton Garden Inn Edison/Raritan Center
+EWRROGI	Hilton Garden Inn Rockaway
+EWRRYHT	Home2 Suites by Hilton Rahway, NJ
+EWRSCGI	Hilton Garden Inn Secaucus/Meadowlands
+EWRSHHH	Hilton Short Hills
+EWRSIGI	Hilton Garden Inn New York/Staten Island
+EWRSMHF	Hilton Meadowlands
+EWRWTDT	DoubleTree by Hilton Jersey City
+EXTAPHX	Hampton Inn Exeter Airport
+FARGIGI	Hilton Garden Inn Fargo
+FARGOHX	Hampton Inn and Suites Fargo, ND
+FARHTHT	Home2 Suites by Hilton Fargo, ND
+FARHWHW	Homewood Suites by Hilton Fargo, ND
+FAYCCHX	Hampton Inn Fayetteville Cross Creek Mall
+FAYDTDT	DoubleTree by Hilton Fayetteville
+FAYFBES	Embassy Suites by Hilton Fayetteville/Fort Bragg
+FAYNCHX	Hampton Inn Fayetteville, NC
+FAYNHGI	Hilton Garden Inn Fayetteville/Fort Bragg
+FAYSDHT	Home2 Suites by Hilton Fayetteville, NC
+FAYSLHX	Hampton Inn and Suites Spring Lake, NC
+FFDNJHX	Hampton Inn and Suites Fairfield
+FHKNYHX	Hampton Inn Fishkill
+FKTHWHW	Homewood Suites by Hilton Somerset, NJ
+FLOWJHT	Home2 Suites by Hilton Florence, SC
+FSDDWGI	Hilton Garden Inn - Sioux Falls Downtown, SD
+FSDHHHX	Hampton Inn Sioux Falls
+FSDHWHW	Homewood Suites by Hilton Sioux Falls
+FSDMCHT	Home2 Suites by Hilton Sioux Falls/Sanford Medical Ctr
+FSDNOHX	Hampton Inn North Sioux City
+FSDSFGI	Hilton Garden Inn Sioux Falls South, SD
+FTLFLDT	DoubleTree by Hilton Fort Lee George Washington Bridge
+GAFSCHX	Hampton Inn Gaffney
+GATDBHN	Hilton Dartford Bridge
+GATHITW	Hilton London Gatwick Airport
+GATMAHN	Hilton Maidstone
+GFKGHGI	Hilton Garden Inn Grand Forks/UND
+GFKHXHX	Hampton Inn and Suites Grand Forks, ND
+GLACCGI	Hilton Garden Inn Glasgow City Centre
+GLAGCHX	Hampton Inn Glasgow, United Kingdom
+GLAGRHN	Hilton Glasgow Grosvenor
+GLAHITW	Hilton Glasgow
+GLASTHN	Hilton Strathclyde
+GOJNNHX	Hampton Inn Nizhny Novgorod Gorkogo Russian Federation
+GRDLRHX	Hampton Inn Greenwood
+GRJPRCI	Conrad Pezula Resort and Spa
+GSBNCHX	Hampton Inn Goldsboro
+GSOAPHX	Hampton Inn Greensboro Airport
+GSOBLHX	Hampton Inn and Suites Burlington, NC
+GSOEAHX	Hampton Inn Greensboro East
+GSOFSHX	Hampton Inn and Suites Greensboro/Coliseum Area, NC
+GSOGBES	Embassy Suites by Hilton Greensboro-Airport
+GSOGRGI	Hilton Garden Inn Greensboro, NC
+GSOHTHT	Home2 Suites by Hilton Greensboro Airport, NC
+GSOHWHW	Homewood Suites by Hilton Greensboro
+GSPCPHW	Homewood Suites by Hilton Greenville, SC
+GSPDTHX	Hampton Inn and Suites Greenville-Downtown, SC
+GSPELHX	Hampton Inn Easley, SC
+GSPESES	Embassy Suites by Hilton Greenville Golf Resort & Conf Ctr
+GSPGHHX	Hampton Inn Greenville Haywood, SC
+GSPGVGI	Hilton Garden Inn Greenville
+GSPHPDT	DoubleTree by Hilton Greensboro
+GSPHSHX	Hampton Inn and Suites Greenville/Duncan
+GSPSCHF	Hilton Greenville And Towers
+GSPSEHX	Hampton Inn and Suites Seneca, SC
+GSPSMHX	Hampton Inn Greenville/Simpsonville
+GSPTRHX	Hampton Inn Travelers Rest
+GSPWDHX	Hampton Inn Greenville Woodruff Road
+GSTNCHX	Hampton Inn Charlotte/Gastonia
+GTNSCHX	Hampton Inn Georgetowne Marina
+GUPGIGI	Hilton Garden Inn Gallup, NM
+GVANYHX	Hampton Inn Geneva, NY
+HCKSEGI	Hilton Garden Inn Hickory, NC
+HDSNCHX	Hampton Inn Henderson
+HHHBFGI	Hilton Garden Inn Beaufort, SC
+HHHHEGI	Hilton Garden Inn Hilton Head
+HILSCHX	Hampton Inn Hilton Head, SC
+HKYNCHX	Hampton Inn Hickory, NC (New)
+HLGWHHX	Hampton Inn and Suites Wheeling - The Highlands, WV
+HPNNAGI	Hilton Garden Inn Nanuet
+HPNNUHX	Hampton Inn Nanuet, NY
+HPTNCHX	Hampton Inn High Point
+HTSBVHX	Hampton Inn Huntington/Barboursville
+HTSHUHX	Hampton Inn Huntington University Area, WV
+HUYLNDI	DoubleTree by Hilton Lincoln
+HVLNCHX	Hampton Inn Havelock
+IADCTHX	Hampton Inn and Suites Charles Town, WV
+ILMEWHX	Hampton Inn Wilmington-Eastwood, NC
+ILMMDHX	Hampton Inn Wilmington Medical Park
+ILMMTHW	Homewood Suites by Hilton Wilmington/Mayfaire
+ILMNCHF	Hilton Wilmington Riverside
+ILMTCGI	Hilton Garden Inn Wilmington Mayfaire Town Center
+ILMWVHX	Hampton Inn and Suites Wilmington/Wrightsville Beach
+INTBRHX	Hampton Inn Bermuda Run/Advance I-40, NC
+INTDBHX	Hampton Inn and Suites Dobson, NC
+INTESES	Embassy Suites by Hilton Winston Salem
+INTSTHX	Hampton Inn Winston-Salem Hanes Mall
+INTUVHX	Hampton Inn and Suites Winston-Salem/University Area, NC
+INTWSGI	Hilton Garden Inn Winston-Salem/Hanes Mall, NC
+INTWUDT	DoubleTree by Hilton Winston Salem University
+INVCOHN	Hilton Coylumbridge
+ISNNRHX	Hampton Inn and Suites Williston, ND
+ISONCHX	Hampton Inn Kinston
+ISPAHGI	Hilton Garden Inn Islip / MacArthur Airport
+ISPBHHX	Hampton Inn Long Island/Brookhaven
+ISPHHHF	Hilton Long Island-Huntington
+ISPICGI	Hilton Garden Inn New York Long Island City/Manhattan View,
+ISPMVHT	Home2 Suites Long Island City
+ISPNYHX	Hampton Inn Long Island/Islandia
+ISPRHGI	Hilton Garden Inn Riverhead, NY
+ISPSBGI	Hilton Garden Inn Stony Brook, NY
+ITHHWHW	Homewood Suites by Hilton Ithaca, NY
+ITHNYHX	Hampton Inn Ithaca, NY
+JEDHIHI	Jeddah Hilton
+JEDWAWA	Waldorf Astoria Jeddah - Qasr Al Sharq
+JFKCPHW	Homewood Suites Carle Place/Garden City
+JFKETDT	DoubleTree by Hilton Tinton Falls-Eatontown
+JFKMLGI	Hilton Garden Inn Melville, NY
+JFKQAGI	Hilton Garden Inn Queens/JFK Airport
+JFKWEGI	Hilton Garden Inn Westbury
+JHCGCHX	Hampton Inn Garden City, NY
+JHWNKHX	Hampton Inn and Suites Jamestown, NY
+JKVNCHT	Home2 Suites by Hilton Jacksonville, NC
+JMSSWHX	Hampton Inn Jamestown, ND
+JNBSATW	Hilton Sandton
+JNVNCHX	Hampton Inn Jonesville/Elkin
+JOSEDT	DoubleTree by Hilton San Jose
+KAMBCHX	Hampton Inn Kamloops
+KAMLODT	DoubleTree by Hilton Kamloops
+KJAMSGI	Hilton Garden Inn Krasnoyarsk
+KLFSSGI	Hilton Garden Inn Kaluga
+KRRGIGI	Hilton Garden Inn Krasnodar
+KUFSAHX	Hampton Inn Samara, Russia
+KVXGIGI	Hilton Garden Inn Kirov
+KZNCCDI	DoubleTree by Hilton Kazan City Center
+LAMNMHX	Hampton Inn and Suites Los Alamos
+LBACCDI	DoubleTree by Hilton Leeds City Centre
+LBAYOHN	Hilton York
+LBGWVHX	Hampton Inn Lewisburg, WV
+LBTNCHX	Hampton Inn Lumberton, NC
+LDNNJHX	Hampton Inn Linden
+LEEHNHN	Hilton Leeds City
+LGARPGI	Hilton Garden Inn Ridgefield Park, NJ
+LGASFDT	DoubleTree Suites by Hilton New York City - Times Squares
+LHRAPTW	Hilton London Heathrow Airport
+LHRATHI	Hilton London Heathrow Airport Terminal 5
+LHRCLDI	DoubleTree by Hilton Heathrow Airport
+LHREPGI	Hilton Garden Inn London Heathrow Airport
+LHRHITW	Hilton London Kensington
+LHRHRHI	Hilton Reading
+LHRLBDI	DoubleTree by Hilton London - West End
+LHROLHN	Hilton London Olympia
+LHRSPHI	Hilton London Syon Park
+LIONHF	Hilton Bellevue
+LKGNYHX	Hampton Inn and Suites Lake George, NY
+LKPMLHX	Hampton Inn and Suites Lake Placid, NY
+LONCOCI	Conrad London St. James
+LONCWHI	Hilton London Canary Wharf
+LONECDI	DoubleTree by Hilton London - Ealing
+LONEUHI	Hilton London Euston
+LONEXDI	Doubletree by Hilton London ExCel, United Kingdom
+LONGNHX	Hampton By Hilton Gatwick North
+LONGPTW	Hilton London Green Park
+LONHITW	London Hilton on Park Lane
+LONHPHN	Hilton London Hyde Park
+LONHYDI	DoubleTree by Hilton London-Hyde Park
+LONISHN	Hilton London Angel Islington
+LONLCDI	DoubleTree by Hilton London - Chelsea
+LONLIDI	DoubleTree by Hilton London-Islington, United Kingdom
+LONLKDI	Doubletree by Hilton London Kensington, United Kingdom
+LONLWHI	Hilton London Wembley
+LONMADI	DoubleTree by Hilton London - Marble Arch
+LONMETW	Hilton London Metropole
+LONNDDI	DoubleTree by Hilton London - Docklands Riverside
+LONPDHI	Hilton London Paddington
+LONSBHI	Hilton London Bankside
+LONTBHI	Hilton London Tower Bridge
+LONTLDI	DoubleTree by Hilton London - Tower of London
+LONTSHI	The Trafalgar, London
+LONVCDI	DoubleTree by Hilton London - Victoria
+LONWAHI	The Waldorf Hilton, London
+LONWLHX	Hampton By Hilton London Waterloo
+LONWMDI	DoubleTree by Hilton London -Westminster
+LPLDLDI	DoubleTree by Hilton Hotel & Spa Liverpool
+LPLHIHI	Hilton Liverpool City Centre
+LPLJLHX	Hampton Inn Liverpool John Lennon Airport
+LPLLCHX	Hampton by Hilton Liverpool City Centre
+LRNBGHX	Hampton Inn Laurinburg
+LRUDMHX	Hampton Inn Deming, NM
+LRUHSHX	Hampton Inn and Suites Las Cruces, NM
+LRULBHX	Hampton Inn Lordsburg, NM
+LRULCGI	Hilton Garden Inn Las Cruces, NM
+LTNDTDI	DoubleTree by Hilton Milton Keynes
+LTNLAHX	Hampton Luton Airport
+LTNNHHX	Hampton Inn Littleton, NH
+LTNNOGI	Hilton Garden Inn Luton North
+MAHNJHW	Homewood Suites Mahwah
+MAHWHHX	Hampton Inn and Suites Mahwah, NJ
+MAKHITW	Makkah Hilton Hotel
+MAKSUHI	Hilton Suites Makkah
+MAKTWHI	Makkah Hilton Towers
+MANDGHI	Hilton Manchester Deansgate
+MANDTDI	DoubleTree by Hilton Hotel & Spa Chester
+MANHITW	Hilton Manchester Airport
+MANPDDI	DoubleTree by Hilton Hotel Manchester - Piccadilly
+MBGINHX	Hampton Inn Martinsburg South-Inwood, WV
+MBGWVHX	Hampton Inn Martinsburg
+MEAHWHW	Homewood Suites by Hilton East Rutherford/Meadowlands, NJ
+MEANJES	Embassy Suites by Hilton Secaucus-Meadowland, NJ
+MEBNCHX	Hampton Inn Mebane
+MEDHIHI	Madinah Hilton Hotel
+MEXAHHF	Hilton Mexico City Airport
+MEXCHHX	Hampton Inn and Suites Mexico City Centro Historico
+MEXRFHH	Hilton Mexico City Reforma
+MEXSAHH	Hilton Santa Fe Mexico City
+MGWGIGI	Hilton Garden Inn Morgantown
+MGWVVHX	Hampton Inn Morgantown
+MHTBFHX	Hampton Inn and Suites Manchester/Bedford
+MHTDTGI	Hilton Garden Inn Manchester Downtown
+MHTEXHX	Hampton Inn and Suites Exeter, NH
+MHTHWHW	Homewood Suites Manchester
+MHTPDGI	Hilton Garden Inn Portsmouth
+MIKHNHN	Hilton Milton Keynes
+MITSDHX	Hampton Inn Mitchell
+MLTNYHX	Hampton Inn Middletown
+MLVNYHW	Homewood Suites by Hilton Long Island-Melville
+MNONCHX	Hampton Inn Charlotte/Monroe
+MORNCHX	Hampton Inn Morehead City,NC
+MOTNDHX	Hampton Inn and Suites Minot/Airport, ND
+MOWMLDI	DoubleTree by Hilton Moscow-Marina, Russia
+MOWMSHX	Hampton Inn Moscow Strogino
+MOWNRGI	Hilton Garden Inn Moscow New Riga, Russia
+MRVNCHX	Hampton Inn Mooresville/Lake Norman, NC
+MTANCHX	Hampton Inn Mount Airy
+MTHNJHX	Hampton Inn Burlington/Mount Holly
+MTNRIHX	Hampton Inn and Suites Newport Middletown
+MTYAPHX	Hampton Inn Monterrey Airport
+MTYGAHX	Hampton Inn Monterrey Gallerias
+MTYMHGI	Hilton Garden Inn Monterrey
+MURNCHX	Hampton Inn Murphy, NC
+MWHNJDT	DoubleTree by Hilton Mahwah
+MYRAPGI	Hilton Garden Inn Myrtle Beach/Coastal Grand Mall, SC
+MYRBHHH	Hilton Myrtle Beach Resort
+MYRCCHX	Hampton Inn Myrtle Beach-Broadway @ The Beach, SC
+MYRESES	Embassy Suites by Hilton Myrtle Beach
+MYRHPHX	Hampton Inn North Myrtle Beach Harbourgate
+MYRKPES	Kingston Plantation Condos
+MYRMIHX	Hampton Inn Murrells Inlet, SC
+MYRNOHX	Hampton Inn Myrtle Beach Northwood
+MYROFHX	Hampton Inn & Suites Myrtle Beach Oceanfront
+MYRRPHH	Hilton Royale Palms
+MYRTTGV	Ocean 22 by Hilton Grand Vacations
+MYRWEHX	Hampton Inn Myrtle Beach West
+NAMHIHI	Hilton Namhae Golf and Spa Resort
+NBRNCHX	Hampton Inn New Bern
+NBYHNHN	Hilton Newbury Centre
+NBYNBHN	Hilton Newbury North
+NBYSCHX	Hampton Inn Newberry Opera House
+NCLGIGI	Hilton Garden Inn Sunderland, United Kingdom
+NCLHIHI	Hilton Newcastle Gateshead
+NCLHXHX	Hampton Inn Newcastle
+NCLNADI	DoubleTree by Hilton Newcastle International Airport
+NEWNEHN	Hilton Newport
+NOCNHHX	Hampton Inn and Suites North Conway, NH
+NOULPHI	Hilton Noumea La Promenade Residences, New Caldonia
+NPTMIHW	Homewood Suites by Hilton Newport Middletown, RI
+NPTSKHX	Hampton Inn South Kingstown, RI
+NWKHSHX	Hampton Inn and Suites Newark/Harrison Riverwalk
+NWKNJHX	Hampton Inn Newark Airport
+NYCAPHX	Hampton Inn New York-JFK Apt(Jamaica/Queens)
+NYCBOHX	Hampton Inn Brooklyn/Downtown, NY
+NYCBPDT	DoubleTree by Hilton New York City - Financial District
+NYCCHGI	Hilton Garden Inn New York/Manhattan-Chelsea
+NYCCICI	Conrad New York, NY
+NYCCLDT	DoubleTree by Hilton New York City - Chelsea
+NYCCSHX	Hampton Manhattan Chelsea
+NYCDTDT	New York City-Metropolitan Hotel, NY
+NYCEMHX	Hampton Inn Manhattan-35th Street/Empire State Bldg, NY
+NYCETGI	Hilton Garden Inn New York Mid-Town Park Avenue
+NYCFDHF	Hilton New York Fashion District
+NYCHSHX	Hampton Manhattan Madison Square Garden
+NYCJEHX	Hampton Inn Jericho/Westbury, NY
+NYCJFHF	Hilton New York JFK Airport, NY
+NYCLAHX	Hampton New York LaGuardia Airport
+NYCMAHX	Hampton Manhattan Times Square South
+NYCMDHF	Hilton Manhattan East
+NYCMEGI	Hilton Garden Inn New York/Manhattan-Midtown East
+NYCMHHX	Hampton Inn Manhattan-SoHo, NY
+NYCMLHH	Hilton Millenium
+NYCMMHW	Homewood Suites New York/Midtown Manhattan Times Sq-South
+NYCMNHX	Hampton Inn Manhattan/Downtown-Financial District
+NYCMRHX	Hampton Inn Harriman/Woodbury, NY
+NYCMTHX	Hampton Inn Manhattan Times Square North
+NYCMWGI	Hilton Garden Inn Times Square
+NYCNADT	DoubleTree by Hilton Nanuet
+NYCNHHH	New York Hilton Midtown
+NYCSIHX	Hampton Inn and Suites Staten Island, NY
+NYCSPHX	Hampton Manhattan Seaport Financial District
+NYCSQDT	DoubleTree by Hilton New York-Times Square South
+NYCSSGI	Hilton Garden Inn New York Times Square Central
+NYCTFGI	Hilton Garden Inn New York  West 35th St
+NYCTRGI	Hilton Garden Inn New York Tribeca
+NYCTSHF	Hilton Times Square
+NYCUNHX	Hampton Inn Manhattan United Nations
+NYCWAWA	The Waldorf Astoria New York
+NYCWFGI	Hilton Garden Inn Central Park South
+NYCWTWA	The Waldorf Towers
+NYCYNHX	Hampton Inn Yonkers
+OAJABHX	Hampton Inn and Suites Atlantic Beach, NC
+OAJDTDT	DoubleTree by Hilton Atlantic Beach
+OAJNCHX	Hampton Inn and Suites Jacksonville, NC
+OAJSWHX	Hampton Inn and Suites Swansboro/Camp Lejeune, NC
+OBXNCHX	Hampton Inn and Suites Outer Banks/Corolla
+OGSPCHX	Hampton Inn Potsdam/Canton, NY
+OLNNYHX	Hampton Inn Olean
+OMAHDT	DoubleTree by Hilton Omaha-Downtown
+ONHNJHX	Hampton Inn Oneonta
+ONTODT	DoubleTree by Hilton Ontario Airport
+ORFKHGI	Hilton Garden Inn Outer Banks/Kitty Hawk
+ORMCBHX	Hampton Inn-Corby,United Kingdom
+ORMNOHN	Hilton Northampton
+OVBDTDI	DoubleTree by Hilton Novosibirsk
+OXFHXHX	Hampton By Hilton Oxford
+PAWSCHX	Hampton Inn Pawley's Island, SC
+PCTDTDT	DoubleTree by Hilton Princeton
+PEEGIGI	Hilton Garden Inn Perm
+PERHITW	Parmelia Hilton Perth Hotel
+PGVGVHX	Hampton Inn Greenville,  NC
+PGVNCHF	Hilton Greenville
+PHLFRDT	DoubleTree Suites by Hilton Mt. Laurel
+PHLMTGI	Hilton Garden Inn Mt. Laurel, NJ
+PISNJES	Embassy Suites by Hilton Piscataway-Somerset
+PKBDOHX	Hampton Inn and Suites Parkersburg Downtown, WV
+PKBWVHX	Hampton Inn Parkersburg-Mineral Wells, WV
+PLBNYHX	Hampton Inn and Suites Plattsburgh, NY
+PMLNJHX	Hampton Inn Philadelphia/Mt. Laurel
+PNCHIHH	Hilton Ponce Golf & Casino Resort
+POSHIHH	Trinidad Hilton & Conference Center
+POUKGHX	Hampton Inn Kingston, NY
+POUNYHX	Hampton Inn Poughkeepsie
+PPTBNHI	Hilton Bora Bora Nui Resort & Spa
+PPTMLHI	Hilton Moorea Lagoon Resort & Spa
+PRGHITW	Hilton Prague
+PRGOTHI	Hilton Prague Old Town
+PRIWVHX	Hampton Inn Princeton, WV
+PRLBHHF	Hilton Pearl River
+PRNDVHW	Homewood Suites by Hilton Dover - Rockaway
+PRNHCHX	Hampton Inn Parsippany
+PRNHOHX	Hampton Inn and Suites Parsippany, NJ
+PRNNJES	Embassy Suites by Hilton Parsippany
+PSMDNHX	Hampton Inn Portsmouth/Downtown, NH
+PSMDOHX	Hampton Inn Dover, NH
+PSMDVHW	Homewood Suites by Hilton Dover, NH
+PSMHWHW	Homewood Suites Portsmouth
+PSMNHHX	Hampton Inn Portsmouth Central, NH
+PTNHHHX	Hampton Inn Princeton, NJ
+PTNHWHW	Homewood Suites by Hilton Princeton, NJ
+PVDCUQQ	Providence Biltmore, Curio Collection By Hilton
+PVDGIGI	Hilton Garden Inn Providence Airport/Warwick
+PVDPRHF	Hilton Providence
+PVDSFHX	Hampton Inn and Suites Smithfield, RI
+PVDWYHX	Hampton Inn and Suites Providence, RI
+PVENJHX	Hampton Inn Pennsville
+PVLNCHX	Hampton Inn and Suites Charlotte/Pineville
+QMZCHTW	Hilton Mainz City
+QMZHITW	Hilton Mainz
+QQYTGHX	Hampton Inn York
+RAPGIGI	Hilton Garden Inn Rapid City, SD
+RAPHAHX	Hampton Inn Rapid City
+RAPSSQQ	Hotel Alex Johnson Rapid City, Curio Collection by Hilton
+RCKSCHX	Hampton Inn Rock Hill
+RDUACES	Embassy Suites by Hilton Raleigh-Durham Airport/Brier Creek
+RDUAHGI	Hilton Garden Inn Raleigh -Durham Airport
+RDUANHX	Hampton Inn and Suites Raleigh Airport/North , NC
+RDUAPES	Embassy Suites by Hilton Raleigh-Durham-Research Triangle E
+RDUAWHX	Hampton Inn and Suites Raleigh/Crabtree Valley, NC
+RDUAYDT	DoubleTree by Hilton Raleigh/Cary
+RDUCHHX	Hampton Inn and Suites Chapel Hill/Druham
+RDUCLHX	Hampton Inn Raleigh/Clayton
+RDUCMES	Embassy Suites by Hilton Raleigh/Crabtree
+RDUCOHX	Hampton Inn and Suites Chapel Hill-Carrboro/Downtown, NC
+RDUCTHW	Homewood Suites by Hilton Raleigh/Crabtree Valley
+RDUCUQQ	The Franklin Hotel Chapel Hill, Curio Collection By Hilton+++
+RDUCYHX	Hampton Inn and Suites Raleigh/Cary
+RDUDADT	DoubleTree by Hilton Raleigh Durham Airport
+RDUDHHF	Hilton Durham
+RDUDMHW	Homewood Suites by Hilton Raleigh-Durham Aprt @ RTP
+RDUDNDT	DoubleTree by Hilton Brownstone-University
+RDUDWHX	Hampton Inn and Suites Raleigh Downtown, NC
+RDUGIGI	Hilton Garden Inn Raleigh-Durham/Research Triangle Park
+RDUGNHX	Hampton Inn Raleigh/Garner
+RDUHHHX	Hampton Inn Raleigh Capital Blvd. North
+RDUHSHX	Hampton Inn and Suites Holly Springs, NC
+RDUHWHW	Homewood Chapel Hill/Durham
+RDUIIDT	DoubleTree Suites by Hilton Raleigh-Durham
+RDUMCGI	Hilton Garden Inn Durham/University Medical Center
+RDUMVHX	Hampton Inn Raleigh Durham Airport
+RDUNCHX	Hampton Inn Raleigh North
+RDUNEGI	Hilton Garden Inn Raleigh Triangle Town Center, NC
+RDUNHHF	Hilton North Raleigh
+RDUNOHX	Hampton Inn and Suites Durham-North I-85, NC
+RDURCGI	Hilton Garden Inn Raleigh-Cary, NC
+RDUSPGI	Hilton Garden Inn Durham Southpoint, NC
+RDUWFHX	Hampton Inn Raleigh/Town of Wake Forest
+RDUWLHX	Hampton Inn Wilson-Downtown, NC
+RFPNJHX	Hampton Inn Ridgefield Park
+RKHRHGI	Hilton Garden Inn Rock Hill
+RLBKDT	DoubleTree by Hilton Bakersfield
+RLDUDT	DoubleTree by Hilton Durango
+RLDVDT	DoubleTree by Hilton Denver
+RLLCDT	DoubleTree by Hilton Portland-Lloyd Center
+RLMVDT	DoubleTree by Hilton Missoula/Edgewater
+RLSADT	DoubleTree by Hilton Sacramento, CA
+RLSCDT	DoubleTree by Hilton Sonoma Wine Country
+RMEBHHX	Hampton Inn Rome, NY
+ROCBPHX	Hampton Inn Brockport, NY
+ROCCPHW	Homewood Suites by Hilton Rochester-Greece, NY
+ROCDTDT	DoubleTree by Hilton Rochester
+ROCEMGI	Hilton Garden Inn Rochester-Downtown, NY
+ROCFPHX	Hampton Inn & Suites Rochester/Victor, NY
+ROCGEHX	Hampton Inn Geneseo, NY
+ROCHEHX	Hampton Inn and Suites Rochester/Henrietta, NY
+ROCHWHW	Homewood Suites by Hilton Rochester/Henrietta
+ROCIRHX	Hampton Inn Rochester/Irondequoit, NY
+ROCNYHX	Hampton Inn Rochester North
+ROCPTGI	Hilton Garden Inn Rochester/Pittsford, NY
+ROCRHHT	Home2 Suites by Hilton Rochester Henrietta, NY
+ROCTSDT	DoubleTree by Hilton Strathallen
+ROCUAGI	Hilton Garden Inn Rochester/University & Medical Center, NY
+ROCVIHW	Homewood Suites Victor, NY
+ROCWBHX	Hampton Inn Rochester/Webster, NY
+ROWHSHX	Hampton Inn and Suites Roswell, NM
+ROXNCHX	Hampton Inn Roxboro, NC
+RUHAMDI	DoubleTree by Hilton Hotel Riyadh - Al Muroj Business Gate
+RUHROGI	Hilton Garden Inn Riyadh Olaya
+RVCNYHX	Hampton Inn and Suites Rockville Centre
+RWIDTDT	DoubleTree by Hilton Rocky Mount
+RWINCHX	Hampton Inn Rocky Mount
+RYEHIHH	Hilton Westchester, NY
+RZZCCGI	Hilton Garden Inn Roanoke Rapids, NC
+RZZNCHX	Hampton Inn and Suites Roanoke Rapids, NC
+SAFCRDT	DoubleTree by Hilton Santa Fe
+SAFHAHX	Hampton Santa Fe
+SALHIHF	Hilton Princess San Salvador
+SCHNTDT	DoubleTree by Hilton Schenectady
+SDGODT	DoubleTree by Hilton San Diego Mission Valley
+SDQSDES	Embassy Suites by Hilton Santo Domingo
+SELCICI	Conrad Seoul
+SELHITW	Millennium Seoul Hilton
+SELNCHX	Hampton Inn Selma/Smithfield
+SFECGHH	Hilton Santa Fe Buffalo Thunder, NM
+SFEHIHF	Hilton Santa Fe
+SFEHWHW	Homewood Suites by Hilton Santa Fe-North, NM
+SJCAPHX	Hampton Inn and Suites San Jose, Costa Rica
+SJDLCHH	Hilton Los Cabos
+SJNCCHH	Condado Lagoon Villas At Caribe Hilton
+SJNHIHH	Caribe Hilton
+SJODTDT	DoubleTree by Hilton Cariari San Jose
+SJOLAGI	Hilton Garden Inn Liberia Airport
+SJUCOHH	The Condado Plaza Hilton
+SJUDTDT	DoubleTree by Hilton San Juan
+SJUELHH	El San Juan Hotel & Casino, PR
+SJUESES	Embassy Suites by Hilton San Juan Hotel & Casino
+SJUGDWA	El Conquistador Resort, PR
+SJUHHHX	Hampton Inn San Juan, Puerto Rico
+SJULCWA	Las Casitas Resort, Puerto Rico
+SLBJAHX	Hampton Inn Salisbury, NC
+SMLSCHX	Hampton Inn Summerville
+SNFNCHX	Hampton Inn Sanford
+SNPNCHX	Hampton Inn and Suites Southern Pines/Pinehurst, NC
+SNTSCHX	Hampton Inn Santee
+SOPNCHW	Homewood Suites by Hilton Olmsted Village-Pinehurst, NC
+SOUAGHI	Hilton at the Ageas Bowl, Southampton
+SOUHNHN	Hilton Southampton
+SPAHSHX	Hampton Spartanburg-I-26-Westgate Mall
+SPASCHX	Hampton Inn Spartanburg North
+SPCCDT	DoubleTree by Hilton Spokane-City Center
+SPFTSHX	Hampton Inn Spearfish, SD
+SPLNJHX	Hampton Inn South Plainfield, NJ
+SPTNCHX	Hampton Inn Southport
+STJHIHH	Hilton Saint John
+STNAPHN	Hilton London Stansted Airport
+STNCBDI	DoubleTree by Hilton Cambridge City Centre
+STNHCHI	Hilton Cambridge, United Kingdom
+STRPKGI	Hilton Garden Inn Stuttgart Neckarpark
+SUMMNHX	Hampton Inn Manning, SC
+SUMSCHX	Hampton Inn Sumter
+SVHHHHX	Hampton Inn Statesville, NC
+SVLWVHX	Hampton Inn Summersville
+SVOHFHI	Hilton Moscow Leningradskaya
+SVXCCDI	DoubleTree by Hilton Ekaterinburg City Centre
+SWFFKGI	Hilton Garden Inn Poughkeepsie/Fishkill
+SWFNWHW	Homewood Suites by Hilton Newburgh-Stewart Airport
+SWIHNHN	Hilton Swindon
+SYDHITW	Hilton Sydney
+SYRAPHX	Hampton Inn Syracuse North
+SYRAUGI	Hilton Garden Inn Auburn, NY
+SYRCYHX	Hampton Inn SYRACUSE/CLAY, NY
+SYRDTDT	DoubleTree by Hilton Syracuse
+SYRDWES	Embassy Suites by Hilton Syracuse
+SYRERHX	Hampton Inn and Suites Syracuse Erie Boulevard, NY
+SYRHWHW	Homewood Suites by Hilton Syracuse/Liverpool
+SYRSHGI	Hilton Garden Inn Syracuse
+SZDCRDI	DoubleTree by Hilton Sheffield Park
+SZDSHHN	Hilton Sheffield
+TAONMHX	Hampton Inn Taos
+TCCSRHX	Hampton Inn Santa Rosa, NM
+TERHIDT	DoubleTree by Hilton Tarrytown
+TJMOSDI	DoubleTree by Hilton Tyumen, Russia
+TRVNJHX	Hampton Inn Turnersville (Philadelphia Area), NJ
+TTNHAHW	Homewood Suites by Hilton Hamilton, NJ
+TTNHLGI	Hilton Garden Inn Hamilton, NJ
+TTNHRHX	Hampton Inn and Suites Robbinsville, NJ
+TTNMHGI	Hilton Garden Inn Mount Holly/Westampton, NJ
+TUUGIGI	Hilton Garden Inn Tabuk
+UCANHHX	Hampton Inn & Suites New Hartford
+UCANYHX	Hampton Inn Utica, NY
+UFAGIGI	Hilton Garden Inn Ufa Riverside
+UFAHXHX	Hampton Inn Ufa
+ULYGSGI	Hilton Garden Inn Ulyanovsk
+VOGVPHX	Hampton By Hilton Volgograd Profsoyuznaya
+VORHEHX	Hampton Inn Philadelphia/Voorhees, NJ
+VORNJHX	Hampton Inn Cherry Hill/Voorhees
+VOZHXHX	Hampton Inn Voronezh, Russia
+WARHNHN	Hilton Warwick / Stratford-upon-Avon
+WASCCES	Embassy Suites by Hilton Washington DC Convention Center
+WASCHES	Embassy Suites by Hilton Chevy Chase Pavilion
+WASDNES	Embassy Suites by Hilton Washington DC Georgetown
+WASDTDT	DoubleTree by Hilton Washington D.C.
+WASHHHX	Hampton Washington-Downtown-Convention Center, DC
+WASHSHX	Hampton Inn Washington, DC/White House
+WASHWHW	Homewood Suites by Hilton Washington, D.C. Downtown
+WASNYHX	Hampton Inn & Suites Washington, D.C./Navy Yard Area
+WASWEGI	Hilton Garden Inn Washington Dc/ Georgetown Area
+WATHNHN	Hilton Watford, United Kingdom
+WBDHAHX	Hampton Inn Woodbridge, NJ
+WHEWVHX	Hampton Inn Wheeling
+WHTNCHX	Hampton Inn Washington, NC
+WILNCHX	Hampton Inn Williamston
+WINNJHX	Hampton Inn East Windsor, NJ
+WINWVHX	Hampton Inn Winfield/Teays Valley
+WKBNCHX	Hampton Inn Wilkesboro
+WLNHSHX	Hampton Inn and Suites Wilson I-95
+WLTSCHX	Hampton Inn Walterboro
+WODHIHF	Hilton Woodcliff Lake
+WRWHSHX	Hampton Inn & Suites Providence/Warwick Airport,RI
+WRWHWHW	Homewood Suites by Hilton Providence-Warwick
+XWOWODI	Doubletree by Hilton Woking, United Kingdom
+YCWLRHX	Hampton Inn Chilliwack, British Columbia, Canada
+YHZDTHX	Hampton Inn and Suites Dartmouth, Nova Scotia, Canada
+YHZDWHW	Homewood  Suites Halifax Downtown
+YHZDXHX	Hampton Inn Halifax Downtown
+YHZHGGI	Hilton Garden Inn Halifax Airport, Nova Scotia
+YHZHHDT	The Hollis Halifax - a DoubleTree Suites by Hilton
+YNJBCHX	Hampton Inn and Suites Langley/Surrey, BC, Canada
+YQMNBHX	Hampton Inn and Suites Moncton, New Brunswick, Canada
+YQYNSHX	Hampton Inn Sydney, Nova Scotia, CA
+YSJSJHX	Hampton Inn and Suites Saint John, New Brunswick, Canada
+YVRAHHF	Hilton Vancouver Airport
+YVRHSHX	Hampton Inn and Suites Vancouver-Downtown, BC, Canada
+YVRRHHX	Hampton Inn Vancouver-Airport/Richmond,BC, Canada
+YVRVMHF	Hilton Vancouver Metrotown
+YWSVRHF	Hilton Whistler Resort & Spa
+YYJDSDT	DoubleTree by Hilton Victoria
+YYTAPHX	Hampton Inn and Suites St. John's Airport, NL, Canada
+ZQNALDI	DoubleTree by Hilton Queenstown, New Zealand
+ZQNHQHI	Hilton Queenstown Resort & Spa
