@@ -101,8 +101,18 @@ object IcibaApiController extends BasicController with Logging {
 			("homoionyms" -> (for (i <- 0 until data.homoionyms.size) yield 
 				data.homoionyms.get(i)).map(p => 
 				(("str" -> p.str) ~ ("s2dto" -> (for (i <- 0 until p.s2dto.size) yield 
-					p.s2dto.get(i)).map( d => (("str1" -> d.str1) ~ ("str2" -> d.str2)))))))
-			): JValue
+					p.s2dto.get(i)).map( d => (("str1" -> d.str1) ~ ("str2" -> d.str2))))))) ~
+			("sameWrds" -> (for (i <- 0 until data.sameWrds.size) yield
+				data.sameWrds.get(i)).map(p =>
+				(("str" -> p.str) ~ ("words" -> (for (i <- 0 until p.words.size) yield
+					p.words.get(i)))))) ~
+			("oppsites" -> (for (i <- 0 until data.oppsites.size) yield
+				data.oppsites.get(i)).map(p =>
+				(("str" -> p.str) ~ ("words" -> (for (i <- 0 until p.words.size) yield
+					p.words.get(i)))))) ~
+			("phrases" -> (for (i <- 0 until data.phrases.size) yield
+				data.phrases.get(i)).map(p =>
+				(("str1" -> p.str1) ~ ("str2" -> p.str2) ~ ("str3" -> p.str3))))): JValue
 	}}
 
 	service("/api/dictionary/removenewword/test") {(info) => {

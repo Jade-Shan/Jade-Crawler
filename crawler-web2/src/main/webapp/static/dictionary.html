@@ -124,6 +124,9 @@ function load(data) {
 			cnt = cnt + addRelatedWords(data.result.relatedWords)
 			cnt = cnt + addExamples(data.result.examples)
 			cnt = cnt + addHomoionyms(data.result.homoionyms)
+			cnt = cnt + addSameWrds(data.result.sameWrds)
+			cnt = cnt + addOppsites(data.result.oppsites)
+			cnt = cnt + addPhrases(data.result.phrases)
 			$('#main').html(cnt)
 	}
 };
@@ -148,12 +151,65 @@ function addHomoionyms(d) {
 	return str; 
 };
 
+function addSameWrds(d) {
+	if (d) {
+		var str = "<h5>同义词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<dl>";
+				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
+					str = str + "<dl><dt>";
+				$.each(item.words, function(index1, item1) {
+					str = str + '<a href="javascript:transword(\'' + 
+						 item1 + '\')">' + item1 + '</a> &nbsp; ';
+					})
+					str = str + "</dt></dl>";
+				str = str + "</ol></dd></dl>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addOppsites(d) {
+	if (d) {
+		var str = "<h5>反义词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<dl>";
+				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
+					str = str + "<dl><dt>";
+				$.each(item.words, function(index1, item1) {
+					str = str + '<a href="javascript:transword(\'' + 
+						 item1 + '\')">' + item1 + '</a> &nbsp; ';
+					})
+					str = str + "</dt></dl>";
+				str = str + "</ol></dd></dl>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
 function addExamples(d) {
 	if (d) {
 		var str = "<h5>例句</h5><ol>";
 		$.each(d, function(index, item){
 				str = str + "<li><dl>";
 				str = str + "<dt>" + item.str1 + "<dt>";
+				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "</dl></li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addPhrases(d) {
+	if (d) {
+		var str = "<h5>词组搭配</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li><dl>";
+				str = str + "<dt>" + '<a href="javascript:transword(\'' + 
+						 item.str1 + '\')">' + item.str1 + '</a>' + "<dt>";
 				str = str + "<dd>" + item.str2 + "<dd>";
 				str = str + "</dl></li>";
 				})
@@ -262,7 +318,7 @@ function addNewWord(word) {
 };
 
 function trans() {
-	word = $wordIpt.val().replace(/\s+/g,"_");
+	word = $wordIpt.val();
 	if ('' == word) {
 		//
 	} else {

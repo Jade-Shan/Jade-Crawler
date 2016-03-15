@@ -15,7 +15,8 @@ class WebIcibaTest extends FunSuite {
 
 	val logger = WebIcibaTest.logger
 
-	val icibaHtml = Source.fromFile("src/test/examples/iciba.html").mkString
+	// val icibaHtml = Source.fromFile("src/test/examples/iciba.html").mkString
+	val icibaHtml = Source.fromFile("src/test/examples/iciba.html2").mkString
 
 	test("Test-scalatest") {
 		val rec = WebIcibaParser.parse(icibaHtml)

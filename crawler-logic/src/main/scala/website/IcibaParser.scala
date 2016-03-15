@@ -16,6 +16,7 @@ import jadecrawler.dto.website.IcibaDto
 import jadecrawler.dto.website.IcibaS2Dto
 import jadecrawler.dto.website.IcibaS3Dto
 import jadecrawler.dto.website.IcibaHomoDto
+import jadecrawler.dto.website.Opposite
 
 import jadeutils.common.JsoupUtils._
 
@@ -28,7 +29,9 @@ object WebIcibaParser extends Logging {
 
 		val doc = Jsoup parse htmlStr
 
-		val word = (doc select "div.in-base>div>h1.keywork").text
+		val articles = doc select "div.info-article"
+
+		val word = (doc select "div.in-base>div>h1.keyword").text
 		logger trace word
 
 		val prons = doc select "div.in-base>div>div>div.base-speak>span"
@@ -40,34 +43,50 @@ object WebIcibaParser extends Logging {
 		val explations = (for (e <- exps; rec = genExps(e)) yield rec) toList;
 		logger trace explations.toString
 
-		val rlts1 = (for (r <- (doc select "li.change>p>span"); rec = r.text if null != rec) yield rec) toList;
-		val rlts2 = (for (r <- (doc select "li.change>p>a"   ); rec = r.text if null != rec) yield rec) toList;
-		val relatedWords = (for (r <- (rlts1 zip rlts2); rec = new IcibaS2Dto(r._1, r._2) if null != rec) yield rec) toList;
+		val rlts1 = (for (r <- (doc select "li.change>p>span"); 
+			rec = r.text if null != rec) yield rec) toList;
+		val rlts2 = (for (r <- (doc select "li.change>p>a"); 
+			rec = r.text if null != rec) yield rec) toList;
+		val relatedWords = (for (r <- (rlts1 zip rlts2); 
+			rec = new IcibaS2Dto(r._1, r._2) if null != rec) yield rec) toList;
 		logger trace relatedWords.toString
 
 		val examps = doc select "div.article-section>div.section-p"
 		val examples = (for (r <- examps; rec = genExamps(r)) yield rec) toList;
 		logger trace examples.toString
 
-		val articles = doc select "div.info-article"
-
 		val homos = getArticleByType(articles, (e) => {
 				val arr = e select "ul.article-list>li.current"
 				arr.length > 0 && arr.get(0).text.contains("同义词辨析")
 			})
-		val homoionyms = (for (r <- homos; rec = genHomo(r) if null != rec) 
+		val homos2 = (for (e <- homos; 
+			a <- e select "div.collins-section>div.section-prep>div.prep-order") yield a).toList
+		val homoionyms = (for (r <- homos2; rec = genHomo(r) if null != rec) 
 			yield rec) toList;
 		logger trace homoionyms.toString
 
+		val pha = getArticleByType(articles, (e) => {
+				val arr = e select "ul.article-list>li.current"
+				arr.length > 0 && arr.get(0).text.contains("词组搭配")
+			})
+		val pha1 = (for (e <- pha; a <- e select "div.collins-section") yield a).toList
+		val phrases = (for (r <- pha1; rec = genPhrase(r) if null != rec) 
+			yield rec) toList;
+		logger trace phrases.toString
+
+		val opw = getArticleByType(articles, (e) => {
+				val arr = e select "ul.article-list>li.current"
+				arr.length > 0 && arr.get(0).text.contains("同反义词")
+			})
+		val opw1 =  (for (e <- opw; a <- e select "div.article") yield a).toList
+		val opGrp = if (null != opw1 && opw1.size > 0) genOpposite(opw1(0)) else (Nil, Nil)
+
 		Some(new IcibaDto(word, pronuctions, explations, relatedWords, examples,
-			homoionyms))
+			homoionyms, opGrp._1, opGrp._2, phrases))
 	}
 
-	def getArticleByType(list: Elements, typeFunc: (Element) => Boolean) = {
-		val ll = (for (e <- list if typeFunc(e)) yield e).toList 
-		(for (e <- ll; 
-			a <- e select "div.collins-section>div.section-prep>div.prep-order") yield a).toList
-	}
+	def getArticleByType(list: Elements, typeFunc: (Element) => Boolean) = (
+		for (e <- list if typeFunc(e)) yield e).toList 
 
 	val pronPattern = """^(\S+)\s?\[(.+)\]$""".r
 	def genPron(e: Element) = e.text match {
@@ -102,6 +121,38 @@ object WebIcibaParser extends Logging {
 		val words = e select "ul.text-sentence>li.item"
 		val recs: java.util.List[IcibaS2Dto] = (for (w <- words; c = (w select "a", w select "span.family-chinese")) yield new IcibaS2Dto(c._1.text, c._2.text)).toList
 		if (isNotBlank(mean)) new IcibaHomoDto(mean, recs) else null
+	}
+
+	def genPhrase(e: Element) = {
+		import scala.collection.JavaConversions._
+
+		val word = (e select "div.section-h>p>span.family-english").text
+		val mean = (e select "div.section-prep>div.prep-order>p>span.family-english").text
+		val exp = (e select "div.section-prep>div.prep-order>div.text-sentence").text
+		if (isNotBlank(mean)) new IcibaS3Dto(word, mean, exp) else null
+	}
+
+	def genOpposite(e: Element): (List[Opposite], List[Opposite]) = {
+		import scala.collection.JavaConversions._
+
+		var la: List[Opposite] = Nil
+		var lb: List[Opposite] = Nil
+
+		var stype = ""
+		for (o <- e select "div.article>div") {
+			if (o.text.contains("同义词")) stype =      "同义词"
+			else if (o.text.contains("反义词")) stype = "反义词"
+			else { 
+				val s = o.select("div.prep-order>p.family-chinese").text
+				val ws = (for(c <- o.select("div.sentence-item>p.family-chinese>a")) yield c.text).toList
+				if (null != s && s.size > 0 && ws.size > 0) {
+					if (stype == "同义词") la = new Opposite(s, ws) :: la
+					if (stype == "反义词") lb = new Opposite(s, ws) :: lb
+				}
+			}
+		}
+
+		(la, lb)
 	}
 
 }
