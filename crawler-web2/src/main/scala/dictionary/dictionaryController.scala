@@ -73,19 +73,19 @@ object IcibaApiController extends BasicController with Logging {
 		val cache = IcibaCrawler.loadLocal(dao, word)
 
 		val data = if (null != cache) { cache } else {
-			// val rec = jadecrawler.website.IcibaCrawler.process(word)
-			// IcibaCrawler.saveLocal(dao, rec)
-			// rec
-			new jadecrawler.dto.website.IcibaDto(word, 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
-				new java.util.ArrayList[(jadecrawler.dto.website.IcibaS2Dto)](), 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS2Dto](),
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaHomoDto]())
+			val rec = jadecrawler.website.IcibaCrawler.process(word)
+			IcibaCrawler.saveLocal(dao, rec)
+			rec
+			// new jadecrawler.dto.website.IcibaDto(word, 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
+			// 	new java.util.ArrayList[(jadecrawler.dto.website.IcibaS2Dto)](), 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS2Dto](),
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaHomoDto]())
 		}
 
 		("result" -> 
-			("word" -> data.word) ~ 
+			("word" -> word) ~ 
 			("pronunciations" -> (for (i <- 0 until data.pronunciations.size) yield 
 				data.pronunciations.get(i)).map(p => 
 				(("str1" -> p.str1) ~ ("str2" -> p.str2) ~ ("str3" -> p.str3)))) ~ 

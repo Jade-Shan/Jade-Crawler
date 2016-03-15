@@ -33,13 +33,13 @@ object WebIcibaParser extends Logging {
 
 		val prons = doc select "div.in-base>div>div>div.base-speak>span"
 		val pronuctions = (for (p <- prons; rec = genPron(p) if rec != None) 
-					yield { rec.getOrElse(null) }) toList;
+			yield { rec.getOrElse(null) }) toList;
 		logger trace pronuctions.toString
-		
+
 		val exps = doc select "div.in-base>ul.base-list>li"
 		val explations = (for (e <- exps; rec = genExps(e)) yield rec) toList;
 		logger trace explations.toString
-		
+
 		val rlts1 = (for (r <- (doc select "li.change>p>span"); rec = r.text if null != rec) yield rec) toList;
 		val rlts2 = (for (r <- (doc select "li.change>p>a"   ); rec = r.text if null != rec) yield rec) toList;
 		val relatedWords = (for (r <- (rlts1 zip rlts2); rec = new IcibaS2Dto(r._1, r._2) if null != rec) yield rec) toList;
@@ -49,14 +49,24 @@ object WebIcibaParser extends Logging {
 		val examples = (for (r <- examps; rec = genExamps(r)) yield rec) toList;
 		logger trace examples.toString
 
-		// val homos = doc select "div#dict_content_5>dl.def_list>dd"
-		// val homoionyms = (for (r <- homos; rec = genHomo(r) if null != rec) 
-		// 	yield rec) toList;
-		// logger trace homoionyms.toString
-		val homoionyms: List[IcibaHomoDto] = Nil
+		val articles = doc select "div.info-article"
+
+		val homos = getArticleByType(articles, (e) => {
+				val arr = e select "ul.article-list>li.current"
+				arr.length > 0 && arr.get(0).text.contains("同义词辨析")
+			})
+		val homoionyms = (for (r <- homos; rec = genHomo(r) if null != rec) 
+			yield rec) toList;
+		logger trace homoionyms.toString
 
 		Some(new IcibaDto(word, pronuctions, explations, relatedWords, examples,
 			homoionyms))
+	}
+
+	def getArticleByType(list: Elements, typeFunc: (Element) => Boolean) = {
+		val ll = (for (e <- list if typeFunc(e)) yield e).toList 
+		(for (e <- ll; 
+			a <- e select "div.collins-section>div.section-prep>div.prep-order") yield a).toList
 	}
 
 	val pronPattern = """^(\S+)\s?\[(.+)\]$""".r
@@ -88,11 +98,9 @@ object WebIcibaParser extends Logging {
 	def genHomo(e: Element) = {
 		import scala.collection.JavaConversions._
 
-		val mean = (e select "dd>div>span.text_blue").text
-		val words = e select "dd>div.ct_example>ul>li"
-		val recs: java.util.List[IcibaS2Dto] = (for (w <- words; c = w.ownText.replaceAll("：",""); 
-				e = (w select "li>a").text if isNotBlank(c) && isNotBlank(e)) 
-			yield new IcibaS2Dto(e, c)).toList
+		val mean = (e select "p>span.family-chinese").text
+		val words = e select "ul.text-sentence>li.item"
+		val recs: java.util.List[IcibaS2Dto] = (for (w <- words; c = (w select "a", w select "span.family-chinese")) yield new IcibaS2Dto(c._1.text, c._2.text)).toList
 		if (isNotBlank(mean)) new IcibaHomoDto(mean, recs) else null
 	}
 
@@ -107,7 +115,7 @@ object IcibaCrawler extends Logging {
 		val page = try {
 			import jadecrawler.net.HTTPUtil
 			val resp = HTTPUtil.doGet(
-				"http://" + site + "/%s" format word.replaceAll(" ", "_"),
+				"http://" + site + "/%s" format word,
 				HTTPUtil.firefoxParams + ("Host" -> site))
 			if (null != resp && null != resp.content && resp.content.length > 0) {
 				new String(resp.content) 
@@ -115,133 +123,133 @@ object IcibaCrawler extends Logging {
 		} catch { case e: Throwable => {
 			logger warn ("query iciba error: {}, {}", Array(word, e)); null } }
 
-		if (null != page) {
-			try { WebIcibaParser.parse(page).getOrElse(null) }
-			catch { case e: Throwable => {
-				logger warn ("iciba page parse err: {}, {}", Array(word, e)); null}}}
-		else { null }
-	}
+			if (null != page) {
+				try { WebIcibaParser.parse(page).getOrElse(null) }
+				catch { case e: Throwable => {
+					logger warn ("iciba page parse err: {}, {}", Array(word, e)); null}}}
+					else { null }
+				}
 
-	import jadeutils.mongo.MongoServer
-	import jadeutils.mongo.BaseMongoDao
-	import jadeutils.mongo.Condition.newCondition
+				import jadeutils.mongo.MongoServer
+				import jadeutils.mongo.BaseMongoDao
+				import jadeutils.mongo.Condition.newCondition
 
-	import jadecrawler.dto.website.NewWordBook
-	import jadecrawler.dto.website.NewWord
+				import jadecrawler.dto.website.NewWordBook
+				import jadecrawler.dto.website.NewWord
 
-	class IcibaDao(serverList: java.util.List[MongoServer]) 
-		extends BaseMongoDao[IcibaDto](serverList)
+				class IcibaDao(serverList: java.util.List[MongoServer]) 
+				extends BaseMongoDao[IcibaDto](serverList)
 
-	class NewWordBookDao(serverList: java.util.List[MongoServer]) 
-		extends BaseMongoDao[NewWordBook](serverList)
+				class NewWordBookDao(serverList: java.util.List[MongoServer]) 
+				extends BaseMongoDao[NewWordBook](serverList)
 
-	def getDao(host: String, port: Int) = 
-		new IcibaDao(new MongoServer(host, port) :: Nil)
+				def getDao(host: String, port: Int) = 
+				new IcibaDao(new MongoServer(host, port) :: Nil)
 
 
-	def saveLocal(dao: IcibaDao, result: IcibaDto) {
-		if (null != result) {
-			logger info ("iciba page parse OK: {}", result.word)
-			try { 
-				dao insert result 
-				logger info ("iciba page save OK: {}", result.word)
-			} catch {
-				case e: Throwable => logger error ("iciba-save error: {}, {}", 
-					Array(result.word, e))
+				def saveLocal(dao: IcibaDao, result: IcibaDto) {
+					if (null != result) {
+						logger debug ("iciba page parse OK: {}", result.word)
+						try { 
+							dao insert result 
+							logger debug ("iciba page save OK: {}", result.word)
+						} catch {
+							case e: Throwable => logger error ("iciba-save error: {}, {}", 
+								Array(result.word, e))
+						}
+					}
+				}
+
+				def loadLocal(dao: IcibaDao, word: String) = try {
+					val rs = dao.findByCondition(newCondition("word", word))
+					if (rs.hasNext) rs.next else null
+				} catch { case e: Throwable => {
+					logger warn ("iciba load local err: {}, {}", Array(word, e)); null}
+				}
+
+				def loadNewWords(host: String, port: Int, username: String, 
+					password: String): java.util.List[NewWord] =
+				{
+					val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
+					val user = try {
+						val rs = dao.findByCondition(newCondition("username", username))
+						if (rs.hasNext) rs.next else null
+					} catch { case e: Throwable => {
+						logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
+					}
+
+					if (null != user && user.password == password) { user.words }
+					else Nil
+				}
+
+				private[this] def processNewWords(host: String, port: Int, username: String, 
+					password: String, word: String, 
+					handler: (String, java.util.List[NewWord]) => java.util.List[NewWord])
+				{
+					val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
+					val user = try {
+						val rs = dao.findByCondition(newCondition("username", username))
+						if (rs.hasNext) rs.next else null
+					} catch { case e: Throwable => {
+						logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
+					}
+
+					if (null != user && user.password == password) {
+						user.words = handler(word, user.words)
+						dao.updateOne(newCondition("username", user.username), 
+							newCondition("$set", newCondition("words", user.words)))
+					}
+				}
+
+				private[this] def addWordOpt(word: String, words: java.util.List[NewWord]
+				): java.util.List[NewWord] = 
+			{
+				if (null == words || words.length == 0) {
+					NewWord(word, 1) :: Nil
+				} else {
+					val l = (for (w <- words) yield w.word)
+					if (l contains word) {
+						var c = words.get(l indexOf word)
+						c.count = c.count + 1
+					} else {
+						words.add(NewWord(word, 1))
+					}
+					words.sortWith(_.count > _.count)
+				}
 			}
-		}
-	}
 
-	def loadLocal(dao: IcibaDao, word: String) = try {
-		val rs = dao.findByCondition(newCondition("word", word))
-		if (rs.hasNext) rs.next else null
-	} catch { case e: Throwable => {
-		logger warn ("iciba load local err: {}, {}", Array(word, e)); null}
-	}
-
-	def loadNewWords(host: String, port: Int, username: String, 
-		password: String): java.util.List[NewWord] =
-	{
-		val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
-		val user = try {
-			val rs = dao.findByCondition(newCondition("username", username))
-			if (rs.hasNext) rs.next else null
-		} catch { case e: Throwable => {
-			logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
+			private[this] def removeWordOpt(word: String, words: java.util.List[NewWord]
+			): java.util.List[NewWord] = 
+		{
+			if (null == words && words.length == 0) { Nil } 
+			else { for (w <- words; if (w.word != word)) yield w }
 		}
 
-		if (null != user && user.password == password) { user.words }
-		else Nil
+		def addNewWord(host: String, port: Int, username: String, password: String, 
+			word: String)
+		{ processNewWords(host, port, username, password, word, addWordOpt) }
+
+		def removeNewWord(host: String, port: Int, username: String, password: String, 
+			word: String)
+		{ processNewWords(host, port, username, password, word, removeWordOpt) }
+
 	}
 
-	private[this] def processNewWords(host: String, port: Int, username: String, 
-		password: String, word: String, 
-		handler: (String, java.util.List[NewWord]) => java.util.List[NewWord])
-	{
-		val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
-		val user = try {
-			val rs = dao.findByCondition(newCondition("username", username))
-			if (rs.hasNext) rs.next else null
-		} catch { case e: Throwable => {
-			logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
-		}
 
-		if (null != user && user.password == password) {
-			user.words = handler(word, user.words)
-			dao.updateOne(newCondition("username", user.username), 
-				newCondition("$set", newCondition("words", user.words)))
-		}
-	}
+	/*
 
-	private[this] def addWordOpt(word: String, words: java.util.List[NewWord]
-		): java.util.List[NewWord] = 
-	{
-		if (null == words || words.length == 0) {
-			NewWord(word, 1) :: Nil
-		} else {
-			val l = (for (w <- words) yield w.word)
-			if (l contains word) {
-				var c = words.get(l indexOf word)
-				c.count = c.count + 1
-			} else {
-				words.add(NewWord(word, 1))
-			}
-			words.sortWith(_.count > _.count)
-		}
-	}
-
-	private[this] def removeWordOpt(word: String, words: java.util.List[NewWord]
-		): java.util.List[NewWord] = 
-	{
-		if (null == words && words.length == 0) { Nil } 
-		else { for (w <- words; if (w.word != word)) yield w }
-	}
-
-	def addNewWord(host: String, port: Int, username: String, password: String, 
-		word: String)
-	{ processNewWords(host, port, username, password, word, addWordOpt) }
-
-	def removeNewWord(host: String, port: Int, username: String, password: String, 
-		word: String)
-	{ processNewWords(host, port, username, password, word, removeWordOpt) }
-
-}
+	 /home/morgan/GRE.txt
 
 
-/*
+	 import jadecrawler.website.IcibaCrawler
+	 import scala.io.Source
+	 val dao = IcibaCrawler.getDao("www.jade-dungeon.net", 27017)
+	 def transWord(word: String) {
+		 if (null == IcibaCrawler.loadLocal(dao, word)) { 
+			 val rec = jadecrawler.website.IcibaCrawler.process(word)
+			 if (null != rec) IcibaCrawler.saveLocal(dao, rec)
+			 }
+	 }
+	 scala.io.Source.fromFile("/home/morgan/GRE.txt").getLines.foreach((s) =>{transWord(s);Thread.sleep(200)})
 
-/home/morgan/GRE.txt
-
-
-import jadecrawler.website.IcibaCrawler
-import scala.io.Source
-val dao = IcibaCrawler.getDao("www.jade-dungeon.net", 27017)
-def transWord(word: String) {
-if (null == IcibaCrawler.loadLocal(dao, word)) { 
-val rec = jadecrawler.website.IcibaCrawler.process(word)
-if (null != rec) IcibaCrawler.saveLocal(dao, rec)
-}
-}
-scala.io.Source.fromFile("/home/morgan/GRE.txt").getLines.foreach((s) =>{transWord(s);Thread.sleep(200)})
-
-*/
+	 */

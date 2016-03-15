@@ -31,7 +31,7 @@
 		<crawler-dto.version>0.1.9-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.9-SNAPSHOT</crawler-net.version>
 		<crawler-logic.version>0.1.9-SNAPSHOT</crawler-logic.version>
-		<crawler-web2.version>0.0.9-SNAPSHOT</crawler-web2.version>
+		<crawler-web2.version>0.1.9-SNAPSHOT</crawler-web2.version>
 		<!-- -->
 		<jstl.version>1.2.5</jstl.version>
 		<jsp.version>2.3.1</jsp.version>
