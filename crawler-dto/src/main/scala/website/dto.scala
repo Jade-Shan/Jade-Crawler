@@ -50,9 +50,9 @@ case class IcibaDto(w: String, prons: java.util.List[IcibaS3Dto],
 	exps: java.util.List[(IcibaS2Dto)], rlts: java.util.List[IcibaS2Dto],
 	exmps: java.util.List[IcibaS3Dto], homs: java.util.List[IcibaHomoDto],
 	samws: java.util.List[Opposite], oppws: java.util.List[Opposite],
-	phws: java.util.List[IcibaS3Dto]) extends MongoModel
+	snys: java.util.List[IcibaS3Dto], phws: java.util.List[IcibaS3Dto]) extends MongoModel
 {
-	def this() = this(null, null, null, null, null, null, null, null, null)
+	def this() = this(null, null, null, null, null, null, null, null, null, null)
 
 	@MongoField                                   var word           = w
 	@MongoField(ElemType = classOf[IcibaS3Dto])   var pronunciations = prons
@@ -62,11 +62,12 @@ case class IcibaDto(w: String, prons: java.util.List[IcibaS3Dto],
 	@MongoField(ElemType = classOf[IcibaHomoDto]) var homoionyms     = homs
 	@MongoField(ElemType = classOf[Opposite])     var sameWrds       = samws
 	@MongoField(ElemType = classOf[Opposite])     var oppsites        = oppws
+	@MongoField(ElemType = classOf[IcibaS3Dto])   var slangys        = snys
 	@MongoField(ElemType = classOf[IcibaS3Dto])   var phrases        = phws
 
 	override def toString = ( "{IcibaDto: {word=%s, pronunciations=%s, " + 
 		"explantions=%s, relatedWords=%s, examples=%s, homoionyms=%s, " + 
-		"sameWrds=%s, oppsites=%s, phrases=%s}}").format(word
+		"sameWrds=%s, oppsites=%s, phrases=%s, slangys=%s}}").format(word
 		,if (null != pronunciations) pronunciations.toString else ""
 		,if (null != explantions   ) explantions.toString    else ""
 		,if (null != relatedWords  ) relatedWords.toString   else ""
@@ -74,6 +75,7 @@ case class IcibaDto(w: String, prons: java.util.List[IcibaS3Dto],
 		,if (null != homoionyms    ) homoionyms.toString     else ""
 		,if (null != sameWrds      ) sameWrds.toString       else ""
 		,if (null != oppsites      ) oppsites.toString       else ""
+		,if (null != slangys       ) slangys.toString        else ""
 		,if (null != phrases       ) phrases.toString        else "")
 
 }

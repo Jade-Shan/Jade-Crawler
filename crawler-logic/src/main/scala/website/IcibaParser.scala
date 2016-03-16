@@ -74,6 +74,15 @@ object WebIcibaParser extends Logging {
 			yield rec) toList;
 		logger trace phrases.toString
 
+		val sln = getArticleByType(articles, (e) => {
+				val arr = e select "ul.article-list>li.current"
+				arr.length > 0 && arr.get(0).text.contains("常用俚语")
+			})
+		val sln1 = (for (e <- sln; a <- e select "div.collins-section>div.section-prep") yield a).toList
+		val slangys = (for (r <- sln1; rec = genSlangy(r) if null != rec) 
+			yield rec) toList;
+		logger trace phrases.toString
+
 		val opw = getArticleByType(articles, (e) => {
 				val arr = e select "ul.article-list>li.current"
 				arr.length > 0 && arr.get(0).text.contains("同反义词")
@@ -82,7 +91,7 @@ object WebIcibaParser extends Logging {
 		val opGrp = if (null != opw1 && opw1.size > 0) genOpposite(opw1(0)) else (Nil, Nil)
 
 		Some(new IcibaDto(word, pronuctions, explations, relatedWords, examples,
-			homoionyms, opGrp._1, opGrp._2, phrases))
+			homoionyms, opGrp._1, opGrp._2, phrases, slangys))
 	}
 
 	def getArticleByType(list: Elements, typeFunc: (Element) => Boolean) = (
@@ -121,6 +130,24 @@ object WebIcibaParser extends Logging {
 		val words = e select "ul.text-sentence>li.item"
 		val recs: java.util.List[IcibaS2Dto] = (for (w <- words; c = (w select "a", w select "span.family-chinese")) yield new IcibaS2Dto(c._1.text, c._2.text)).toList
 		if (isNotBlank(mean)) new IcibaHomoDto(mean, recs) else null
+	}
+
+	def genSlangy(e: Element) = {
+		import scala.collection.JavaConversions._
+
+		val word = (e select "div.section-prep>div.prep-order>p.family-english").text
+		val mean = e select "div.text-sentence>div.sentence-item"
+		var a = ""
+		var b = ""
+		for (m <- mean) {
+			if (m.attr("class").contains("no-icon") && m.text.size > 1) {
+				a = a + "\t" + m.text
+			} else if (!m.attr("class").contains("no-icon")) {
+				b = b + m.select("p.family-english").text + "\t" +
+					m.select("p.family-chinese").text + "\n"
+			}
+		}
+		new IcibaS3Dto(word, a, b)
 	}
 
 	def genPhrase(e: Element) = {
