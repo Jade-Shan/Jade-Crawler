@@ -127,6 +127,7 @@ function load(data) {
 			cnt = cnt + addSameWrds(data.result.sameWrds)
 			cnt = cnt + addOppsites(data.result.oppsites)
 			cnt = cnt + addPhrases(data.result.phrases)
+			cnt = cnt + addSlangys(data.result.slangys)
 			$('#main').html(cnt)
 	}
 };
@@ -203,6 +204,22 @@ function addExamples(d) {
 	return str; 
 };
 
+function addSlangys(d) {
+	if (d) {
+		var str = "<h5>俚语</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li><dl>";
+				str = str + "<dt>" + '<a href="javascript:transword(\'' + 
+						 item.str1 + '\')">' + item.str1 + '</a>' + "<dt>";
+				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "<dd>" + item.str3 + "<dd>";
+				str = str + "</dl></li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
 function addPhrases(d) {
 	if (d) {
 		var str = "<h5>词组搭配</h5><ol>";
@@ -211,6 +228,7 @@ function addPhrases(d) {
 				str = str + "<dt>" + '<a href="javascript:transword(\'' + 
 						 item.str1 + '\')">' + item.str1 + '</a>' + "<dt>";
 				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "<dd>" + item.str3 + "<dd>";
 				str = str + "</dl></li>";
 				})
 		str = str + "</ol>";

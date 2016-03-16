@@ -156,7 +156,15 @@ object WebIcibaParser extends Logging {
 		val word = (e select "div.section-h>p>span.family-english").text
 		val mean = (e select "div.section-prep>div.prep-order>p>span.family-english").text
 		val exp = (e select "div.section-prep>div.prep-order>div.text-sentence").text
-		if (isNotBlank(mean)) new IcibaS3Dto(word, mean, exp) else null
+
+		val blk = e select "div.text-sentence>div.sentence-item"
+		var b = ""
+		for (m <- blk) {
+				b = b + m.select("p.family-english").text + "\t" +
+					m.select("p.family-chinese").text + "\n"
+		}
+
+		if (isNotBlank(mean)) new IcibaS3Dto(word, mean, b) else null
 	}
 
 	def genOpposite(e: Element): (List[Opposite], List[Opposite]) = {

@@ -84,6 +84,8 @@ object IcibaApiController extends BasicController with Logging {
 			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaHomoDto]())
 		}
 
+		logInfo("-------{}", data)
+
 		("result" -> 
 			("word" -> word) ~ 
 			("pronunciations" -> (for (i <- 0 until data.pronunciations.size) yield 
@@ -112,7 +114,10 @@ object IcibaApiController extends BasicController with Logging {
 					p.words.get(i)))))) ~
 			("phrases" -> (for (i <- 0 until data.phrases.size) yield
 				data.phrases.get(i)).map(p =>
-				(("str1" -> p.str1) ~ ("str2" -> p.str2) ~ ("str3" -> p.str3))))): JValue
+				(("str1" -> p.str1) ~ ("str3" -> p.str3) ~ ("str2" -> p.str2)))) ~
+			("slangys" -> (for (i <- 0 until data.slangys.size) yield
+				data.slangys.get(i)).map(p =>
+				(("str1" -> p.str1) ~ ("str3" -> p.str3) ~ ("str2" -> p.str2))))): JValue
 	}}
 
 	service("/api/dictionary/removenewword/test") {(info) => {
