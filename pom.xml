@@ -27,7 +27,7 @@
 		<junit.version>4.12</junit.version>
 		<!-- -->
 		<jadeutils.version>0.1.9</jadeutils.version>
-		<jadescalautils.version>0.1.10</jadescalautils.version>
+		<jadescalautils.version>0.1.11-SNAPSHOT</jadescalautils.version>
 		<crawler-dto.version>0.1.9-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.9-SNAPSHOT</crawler-net.version>
 		<crawler-logic.version>0.1.9-SNAPSHOT</crawler-logic.version>
