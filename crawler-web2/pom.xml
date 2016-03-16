@@ -91,52 +91,6 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!-- =========================== -->
-			<!--    run scala application    -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<configuration>
-					<scalaVersion>${scala.version}</scalaVersion>
-					<jvmArgs>
-						<jvmArg>-client</jvmArg>
-						<jvmArg>-Xms64m</jvmArg>
-						<jvmArg>-Xmx1024m</jvmArg>
-					</jvmArgs>
-					<!-- 
-					<launchers>
-						<launcher>
-							<id>foo</id>
-							<mainClass>example.ScalaAppExample</mainClass>
-							<args>
-								<arg>Hello</arg>
-								<arg>World</arg>
-							</args>
-						</launcher>
-					</launchers>
-							 -->
-				</configuration>
-				<executions>
-					<execution><!-- do "scala:compile" when "compile" -->
-						<id>compile-scala</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution><!-- do "scala:testCompile" when "test-compile" -->
-						<id>compile-scala-test</id>
-						<phase>test-compile</phase>
-						<goals>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- =========================== -->
-			<!--        jetty plugin         -->
-			<!-- =========================== -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
@@ -162,27 +116,5 @@
 			</resource>
 		</resources>
 	</build>
-
-  <profiles>
-    <profile>
-      <id>dev</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <filters>
-          <filter>params-dev.properties</filter>
-        </filters>
-      </build>
-    </profile>
-    <profile>
-      <id>prd</id>
-      <build>
-        <filters>
-          <filter>params-prd.properties</filter>
-        </filters>
-      </build>
-    </profile>
-  </profiles>
 
 </project>
