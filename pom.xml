@@ -15,7 +15,9 @@
 		<module>crawler-dto</module>
 		<module>crawler-net</module>
 		<module>crawler-logic</module>
+		<!-- 
 		<module>crawler-web2</module>
+				 -->
 	</modules>
 
 	<properties>
@@ -27,7 +29,7 @@
 		<junit.version>4.12</junit.version>
 		<!-- -->
 		<jadeutils.version>0.1.9</jadeutils.version>
-		<jadescalautils.version>0.1.11-SNAPSHOT</jadescalautils.version>
+		<jadescalautils.version>0.1.11</jadescalautils.version>
 		<crawler-dto.version>0.1.9-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.9-SNAPSHOT</crawler-net.version>
 		<crawler-logic.version>0.1.9-SNAPSHOT</crawler-logic.version>
