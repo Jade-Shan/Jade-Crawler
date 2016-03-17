@@ -8,7 +8,7 @@
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>crawler-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1.8</version>
+		<version>0.1.9</version>
 	</parent>
 
 	<artifactId>crawler-dto</artifactId>
@@ -26,50 +26,6 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<!-- =========================== -->
-			<!--    run scala application    -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<configuration>
-					<scalaVersion>${scala.version}</scalaVersion>
-					<jvmArgs>
-						<jvmArg>-client</jvmArg>
-						<jvmArg>-Xms64m</jvmArg>
-						<jvmArg>-Xmx1024m</jvmArg>
-					</jvmArgs>
-					<launchers>
-						<launcher>
-							<id>foo</id>
-							<mainClass>example.ScalaAppExample</mainClass>
-							<args>
-								<arg>Hello</arg>
-								<arg>World</arg>
-							</args>
-						</launcher>
-					</launchers>
-				</configuration>
-				<executions>
-					<execution><!-- do "scala:compile" when "compile" -->
-						<id>compile-scala</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution><!-- do "scala:testCompile" when "test-compile" -->
-						<id>compile-scala-test</id>
-						<phase>test-compile</phase>
-						<goals>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>

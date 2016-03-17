@@ -25,6 +25,16 @@ case class IcibaS3Dto(s1: String, s2: String, s3: String) {
 	override def toString = "{%s, %s, %s}".format(str1, str2, str3) 
 }
 
+case class Opposite(s: String, ws: java.util.List[String]) {
+	def this() = this(null, null)
+
+	@MongoField var str = s
+	@MongoField(ElemType = classOf[String]) var words = ws
+
+	override def toString = "{%s, %s}".format(str, 
+		if (null == words) "{}" else words.toString)
+}
+
 case class IcibaHomoDto(s: String, dto: java.util.List[IcibaS2Dto]) {
 	def this() = this(null, null)
 
@@ -38,10 +48,11 @@ case class IcibaHomoDto(s: String, dto: java.util.List[IcibaS2Dto]) {
 @MongoDocument(databaseName = "crawler", collectionName = "iciba")
 case class IcibaDto(w: String, prons: java.util.List[IcibaS3Dto], 
 	exps: java.util.List[(IcibaS2Dto)], rlts: java.util.List[IcibaS2Dto],
-	exmps: java.util.List[IcibaS3Dto], homs: java.util.List[IcibaHomoDto]
-) extends MongoModel
+	exmps: java.util.List[IcibaS3Dto], homs: java.util.List[IcibaHomoDto],
+	samws: java.util.List[Opposite], oppws: java.util.List[Opposite],
+	snys: java.util.List[IcibaS3Dto], phws: java.util.List[IcibaS3Dto]) extends MongoModel
 {
-	def this() = this(null, null, null, null, null, null)
+	def this() = this(null, null, null, null, null, null, null, null, null, null)
 
 	@MongoField                                   var word           = w
 	@MongoField(ElemType = classOf[IcibaS3Dto])   var pronunciations = prons
@@ -49,14 +60,24 @@ case class IcibaDto(w: String, prons: java.util.List[IcibaS3Dto],
 	@MongoField(ElemType = classOf[IcibaS2Dto])   var relatedWords   = rlts
 	@MongoField(ElemType = classOf[IcibaS3Dto])   var examples       = exmps
 	@MongoField(ElemType = classOf[IcibaHomoDto]) var homoionyms     = homs
+	@MongoField(ElemType = classOf[Opposite])     var sameWrds       = samws
+	@MongoField(ElemType = classOf[Opposite])     var oppsites        = oppws
+	@MongoField(ElemType = classOf[IcibaS3Dto])   var slangys        = snys
+	@MongoField(ElemType = classOf[IcibaS3Dto])   var phrases        = phws
 
-	override def toString = ("{IcibaDto: {word=%s, pronunciations=%s, " + 
-		"explantions=%s, relatedWords=%s, examples=%s, homoionyms=%s}}").format(word
+	override def toString = ( "{IcibaDto: {word=%s, pronunciations=%s, " + 
+		"explantions=%s, relatedWords=%s, examples=%s, homoionyms=%s, " + 
+		"sameWrds=%s, oppsites=%s, phrases=%s, slangys=%s}}").format(word
 		,if (null != pronunciations) pronunciations.toString else ""
 		,if (null != explantions   ) explantions.toString    else ""
 		,if (null != relatedWords  ) relatedWords.toString   else ""
 		,if (null != examples      ) examples.toString       else ""
-		,if (null != homoionyms    ) homoionyms.toString     else "")
+		,if (null != homoionyms    ) homoionyms.toString     else ""
+		,if (null != sameWrds      ) sameWrds.toString       else ""
+		,if (null != oppsites      ) oppsites.toString       else ""
+		,if (null != slangys       ) slangys.toString        else ""
+		,if (null != phrases       ) phrases.toString        else "")
+
 }
 
 case class NewWord(w: String, c: Int) {

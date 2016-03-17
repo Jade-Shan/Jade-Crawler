@@ -21,7 +21,7 @@ object YyetsRecListParser extends Logging {
 	def parse(htmlStr: String): List[YyetsRecListDto] = {
 		val doc = Jsoup parse htmlStr
 		val lines = doc select "div.resource-showlist>ul>li.clearfix>div.fl-info>dl>dt.f14>strong>a"
-		(for (l <- lines; rec = genRec(l) if rec != None) yield rec) toList;
+		(for (l <- lines; rec = genRec(l)) yield rec) toList;
 	}
 
 	private[this] def genRec(e: Element) = {
@@ -42,7 +42,7 @@ object YyetsRecInfoParser extends Logging{
 	def parse(htmlStr: String, id: String, name: String): List[YyetsRecInfoDto] = {
 		val doc = Jsoup parse htmlStr
 		val items = doc select "div.middle-box>div.w>div.download-box>div.media-box>div.media-list>ul>li.clearfix"
-		val itms = (for (i <- items; itm = genItem(i, id, name) if itm != None) yield itm) toList;
+		val itms = (for (i <- items; itm = genItem(i, id, name)) yield itm) toList;
 		if (null != itms && itms.size > 0) itms else Nil
 	}
 
@@ -54,7 +54,7 @@ object YyetsRecInfoParser extends Logging{
 		val filename = (e select "div.fl>a").attr("title")
 		val size =     (e select "div.fl>font.f3").text
 		val links =     e select "div.fr>a"
-		val lks = (for (l <- links; lk = genLink(l) if lk != None) yield lk) toList;
+		val lks = (for (l <- links; lk = genLink(l)) yield lk) toList;
 		new YyetsRecInfoDto(id, name, season, episode, format, filename, size, 
 			lks.filter(_ != null))
 	}

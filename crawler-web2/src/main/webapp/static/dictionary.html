@@ -124,6 +124,10 @@ function load(data) {
 			cnt = cnt + addRelatedWords(data.result.relatedWords)
 			cnt = cnt + addExamples(data.result.examples)
 			cnt = cnt + addHomoionyms(data.result.homoionyms)
+			cnt = cnt + addSameWrds(data.result.sameWrds)
+			cnt = cnt + addOppsites(data.result.oppsites)
+			cnt = cnt + addPhrases(data.result.phrases)
+			cnt = cnt + addSlangys(data.result.slangys)
 			$('#main').html(cnt)
 	}
 };
@@ -136,10 +140,49 @@ function addHomoionyms(d) {
 				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
 				$.each(item.s2dto, function(index, item) {
 					str = str + "<dl>";
-					str = str + "<dt>" + item.str1+ "</dt>";
+					str = str + "<dt>" + '<a href="javascript:transword(\'' + 
+						 item.str1 + '\')">' + item.str1 + '</a>' + "</dt>";
 					str = str + "<dd>" + item.str2+ "</dd>";
 					str = str + "</dl>";
 					})
+				str = str + "</ol></dd></dl>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addSameWrds(d) {
+	if (d) {
+		var str = "<h5>同义词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<dl>";
+				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
+					str = str + "<dl><dt>";
+				$.each(item.words, function(index1, item1) {
+					str = str + '<a href="javascript:transword(\'' + 
+						 item1 + '\')">' + item1 + '</a> &nbsp; ';
+					})
+					str = str + "</dt></dl>";
+				str = str + "</ol></dd></dl>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addOppsites(d) {
+	if (d) {
+		var str = "<h5>反义词</h5><ol>";
+		$.each(d, function(index, item) {
+				str = str + "<dl>";
+				str = str + "<dt>" + item.str+ "</dt><dd><ol>";
+					str = str + "<dl><dt>";
+				$.each(item.words, function(index1, item1) {
+					str = str + '<a href="javascript:transword(\'' + 
+						 item1 + '\')">' + item1 + '</a> &nbsp; ';
+					})
+					str = str + "</dt></dl>";
 				str = str + "</ol></dd></dl>";
 				})
 		str = str + "</ol>";
@@ -154,6 +197,38 @@ function addExamples(d) {
 				str = str + "<li><dl>";
 				str = str + "<dt>" + item.str1 + "<dt>";
 				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "</dl></li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addSlangys(d) {
+	if (d) {
+		var str = "<h5>俚语</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li><dl>";
+				str = str + "<dt>" + '<a href="javascript:transword(\'' + 
+						 item.str1 + '\')">' + item.str1 + '</a>' + "<dt>";
+				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "<dd>" + item.str3 + "<dd>";
+				str = str + "</dl></li>";
+				})
+		str = str + "</ol>";
+	}
+	return str; 
+};
+
+function addPhrases(d) {
+	if (d) {
+		var str = "<h5>词组搭配</h5><ol>";
+		$.each(d, function(index, item){
+				str = str + "<li><dl>";
+				str = str + "<dt>" + '<a href="javascript:transword(\'' + 
+						 item.str1 + '\')">' + item.str1 + '</a>' + "<dt>";
+				str = str + "<dd>" + item.str2 + "<dd>";
+				str = str + "<dd>" + item.str3 + "<dd>";
 				str = str + "</dl></li>";
 				})
 		str = str + "</ol>";
@@ -261,12 +336,12 @@ function addNewWord(word) {
 };
 
 function trans() {
-	word = $wordIpt.val().replace(/\s+/g,"_");
+	word = $wordIpt.val();
 	if ('' == word) {
 		//
 	} else {
 		$wordIpt.val('');
-		$.ajax({ type: 'GET', dataType: 'json', timeout: 3000,
+		$.ajax({ type: 'GET', dataType: 'json', timeout: 13000,
 				url: appPath + '/api/dictionary/eng2chs/' + word,
 				success: function(data, status, xhr) { load(data); },
 				error: function(xhr, errorType, error) { alert("Ajax Error!") },

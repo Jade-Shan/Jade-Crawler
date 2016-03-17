@@ -2,62 +2,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.jade-dungeon</groupId>
+	<parent>
+		<groupId>net.jade-dungeon</groupId>
+		<artifactId>jadelibs-scala</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
 	<artifactId>crawler-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>0.1.8</version>
+	<version>0.1.9</version>
 	<name>jade crawler parent</name>
 	<url>https://github.com/Jade-Shan/jade-crawler</url>
 
 	<modules>
-		<module>crawler-base</module>
 		<module>crawler-dto</module>
 		<module>crawler-net</module>
 		<module>crawler-logic</module>
-		<module>crawler-web2</module>
+		<!-- <module>crawler-web2</module> -->
 	</modules>
 
 	<properties>
-		<charset.encoding>UTF-8</charset.encoding>
-		<java.version>1.7</java.version>
-		<scala.version.floor>2.10</scala.version.floor>
-		<scala.version>${scala.version.floor}.5</scala.version>
-		<scalatest.version>1.9.1</scalatest.version>
-		<junit.version>4.12</junit.version>
-		<!-- -->
-		<jadeutils.version>0.1.9</jadeutils.version>
-		<jadescalautils.version>0.1.6</jadescalautils.version>
-		<crawler-base.version>0.1.8</crawler-base.version>
-		<crawler-dto.version>0.1.8</crawler-dto.version>
-		<crawler-net.version>0.1.8</crawler-net.version>
-		<crawler-logic.version>0.1.8</crawler-logic.version>
-		<crawler-web2.version>0.0.8</crawler-web2.version>
-		<!-- -->
-		<springframework.version>4.2.0.RELEASE</springframework.version>
-		<commonslang.version>2.6</commonslang.version>
-		<httpcomponents.version>4.3.6</httpcomponents.version>
-		<json4s.version>3.2.11</json4s.version>
-		<jsoup.version>1.8.1</jsoup.version>
-		<json.version>20140107</json.version>
-		<slf4j.version>1.7.0</slf4j.version>
-		<logback.version>1.0.13</logback.version>
-		<commonscli.version>1.3</commonscli.version>
-		<mvn-rec-plg.version>2.6</mvn-rec-plg.version>
-		<mvn-cmp-plg.version>3.0</mvn-cmp-plg.version>
-		<scala-mvn-plg.version>3.2.0</scala-mvn-plg.version>
-		<mvn-surfire-plg.version>2.16</mvn-surfire-plg.version>
-		<jett-maven-plg.version>9.3.0.M2</jett-maven-plg.version>
+		<jadeutils.version>0.1.12</jadeutils.version>
+		<jadescalautils.version>0.1.14</jadescalautils.version>
+		<crawler-dto.version>0.1.9</crawler-dto.version>
+		<crawler-net.version>0.1.9</crawler-net.version>
+		<crawler-logic.version>0.1.9</crawler-logic.version>
+		<crawler-web2.version>0.1.9</crawler-web2.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>net.jade-dungeon</groupId>
-				<artifactId>crawler-base</artifactId>
-				<version>${crawler-base.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
 				<artifactId>crawler-dto</artifactId>
@@ -98,360 +75,22 @@
 				<artifactId>jade-scala-utils</artifactId>
 				<version>${jadescalautils.version}</version>
 			</dependency>
-			<!-- -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-beans</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>${springframework.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>javax.mail</groupId>
-				<artifactId>mail</artifactId>
-				<version>1.4.1</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>${commonslang.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-cli</groupId>
-				<artifactId>commons-cli</artifactId>
-				<version>${commonscli.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>${httpcomponents.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jsoup</groupId>
-				<artifactId>jsoup</artifactId>
-				<version>${jsoup.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>json</artifactId>
-				<version>${json.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.json4s</groupId>
-				<artifactId>json4s-jackson_${scala.version.floor}</artifactId>
-				<version>${json4s.version}</version>
-			</dependency>
-			<!-- -->
-			<dependency>
-				<groupId>org.scala-lang</groupId>
-				<artifactId>scala-library</artifactId>
-				<version>${scala.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.scala-lang</groupId>
-				<artifactId>scala-compiler</artifactId>
-				<version>${scala.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.scala-lang</groupId>
-				<artifactId>scala-reflect</artifactId>
-				<version>${scala.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.scala-lang</groupId>
-				<artifactId>scala-actors</artifactId>
-				<version>${scala.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.scalatest</groupId>
-				<artifactId>scalatest_2.10</artifactId>
-				<version>${scalatest.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.icegreen</groupId>
-				<artifactId>greenmail</artifactId>
-				<version>1.3.1b</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>3.1.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet.jsp</groupId>
-				<artifactId>javax.servlet.jsp-api</artifactId>
-				<version>2.3.1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.taglibs</groupId>
-				<artifactId>taglibs-standard-spec</artifactId>
-				<version>1.2.5</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.taglibs</groupId>
-				<artifactId>taglibs-standard-impl</artifactId>
-				<version>1.2.5</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-library</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-compiler</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-reflect</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-actors</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
 		<!-- for test scope -->
 		<dependency>
 			<groupId>org.scalatest</groupId>
-			<artifactId>scalatest_2.10</artifactId>
-			<scope>test</scope>
+			<artifactId>scalatest_${scala.version.floor}</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>${mvn-rec-plg.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${mvn-cmp-plg.version}</version>
-				</plugin>
-				<!-- for mix java and scala -->
-				<plugin>
-					<groupId>net.alchim31.maven</groupId>
-					<artifactId>scala-maven-plugin</artifactId>
-					<version>${scala-mvn-plg.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${mvn-surfire-plg.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.jetty</groupId>
-					<artifactId>jetty-maven-plugin</artifactId>
-					<version>${jett-maven-plg.version}</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
-		<plugins>
-			<!-- =========================== -->
-			<!--   copy resources            -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>${charset.encoding}</encoding>
-				</configuration>
-			</plugin>
-			<!-- =========================== -->
-			<!--   compile java              -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${charset.encoding}</encoding>
-				</configuration>
-				<executions>
-					<execution><!-- do java "compile" when "compile" -->
-						<phase>compile</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- =========================== -->
-			<!--   compile scala             -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<scalaVersion>${scala.version}</scalaVersion>
-					<jvmArgs>
-						<jvmArg>-Xms64m</jvmArg>
-						<jvmArg>-Xmx1024m</jvmArg>
-					</jvmArgs>
-					<args>
-						<!-- <arg>-unchecked</arg> -->
-						<!-- <arg>-explaintypes</arg> -->
-						<arg>-feature</arg>
-						<arg>-deprecation</arg>
-					</args>
-				</configuration>
-			</plugin>
-			<!-- =========================== -->
-			<!--        surefire test        -->
-			<!-- =========================== -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<includes>
-						<include>**/*Test.java</include>
-					</includes>
-					<excludes>
-						<exclude>**/*IntegrationTest.java</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
 	</build>
-
-	<!-- =========================== -->
-	<!--       different env         -->
-	<!-- =========================== -->
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<profiles.scope.compile>compile</profiles.scope.compile>
-				<profiles.scope.runtime>runtime</profiles.scope.runtime>
-			</properties>
-			<build>
-				<filters>
-					<filter>params-dev.properties</filter>
-				</filters>
-			</build>
-		</profile>
-		<profile>
-			<id>prd</id>
-			<properties>
-				<profiles.scope.compile>compile</profiles.scope.compile>
-				<profiles.scope.runtime>runtime</profiles.scope.runtime>
-			</properties>
-			<build>
-				<filters>
-					<filter>params-prd.properties</filter>
-				</filters>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<includes>
-								<include>**/*Test.java</include>
-							</includes>
-							<excludes>
-								<exclude>**/Abstract*.java</exclude>
-							</excludes>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>rls</id>
-			<properties>
-				<profiles.scope.compile>provided</profiles.scope.compile>
-				<profiles.scope.runtime>provided</profiles.scope.runtime>
-			</properties>
-			<build>
-				<filters>
-					<filter>params-prd.properties</filter>
-				</filters>
-			</build>
-		</profile>
-	</profiles>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>jade-dungeon-snapshots</id>
-			<name>Jade-Dungeon Repo SNAPSHOTS</name>
-			<url>http://nexus.jade-dungeon.net/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-		<repository>
-			<id>jade-dungeon-releases</id>
-			<name>Jade-Dungeon Repo Release</name>
-			<url>http://nexus.jade-dungeon.net/nexus/content/repositories/releases/</url>
-		</repository>
-	</distributionManagement>
 
 </project>

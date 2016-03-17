@@ -1,0 +1,3186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="baidu-site-verification" content="cU06Y0SNXq" />
+    <title>big是什么意思_big的翻译_音标_读音_用法_例句_爱词霸在线词典</title>
+    <meta name="keywords" content="big,big是什么意思,big的翻译,big怎么读,big的读音,big的用法,big的例句">
+    <meta name="description" content="爱词霸权威在线词典,为您提供big的中文意思,big的用法讲解,big的读音,big的同义词,big的反义词,big的例句等英语服务。">
+	<link rel='stylesheet' href='../static/styles/search_result.css?time=20160309' />
+	<script type='text/javascript' src='http://cdn.iciba.com/web/js/jquery-1.10.2.min.js'></script>
+    <script type='text/javascript' src='../static/scripts/search_common.js'></script>
+    <script type='text/javascript' src='../static/scripts/search_suggest.js'></script>
+    <script type='text/javascript' src='../static/scripts/jquery.tinyscrollbar.js'></script>
+    <script type='text/javascript' src='../static/scripts/localstoragedb.js'></script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1256556802"]);
+    </script>
+</head>
+<body>
+	<!-- 固定头部 start -->
+    <div class='header-nav'>
+    <div class='nav-logo'></div>
+    <!-- 导航item start -->
+    <ul class='nav-list'>
+        <li class='active'><a class='current' href='http://www.iciba.com' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','查词','首页导航','','']);">查词</a></li>
+        <li><a href='http://fy.iciba.com' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','翻译','首页导航','','']);">翻译</a></li>
+        <li><a href='http://news.iciba.com' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','资讯','首页导航','','']);">发现</a></li>
+        <li><a href='http://word.iciba.com' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','背单词','首页导航','','']);">背单词</a></li>
+        <li><a href='http://cp.iciba.com' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','词霸下载','首页导航','','']);">词霸下载</a></li>
+        <li><a href='http://zt.iciba.com/ef/vipabc/vipabc.htm' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','流利口语','首页导航','','']);">流利口语</a></li>
+        <div class='clear'></div>
+    </ul>
+    <!-- 导航item end-->
+    <div class='user'>
+        <a href='#'><img class='u-profile' src='http://cdn.iciba.com/web/img/head.png' /></a>
+        <ul class='u-option'>
+            <div class='u-triangle'></div>
+            <li class='u-register'><a href='#' onclick="_czc.push(['_trackEvent','首页,查词结果','注册','首页导航','','']);">注册</a></li>
+            <li class='u-login'><a href='#' onclick="_czc.push(['_trackEvent','首页,查词结果','登录','首页导航','','']);">登录</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+(function(window, $){
+    //顶部导航hover效果
+    var $nav_lis = $('.nav-list li');
+    var currentNav = $('.nav-list li.active');
+	$nav_lis.mouseover(function(){
+		$nav_lis.removeClass('active');
+		$(this).addClass('active');
+	}).mouseout(function(){
+		$nav_lis.removeClass('active');
+		currentNav.addClass('active');
+	});
+    var $user = $('.user');
+	var $u_option = $('.u-option');
+	$user.mouseover(function(){
+		$u_option.show();
+	}).mouseout(function(){
+		$u_option.hide();
+	});
+    var ustat = getCookie('_ustat');
+    if (ustat == undefined) {
+        var uid = 0;
+    } else {
+        var oUstat = JSON.parse(ustat);
+        var uid = oUstat.i;
+    }
+    var selfUrl = window.location.href;
+    if (uid!=""&&uid!=0) {
+        $('.u-profile').attr("src", "http://my.iciba.com/index.php?c=avatars&m=display&uid="+uid+"&size=small");
+        $('.u-register a').attr("href", "http://my.iciba.com/?c=user");
+        $('.u-register a').attr("target", "_blank");
+        $('.u-register a').text("个人中心");
+        $('.u-login a').attr("href", "http://my.iciba.com/?c=logout&returnurl="+selfUrl);
+        $('.u-login a').attr("onclick", "syncScb()");
+        $('.u-login a').text("退出登录");
+    } else {
+        $('.u-profile').attr("src", "http://cdn.iciba.com/web/img/head.png");
+        $('.u-register a').attr("href", "http://my.iciba.com/?c=register&returnurl="+selfUrl);
+        $('.u-register a').text("注册");
+        $('.u-login a').attr("href", "http://my.iciba.com/?returnurl="+selfUrl);
+        $('.u-login a').text("登录");
+    }
+    
+})(window, jQuery);
+</script>
+
+	<!-- 固定头部 end -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?ff8e5ea3d826cc3ff9e62f38fb25f05b";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<object style="display:none;height:0px;width:0px;overflow:hidden;" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="0" height="0" id="asound" align="absmiddle">
+    <param name="allowScriptAccess" value="sameDomain">
+    <param name="movie" value="/static/images/swf/asound.swf">
+    <param name="quality" value="high">
+    <embed src="/static/images/swf/asound.swf" quality="high" width="0" height="0" name="asound" align="absmiddle" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+<!-- 页面主体 start -->
+<!-- 搜索框部分 start -->
+<div class='search-area'>
+    <style type='text/css'>
+    #ad-top .head_ad {
+        position: relative;
+        width: 960px;
+        height: 48px;
+    }
+    </style>
+	<div class='ad-top' id='ad-top'>
+	<script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2369049',
+            container: s,
+            size: '960,48',
+            display: 'inlay-fix'
+        });
+    })();
+    </script>
+    <script src="http://dup.baidustatic.com/js/os.js"></script>
+	</div>
+	<div class='search-wrap'>
+		<!-- 查词搜索框 start -->
+		<form class='search-form' id='search_form' onsubmit="return false;">
+			<a href='javascript:void(0);' class='search-icon' onclick="_czc.push(['_trackEvent','查词结果','查词历史','输入框','','']);"></a>
+			<div class='search-state'>
+				<a href='javascript:void(0);' class='search-clear' onclick="_czc.push(['_trackEvent','取消','输入框','','','']);"><i class='clear-icon'></i>清除</a>
+				<span class='split'>|</span>
+				<a href='javascript:void(0);' class='search-history'><i class='history-icon'></i>历史记录</a>
+				<ul class='history-list' id='history_list'>
+					<i class='triangle'></i>
+					<ul class='history'>
+					</ul>
+				</ul>
+			</div>
+			<input class='search-input' id='search_input' type='text' placeholder='单词和句子都交给小词' onmouseover="this.select()" onfocus="this.select()" value="big" />
+			<ul class='suggest-list' id='suggest_list'>	
+			</ul>
+		</form>
+		<!-- 查词搜索框 end -->
+	</div>
+	<!--<div class='new-ad-tab'>
+			<a href='http://zt.iciba.com/ef/vipabc/vipabc.htm' target="_blank" onclick="_czc.push(['_trackEvent','首页,查词结果','流利口语','查词页搜索框下','','']);"><p>流利口语</p></a>
+			<div class='clear'></div>
+	  </div> -->
+</div>
+<script>
+$(document).ready(function(){
+    (function(window, $){
+        ICIBA.Suggest.Install('search_input', true, 'search_form', 'suggest_list');
+        
+        $('.search-clear').click(function(){
+            $('#search_input').val('').focus();
+        });
+        $('.search-history').click(function(e){
+            if($(this).hasClass('show')){
+                $(this).removeClass('show');
+                $('#history_list').hide();
+            }else {
+                $(this).addClass('show');
+                $('#history_list').show();
+            }
+            ICIBA.Suggest.Hide();
+            e.stopPropagation();
+        });
+        $('#history_list').click(function(e){
+            e.stopPropagation();
+        })
+        $(document).click(function(){
+            $('.search-history').removeClass('show');
+            $('#history_list').hide();
+        });
+        $('#search_input').focus(function(){
+            $('.search-history').removeClass('show');
+            $('#history_list').hide();
+        });
+        $('#search_input').on('mousedown mouseup dblclick', function(event){
+            event.stopPropagation();
+        })
+        var $search_wrap_top = $('.search-wrap').offset().top;
+        var positionFixed = false;
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= $search_wrap_top) {
+                if(!positionFixed) {
+                    $('.search-wrap').css({'position': 'fixed'});
+                    $('.search-wrap').css({'background': '#ffffff'});
+                    $('.search-wrap').css({'box-shadow': '0 1px 10px rgba(0,0,0,0.08)'});
+                    $('.search-form').css({'padding': '10px 0'});
+                    $('.search-icon').css({'top': '22px'});
+                }
+                positionFixed = true;
+            } else {
+                if(positionFixed) {
+                    $('.search-wrap').css({'position': 'relative'});
+                    $('.search-wrap').css({'box-shadow': 'none'});
+                    $('.search-form').css({'padding': '20px 0 10px 0'});
+                    $('.search-icon').css({'top': '32px'});
+                }
+                positionFixed = false;
+            }
+        });
+        function getWordString(search_history){
+            var wordLength = search_history.length;
+            var wordString = "", liString = "";
+            for (var i = 0; i < wordLength; i++) {
+                liString = "";
+                liString += '<li>' + '<a href="/' + search_history[i] + '">' + search_history[i] + '</a>' +'</li>';
+                wordString += liString;
+            }
+            wordString += "<div class='clear'></div>";
+            wordString += "<div class='text-clear'><a href='javascript:void(0);' id='history-clear'>清除历史记录</a></div>";
+            return wordString;
+        }
+        
+        $(document).ready(function(){
+            setHistory();
+            var search_history = new Array;
+            search_history = getHistory();
+            search_history.reverse();
+            $('#history_list .history').html(getWordString(search_history));
+            $('#history-clear').click(function() {
+                clearHistory();
+                $('.search-history').removeClass('show');
+                $('#history_list .history').css({'margin': '0'}).html("<p>现在还没有历史记录呦</p>");
+                $('#history_list').hide();
+            });
+            $("#search_input")[0].select();        
+        });
+        
+        $(document).keyup(function (e) {
+            if (e.which == 13){
+                if ($("#search_input").val() != "") {
+                    window.location.href="/"+$("#search_input").val();
+                }
+            } else if (e.which >= 65 && e.which <= 90) {
+                if (!$("#search_input").is(":focus")) {
+                    $("#search_input").focus();
+                }
+            }
+        });
+        $('.search-icon').click(function(){
+            window.location.href="/"+$("#search_input").val();
+        });
+
+    })(window, jQuery);
+})
+
+</script>
+<!-- 搜索框部分 end -->
+<!-- 快速导航 start -->
+<div class='quick-nav'>
+    <ul class='nav-list'>
+    	<div class='nav'>
+    		    		<div class='nav-head'><i class='nav-head-ico'></i><span style='font-size:14px;color:#000000;'>基础知识</span></div>
+    		    		<div class='nav-section' style='border-left:1px solid #d6d6d6;margin-left:4px;'>
+        	        	<li class='current'><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','基本释义','左侧快速导航','','']);"><span>基本释义</span></a></li>
+        	        	        	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','双语例句','左侧快速导航','','']);"><span>双语例句</span></a></li>
+        	      	</div>
+      </div>
+      <div class='nav'>
+      	<div class='nav-head'><i class='nav-head-ico'></i><span style='font-size:14px;color:#000000;'>权威解析</span></div>
+      	<div class='nav-section' style='border-left:1px solid #d6d6d6;margin-left:4px;'>
+        	        	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','柯林斯','左侧快速导航','','']);"><span>柯林斯</span></a></li>
+        	        	        	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','英汉双向','左侧快速导航','','']);"><span>英汉双向</span></a></li>
+        	        	         	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','英英释义','左侧快速导航','','']);"><span>英英释义</span></a></li>
+        	        	<li class="oxford">
+        		<a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','牛津词典','左侧快速导航','','']);">
+        			<span>牛津词典<i class='oxford_i' style="display:none;margin-left:2px;width:11px;height:11px;background:url('../static/images/getwords_ico.png') no-repeat -35px 0"></i></span>	
+        		</a>
+        	</li>
+        	         	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','行业释义','左侧快速导航','','']);"><span>行业释义</span></a></li>
+        	       	</div>
+       </div>
+       <div class='nav'>
+       	       	<div class='nav-head'><i class='nav-head-ico'></i><span style='font-size:14px;color:#000000;'>词汇学习</span></div>
+       	       	<div class='nav-section' style='border-left:1px solid #d6d6d6;margin-left:4px;'>
+       		         	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','词组搭配','左侧快速导航','','']);"><span>词组搭配</span></a></li>
+        	        	        	        	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','同反义词','左侧快速导航','','']);"><span>同反义词</span></a></li>
+        	        						<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','同义词辨析','左侧快速导航','','']);"><span>同义词辨析</span></a></li>
+        	        		                 	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','常用俚语','左侧快速导航','','']);"><span>常用俚语</span></a></li>
+	        	        	        <li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','百科','左侧快速导航','','']);"><span>百科</span></a></li>
+		      		               	<li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','网络释义','左侧快速导航','','']);"><span>网络释义</span></a></li>
+		      		      		      <li><a href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','更多资料','左侧快速导航','','']);"><span>更多资料</span></a></li>
+	        	        	               </div>
+       </div>
+       <!--<div class='getwords'><i></i><span style='display:inline-block;vertical-align:middle;margin-left:7px;margin-top:6px;'>划译</span></div>-->
+       <!--<a href="http://download.iciba.com/pc/personal2016/PowerWord.800.12012.exe" onclick="_czc.push(['_trackEvent','查词结果','PC下载','左侧快速导航下边栏','','']);"><div class='pc-download-b'></div></a>-->
+       <!-- 广告位：词霸网站查词结果页左侧栏目小图 -->
+       <div style="width:90px;height:112px;margin-left:-10px;">
+				<script>
+					(function() {
+    				var s = "_" + Math.random().toString(36).slice(2);
+    				document.write('<div id="' + s + '"></div>');
+    				(window.slotbydup=window.slotbydup || []).push({
+        			id: '2432907',
+        			container: s,
+        			size: '90,112',
+        			display: 'inlay-fix'
+    				});
+					})();
+				</script>
+				<script src="http://dup.baidustatic.com/js/os.js"></script>
+			</div>
+    </ul>
+</div>
+<!-- 快速导航 end -->
+<div class='main-container'>
+	<!-- 查询结果 start -->
+    
+	<div class='main-result'>
+		<div class='result-info'>
+                        <!-- 基础释义 start -->
+<style type='text/css'>
+	.main-result .info-base {
+  	float: left;
+  	width: 560px;
+    margin-bottom: 15px;
+    position: relative; 
+    background: #f9f8e4; 
+    border: 1px solid #ecebc7; }
+    .info-base .in-base{
+      padding: 10px 30px 25px 30px; }
+    .info-base .keyword{
+	  	float:left;
+	  	margin-top:10px;
+	  	margin-right:20px;
+	  	font-family: 'Roboto Light';
+	  	font-size:32px;
+	  	color:#32220e; }
+	  .main-result .info-base .base-list{
+	   	margin-top:2px; }
+    .main-result .info-base .base-word {
+      margin-bottom: 8px; }
+      .main-result .info-base .base-word.abbr{
+        margin-bottom: 5px;
+        font-family: 'Roboto Light';
+        font-size: 30px;
+        color: #32220e; }
+      .main-result .info-base .base-word .word-rate {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 3px; }
+        .main-result .info-base .base-word .word-rate i {
+          display: inline-block;
+          width: 13px;
+          height: 13px;
+          margin-right: 4px;
+          background: url("http://cdn.iciba.com/web/img/info_icons.png") no-repeat;
+          background-size: 105px 92px;
+          background-position: -30px -1px; }
+          .main-result .info-base .base-word .word-rate i.light {
+            background-position: -1px -1px; }
+      .main-result .info-base .base-word .base-level {
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: middle; }
+        .main-result .info-base .base-word .base-level span {
+          font-size: 11px;
+          color: #9b8d72; }
+    .main-result .info-base .base-speak {
+    	margin-top:10px;
+      color: #9b8d72;
+      font-size: 14px;
+      min-height: 20px; }
+    .main-result .info-base .base-list li {
+      position: relative;
+      margin-bottom: 2px; 
+      margin-left: 2px; }
+      .main-result .info-base li.change {
+        margin-top:20px; }
+        .main-result .info-base li.change span.prop{
+        	position:absolute;
+      		line-height:20px;
+      		font-size: 14px;
+      		color: #9b8d72; }
+      		.main-result .info-base li.change p{
+        	 line-height: 24px;
+      margin-left: 36px;
+      padding: 0 20px;
+      font-size: 14px;
+      color: #32220e;}
+        .main-result .info-base .base-list li.change a.shape {
+          margin-right: 5px; }
+    .main-result .info-base .base-list span.prop {
+      position: absolute;
+      height: 100%;
+      line-height: 26px;
+      color: #32220e;
+      font-size: 16px;
+      font-family: arial, sans-serif, "microsoft yahei", simhei;
+      text-align: center; }
+    .main-result .info-base .base-list p {
+    	line-height: 24px;
+      margin-left: 36px;
+      padding: 0 20px;
+      font-size: 14px;
+      color: #32220e; }
+      .suggest_b{
+	width:480px;
+}
+	.suggest_b .sug-text {
+    color: #999999;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top:-20px;
+    margin-bottom:10px; }
+  .suggest_b .sug-words {
+    line-height: 16px;
+    margin-top: 5px; }
+    .suggest_b .sug-words a {
+      font-size: 16px;
+      font-family: arial, sans-serif, "microsoft yahei", simhei; }
+
+	
+	
+</style>	
+<div class='info-article info-base'>
+	<div class='in-base'>
+		<div style='width:450px;'>
+					<h1 class='keyword'>big</h1>
+			  <div style='float:left;margin-top:10px;'>
+    	<div class='base-speak'>
+                        <span>英 [ bɪg ]</span><i class='new-speak-step' onmouseover="displayAudio('http://res.iciba.com/resource/amp3/oxford/0/dd/3e/dd3eded85f7085dc92210aa496e92ba9.mp3')"></i>
+                        <span>美 [ bɪɡ ]</span><i class='new-speak-step' onmouseover="displayAudio('http://res.iciba.com/resource/amp3/1/0/d8/61/d861877da56b8b4ceb35c8cbfdf65bb4.mp3')"></i>
+           	 	</div>
+			<div class='base-word' style="margin-top:-2px;">
+                        		<div class='word-rate'>
+			<p><i class='light'></i><i class='light'></i><i class='light'></i><i class='light'></i><i class='light'></i></p>
+        </div>
+                <div class='base-level'>
+            <p>
+                                    <span>考研&nbsp;/</span>
+                                                <span>CET6&nbsp;/</span>
+                                                <span>CET4&nbsp;/</span>
+                                    </p>
+        </div>
+	</div>
+
+		</div>
+		<div class='clear'></div>
+		</div>	
+        <ul class='base-list switch_part' >
+                <li>
+        <span class='prop'>adj.</span>
+			<p>
+                        大的;                         重要的;                         （计划）庞大的;                         大方的                        </p>
+		</li>
+                <li>
+        <span class='prop'>adv.</span>
+			<p>
+                        大量地;                         成功地;                         夸大地;                         宽宏大量地                        </p>
+		</li>
+                <li>
+        <span class='prop'>n.</span>
+			<p>
+                        大亨;                         大公司                        </p>
+		</li>
+                
+	</ul>
+                <br/>
+    <h1 class='base-word abbr'>BIG</h1>
+    <ul class='base-list switch_part'>
+                        <li>
+        <span class='prop prop_long'>abbr.</span>
+			<p class='p_long'>
+                        best in group 一批中最好的                        British Insurance Group 英国保险集团                        bismuth iron garnet 铋铁石榴石                        Basic Insurance Group 利益保险集团                        </p>
+	    </li>
+                        
+    </ul>
+        <br/>
+    <h1 class='base-word abbr'>Big</h1>
+    <ul class='base-list switch_part'>
+                        <li>
+        <span class='prop prop_long'>释义</span>
+			<p class='p_long'>
+                        [地名] 大（英语）                        [电影]飞越未来/飞向未来                        </p>
+	    </li>
+                        
+    </ul>
+            		<li class='change'>
+			<span class='prop chinese'>变形</span>
+			<p>
+                                                                                                				<span>比较级：</span>
+                                     <a class='shape' href="http://www.iciba.com/bigger" target='_blank'>bigger</a>
+                                                				<span>最高级：</span>
+                                     <a class='shape' href="http://www.iciba.com/biggest" target='_blank'>biggest</a>
+                                			</p>
+		</li>
+            <div class='scb-btn' onclick="_czc.push(['_trackEvent','查词结果','添加生词本','基本释义右上','','']);">
+	<a class='scb-icon' href='javascript:void(0);'></a>
+	<!--<span class='scb-text'>添加到生词本</span>-->
+</div>
+<div class='scb-con'>
+    <i class='triangle-top'></i>
+	<div class='scb-wrap'>
+		<p class='scb-choose'>选择要添加的生词本</p>
+		<div id="scrollbar1">
+            <div class="scrollbar"><div class="track"><div class="thumb"></div></div></div>
+            <div class="viewport">
+                <div class="overview">
+                    <div class='scb-action'>
+						<ul class='scb-list'>
+							
+						</ul>
+					</div>
+                </div>
+            </div>
+        </div>
+        <p class='scb-entry'>
+            <a class='scb-create' href='javascript:void(0);' onclick="_czc.push(['_trackEvent','查词结果','创建生词本','基本释义右上','','']);"><i class='plus'></i>新建生词本</a>
+            <a class="go-scb" href='javascript:void(0);' target="_blank" onclick="_czc.push(['_trackEvent','查词结果','进入生词本','基本释义右上','','']);">进入生词本<i class='jump'></i></a></p>
+	</div>
+</div>
+<script type="text/javascript">
+//初始化全局变量用于保存线上生词本名
+window.ScbName = [];
+(function(window, $){
+    $('.scb-create').click(function(){
+        $('.scb-mask').show();
+        $('#textarea').focus();
+    });
+    $('.scb-btn').click(function(event){
+                window.location.href = "http://my.iciba.com/?returnurl=" + window.location.href;
+            });
+    $('.scb-con').click(function(event){
+        event.stopPropagation();
+    });
+    $(document).click(function(event){
+        $('.scb-btn .scb-icon').removeClass('active');
+        $('.scb-con').slideUp();
+    });
+    $('.scb-list').delegate("span", "click", function(){
+        var bookname = $(this).text();
+        var bookid   = $(this).attr("data-bookid")?$(this).attr("data-bookid"):0;
+        setWord(bookname, bookid);
+    });
+    $('.scb-entry a.go-scb').click(function(){
+        syncScb();
+        window.open("http://scb.iciba.com");
+        return false;
+    });
+    $('.scb-list').delegate('li', 'click', function(){
+        $(this).find('i.check').css({'opacity': '1'}).animate({opacity: 0}, 1500);
+    });
+    //获取线上生词本数据
+    function getScb()
+    {
+        var uid = "0";
+        $.ajax({
+            url:"./ajax/notebooklist/" + $('#search_input').val(),
+            type:"post",
+            data:"&u="+uid,
+            dataType:"json",
+            success:function(res){
+                setScb(res);
+                setVersion(res);
+            }
+        }); 
+    }
+    //将线上生词本和localstorage生词本名生成html插入到生词本控件中
+    function setScb(data){
+        var scb_list = $(".scb-list");
+        var content = "";
+        if (data.status != 0) {
+            for(var i = 0, l = data.books.length; i < l; i++){
+                content += "<li class='color-" + i % 7 + "'>" + "<i class='circle'></i><span class='name' data-bookid='"+data.books[i].book_id+"'>" + data.books[i].book_name + "</span>" + "<i class='check'>" + "</i>" + "</li>";
+                //将线上生词本名push到全局变量ScbName
+                ScbName.push(data.books[i].book_name);
+            }
+        }
+        if(window.localStorage.getItem("db_scbLib_0")){
+            var LSScbObj = JSON.parse(window.localStorage.getItem("db_scbLib_0"));
+            var bookObj = LSScbObj.data.books;
+            bookArr = $.map(bookObj, function(value){ return value; });
+            for(var i = 0; i < bookArr.length; i++){
+                content += "<li class='color-" + i % 7 + "'>" + "<i class='circle'></i><span class='name' data-bookid='0'>" + bookArr[i].n + "</span>" + "<i class='check'>" + "</i>" + "</li>";
+            }
+        }
+        scb_list.html(content);
+    }
+    //设置生词本版本号
+    function setVersion(data){
+        window.localStorage.setItem("ScbClientVersion", data.clientVersion?data.clientVersion:0);
+    }
+    function syncScb()
+    {
+        var uid = "0";
+        var LSScbObj = JSON.parse(window.localStorage.getItem("db_scbLib_0"));
+        var bookObj = LSScbObj.data.books;
+        var wordObj = LSScbObj.data.words;
+        var newScbBook = $.map(bookObj, function(value){ return value; });
+        var newScbWord = $.map(wordObj, function(value){ return value; });
+        var version = window.localStorage.getItem("ScbClientVersion") ? window.localStorage.getItem("ScbClientVersion") : 0;
+        var jsonBook = JSON.stringify(newScbBook);
+        var jsonWord = JSON.stringify(newScbWord);
+        if (newScbBook.length < 1 && newScbWord.length < 1) {
+            return false;
+        }
+        $.ajax({
+            url:"./ajax/notebook/" + version,
+            type:"post",
+            data:"b="+jsonBook+"&w="+jsonWord+"&u="+uid,
+            dataType:"json",
+            success:function(res){
+                if (res[0].errno == 0) {
+                    window.lib.deleteRows("books", function(row){return true;});
+                    window.lib.deleteRows("words", function(row){return true;});
+                    window.lib.commit();
+                    window.localStorage.setItem("ScbClientVersion", res[0].clientVersion)
+                }
+            }
+        });
+    }
+    function setWord(bookname, bookid)
+    {
+        var word = "big";
+        window.lib.insert("words", {w: word, p: bookname, i: bookid});
+        window.lib.commit();
+    }
+    window.setInterval(syncScb, 60000);
+})(window, jQuery);
+</script>
+    
+	</div>
+</div>
+<!-- 基础释义 end -->
+<script>
+$(".switch_key").on("click",function(){
+    var index = $(this).attr("data-index");
+    $(".switch_part").each(function(i){
+        if (i == index) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+});
+var $prop_long = $('.prop_long');
+$prop_long.each(function(index, element){
+		if($(element).width() > 36){
+			var new_left = $(element).width() ;
+			var p_long = $(element).next('.p_long');
+			p_long.css("margin-left", new_left);
+		}
+});
+</script>
+            <style type='text/css'>
+	.main-result .info-edsentence {
+  	padding-top: 1px;
+  	padding-bottom: 1px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background:#ffffff;
+    border:1px solid #eeeeee;
+    box-shadow:0 1px 10px rgba(0,0,0,0.04); }
+    .main-result .info-edsentence .article-list {
+      position: relative;
+      margin-top: 20px;
+      margin-left: 25px;
+      margin-right: 25px;
+      border-bottom: 1px solid #e2e2e2; }
+      .main-result .info-edsentence .article-list li {
+        float: left;
+        font-size: 18px;
+        color: #999999;
+        border-bottom: 1px solid #e2e2e2;
+        padding-bottom: 10px;
+        margin-bottom: -1px;
+        margin-right: 20px;
+        cursor: pointer; }
+        .main-result .info-edsentence .article-list li:hover{
+          color:#57b7fc; } 
+        .main-result .info-edsentence .article-list li.current {
+          color: #333333;
+          border-bottom: 1px solid #333333; }
+        .main-result .info-edsentence .article-list p.info-display {
+      	  font-size:12px;
+      	  color:#999999;
+      	  width: 40px;
+          height: 20px;
+          position: absolute;
+          right: 0px;
+          top: 2px;
+          cursor: pointer; }
+          .main-result .info-edsentence .article-list p.info-display i.ico-display{
+        	  display: inline-block;
+        	  margin-left:5px;
+        	  width: 10px;
+            height: 10px;
+            background: url("../static/images/newsearch_ico.png") no-repeat -26px -33px; }
+          .main-result .info-edsentence .article-list p.info-display i.ico-display.selected {
+            background: url("../static/images/newsearch_ico.png") no-repeat -7px -33px!important; }
+	.info-edsentence{
+		float:left;
+		width:380px;
+		
+		margin-left: 20px;
+		margin-bottom:12px!important;
+		box-shadow:0 1px 10px rgba(0,0,0,0.04); }
+	  .info-edsentence .edsentence{
+	  	padding:0 25px 23px 25px; }
+	  	.info-edsentence .edsentence-section li{
+	  		height:70px;
+	  		margin-top:20px; }
+	  	.info-edsentence .edsentence-section img{
+	  		float:left;
+	  		width:110px;
+	  		height:70px; }
+	      span.special{ color:#ea843f; }
+</style>
+<div class='info-edsentence'>
+	<ul class='article-list'>
+		<li class='current'>每日一句</li>
+		<li>发现频道</li>
+		<div class='clear'></div>
+  </ul>
+  <div class='edsentence'>
+    <div class='edsentence-section' id='dailysentence'>
+    	
+    </div>
+    <div class='edsentence-section' id='article' style='display:none;'>
+    	
+    	
+    </div>
+  </div>
+</div>
+<div class='clear'>
+</div>
+<!--<style type='text/css'>
+	a.new{
+		margin-right:0!important;
+	}
+	.newyear{
+		color:#74be00;
+		margin-bottom:15px;
+		font-size:14px;
+	}
+</style>-->
+<!--<a class='new' href='http://download.iciba.com/pc/personal2016/PowerWord.800.12012.exe' onclick="_czc.push(['_trackEvent','查词结果','词霸pc下载链接 ','基本释义下方','','']);">
+    <p class=newyear>词霸桌面版，释义更精准，查词快3倍！ 专属福利 点击下载&nbsp;&nbsp;> </p>
+</a>-->
+<!-- 广告位：查词结果页文字链1 -->
+<div style="width:960px;height:20px;margin-bottom:15px;cursor:pointer;">
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '2432897',
+        container: s,
+        size: '960,20',
+        display: 'inlay-fix'
+    });
+})();
+</script>
+<script src="http://dup.baidustatic.com/js/os.js"></script>
+</div>
+<script>
+(function(window,$){
+	var $baseheight = $('.info-base').height();
+	var $baseheight = $baseheight + 4 ;
+	$('.info-edsentence').css('height',$baseheight + 'px');
+	var $num = ($baseheight - 96)/90;
+	var $num = Math.floor($num);
+	if($num == -1 || $num == 0){
+		$num = 0;
+		$('.info-edsentence').css('height','196px');
+		$('.info-base').css('height','196px');
+		var aSentenceTmp = [{"title":"2016-03-11","en":"Land? Land is a ship too <span class=\"special\">big<\/span> for me. It\u2019s a woman too beautiful, it\u2019s ...","cn":"\u9646\u5730\uff1f\u5bf9\u6211\u6765\u8bf4\uff0c\u9646\u5730\u662f\u8258\u592a\u5927\u7684\u8239\uff0c\u662f...","id":"1884","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-11.jpg","b_en":"Land? Land is a ship too <span class=\"special\">big<\/span> for me. It\u2019...","b_cn":"\u9646\u5730\uff1f\u5bf9\u6211\u6765\u8bf4\uff0c\u9646\u5730\u662f\u8258\u592a\u5927\u7684\u8239\uff0c\u662f\u4f4d\u592a..."},{"title":"2015-10-17","en":"Many people lose the small joys in the hope for the <span class=\"special\">big<\/span> happiness.","cn":"\u5f88\u591a\u4eba\u5e0c\u671b\u83b7\u5f97\u5927\u7684\u5feb\u4e50\uff0c\u56e0\u800c\u9519\u5931\u5c0f\u7684...","id":"1574","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-10-17-1.jpg","b_en":"Many people lose the small joys in the h...","b_cn":"\u5f88\u591a\u4eba\u5e0c\u671b\u83b7\u5f97\u5927\u7684\u5feb\u4e50\uff0c\u56e0\u800c\u9519\u5931\u5c0f\u7684\u4e50\u8da3..."},{"title":"2015-09-01","en":"Happiness always looks small while you hold it in your hands, but let ...","cn":"\u4f60\u628a\u5e78\u798f\u6367\u5728\u624b\u91cc\uff0c\u770b\u4f3c\u5fae\u4e0d\u8db3\u9053\uff0c\u4e00\u65e6...","id":"1481","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-09-01.jpg","b_en":"Happiness always looks small while you h...","b_cn":"\u4f60\u628a\u5e78\u798f\u6367\u5728\u624b\u91cc\uff0c\u770b\u4f3c\u5fae\u4e0d\u8db3\u9053\uff0c\u4e00\u65e6\u653e\u624b..."},{"title":"2015-06-08","en":"If your dream was <span class=\"special\">big<\/span> enough and you had the guts to follow it, there ...","cn":"\u5982\u679c\u4f60\u7684\u68a6\u60f3\u8db3\u591f\u8fdc\u5927\uff0c\u4f60\u53c8\u6709\u52c7\u6c14\u53bb\u8ffd...","id":"1314","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-06-08.jpg","b_en":"If your dream was <span class=\"special\">big<\/span> enough and you had...","b_cn":"\u5982\u679c\u4f60\u7684\u68a6\u60f3\u8db3\u591f\u8fdc\u5927\uff0c\u4f60\u53c8\u6709\u52c7\u6c14\u53bb\u8ffd\u968f\u5b83..."},{"title":"2015-02-18","en":"Enjoy the little things, for one day you may look back and realize the...","cn":"\u4eab\u53d7\u751f\u6d3b\u4e2d\u7684\u5c0f\u4e8b\u3002\u603b\u6709\u4e00\u5929\u5f53\u4f60\u66ae\u7136\u56de...","id":"1204","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-02-18.jpg","b_en":"Enjoy the little things, for one day you...","b_cn":"\u4eab\u53d7\u751f\u6d3b\u4e2d\u7684\u5c0f\u4e8b\u3002\u603b\u6709\u4e00\u5929\u5f53\u4f60\u66ae\u7136\u56de\u9996\uff0c..."},{"title":"2015-01-19","en":"The size of your dreams must always exceed your current capacity to ac...","cn":"\u4f60\u7684\u68a6\u60f3\u6c38\u8fdc\u90fd\u8981\u5927\u4e8e\u73b0\u5728\u7684\u80fd\u529b\u8303\u56f4\u3002...","id":"1174","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-01-19.jpg","b_en":"The size of your dreams must always exce...","b_cn":"\u4f60\u7684\u68a6\u60f3\u6c38\u8fdc\u90fd\u8981\u5927\u4e8e\u73b0\u5728\u7684\u80fd\u529b\u8303\u56f4\u3002\u5982\u679c..."},{"title":"2014-09-05","en":"This is a <span class=\"special\">big<\/span> and beautiful world. Most of us live and die in the same...","cn":"\u8fd9\u4e2a\u4e16\u754c\u5982\u6b64\u8fbd\u9614\u548c\u7f8e\u4e3d\uff0c\u800c\u5927\u591a\u6570\u4eba\u4ece...","id":"1030","picture":"http:\/\/cdn.iciba.com\/news\/word\/2014-09-05.jpg","b_en":"This is a <span class=\"special\">big<\/span> and beautiful world. Most ...","b_cn":"\u8fd9\u4e2a\u4e16\u754c\u5982\u6b64\u8fbd\u9614\u548c\u7f8e\u4e3d\uff0c\u800c\u5927\u591a\u6570\u4eba\u4ece\u751f\u5230..."},{"title":"2016-03-15","en":"I can accept defeat but could not accept to give up .","cn":"\u6211\u53ef\u4ee5\u63a5\u53d7\u5931\u8d25\uff0c\u4f46\u4e0d\u80fd\u63a5\u53d7\u653e\u5f03.\uff08\u8fc8...","id":"1894","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-15.jpg","b_en":"I can accept defeat but could not accept...","b_cn":"\u6211\u53ef\u4ee5\u63a5\u53d7\u5931\u8d25\uff0c\u4f46\u4e0d\u80fd\u63a5\u53d7\u653e\u5f03.\uff08\u8fc8\u514b\u5c14..."},{"title":"2016-03-15","en":"While the world is full of suffering, it is also full of overcoming it...","cn":" \u7136\u4e16\u754c\u5145\u6ee1\u82e6\u96be\uff0c\u4f46\u662f\u82e6\u96be\u603b\u662f\u53ef\u4ee5\u6218...","id":"1895","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.02.15.jpg","b_en":"While the world is full of suffering, it...","b_cn":" \u7136\u4e16\u754c\u5145\u6ee1\u82e6\u96be\uff0c\u4f46\u662f\u82e6\u96be\u603b\u662f\u53ef\u4ee5\u6218\u80dc\u7684..."},{"title":"2016-03-14","en":"Behind the fear of an ideal you, you create the fear, you can beat him...","cn":" \u6050\u60e7\u7684\u80cc\u540e\u6709\u4e00\u4e2a\u7406\u60f3\u7684\u4f60\uff0c\u6050\u60e7\u662f\u4f60...","id":"1889","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-14.jpg","b_en":"Behind the fear of an ideal you, you cre...","b_cn":" \u6050\u60e7\u7684\u80cc\u540e\u6709\u4e00\u4e2a\u7406\u60f3\u7684\u4f60\uff0c\u6050\u60e7\u662f\u4f60\u81ea\u5df1..."},{"title":"2016-03-14","en":"Don't bother just to be better than your contemporaries or predecessor...","cn":"\u522b\u81ea\u5bfb\u70e6\u607c\u5730\u53ea\u60f3\u6bd4\u4f60\u540c\u65f6\u4ee3\u7684\u4eba\u6216\u662f\u5148...","id":"1893","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.14.jpg","b_en":"Don't bother just to be better than your...","b_cn":"\u522b\u81ea\u5bfb\u70e6\u607c\u5730\u53ea\u60f3\u6bd4\u4f60\u540c\u65f6\u4ee3\u7684\u4eba\u6216\u662f\u5148\u8f88\u4eec..."},{"title":"2016-03-13","en":" The only way to keep your health is to eat what you don't want, drink...","cn":"\u4fdd\u6301\u8eab\u4f53\u5065\u5eb7\u7684\u552f\u4e00\u529e\u6cd5\uff0c\u5c31\u662f\u5403\u70b9\u4f60\u4e0d...","id":"1888","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-13.jpg","b_en":" The only way to keep your health is to ...","b_cn":"\u4fdd\u6301\u8eab\u4f53\u5065\u5eb7\u7684\u552f\u4e00\u529e\u6cd5\uff0c\u5c31\u662f\u5403\u70b9\u4f60\u4e0d\u60f3\u5403..."},{"title":"2016-03-13","en":"I've been here before,But always hit the floor,I've spent a lifetime r...","cn":"\u6211\u66fe\u7ecf\u7231\u8fc7\uff0c\u4f46\u6bcf\u6b21\u90fd\u65e0\u75be\u800c\u7ec8\uff0c\u6211\u7528\u5c3d...","id":"1892","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.13.jpg","b_en":"I've been here before,But always hit the...","b_cn":"\u6211\u66fe\u7ecf\u7231\u8fc7\uff0c\u4f46\u6bcf\u6b21\u90fd\u65e0\u75be\u800c\u7ec8\uff0c\u6211\u7528\u5c3d\u4e00\u751f..."},{"title":"2016-03-12","en":"There are more things between heaven and earth than are dreamt of in y...","cn":"\u5728\u8fd9\u5929\u5730\u95f4\u6709\u8bb8\u591a\u4e8b\u60c5\u662f\u4eba\u7c7b\u54f2\u5b66\u6240\u4e0d\u80fd...","id":"1887","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-12.jpg","b_en":"There are more things between heaven and...","b_cn":"\u5728\u8fd9\u5929\u5730\u95f4\u6709\u8bb8\u591a\u4e8b\u60c5\u662f\u4eba\u7c7b\u54f2\u5b66\u6240\u4e0d\u80fd\u89e3\u91ca..."},{"title":"2016-03-12","en":" When my eyes were stabbed by the flash of a neon light.That split the...","cn":"\u4e00\u9053\u8000\u773c\u7684\u9713\u8679\u706f\u5149\u523a\u5165\u6211\u7684\u773c\u775b\uff0c\u5b83\u5212...","id":"1891","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.12.jpg","b_en":" When my eyes were stabbed by the flash ...","b_cn":"\u4e00\u9053\u8000\u773c\u7684\u9713\u8679\u706f\u5149\u523a\u5165\u6211\u7684\u773c\u775b\uff0c\u5b83\u5212\u7834\u591c..."}];
+		var html = "";
+		for (var i=0;i<=$num;i++) {
+	  	html += '<li onclick="_czc.push(["_trackEvent","查词结果","每日一句","tab切换","",""]);"><a style="margin-right:0px!important;" href="http://news.iciba.com/dailysentence/detail-'+aSentenceTmp[i]['id']+'.html" target="_blank"><img src="'+ aSentenceTmp[i]['picture'] +'">';
+	  	html += '<div style="float:left;width:180px;margin-left:10px;"><p style="font-size:14px;color:#333333;line-height:16px;margin-bottom:3px;">' + aSentenceTmp[i]['b_en'] + '</p>';
+	  	html += '<p style="font-size:12px;color:#999999;line-height:18px;">' + aSentenceTmp[i]['b_cn'] + '</p></div>';
+	  	html += '<div class="clear"></div>'
+	  	html += '</a></li>';
+		}
+		html += '<div class="section-more"><a href="http://news.iciba.com/appv3/wwwroot/ds.php?action=search&search_word=big">查看更多</a></div>'
+		$("#dailysentence").html(html);	
+		var aArticleTmp = {"0":{"id":"1568070","catid":"37","typeid":"0","title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06\u4e3a\u5168\u7403\u7b2c\u4e00","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504095144476.jpg","keywords":"\u4e2d\u56fd \u624b\u6e38 \u5e02\u573a","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568070.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430704213","updatetime":"1430704457","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d\u660e\u5e74\u5c31\u5c06\u53d1\u751f\u53d8\u5316\u3002\u5c4a\u65f6\uff0c\u4e2d...","b_title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06...","b_content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d..."},"1":{"id":"1568078","catid":"487","typeid":"0","title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504114531294.jpg","keywords":"\u82f1\u6587 \u5355\u8bcd","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/basic\/1568078.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430711004","updatetime":"1430711377","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e\u611f\u5230\u7684\u56f0\u4e4f\u611f&rdquo;...","b_title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","b_content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e..."},"2":{"id":"1568086","catid":"424","typeid":"0","title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e\u540d\u6a21\u540c\u53f0PK","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505115009916.jpg","keywords":"\u8d3e\u65af\u4e01\u6bd4\u4f2f \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568086.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430797714","updatetime":"1430797965","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\nJustin Bieber may be next in line to f...","b_title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e...","b_content":"\r\n\r\n\t\r\nJustin Bieber may be next..."},"3":{"id":"1568088","catid":"42","typeid":"0","title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505043839422.jpg","keywords":"\u6362\u5de5\u4f5c \u9519\u8bef","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568088.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430814935","updatetime":"1430815288","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010\uff0c\u4e5f\u662f\u63d0\u5347\u4e2a\u4eba\u6536\u5165\u7684\u6377\u5f84\uff0c...","b_title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","b_content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010..."},"4":{"id":"1568093","catid":"39","typeid":"0","title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chapter17\uff08\u4e0b\uff09","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506095924305.jpg","keywords":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3","description":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568093.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430956440","updatetime":"1430878424","mobile_flag":"1","mobile_thumb":"","xiaomipic":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","content":"\r\n\t\r\n&quot;Sir?&quot; said Harry. &quot;I&rsq...","b_title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chap...","b_content":"\r\n\t\r\n&quot;Sir?&quot; said Harry..."},"5":{"id":"1568100","catid":"409","typeid":"0","title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e\u7684\u81ea\u5df1","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506114331639.jpg","keywords":"\u65c5\u884c \u81ea\u5df1","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/lehuo\/1568100.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430883665","updatetime":"1430884135","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417\uff1f\u7231\u65c5\u884c\u7231\u81ea\u7531\u7684\u4f60\uff0c\u613f\u610f\u56e0...","b_title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e...","b_content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417..."},"6":{"id":"1568101","catid":"249","typeid":"0","title":"2013\u5e74\u8003\u7814\u82f1\u8bed Use Of English","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506115238663.jpg","keywords":"2013 \u8003\u7814 \u82f1\u8bed","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/xdf7\/1568101.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430884284","updatetime":"1430884843","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nPeople are, on the whole, poor at consid...","b_title":"2013\u5e74\u8003\u7814\u82f1\u8bed Us...","b_content":"\r\n\t\r\nPeople are, on the whole, p..."},"7":{"id":"1568113","catid":"43","typeid":"0","title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868\u8fbe","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0507\/20150507114710493.jpg","keywords":"\u82f1\u6587 \u8868\u8fbe \u8f7b\u800c\u6613\u4e3e","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/oral\/1568113.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430970121","updatetime":"1430970594","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n1. It&#39;s really simple.\r\n\u5f88\u7b80\u5355\u3002\r\n2. It&...","b_title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868...","b_content":"\r\n\t\r\n1. It&#39;s really simple.\r..."},"8":{"id":"1568121","catid":"424","typeid":"0","title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71\u91cc\u7684\u4e0d\u540c\u6bcd\u4eb2","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508093343188.jpg","keywords":"\u6bcd\u4eb2 \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568121.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431048518","updatetime":"1431049100","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2\u98ce\u91c7\u7684\u7535\u5f71\u4e0d\u5c11\uff0c\u5c0f\u7f16\u5728\u6b64\u641c...","b_title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71...","b_content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2..."},"9":{"id":"1568124","catid":"42","typeid":"0","title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u808918\u6761\u5efa\u8bae","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508102608983.jpg","keywords":"\u6bd5\u4e1a\u751f \u5efa\u8bae","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568124.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431051890","updatetime":"1431057094","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nWe recently asked netizens to tell us th...","b_title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u80891...","b_content":"\r\n\t\r\nWe recently asked netizens ..."},"pagenum":100};
+		var content = "";
+		for (var i=0;i<=$num;i++) {
+	  	content += '<li onclick="_czc.push(["_trackEvent","查词结果","悦读","tab切换","",""]);"><a style="margin-right:0px!important;" href="'+aArticleTmp[i]['url']+'"><img src="'+aArticleTmp[i]['thumb']+'"  onerror="javascript:this.src='+"'" +'http://cdn.iciba.com/news/bbc/phpcms/default/default_article.jpg'+"'" +'">'; 
+	  	content += '<div style="float:left;width:180px;margin-left:10px;"><p class="recommend_title" style="font-size:14px;color:#333333;;line-height:16px;margin-bottom:3px;">' + aArticleTmp[i]['b_title'] + '</p>';
+	  	content += '<p style="font-size:14px;color:#999999;line-height:18px;">' + aArticleTmp[i]['b_content'] + '</p></div>';
+	  	content += '<div class="clear"></div>';
+	  	content += '</a></li>';
+		}
+		content += '<div class="section-more"><a href="http://news.iciba.com/search/search.php?wd=big">查看更多</a></div>'
+		$("#article").html(content);
+	}else{
+		var aSentenceTmp = [{"title":"2016-03-11","en":"Land? Land is a ship too <span class=\"special\">big<\/span> for me. It\u2019s a woman too beautiful, it\u2019s ...","cn":"\u9646\u5730\uff1f\u5bf9\u6211\u6765\u8bf4\uff0c\u9646\u5730\u662f\u8258\u592a\u5927\u7684\u8239\uff0c\u662f...","id":"1884","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-11.jpg","b_en":"Land? Land is a ship too <span class=\"special\">big<\/span> for me. It\u2019...","b_cn":"\u9646\u5730\uff1f\u5bf9\u6211\u6765\u8bf4\uff0c\u9646\u5730\u662f\u8258\u592a\u5927\u7684\u8239\uff0c\u662f\u4f4d\u592a..."},{"title":"2015-10-17","en":"Many people lose the small joys in the hope for the <span class=\"special\">big<\/span> happiness.","cn":"\u5f88\u591a\u4eba\u5e0c\u671b\u83b7\u5f97\u5927\u7684\u5feb\u4e50\uff0c\u56e0\u800c\u9519\u5931\u5c0f\u7684...","id":"1574","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-10-17-1.jpg","b_en":"Many people lose the small joys in the h...","b_cn":"\u5f88\u591a\u4eba\u5e0c\u671b\u83b7\u5f97\u5927\u7684\u5feb\u4e50\uff0c\u56e0\u800c\u9519\u5931\u5c0f\u7684\u4e50\u8da3..."},{"title":"2015-09-01","en":"Happiness always looks small while you hold it in your hands, but let ...","cn":"\u4f60\u628a\u5e78\u798f\u6367\u5728\u624b\u91cc\uff0c\u770b\u4f3c\u5fae\u4e0d\u8db3\u9053\uff0c\u4e00\u65e6...","id":"1481","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-09-01.jpg","b_en":"Happiness always looks small while you h...","b_cn":"\u4f60\u628a\u5e78\u798f\u6367\u5728\u624b\u91cc\uff0c\u770b\u4f3c\u5fae\u4e0d\u8db3\u9053\uff0c\u4e00\u65e6\u653e\u624b..."},{"title":"2015-06-08","en":"If your dream was <span class=\"special\">big<\/span> enough and you had the guts to follow it, there ...","cn":"\u5982\u679c\u4f60\u7684\u68a6\u60f3\u8db3\u591f\u8fdc\u5927\uff0c\u4f60\u53c8\u6709\u52c7\u6c14\u53bb\u8ffd...","id":"1314","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-06-08.jpg","b_en":"If your dream was <span class=\"special\">big<\/span> enough and you had...","b_cn":"\u5982\u679c\u4f60\u7684\u68a6\u60f3\u8db3\u591f\u8fdc\u5927\uff0c\u4f60\u53c8\u6709\u52c7\u6c14\u53bb\u8ffd\u968f\u5b83..."},{"title":"2015-02-18","en":"Enjoy the little things, for one day you may look back and realize the...","cn":"\u4eab\u53d7\u751f\u6d3b\u4e2d\u7684\u5c0f\u4e8b\u3002\u603b\u6709\u4e00\u5929\u5f53\u4f60\u66ae\u7136\u56de...","id":"1204","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-02-18.jpg","b_en":"Enjoy the little things, for one day you...","b_cn":"\u4eab\u53d7\u751f\u6d3b\u4e2d\u7684\u5c0f\u4e8b\u3002\u603b\u6709\u4e00\u5929\u5f53\u4f60\u66ae\u7136\u56de\u9996\uff0c..."},{"title":"2015-01-19","en":"The size of your dreams must always exceed your current capacity to ac...","cn":"\u4f60\u7684\u68a6\u60f3\u6c38\u8fdc\u90fd\u8981\u5927\u4e8e\u73b0\u5728\u7684\u80fd\u529b\u8303\u56f4\u3002...","id":"1174","picture":"http:\/\/cdn.iciba.com\/news\/word\/2015-01-19.jpg","b_en":"The size of your dreams must always exce...","b_cn":"\u4f60\u7684\u68a6\u60f3\u6c38\u8fdc\u90fd\u8981\u5927\u4e8e\u73b0\u5728\u7684\u80fd\u529b\u8303\u56f4\u3002\u5982\u679c..."},{"title":"2014-09-05","en":"This is a <span class=\"special\">big<\/span> and beautiful world. Most of us live and die in the same...","cn":"\u8fd9\u4e2a\u4e16\u754c\u5982\u6b64\u8fbd\u9614\u548c\u7f8e\u4e3d\uff0c\u800c\u5927\u591a\u6570\u4eba\u4ece...","id":"1030","picture":"http:\/\/cdn.iciba.com\/news\/word\/2014-09-05.jpg","b_en":"This is a <span class=\"special\">big<\/span> and beautiful world. Most ...","b_cn":"\u8fd9\u4e2a\u4e16\u754c\u5982\u6b64\u8fbd\u9614\u548c\u7f8e\u4e3d\uff0c\u800c\u5927\u591a\u6570\u4eba\u4ece\u751f\u5230..."},{"title":"2016-03-15","en":"I can accept defeat but could not accept to give up .","cn":"\u6211\u53ef\u4ee5\u63a5\u53d7\u5931\u8d25\uff0c\u4f46\u4e0d\u80fd\u63a5\u53d7\u653e\u5f03.\uff08\u8fc8...","id":"1894","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-15.jpg","b_en":"I can accept defeat but could not accept...","b_cn":"\u6211\u53ef\u4ee5\u63a5\u53d7\u5931\u8d25\uff0c\u4f46\u4e0d\u80fd\u63a5\u53d7\u653e\u5f03.\uff08\u8fc8\u514b\u5c14..."},{"title":"2016-03-15","en":"While the world is full of suffering, it is also full of overcoming it...","cn":" \u7136\u4e16\u754c\u5145\u6ee1\u82e6\u96be\uff0c\u4f46\u662f\u82e6\u96be\u603b\u662f\u53ef\u4ee5\u6218...","id":"1895","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.02.15.jpg","b_en":"While the world is full of suffering, it...","b_cn":" \u7136\u4e16\u754c\u5145\u6ee1\u82e6\u96be\uff0c\u4f46\u662f\u82e6\u96be\u603b\u662f\u53ef\u4ee5\u6218\u80dc\u7684..."},{"title":"2016-03-14","en":"Behind the fear of an ideal you, you create the fear, you can beat him...","cn":" \u6050\u60e7\u7684\u80cc\u540e\u6709\u4e00\u4e2a\u7406\u60f3\u7684\u4f60\uff0c\u6050\u60e7\u662f\u4f60...","id":"1889","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-14.jpg","b_en":"Behind the fear of an ideal you, you cre...","b_cn":" \u6050\u60e7\u7684\u80cc\u540e\u6709\u4e00\u4e2a\u7406\u60f3\u7684\u4f60\uff0c\u6050\u60e7\u662f\u4f60\u81ea\u5df1..."},{"title":"2016-03-14","en":"Don't bother just to be better than your contemporaries or predecessor...","cn":"\u522b\u81ea\u5bfb\u70e6\u607c\u5730\u53ea\u60f3\u6bd4\u4f60\u540c\u65f6\u4ee3\u7684\u4eba\u6216\u662f\u5148...","id":"1893","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.14.jpg","b_en":"Don't bother just to be better than your...","b_cn":"\u522b\u81ea\u5bfb\u70e6\u607c\u5730\u53ea\u60f3\u6bd4\u4f60\u540c\u65f6\u4ee3\u7684\u4eba\u6216\u662f\u5148\u8f88\u4eec..."},{"title":"2016-03-13","en":" The only way to keep your health is to eat what you don't want, drink...","cn":"\u4fdd\u6301\u8eab\u4f53\u5065\u5eb7\u7684\u552f\u4e00\u529e\u6cd5\uff0c\u5c31\u662f\u5403\u70b9\u4f60\u4e0d...","id":"1888","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-13.jpg","b_en":" The only way to keep your health is to ...","b_cn":"\u4fdd\u6301\u8eab\u4f53\u5065\u5eb7\u7684\u552f\u4e00\u529e\u6cd5\uff0c\u5c31\u662f\u5403\u70b9\u4f60\u4e0d\u60f3\u5403..."},{"title":"2016-03-13","en":"I've been here before,But always hit the floor,I've spent a lifetime r...","cn":"\u6211\u66fe\u7ecf\u7231\u8fc7\uff0c\u4f46\u6bcf\u6b21\u90fd\u65e0\u75be\u800c\u7ec8\uff0c\u6211\u7528\u5c3d...","id":"1892","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.13.jpg","b_en":"I've been here before,But always hit the...","b_cn":"\u6211\u66fe\u7ecf\u7231\u8fc7\uff0c\u4f46\u6bcf\u6b21\u90fd\u65e0\u75be\u800c\u7ec8\uff0c\u6211\u7528\u5c3d\u4e00\u751f..."},{"title":"2016-03-12","en":"There are more things between heaven and earth than are dreamt of in y...","cn":"\u5728\u8fd9\u5929\u5730\u95f4\u6709\u8bb8\u591a\u4e8b\u60c5\u662f\u4eba\u7c7b\u54f2\u5b66\u6240\u4e0d\u80fd...","id":"1887","picture":"http:\/\/cdn.iciba.com\/news\/word\/2016-03-12.jpg","b_en":"There are more things between heaven and...","b_cn":"\u5728\u8fd9\u5929\u5730\u95f4\u6709\u8bb8\u591a\u4e8b\u60c5\u662f\u4eba\u7c7b\u54f2\u5b66\u6240\u4e0d\u80fd\u89e3\u91ca..."},{"title":"2016-03-12","en":" When my eyes were stabbed by the flash of a neon light.That split the...","cn":"\u4e00\u9053\u8000\u773c\u7684\u9713\u8679\u706f\u5149\u523a\u5165\u6211\u7684\u773c\u775b\uff0c\u5b83\u5212...","id":"1891","picture":"http:\/\/cdn.iciba.com\/news\/word\/260x160-2016.03.12.jpg","b_en":" When my eyes were stabbed by the flash ...","b_cn":"\u4e00\u9053\u8000\u773c\u7684\u9713\u8679\u706f\u5149\u523a\u5165\u6211\u7684\u773c\u775b\uff0c\u5b83\u5212\u7834\u591c..."}];
+		var html = "";
+		if($num == 1){
+				html += '<li onclick="_czc.push(["_trackEvent","查词结果","每日一句","tab切换","",""]);"><a style="margin-right:0px!important;" href="http://news.iciba.com/dailysentence/detail-'+aSentenceTmp[0]['id']+'.html" target="_blank"><img src="'+ aSentenceTmp[0]['picture'] +'">';
+		  	html += '<div style="float:left;width:180px;margin-left:10px;"><p style="font-size:14px;color:#333333;;line-height:16px;margin-bottom:3px;">' + aSentenceTmp[0]['b_en'] + '</p>' ;
+		  	html += '<p style="font-size:12px;color:#999999;line-height:18px;">' + aSentenceTmp[0]['b_cn'] + '</p></div>';
+		  	html += '<div class="clear"></div>'
+		  	html += '</a></li>';	
+		  	html += '<div class="section-more"><a href="http://news.iciba.com/appv3/wwwroot/ds.php?action=search&search_word=big">查看更多</a></div>'
+				$("#dailysentence").html(html);	
+				
+				var aArticleTmp = {"0":{"id":"1568070","catid":"37","typeid":"0","title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06\u4e3a\u5168\u7403\u7b2c\u4e00","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504095144476.jpg","keywords":"\u4e2d\u56fd \u624b\u6e38 \u5e02\u573a","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568070.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430704213","updatetime":"1430704457","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d\u660e\u5e74\u5c31\u5c06\u53d1\u751f\u53d8\u5316\u3002\u5c4a\u65f6\uff0c\u4e2d...","b_title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06...","b_content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d..."},"1":{"id":"1568078","catid":"487","typeid":"0","title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504114531294.jpg","keywords":"\u82f1\u6587 \u5355\u8bcd","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/basic\/1568078.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430711004","updatetime":"1430711377","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e\u611f\u5230\u7684\u56f0\u4e4f\u611f&rdquo;...","b_title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","b_content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e..."},"2":{"id":"1568086","catid":"424","typeid":"0","title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e\u540d\u6a21\u540c\u53f0PK","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505115009916.jpg","keywords":"\u8d3e\u65af\u4e01\u6bd4\u4f2f \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568086.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430797714","updatetime":"1430797965","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\nJustin Bieber may be next in line to f...","b_title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e...","b_content":"\r\n\r\n\t\r\nJustin Bieber may be next..."},"3":{"id":"1568088","catid":"42","typeid":"0","title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505043839422.jpg","keywords":"\u6362\u5de5\u4f5c \u9519\u8bef","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568088.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430814935","updatetime":"1430815288","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010\uff0c\u4e5f\u662f\u63d0\u5347\u4e2a\u4eba\u6536\u5165\u7684\u6377\u5f84\uff0c...","b_title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","b_content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010..."},"4":{"id":"1568093","catid":"39","typeid":"0","title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chapter17\uff08\u4e0b\uff09","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506095924305.jpg","keywords":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3","description":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568093.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430956440","updatetime":"1430878424","mobile_flag":"1","mobile_thumb":"","xiaomipic":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","content":"\r\n\t\r\n&quot;Sir?&quot; said Harry. &quot;I&rsq...","b_title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chap...","b_content":"\r\n\t\r\n&quot;Sir?&quot; said Harry..."},"5":{"id":"1568100","catid":"409","typeid":"0","title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e\u7684\u81ea\u5df1","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506114331639.jpg","keywords":"\u65c5\u884c \u81ea\u5df1","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/lehuo\/1568100.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430883665","updatetime":"1430884135","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417\uff1f\u7231\u65c5\u884c\u7231\u81ea\u7531\u7684\u4f60\uff0c\u613f\u610f\u56e0...","b_title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e...","b_content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417..."},"6":{"id":"1568101","catid":"249","typeid":"0","title":"2013\u5e74\u8003\u7814\u82f1\u8bed Use Of English","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506115238663.jpg","keywords":"2013 \u8003\u7814 \u82f1\u8bed","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/xdf7\/1568101.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430884284","updatetime":"1430884843","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nPeople are, on the whole, poor at consid...","b_title":"2013\u5e74\u8003\u7814\u82f1\u8bed Us...","b_content":"\r\n\t\r\nPeople are, on the whole, p..."},"7":{"id":"1568113","catid":"43","typeid":"0","title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868\u8fbe","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0507\/20150507114710493.jpg","keywords":"\u82f1\u6587 \u8868\u8fbe \u8f7b\u800c\u6613\u4e3e","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/oral\/1568113.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430970121","updatetime":"1430970594","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n1. It&#39;s really simple.\r\n\u5f88\u7b80\u5355\u3002\r\n2. It&...","b_title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868...","b_content":"\r\n\t\r\n1. It&#39;s really simple.\r..."},"8":{"id":"1568121","catid":"424","typeid":"0","title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71\u91cc\u7684\u4e0d\u540c\u6bcd\u4eb2","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508093343188.jpg","keywords":"\u6bcd\u4eb2 \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568121.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431048518","updatetime":"1431049100","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2\u98ce\u91c7\u7684\u7535\u5f71\u4e0d\u5c11\uff0c\u5c0f\u7f16\u5728\u6b64\u641c...","b_title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71...","b_content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2..."},"9":{"id":"1568124","catid":"42","typeid":"0","title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u808918\u6761\u5efa\u8bae","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508102608983.jpg","keywords":"\u6bd5\u4e1a\u751f \u5efa\u8bae","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568124.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431051890","updatetime":"1431057094","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nWe recently asked netizens to tell us th...","b_title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u80891...","b_content":"\r\n\t\r\nWe recently asked netizens ..."},"pagenum":100};
+				var content = "";
+	  		content += '<li onclick="_czc.push(["_trackEvent","查词结果","悦读","tab切换","",""]);"><a style="margin-right:0px!important;" href="'+aArticleTmp[0]['url']+'"><img src="'+aArticleTmp[0]['thumb']+'"  onerror="javascript:this.src='+"'" +'http://cdn.iciba.com/news/bbc/phpcms/default/default_article.jpg'+"'" +'">'; 
+	  		content += '<div style="float:left;width:180px;margin-left:10px;"><p class="recommend_title" style="font-size:14px;color:#333333;;line-height:16px;margin-bottom:3px;">' + aArticleTmp[0]['b_title'] + '</p>';
+	  		content += '<p style="font-size:14px;color:#999999;line-height:18px;">' + aArticleTmp[0]['b_content'] + '</p></div>';
+	  		content += '<div class="clear"></div>'
+	  		content += '</a></li>';
+				content += '<div class="section-more"><a href="http://news.iciba.com/search/search.php?wd=big">查看更多</a></div>'
+				$("#article").html(content);
+				
+		}else{
+			for (var i=0;i<$num-1;i++) {
+				html += '<li onclick="_czc.push(["_trackEvent","查词结果","每日一句","tab切换","",""]);"><a style="margin-right:0px!important;" href="http://news.iciba.com/dailysentence/detail-'+aSentenceTmp[i]['id']+'.html" target="_blank"><img src="'+ aSentenceTmp[i]['picture'] +'">';
+		  	html += '<div style="float:left;width:180px;margin-left:10px;"><p style="font-size:14px;color:#333333;;line-height:16px;margin-bottom:3px;">' + aSentenceTmp[i]['b_en'] + '</p>' ;
+		  	html += '<p style="font-size:12px;color:#999999;line-height:18px;">' + aSentenceTmp[i]['b_cn'] + '</p></div>';
+		  	html += '<div class="clear"></div>'
+		  	html += '</a></li>';	
+				if(i==0){
+		  		html += '<li>';
+	  			html +=	'<script>';
+					html +=	'(function() {';
+    			html +=	'var s = "_" + Math.random().toString(36).slice(2);';
+    			html +=	'document.write(';
+    			html += "'<div id=\"' + s + '\">";
+    			html += "</div>'";
+    			html += ');';
+    			html +=	'(window.slotbydup=window.slotbydup || []).push({';
+      		html +=	"id: '2432893',";
+      		html +=	'container: s,';
+		      html +=	"size: '300,70',";
+		      html +=	"display: 'inlay-fix'";
+		    	html +=	'});';
+					html +=	'})();';
+					html +=	'<\/script>';
+					html +=	'<script src="http:\/\/dup.baidustatic.com\/js\/os.js"><\/script>';
+					html += '</li>';
+		  	}                
+			}
+			html += '<div class="section-more"><a href="http://news.iciba.com/appv3/wwwroot/ds.php?action=search&search_word=big">查看更多</a></div>'
+			$("#dailysentence").html(html);	
+			
+			var aArticleTmp = {"0":{"id":"1568070","catid":"37","typeid":"0","title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06\u4e3a\u5168\u7403\u7b2c\u4e00","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504095144476.jpg","keywords":"\u4e2d\u56fd \u624b\u6e38 \u5e02\u573a","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568070.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430704213","updatetime":"1430704457","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d\u660e\u5e74\u5c31\u5c06\u53d1\u751f\u53d8\u5316\u3002\u5c4a\u65f6\uff0c\u4e2d...","b_title":"2016\u5e74\u4e2d\u56fd\u624b\u6e38\u5e02\u573a\u5c06...","b_content":"\r\n\r\n\t\r\n\u76ee\u524d\u4e2d\u56fd\u624b\u673a\u6e38\u620f\u5e02\u573a\u4ec5\u6b21\u4e8e\u7f8e\u56fd\u3002\u4f46\u636e\u9884\u8ba1\uff0c\u8fd9\u4e00\u6392\u540d..."},"1":{"id":"1568078","catid":"487","typeid":"0","title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0504\/20150504114531294.jpg","keywords":"\u82f1\u6587 \u5355\u8bcd","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/basic\/1568078.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430711004","updatetime":"1430711377","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e\u611f\u5230\u7684\u56f0\u4e4f\u611f&rdquo;...","b_title":"7\u4e2a\u4e0d\u53ef\u80fd\u7ffb\u8bd1\u7684\u82f1\u6587\u5355\u8bcd","b_content":"\r\n\r\n\t\r\n\u610f\u5927\u5229\u4eba\u53ef\u4ee5\u7528\u4e00\u4e2a\u8bcd\u5f62\u5bb9&ldquo;\u5927\u9910\u4e00\u987f\u4e4b\u540e..."},"2":{"id":"1568086","catid":"424","typeid":"0","title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e\u540d\u6a21\u540c\u53f0PK","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505115009916.jpg","keywords":"\u8d3e\u65af\u4e01\u6bd4\u4f2f \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568086.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430797714","updatetime":"1430797965","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\nJustin Bieber may be next in line to f...","b_title":"\u8d3e\u65af\u4e01\u6bd4\u4f2f\u8981\u6f14\u7535\u5f71\u4e86\uff01\u4e0e...","b_content":"\r\n\r\n\t\r\nJustin Bieber may be next..."},"3":{"id":"1568088","catid":"42","typeid":"0","title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0505\/20150505043839422.jpg","keywords":"\u6362\u5de5\u4f5c \u9519\u8bef","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568088.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430814935","updatetime":"1430815288","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010\uff0c\u4e5f\u662f\u63d0\u5347\u4e2a\u4eba\u6536\u5165\u7684\u6377\u5f84\uff0c...","b_title":"\u6362\u5de5\u4f5c\u65f6\u5e38\u72af\u7684\u4e94\u7c7b\u9519\u8bef","b_content":"\r\n\r\n\t\r\n\u6362\u5de5\u4f5c\u662f\u5bf9\u804c\u4e1a\u751f\u6daf\u7684\u518d\u8c03\u6574\uff0c\u662f\u5bf9\u4e2a\u4eba\u804c\u4e1a\u68a6\u60f3\u7684\u8ffd\u9010..."},"4":{"id":"1568093","catid":"39","typeid":"0","title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chapter17\uff08\u4e0b\uff09","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506095924305.jpg","keywords":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3","description":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","posids":"0","url":"http:\/\/news.iciba.com\/study\/bilingual\/1568093.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430956440","updatetime":"1430878424","mobile_flag":"1","mobile_thumb":"","xiaomipic":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506101210737.jpg","content":"\r\n\t\r\n&quot;Sir?&quot; said Harry. &quot;I&rsq...","b_title":"\u54c8\u5229\u6ce2\u7279\u4e0e\u9b54\u6cd5\u77f3Chap...","b_content":"\r\n\t\r\n&quot;Sir?&quot; said Harry..."},"5":{"id":"1568100","catid":"409","typeid":"0","title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e\u7684\u81ea\u5df1","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506114331639.jpg","keywords":"\u65c5\u884c \u81ea\u5df1","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/lehuo\/1568100.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430883665","updatetime":"1430884135","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417\uff1f\u7231\u65c5\u884c\u7231\u81ea\u7531\u7684\u4f60\uff0c\u613f\u610f\u56e0...","b_title":"\u4e00\u4e2a\u4eba\u7684\u65c5\u884c\uff1a\u9047\u89c1\u6700\u771f\u5b9e...","b_content":"\r\n\t\r\n\u6625\u5929\u5230\uff0c\u82b1\u513f\u5f00\u3002\u7f8e\u7f8e\u7684\u4eba\u95f4\u56db\u6708\u5929\uff0c\u4f60\u51c6\u5907\u597d\u4e86\u53bb\u51fa\u6e38\u4e86\u5417..."},"6":{"id":"1568101","catid":"249","typeid":"0","title":"2013\u5e74\u8003\u7814\u82f1\u8bed Use Of English","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0506\/20150506115238663.jpg","keywords":"2013 \u8003\u7814 \u82f1\u8bed","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/xdf7\/1568101.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430884284","updatetime":"1430884843","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nPeople are, on the whole, poor at consid...","b_title":"2013\u5e74\u8003\u7814\u82f1\u8bed Us...","b_content":"\r\n\t\r\nPeople are, on the whole, p..."},"7":{"id":"1568113","catid":"43","typeid":"0","title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868\u8fbe","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0507\/20150507114710493.jpg","keywords":"\u82f1\u6587 \u8868\u8fbe \u8f7b\u800c\u6613\u4e3e","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/oral\/1568113.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1430970121","updatetime":"1430970594","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n1. It&#39;s really simple.\r\n\u5f88\u7b80\u5355\u3002\r\n2. It&...","b_title":"\u201c\u8f7b\u800c\u6613\u4e3e\u201d\u7684\u5404\u79cd\u82f1\u6587\u8868...","b_content":"\r\n\t\r\n1. It&#39;s really simple.\r..."},"8":{"id":"1568121","catid":"424","typeid":"0","title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71\u91cc\u7684\u4e0d\u540c\u6bcd\u4eb2","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508093343188.jpg","keywords":"\u6bcd\u4eb2 \u7535\u5f71","description":"","posids":"0","url":"http:\/\/news.iciba.com\/salon\/yule\/1568121.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431048518","updatetime":"1431049100","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2\u98ce\u91c7\u7684\u7535\u5f71\u4e0d\u5c11\uff0c\u5c0f\u7f16\u5728\u6b64\u641c...","b_title":" \u6e29\u60c5\u6bcd\u4eb2\u8282\uff1a11\u90e8\u7535\u5f71...","b_content":"\r\n\t\r\n\u6bcf\u5e74\u4e94\u6708\u7684\u7b2c\u4e8c\u4e2a\u5468\u65e5\u662f\u6bcd\u4eb2\u8282\uff0c\u6709\u53f2\u4ee5\u6765\u6b4c\u9882\u6bcd\u7231\u5c55\u73b0\u6bcd\u4eb2..."},"9":{"id":"1568124","catid":"42","typeid":"0","title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u808918\u6761\u5efa\u8bae","style":"","thumb":"http:\/\/cdn.iciba.com\/news\/2015\/0508\/20150508102608983.jpg","keywords":"\u6bd5\u4e1a\u751f \u5efa\u8bae","description":"","posids":"0","url":"http:\/\/news.iciba.com\/study\/career\/1568124.shtml","listorder":"0","status":"99","sysadd":"1","islink":"0","username":"guoyafei","inputtime":"1431051890","updatetime":"1431057094","mobile_flag":"1","mobile_thumb":"","xiaomipic":"","content":"\r\n\t\r\nWe recently asked netizens to tell us th...","b_title":"\u7ed9\u5373\u5c06\u6b65\u5165\u804c\u573a\u7684\u5c0f\u9c9c\u80891...","b_content":"\r\n\t\r\nWe recently asked netizens ..."},"pagenum":100};
+			var content = "";
+			for (var i=0;i<$num-1;i++) {
+	  		content += '<li onclick="_czc.push(["_trackEvent","查词结果","悦读","tab切换","",""]);"><a style="margin-right:0px!important;" href="'+aArticleTmp[i]['url']+'"><img src="'+aArticleTmp[i]['thumb']+'"  onerror="javascript:this.src='+"'" +'http://cdn.iciba.com/news/bbc/phpcms/default/default_article.jpg'+"'" +'">';
+	  		content += '<div style="float:left;width:180px;margin-left:10px;"><p class="recommend_title" style="font-size:14px;color:#333333;;line-height:16px;margin-bottom:3px;">' + aArticleTmp[i]['b_title'] + '</p>';
+	  		content += '<p style="font-size:14px;color:#999999;line-height:18px;">' + aArticleTmp[i]['b_content'] + '</p></div>';
+	  		content += '<div class="clear"></div>'
+	  		content += '</a></li>';
+	  		if(i==0){
+		  		content += '<li>';
+	  			content +=	'<script>';
+					content +=	'(function() {';
+    			content +=	'var s = "_" + Math.random().toString(36).slice(2);';
+    			content +=	'document.write(';
+    			content += "'<div id=\"' + s + '\">";
+    			content += "</div>'";
+    			content += ');';
+    			content +=	'(window.slotbydup=window.slotbydup || []).push({';
+      		content +=	"id: '2434786',";
+      		content +=	'container: s,';
+		      content +=	"size: '328,70',";
+		      content +=	"display: 'inlay-fix'";
+		    	content +=	'});';
+					content +=	'})();';
+					content +=	'<\/script>';
+					content +=	'<script src="http:\/\/dup.baidustatic.com\/js\/os.js"><\/script>';
+					content += '</li>';
+		  	}         
+			}
+			content += '<div class="section-more"><a href="http://news.iciba.com/search/search.php?wd=big">查看更多</a></div>'
+			$("#article").html(content);
+		}
+	}	
+}(window, jQuery));
+	
+</script>
+			<!-- 双语例句 start -->
+<div class='info-article article-tab'>
+	<ul class='article-list'>
+		<li class='current'>双语例句</li>        <li  onclick="_czc.push(['_trackEvent','查词结果','点击权威例句','词典tab切换','','']);">权威例句</li>        <li  onclick="_czc.push(['_trackEvent','查词结果','点击句式用法','词典tab切换','','']);">句式用法</li>		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+    <div class='article'>
+        		<div class='article-section'>
+            			<div class='section-p'>
+                <span class='p-order'>1.</span>
+				<div class='p-container'>
+                    <p class='p-english family-english size-english'>The wind was bouncing the branches of the big oak trees.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_new_dj//c/0/f/c0f07e42778c44733709802834498935.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'>一棵棵高大橡树的枝条随风摇摆。</p>
+                    <p class='p-from'></p>
+                </div>
+            </div>
+                        			<div class='section-p'>
+                <span class='p-order'>2.</span>
+				<div class='p-container'>
+                    <p class='p-english family-english size-english'>Big credits were given to East Germany by successive West German governments.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_new_dj//9/c/2/9c2d9aed75124d882f2251543bfcdae4.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'>历届西德政府给予东德大量的贷款。</p>
+                    <p class='p-from'></p>
+                </div>
+            </div>
+                        			<div class='section-p'>
+                <span class='p-order'>3.</span>
+				<div class='p-container'>
+                    <p class='p-english family-english size-english'>Bake some big red peppers and hollow them out.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_new_dj//b/e/a/bea4af0861e63acdc3192c2dcd40604c.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'>将几个大红甜椒烤一烤，再把它们掏空。</p>
+                    <p class='p-from'></p>
+                </div>
+            </div>
+                        <div class='section-more'><a href='http://dj.iciba.com/big-1.html' target="_blank" onclick="_czc.push(['_trackEvent','查词结果','双语例句更多','','','']);">查看更多</a></div>
+        </div>
+                        <div class='article-section display-n'>
+            			<div class='section-p'>
+                <span class='p-order'>1.</span>
+                <div class='p-container'>
+                    <p class='p-english family-english size-english'>Irfan Naseer wanted to be the next big thing.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_authority/3/8/8/3886a87ebbbc8fb62d77594ba878293d.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'></p>
+                    <p class='p-from'>来自BBC</p>
+                </div>
+            </div>
+                        			<div class='section-p'>
+                <span class='p-order'>2.</span>
+                <div class='p-container'>
+                    <p class='p-english family-english size-english'>There's been a big age and experience gap.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_authority/7/1/6/716d238445b244c8db459a9781d787ec.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'></p>
+                    <p class='p-from'>来自BBC</p>
+                </div>
+            </div>
+                        			<div class='section-p'>
+                <span class='p-order'>3.</span>
+                <div class='p-container'>
+                    <p class='p-english family-english size-english'>On this showing, 'big journalism' is safe.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_authority/7/8/6/78677c7fe93fed039bd8423dfb3e831b.mp3')"></i></p>
+                    <p class='p-chinese family-chinese size-chinese'></p>
+                    <p class='p-from'>来自BBC</p>
+                </div>
+            </div>
+                        <div class='section-more'><a href='http://dj.iciba.com/big-2.html' target="_blank" onclick="_czc.push(['_trackEvent','查词结果','权威例句更多','','','']);">查看更多</a></div>
+        </div>
+                                <div class='article-section display-n'>
+                                    
+            <div class='section-p'>
+                                                <div class='section-p'>
+                  <span class='p-order'>1.</span>
+                  <div class='p-container'>
+                      <p class='p-english family-english size-english'>This is a piece of big news.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_synusage/a/2/5/a250360218f0a4956b0e2e55ddef58a4.mp3')"></i></p>
+                      <p class='p-chinese family-chinese size-chinese'>这是一条重要新闻。</p>
+                      <p class='p-from'>来自《权威词典》</p>
+                  </div>
+                </div>
+                                                                                <div class='section-p'>
+                  <span class='p-order'>2.</span>
+                  <div class='p-container'>
+                      <p class='p-english family-english size-english'>The big question is under discussion.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_synusage/8/1/f/81f89464ddaaca3194ae938389f8f84a.mp3')"></i></p>
+                      <p class='p-chinese family-chinese size-chinese'>那个重要的问题正在讨论之中。</p>
+                      <p class='p-from'>来自《权威词典》</p>
+                  </div>
+                </div>
+                                                                                <div class='section-p'>
+                  <span class='p-order'>3.</span>
+                  <div class='p-container'>
+                      <p class='p-english family-english size-english'>There is a big bell in the room.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_synusage/9/a/e/9aeffc4cdbc459aa57e9398eea6f7352.mp3')"></i></p>
+                      <p class='p-chinese family-chinese size-chinese'>屋里有口大钟。</p>
+                      <p class='p-from'>来自《权威词典》</p>
+                  </div>
+                </div>
+                            </div>
+            
+                        <div class='section-more'><a href='http://dj.iciba.com/big-3.html' target="_blank" onclick="_czc.push(['_trackEvent','查词结果','句式用法更多','','','']);">查看更多</a></div>
+        </div>
+        	</div>
+</div>
+<!-- 双语例句 end -->
+			<style type='text/css'>
+	.info-recommend{
+		background:#ffffff;
+	  border:1px solid #eeeeee;
+	  box-shadow:0 1px 10px rgba(0,0,0,0.04);
+	  margin-bottom:20px;
+	  border-radius:4px;
+	  -webkit-border-radius:4px; }
+	  .info-recommend .in-recommend{
+	    padding:20px 30px; }
+	    .info-recommend .in-recommend li{
+	  	  float:left;
+	      width:430px; }
+	      .info-recommend .in-recommend li img{
+	    	  width:110px;
+	    	  height:70px;
+	        float:left;
+	        cursor:pointer; }
+	      .info-recommend .in-recommend li .recommend_right{
+	    	  float:left;
+	    	  width:280px; 
+	    	  margin-left:25px; }
+	    	  .info-recommend .in-recommend li .recommend_right span{
+	    	    font-size:12px;
+	    	    color:#dedede;
+	    	    cursor:pointer; }
+	    	  .info-recommend .in-recommend li .recommend_right p.recommend_title{
+	    	  	margin-top:-2px;
+	    		  margin-bottom:3px;
+	    	    font-size:14px;
+	    	    color:#333333;
+	    	    cursor:pointer; }
+	    	  .info-recommend .in-recommend li .recommend_right p.recommend_article{
+	    		  height:42px;
+	    	    font-size:14px;
+	    	    color:#999999;
+	    	    line-height:150%;
+	    	    cursor:pointer; 
+	    	    overflow:hidden; }  
+</style>
+<div class='info-recommend'>
+	<div class='in-recommend'>
+		<li style='margin-right:38px;' onclick="_czc.push(['_trackEvent','查词结果','广告1','中部链接','','']);">
+		  <!--<img src='../static/images/ed-img.png'>
+		  <div class='recommend_right'>
+		    <p class='recommend_title'>她竟然这样学英语</p>
+		    <p class='recommend_article'>情母亲节：11部电影里的不同母亲每年五月的第二个周日是母亲节，电影里的有史以来...</p>
+		    <span>推荐</span>
+		  </div>  -->
+		  <script>
+				(function() {
+    			var s = "_" + Math.random().toString(36).slice(2);
+    			document.write('<div id="' + s + '"></div>');
+    			(window.slotbydup=window.slotbydup || []).push({ 
+        		id: '2431001',
+        		container: s,
+        		size: '430,100',
+        		display: 'inlay-fix'
+    			});
+				})();
+			</script>
+			<script src="http://dup.baidustatic.com/js/os.js"></script>
+		</li>
+		<li onclick="_czc.push(['_trackEvent','查词结果','广告2','中部链接','','']);">
+		  <!--<img src='../static/images/ed-img.png'>
+		  <div class='recommend_right'>
+		    <p class='recommend_title'>她竟然这样学英语</p>
+		    <p class='recommend_article'>情母亲节：11部电影里的不同母亲每年五月的第二个周日是母亲节，电影里的有史以来...</p>
+		    <span>推荐</span>
+		  </div> -->
+		  <script>
+				(function() {
+    			var s = "_" + Math.random().toString(36).slice(2);
+    			document.write('<div id="' + s + '"></div>');
+    			(window.slotbydup=window.slotbydup || []).push({
+        		id: '2431003',
+        		container: s,
+        		size: '430,100',
+        		display: 'inlay-fix'
+    			});
+				})();
+			</script>
+			<script src="http://dup.baidustatic.com/js/os.js"></script>
+		</li>
+		<div class='clear'></div>
+  </div>
+</div>	
+	
+            <!-- 柯林斯 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>柯林斯高阶英汉双解学习词典</li>
+		<!--<a href="http://download.iciba.com/pc/personal2016/PowerWord.800.12012.exe" onclick="_czc.push(['_trackEvent','查词结果','词霸pc下载链接 ','柯林斯菜单','','']);"><p style='float:left;margin-left:-5px;line-height:24px;font-size:14px;color:#74be00;cursor:pointer;'>词霸桌面版，释义更精准，查词快3倍！ 专属福利 点击下载</p></a>-->
+		<div style="float:left;width:570px;height:24px;margin-left:-5px;cursor:pointer;">
+		<!-- 广告位：查词结果页文字链2 -->
+			<script>
+				(function() {
+    			var s = "_" + Math.random().toString(36).slice(2);
+    			document.write('<div id="' + s + '"></div>');
+    			(window.slotbydup=window.slotbydup || []).push({
+        		id: '2432901',
+        		container: s,
+        		size: '570,24',
+        		display: 'inlay-fix'
+    			});
+				})();
+			</script>
+			<script src="http://dup.baidustatic.com/js/os.js"></script>
+		</div>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+        <div class='collins-section'>
+                                                            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>1</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>（人或物）大的</span>
+                        <span class='family-english size-english prep-en'>A big person or thing is large in physical size.</span>
+                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Australia's a <b>big</b> country...<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/d/0/5/d058e66ba855608f9699aef736b11a55.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>澳大利亚是个幅员辽阔的国家。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Her husband was a <b>big</b> man...<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/3/3/6/336f4241cb25d86f895ae348be5ad587.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>她丈夫是个大块头。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>The car was too <b>big</b> to fit into our garage.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/9/d/b/9db816cb6bb77cf332eec4b97f946ed6.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>这部车太大了，我们的车库放不下。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>2</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>数量多的</span>
+                        <span class='family-english size-english prep-en'>Something that is big consists of many people or things.</span>
+                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>The crowd included a <b>big</b> contingent from Ipswich.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/3/8/c/38cc503ff79170dad7024bdb1355ad2b.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>人群中有来自伊普斯威奇的一个人数众多的代表团。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>...the <b>big</b> backlog of applications.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/6/9/1/691814c00ca5694b8d4061b689b490a3.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>大量积压的申请表</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>3</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>严重的；重大的；大幅度的</span>
+                        <span class='family-english size-english prep-en'>If you describe something such as a problem, increase, or change as a big one, you mean it is great in degree, extent, or importance.</span>
+                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Her problem was just too <b>big</b> for her to tackle on her own...<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/a/8/9/a893bba067a3c66b5596d52a106a6470.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>她的问题太严重了，光靠她自己是没法解决的。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>There could soon be a <b>big</b> increase in unemployment.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/1/3/1/131857247486b3e614544d3bb84624aa.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>失业人数可能很快就会出现大幅增长。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>4</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>规模大的</span>
+                        <span class='family-english size-english prep-en'>A big organization employs many people and has many customers.</span>
+                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Exchange is largely controlled by <b>big</b> banks.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/f/5/3/f53e69030b3463428c20055063c6fad1.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>货币兑换业务主要由大银行控制。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>...one of the <b>biggest</b> companies in Italy.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/2/8/8/288d081656b6928c92f7f783deb385da.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>意大利最大的公司之一</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>5</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>影响大的；职位高的</span>
+                        <span class='family-english size-english prep-en'>If you say that someone is big in a particular organization, activity, or place, you mean that they have a lot of influence or authority in it.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>ADJ n</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Their father was very <b>big</b> in the army...<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/5/4/9/5491b16f21f4ac0837ce1f3c3bf81b83.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>他们的父亲在军中很有影响力。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>I'm sure all the <b>big</b> names will come to the club.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/7/9/e/79ea5db83f8dca3b9217d1a74726496b.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>我相信所有的大人物都会到这个俱乐部来。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>6</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ</span>
+                        <span class='family-chinese'>（强调厌恶之深）十足的，突出的</span>
+                        <span class='family-english size-english prep-en'>If you call someone a big bully or a big coward, you are emphasizing your disapproval of them.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>ADJ n</span>
+                                                                                                <label>语用信息：</label><span class='family-english'>emphasis</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>7</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ</span>
+                        <span class='family-chinese'>年龄较大的；年长的</span>
+                        <span class='family-english size-english prep-en'>Children often refer to their older brother or sister as their big brother or sister.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>ADJ n</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>8</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ</span>
+                        <span class='family-chinese'>（字母）大写的</span>
+                        <span class='family-english size-english prep-en'>Capital letters are sometimes referred to as big letters.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>ADJ n</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>...a <b>big</b> letter J.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/7/5/0/75060cffa897648277fda2f216300299.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>大写字母J</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>9</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>ADJ-GRADED</span>
+                        <span class='family-chinese'>（字词）大的，生僻的，不常用的</span>
+                        <span class='family-english size-english prep-en'>Big words are long or rare words which have meanings that are difficult to understand.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>usu ADJ n</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>They use a lot of <b>big</b> words.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/9/2/7/9276828ab4a562c2a76d3da98292f9b6.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>他们使用很多生僻的词汇。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                                                                                <div class='text-paragraph'>
+                    <div class='pragraph-h family-english size-english'>Usage Note用法说明</div>
+                    <p class='p-english'><b>Big</b>, <b>large</b>, and <b>great</b> are all used to talk about size. In general, <b>large</b> is more formal than <b>big</b>, and <b>great</b> is more formal than <b>large</b>. <b>Big</b> and <b>large</b> are normally used to describe objects, but you can also use <b>big</b> to suggest that something is important or impressive. <i>...his influence over the big advertisers.</i> You normally use <b>great</b> to emphasize the importance of someone or something. <i>...the great English architect, Inigo Jones.</i> However, you can also use <b>great</b> to suggest that something is impressive because of its size. <i>The great bird of prey was a dark smudge against the sun.</i> You can use <b>large</b> or <b>great</b>, but not <b>big</b>, to describe amounts. <i>...a large amount of blood on the floor. ...the coming of tourists in great numbers.</i> Both <b>big</b> and <b>great</b> can be used to emphasize the intensity of something, although <b>great</b> is more formal. <i>It gives me great pleasure to welcome you... Most of them act like big fools.</i> Remember that <b>great</b> has several other meanings, when it does not refer to size, but to something that is remarkable, very good, or enjoyable.</p>
+                    <p class='p-chinese family-chinese size-chinese size-chinese'>big, large 和 great 都可以用来表示大小。总的来说，large 比 big 更为正式，great 又比 large 更正式。big 和 large 一般用来形容物体，但是 big 也可以表示某物重要或令人印象深刻：his influence over the big advertisers（他对大广告客户的影响力）。great 通常用来强调某人或某物的重要性：the great English architect, Inigo Jones（英国伟大的建筑师伊尼戈·琼斯）。但是 great 也可以用来表示某物因为巨大而令人印象深刻：The great bird of prey was a dark smudge against the sun （逆着太阳望去，那只巨大的猛禽呈一团黑影）。large 和 great 可以用来形容数量，而 big 则不可以：a large amount of blood on the floor（地板上的一大摊血），the coming of tourists in great numbers（大量涌来的游客）。big 和 great 都可以用来强调强烈程度，但 great 更加正式：It gives me great pleasure to welcome you（很荣幸能迎接您的到来），Most of them act like big fools（他们中多数人都表现得跟大傻瓜似的）。注意 great 还有其他意义，不仅用来描述大小，还可以用来表示某物不同寻常、出色或令人愉快。</p>
+                    <div class='clear'></div>
+                </div>
+                                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>10</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>PHRASE</span>
+                        <span class='family-chinese'>取得成功；出名</span>
+                        <span class='family-english size-english prep-en'>If you make it big, you become successful or famous.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>V inflects</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>We're not just looking at making it <b>big</b> in the UK, we want to be <b>big</b> internationally.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/4/e/d/4eda66fda84cedaba6ad4679f184b3ba.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>我们不仅想在英国取得成功，还想在国际上扬名立万。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>11</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>PHRASE</span>
+                        <span class='family-chinese'>雄心勃勃；志向远大</span>
+                        <span class='family-english size-english prep-en'>If you think big, you make plans on a large scale, often using a lot of time, effort, or money.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>V inflects</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>Maybe we're not thinking <b>big</b> enough.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/4/c/d/4cd4576306f8acb80ee5f0a2934d8134.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>也许我们的抱负还不够远大。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+            			<div class='section-prep no-order'>
+                <i class='prep-order-icon'>12</i>                                                                				<div class='prep-order'>
+                    <p class='size-chinese'>
+                        <span class='family-english'>PHRASE</span>
+                        <span class='family-chinese'>大规模地；广泛地</span>
+                        <span class='family-english size-english prep-en'>If something is happening in a big way, it is happening on a large scale.</span>
+                    </p>
+                                        <p class='text-label'>
+                                                                        <label>搭配模式：</label><span class='family-english'>PHR after v</span>
+                                                                                                <label>STYLE标签：</label><span class='family-english'>INFORMAL 非正式</span>
+                                                                    </p>
+                    					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english'>I think boxing will take off in a <b>big</b> way here.<i class='speak-step' onmouseover="displayAudio('http://res-tts.iciba.com/tts_dj/0/9/f/09fd9a96696604d4d1e08977fd075366.mp3')"></i></p>
+                            <p class='family-chinese size-chinese'>我想拳击运动在这儿会有很大的发展。</p>
+                        </div>
+                        					</div>
+                </div>
+                            </div>
+                                                		</div>
+		<!--div class='collins-change'>
+			<div class='section-h'>
+				<span class='h-order'><i></i>变体形式</span>
+				<p><span class='family-english size-english'>in BRIT, use</span> 英国英语用 <span class='family-english size-english'>rowing boat</span> 副词用法</p>
+			</div>
+		</div-->
+		<!--div class='section-more'><a href='#'>查看更多</a></div-->
+	</div>
+</div>
+<!-- 柯林斯 end -->
+			<!-- 英汉双向大词典 start -->
+<div class='info-article'>
+    <ul class='article-list'>
+        <li class='current'>英汉双向大词典</li>
+        <p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+        <div class='clear'></div>
+    </ul>
+        <div class='article'>
+        <div class='collins-section'>
+                                    <div class='section-h'>
+                <span class='h-order family-english'>A</span>
+                <p><span class='family-english'>adj.</span></p>
+            </div>
+                                    <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大的, 硕大的, 高大的</p>
+                    <div class='text-sentence'>
+                                                <div class='sentence-item'>
+                            <i class='circle-icon'></i>
+                            <p class='family-english size-english'>There is a big bell in the room.</p>
+                            <p class='family-chinese size-chinese'>房间里有个大钟。</p>
+                        </div>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>重要的, 重大的</p>
+                    <div class='text-sentence'>
+                                                <div class='sentence-item'>
+                            <i class='circle-icon'></i>
+                            <p class='family-english size-english'>It's the big moment in my life.</p>
+                            <p class='family-chinese size-chinese'>这是我一生中的重大时刻。</p>
+                        </div>
+                                                <div class='sentence-item'>
+                            <i class='circle-icon'></i>
+                            <p class='family-english size-english'>The young man had big ideas.</p>
+                            <p class='family-chinese size-chinese'>这个年轻人有抱负。</p>
+                        </div>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>3</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>年龄较大的, 长大了的</p>
+                    <div class='text-sentence'>
+                                                <div class='sentence-item'>
+                            <i class='circle-icon'></i>
+                            <p class='family-english size-english'>Don't cry, you are a big boy now.</p>
+                            <p class='family-chinese size-chinese'>不要哭, 你已经是大孩子了。</p>
+                        </div>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>4</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>成功的; 大受欢迎的</p>
+                    <div class='text-sentence'>
+                                                <div class='sentence-item'>
+                            <i class='circle-icon'></i>
+                            <p class='family-english size-english'>Coca-Cola is very big in the West.</p>
+                            <p class='family-chinese size-chinese'>可口可乐在西方很流行。</p>
+                        </div>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>5</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>热中于…的；狂热的</p>
+                    <div class='text-sentence'>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>6</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>经常（或大量）做某事的</p>
+                    <div class='text-sentence'>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>7</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大方的；慷慨的</p>
+                    <div class='text-sentence'>
+                                            </div>
+                </div>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>8</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>(计划) 庞大的；宏大的</p>
+                    <div class='text-sentence'>
+                                            </div>
+                </div>
+            </div>
+                                                <div class='section-h'>
+                <span class='h-order family-english'>B</span>
+                <p><span class='family-english'>adv.</span></p>
+            </div>
+                                    <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+                <div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大大；给人印象深地 </seg></p>
+                    <div class='text-sentence'>
+                                            </div>
+                </div>
+            </div>
+                                </div>
+    </div>
+    </div>
+<!-- 英汉双向大词典 end -->
+            <!-- 英英释义 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>英英释义</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+    	<div class='article'>
+		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>A</span>
+                <p><span class='family-english'>Adjective</span></p>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>1. above average in size or number or quantity or magnitude or extent;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a large city" </li>
+                                                <li class='item'> "set out for the big city" </li>
+                                                <li class='item'> "a large sum" </li>
+                                                <li class='item'> "a big (or large) barn" </li>
+                                                <li class='item'> "a large family" </li>
+                                                <li class='item'> "big businesses" </li>
+                                                <li class='item'> "a big expenditure" </li>
+                                                <li class='item'> "a large number of newspapers" </li>
+                                                <li class='item'> "a big group of scientists" </li>
+                                                <li class='item'> "large areas of the world" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>2. significant;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "graduation was a big day in his life" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>3</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>3. of very great significance;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "deciding to drop the atom bomb was a very big decision" </li>
+                                                <li class='item'> "a momentous event" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>4</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>4. conspicuous in position or importance;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a big figure in the movement" </li>
+                                                <li class='item'> "big man on campus" </li>
+                                                <li class='item'> "he's very large in financial circles" </li>
+                                                <li class='item'> "a prominent citizen" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>5</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>5. very intense;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a bad headache" </li>
+                                                <li class='item'> "in a big rage" </li>
+                                                <li class='item'> "had a big (or bad) shock" </li>
+                                                <li class='item'> "a bad earthquake" </li>
+                                                <li class='item'> "a bad storm" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>6</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>6. loud and firm;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a big voice" </li>
+                                                <li class='item'> "big bold piano sounds" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>7</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>7. prodigious;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "big spender" </li>
+                                                <li class='item'> "big eater" </li>
+                                                <li class='item'> "heavy investor" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>8</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>8. (of animals) fully developed;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "an adult animal" </li>
+                                                <li class='item'> "a grown woman" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>9</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>9. marked by intense physical force;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a big wind" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>10</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>10. feeling self-importance;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "too big for his britches" </li>
+                                                <li class='item'> "had a swelled head" </li>
+                                                <li class='item'> "he was swelled with pride" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>11</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>11. older brother or sister;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "big sister" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>12</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>12. exhibiting self-importance;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "big talk" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>13</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>13. generous and understanding and tolerant;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "a heart big enough to hold no grudges" </li>
+                                                <li class='item'> "that's very big of you to be so forgiving" </li>
+                                                <li class='item'> "a large and generous spirit" </li>
+                                                <li class='item'> "a large heart" </li>
+                                                <li class='item'> "magnanimous toward his enemies" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>14</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>14. given or giving freely;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "was a big tipper" </li>
+                                                <li class='item'> "the bounteous goodness of God" </li>
+                                                <li class='item'> "bountiful compliments" </li>
+                                                <li class='item'> "a freehanded host" </li>
+                                                <li class='item'> "a handsome allowance" </li>
+                                                <li class='item'> "Saturday's child is loving and giving" </li>
+                                                <li class='item'> "a liberal backer of the arts" </li>
+                                                <li class='item'> "a munificent gift" </li>
+                                                <li class='item'> "her fond and openhanded grandfather" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>15</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>15. in an advanced stage of pregnancy;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "was big with child" </li>
+                                                <li class='item'> "was great with child" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+                    </div>
+    </div>
+    	<div class='article'>
+		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>B</span>
+                <p><span class='family-english'>Adverb</span></p>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>1. extremely well;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "his performance went over big" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>2. in a boastful manner;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "he talked big all evening" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>3</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>3. on a grand scale;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "think big" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>4</i>
+				<div class='prep-order'>
+                    <p class='family-english size-english'>4. in a major way;</p>
+					<ul class='text-sentence'>
+                                                <li class='item'> "the play failed big at the box office" </li>
+                        						<!--li class='text-label'>
+							<label>同义词</label><a class='family-english' href='#'>about, like</a>
+						</li>
+						<li class='text-label'>
+							<label>反义词</label><a class='family-english' href='#'>but</a>
+						</li-->
+					</ul>
+				</div>
+            </div>
+                    </div>
+    </div>
+    </div>
+<!-- 英英释义 end -->
+
+            <style type='text/css'>
+	.main-result .info-product {
+  	padding-top: 1px;
+  	padding-bottom: 1px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background:#ffffff;
+    border:1px solid #eeeeee;
+    box-shadow:0 1px 10px rgba(0,0,0,0.04); }
+    .main-result .info-product .article-list {
+      position: relative;
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e2e2e2; }
+      .main-result .info-product .article-list li {
+        float: left;
+        font-size: 20px;
+        color: #999999;
+        border-bottom: 1px solid #d6d6d6;
+        padding-bottom: 10px;
+        margin-bottom: -1px;
+        margin-right: 20px;
+        cursor: pointer; }
+      .main-result .info-product .article-list li.current {
+        color: #333333;
+        border-bottom: 1px solid #333333; }
+      .main-result .info-product .article-list p.info-display {
+      	font-size:12px;
+      	color:#999999;
+      	width: 40px;
+        height: 20px;
+        position: absolute;
+        right: 0px;
+        top: 2px;
+        cursor: pointer; }
+        .main-result .info-product .article-list p.info-display i.ico-display{
+        	display: inline-block;
+          margin-left:5px;
+        	width: 10px;
+          height: 10px;
+          background: url("../static/images/newsearch_ico.png") no-repeat -26px -33px; }
+        .main-result .info-product .article-list p.info-display i.ico-display.selected {
+          background: url("../static/images/newsearch_ico.png") no-repeat -7px -33px!important; }
+    .main-result .info-product .article{
+    	margin-left: 35px;
+    	margin-right: 35px;
+    	padding-bottom:25px; }
+	    .product .product-section{
+		    float:left;
+		    width:120px;
+	  		height:215px;
+	  		margin-left:78px;
+	  		margin-right:92px; }
+	  		.product .product-section .product-intro{
+	  			font-size:14px;
+	  			color:#333333;
+	    		text-align:center; }
+	  		.product .product-section i{
+	    		display:inline-block; }
+	  		.product .product-section i.pc{
+	  			width:81px;
+	    		height:81px;
+	    		margin-left:20px;
+	    		margin-top:30px;
+	    		background:url("../static/images/download_ico.png") 0 0; }
+	  		.product .product-section i.android{
+	  			width:112px;
+	    		height:112px;
+	    		margin-left:5px;
+	    		margin-top:15px;
+	   		  border:1px solid #d6d6d6; 
+	   		  background:url("../static/images/new_download_ico.png") 1px 0; }
+	  		.product .product-section i.ios{
+	  			width:112px;
+	    		height:112px;
+	    		margin-left:5px;
+	   		  margin-top:15px;
+	    		border:1px solid #d6d6d6; 
+	    		background:url("../static/images/new_download_ico.png") -110px 0; }
+	  		.product .product-section .pc-btn{
+	    		width:120px;
+	    		height:40px;
+	    		margin-top:28px;
+	    		background-color:#e65f49;
+	    		text-align:center;
+	    		line-height:40px;
+	    		border-radius:45px;
+	    		-webkit-border-radius:45px;
+	    		font-size:16px;
+	    		color:#ffffff;
+	    		cursor:pointer; }
+	    		.product .product-section .pc-btn:hover{
+	    		 background-color:#ef7065;}
+	  		.product .product-section p.holy{
+	    		margin-top:10px;
+	    		font-size:14px;
+	  			color:#333333;
+	  			text-align:center; }
+	  		.product .product-section p.download{
+	  			font-size:12px;
+	  			color:#999999;
+	  			text-align:center; }
+</style>
+<div class='info-product info-article'>
+	<ul class='article-list'>
+		<li class='current'>牛津词典</li>
+		<p style='float:left;margin-left:-5px;font-size:14px;line-height:24px;color:#999999;'>金山词霸客户端产品已经全面收录牛津词典</p>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article product'>
+		<div class='product-section'>
+			<p class='product-intro'>词霸PC客户端</p>
+			<i class='pc'></i>
+			<a href="http://download.iciba.com/pc/personal2016/PowerWord.800.12012.exe" onclick="_czc.push(['_trackEvent','查词结果','PC下载','牛津词典','','']);"><div class='pc-btn'>立即下载</div></a>
+		</div>
+		<div class='product-section'>
+			<p class='product-intro'>词霸Android版</p>
+			<i class='android'></i>
+			<p class='holy'>上词霸学英语!</p>
+			<p class='download'>立刻扫码下载</p>
+		</div>
+		<div class='product-section'>
+			<p class='product-intro'>词霸iOS版</p>
+			<i class='ios'></i>
+			<p class='holy'>上词霸找朋友!</p>
+			<p class='download'>立刻扫码下载</p>
+		</div>
+		<div class='clear'></div>
+  </div>		
+</div>	            <!-- 行业解释 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>行业释义</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+		<div class='collins-section'>
+            <ul class='multiple-list'>
+                                <li class='current'><span class='text'>哲学</span><i class='cut-line'></i></li>
+                                <li class='text'><span class='text'>物理学</span></li>
+                				<div class='clear'></div>
+			</ul>
+                        <ul class='text-content'>
+                                <li>1.大爆炸宇宙论</li>
+                                <li>2.bang cosmology</li>
+                                <li>3.宇宙大爆炸</li>
+                                <li>4.bang of universe</li>
+                            </ul>
+                        <ul class='text-content display-n'>
+                                <li>1.大爆炸宇宙论</li>
+                                <li>2.bang cosmology</li>
+                            </ul>
+            		</div>
+	</div>
+</div>
+<script>
+(function(window, $){
+var $multiple_list_lis = $('.article .multiple-list li');
+var $text_content_secs = $('.article .text-content');
+$multiple_list_lis.each(function(index, element){
+	$(element).click(function() {
+		$multiple_list_lis.removeClass('current');
+		$(this).addClass('current');
+		$text_content_secs.hide();
+		$($text_content_secs[index]).show();
+	});
+});
+}(window, jQuery));
+</script>
+
+<!-- 行业解释 end -->
+
+            <!-- 词组习语 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>词组搭配</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+		<h2 class='family-chinese size-chinese'>常用词组</h2>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>A</span>
+                <p><span class='family-english'>big idea</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(chiefly ironic)a clever or important intention or scheme<span> <span class='family-chinese size-chinese'>(主 讽)好办法，妙点子，重要的意图（或计划）</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>okay, what's the big idea?.</p>
+                            <p class='family-chinese size-chinese'>那好，有什么好点子？。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>B</span>
+                <p><span class='family-english'>the big lie</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>a gross distortion or misrepresentation of the facts, especially when used as a propaganda device by a politician or official body<span> <span class='family-chinese size-chinese'>（尤指政客或政府机构作为宣传手段的） 大谎言，弥天大谎</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>C</span>
+                <p><span class='family-english'>big money</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(主 北美 亦作 big bucks)(informal)large amounts of money, especially as pay or profit<span> <span class='family-chinese size-chinese'>(非正式)（尤指报酬或利润的）大笔钱</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>D</span>
+                <p><span class='family-english'>big screen</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)the cinema[as modifier]<span> <span class='family-chinese size-chinese'>(非正式)电影</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>her big-screen debut.</p>
+                            <p class='family-chinese size-chinese'>她在电影中的首次演出。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>E</span>
+                <p><span class='family-english'>big shot</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(亦作 big noise)(informal)an important or influential person<span> <span class='family-chinese size-chinese'>(非正式)大人物，要人</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>F</span>
+                <p><span class='family-english'>the big stick</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)the use or threat of force or power<span> <span class='family-chinese size-chinese'>(非正式)大棒政策，武力威胁</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>the authorities used quiet persuasion instead of the big stick.</p>
+                            <p class='family-chinese size-chinese'>当局不使用武力，而是和平劝说。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>G</span>
+                <p><span class='family-english'>the Big Three, Four, etc.</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)the three, four, etc., most important or powerful figures in a particular field<span> <span class='family-chinese size-chinese'>(非正式)三巨头（或四巨头等）（表示某个领域里最重要的人物）</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>increased competition between the Big Three cider-makers.</p>
+                            <p class='family-chinese size-chinese'>三大苹果酒厂之间日益激烈的竞争。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>H</span>
+                <p><span class='family-english'>come (或 go) over big</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)have a great effect; be a success<span> <span class='family-chinese size-chinese'>(非正式)影响巨大；大获成功</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>the story went over big with the children.</p>
+                            <p class='family-chinese size-chinese'>这个故事对孩子们影响很大。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>I</span>
+                <p><span class='family-english'>give someone the big E</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(Brit. informal)reject someone, typically in an insensitive or dismissive way<span> <span class='family-chinese size-chinese'>(英，非正式)（尤指无情或轻蔑地）拒绝某人</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>J</span>
+                <p><span class='family-english'>in a big way</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)to a great extent or high degree<span> <span class='family-chinese size-chinese'>(非正式)广泛地，很大程度上</span></p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>he contributed to the film in a big way.</p>
+                            <p class='family-chinese size-chinese'>他对那部电影作出了很大的贡献。</p>
+                        </div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+                            <p class='family-english size-english'>they go for it in a big way.</p>
+                            <p class='family-chinese size-chinese'>他们非常喜欢它。</p>
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>K</span>
+                <p><span class='family-english'>make it big</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)become very successful or famous<span> <span class='family-chinese size-chinese'>(非正式)大获成功；一举成名</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>L</span>
+                <p><span class='family-english'>talk big</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)talk confidently or boastfully<span> <span class='family-chinese size-chinese'>(非正式)信心十足地说；说大话</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>M</span>
+                <p><span class='family-english'>think big</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)be ambitious<span> <span class='family-chinese size-chinese'>(非正式)雄心勃勃</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english'>N</span>
+                <p><span class='family-english'>too big for one's boots (或 旧</span></p>
+            </div>
+                        <div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p><span class='family-english size-english'>(informal)conceited<span> <span class='family-chinese size-chinese'>(非正式)自负的，自以为是的</span></p>
+					<div class='text-sentence'>
+                        					</div>
+				</div>
+            </div>
+            		</div>
+        		<!--h2 class='family-chinese size-chinese'>习惯用语</h2>
+		<div class='collins-section'>
+			<div class='section-h'>
+                <span class='h-order family-english weight-bold'></span>
+                <p class='weight-bold'><span class='family-english'></span></p>
+            </div>
+			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-english weight-bold size-english'></p>
+					<div class='text-sentence'>
+						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english size-english'>She came in for a coffeg,and told me about her friend S Shona.<i class='speak-step'></i></p>
+							<p class='family-chinese size-chinese'>她进来要了一杯咖啡，并且向我谈起了她的朋友肖娜。</p>
+						</div>
+						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english size-english'>She came in for a coffeg,and told me about her friend <i class='speak-step'></i></p>
+							<p class='family-chinese size-chinese'>她进来要了一杯咖啡，并且向我谈起了她的朋友肖娜。</p>
+						</div>
+					</div>
+				</div>
+            </div>
+		</div-->
+	</div>
+</div>
+<!-- 词组习语 end -->
+                        <!-- 同反义词 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>同反义词</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+        		<div class='opposite-word'><label>同义词</label></div>
+                <div class='collins-section'>
+            			<div class='section-h'>
+                <span class='h-order family-english'>A</span>
+                <p><span class='family-english'>adj.</span></p>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大的,巨大的;重大的;伟大的</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>
+                                                                <a href='/huge' target="_blank">huge</a>
+                                                                <a href='/tremendous' target="_blank">tremendous</a>
+                                                                <a href='/colossal' target="_blank">colossal</a>
+                                                                <a href='/considerable' target="_blank">considerable</a>
+                                                                <a href='/large' target="_blank">large</a>
+                                                                <a href='/important' target="_blank">important</a>
+                                                                <a href='/immense' target="_blank">immense</a>
+                                                                <a href='/enormous' target="_blank">enormous</a>
+                                                                <a href='/vast' target="_blank">vast</a>
+                                                                <a href='/great' target="_blank">great</a>
+                                                                <a href='/gigantic' target="_blank">gigantic</a>
+                                                                <a href='/grand' target="_blank">grand</a>
+                                							</p>
+						</div>
+					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>成年的;成熟的</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>
+                                                                <a href='/adult' target="_blank">adult</a>
+                                                                <a href='/mature' target="_blank">mature</a>
+                                                                <a href='/grown-up' target="_blank">grown-up</a>
+                                							</p>
+						</div>
+					</div>
+				</div>
+            </div>
+                                </div>
+                <div class='collins-section'>
+                                            </div>
+                        		<div class='opposite-word'><label>反义词</label></div>
+        		<div class='collins-section'>
+            			<div class='section-h'>
+                <span class='h-order family-english'>A</span>
+                <p><span class='family-english'>adj.</span></p>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大的;主要的</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>
+                                                                <a href='/little' target="_blank">little</a>
+                                                                <a href='/small' target="_blank">small</a>
+                                							</p>
+						</div>
+					</div>
+				</div>
+            </div>
+                                </div>
+        		<div class='collins-section'>
+                                            </div>
+                	</div>
+</div>
+<!-- 同反义词 end -->
+            <!-- 同义词辨析 start -->
+<div class='info-article'>
+    <ul class='article-list'>
+        <li class='current'>同义词辨析</li>
+        <p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+        <div class='clear'></div>
+    </ul>
+    <div class='article'>
+        <div class='collins-section'>
+                        <div class='section-prep no-order'>
+                <i class='prep-order-icon'>1</i>
+                <div class='prep-order'>
+                    <p>
+                        <span class='family-english size-english'>big, large, great, grand</span>
+                        <span class='family-chinese size-chinese'>这些形容词均含"大的"之意。</span>
+                    </p>
+                    <ul class='text-sentence'>
+                                                                                                <li class='item'><a href='/big' target="_blank">big</a><span class='family-chinese size-chinese'>： 常用词，使用广泛，较口语化。多指体积、重量或容量等方面的"大"，有时也用于描写抽象之物。<span></li>
+                                                                        <li class='item'><a href='/ large' target="_blank"> large</a><span class='family-chinese size-chinese'>： 普通用词，含义广，指体积、面积、容量、数量以及程度等方面的大，具体或抽象意义均可用。<span></li>
+                                                                        <li class='item'><a href='/ great' target="_blank"> great</a><span class='family-chinese size-chinese'>： 普通用词，可指具体东西的"大"，但更常指事物的重要，人的行为、品格的伟大等，带一定的感情色彩。 <span></li>
+                                                                        <li class='item'><a href='/ grand' target="_blank"> grand</a><span class='family-chinese size-chinese'>： 侧重指盛大、绝大，有气派。<span></li>
+                                            </ul>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<!-- 同义词辨析 end -->
+            			<!-- 常用俚语 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>常用俚语</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>make little ones out of big ones</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>v </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.[黑社会用语]在狱中服刑(原指在狱中服劳役，将大石块砸成小石块)</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>He got made little ones out of big ones for two years.</p>
+							<p class='family-chinese size-chinese'>他坐了两年牢。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>big e</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>n </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.柜绝，排斥，排挤</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>He decided not to make advances to her for fear of big E.</p>
+							<p class='family-chinese size-chinese'>他害怕遭到招绝，决定不向她求爱。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>3</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>big gun</p>
+					<div class='text-sentence'>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.大人物，有影响的人物</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>l knew they would bring in the big guns at the last minute.</p>
+							<p class='family-chinese size-chinese'> 我早就知道在最后时刻他们会把那些大人物搬出来的。</p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>b.(big guns)强有力的论点或论证</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>Against these big critics' big guns. I offer Serban & Co. some shelter.</p>
+							<p class='family-chinese size-chinese'>我为塞班公司捉供挡箭牌来对付那些大批评家的抨击。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>4</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>no big deal</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>n </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.(指某事物)不难，不重要，没问题，不麻烦</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>Don't worry. It's no big deal.</p>
+							<p class='family-chinese size-chinese'>你放心，这事并不难。</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>What she did is no biggie.</p>
+							<p class='family-chinese size-chinese'>她干的事没什么了不起的。</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>Getting a passport's no big deal.</p>
+							<p class='family-chinese size-chinese'>领护照并不麻烦。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>5</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>big idea</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>n </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.不受欢迎的建议或行动，馊主意</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>6</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>in a big way</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>adv </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.很多,极端,非常</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>I'm really interested in her in a big way.</p>
+							<p class='family-chinese size-chinese'>我的确对她非常感兴趣。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>7</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>talk on the big white phone</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>v </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.往抽水马桶里呕吐</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>One more beer and I'm gonna have to go talk on the big white phone.</p>
+							<p class='family-chinese size-chinese'> 再多喝一杯啤酒，我就非要跑到洗手间去呕吐不可怜。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>8</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>big moment</p>
+					<div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+							<p class='label family-english size-english'><label>n </label></p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.(学生用语)情人，心上人</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>My big moment is not exactly a good looker, but he is pleasant enough.</p>
+							<p class='family-chinese size-chinese'>我的心上人尽管其貌不扬，但是他相当讨人喜欢。</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        		<div class='collins-section'>
+			<div class='section-prep no-order'>
+				<i class='prep-order-icon'>9</i>
+				<div class='prep-order'>
+					<p class='family-english size-english'>big cheese</p>
+					<div class='text-sentence'>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>a.老板，头头，大亨</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>The big cheese is giving everyone a bonus al the end of the year.</p>
+							<p class='family-chinese size-chinese'>年终时老板给大家分红。</p>
+						</div>
+                                                						<div class='sentence-item no-icon'>
+							<p class='family-chinese size-chinese'>b.愚蠢粗鲁的男子</p>
+						</div>
+                        						<div class='sentence-item'>
+							<i class='circle-icon'></i>
+							<p class='family-english'>Don't be a big cheese, man !</p>
+							<p class='family-chinese size-chinese'> 喂，别胡来!</p>
+						</div>
+                                                					</div>
+				</div>
+			</div>
+		</div>
+        	</div>
+</div>
+<!-- 常用俚语 end -->            <!-- 百度百科 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>百科</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+        <div class='baike-section'>
+			<div class='baike-img'>
+                <img src='http://photo.hanyu.iciba.com/upload/encyclopedia_2/d8/61/s_bk_d861877da56b8b4ceb35c8cbfdf65bb4_q8PRR5.jpg' />
+				<p></p>
+			</div>
+			<div class='baike-content'>
+                <p>《BIG》为2012年韩国KBS电视台月火电视剧，由<a href='http://hanyu.iciba.com/hy/%E5%85%A8%E5%9F%BA%E5%B0%9A' target='_blank' alt='全基尚'>全基尚</a>导演指导拍摄，是人气作家洪贞恩、洪美兰（洪氏姐妹）的最新作品。该剧由<a href='http://hanyu.iciba.com/hy/%E5%AD%94%E4%BE%91' target='_blank' alt='孔侑'>孔侑</a>，<a href='http://hanyu.iciba.com/hy/%E6%9D%8E%E6%95%8F%E8%B4%9E' target='_blank' alt='李敏贞'>李敏贞</a>及<a href='http://hanyu.iciba.com/hy/miss+A' target='_blank' alt='miss A'>miss A</a>成员...</p>
+                <div class='section-more'><a href='http://baike.baidu.com/view/127758.htm?fr=iciba' target='_blank'>查看更多</a></div>
+				<div class='info-origin'>本内容来源于<i></i></div>
+			</div>
+			<div class='clear'></div>
+		</div>
+        	</div>
+</div>
+<!-- 百度百科 end -->
+            <!-- 网络释义 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>网络释义</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+    <div class='article'>
+        		<div class='collins-section'>
+			<h2 class='family-chinese size-chinese'>常用词组</h2>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大的</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>字典中名字的解释 ... (1) 有名的,著名的;名贵的[ well-known;famous] (3) 大的[ big;great] (2) 同本义[ give name to].</p>
+							
+						</div>
+					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>Yes Chinese | Learn Chinese Online ... 丑 Ugly 大 Big 小 Small.</p>
+							
+						</div>
+					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>3</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>大昭和</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>日本大昭和（BIG） 日本大昭和（BIG）刀具产品发布日期：[2007-10-26] 共阅[2792]次 B I G 刀具 ：B I G 镗刀 、B I G 精镗刀杆 …</p>
+							
+						</div>
+					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>4</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>飞越未来(Big.)</p>
+					<div class='text-sentence'>
+						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>美人鱼(Splash)和飞越未来(Big)的最新下载分享到:  返回汤姆汉克斯吧汤姆汉克斯吧&lt;&lt;回本吧首页点击领取全球唯一粉丝编号月活跃.</p>
+							
+						</div>
+					</div>
+				</div>
+            </div>
+                    </div>
+                		<div class='collins-section'>
+			<h2 class='family-chinese size-chinese'>相关词条</h2>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>1</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>big three</p>
+                    <div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>三巨头</p>
+                            <p class='family-chinese size-chinese'>亚洲三巨头（Big Three）——中国、印度和日本——处于大致的平衡状态。当中任何两国在经济和军事上的强大都足以阻止第三国主 …</p>
+							
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>2</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>big book</p>
+                    <div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>大书</p>
+                            <p class='family-chinese size-chinese'>诚品书局进口一种大书(Big Book)，为了便于说故事展示，或者教学使用，我曾买过彩虹鱼。做为说故事展示，情况稍稍好一点，但  …</p>
+							
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>3</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>big data</p>
+                    <div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>海量数据</p>
+                            <p class='family-chinese size-chinese'>海量数据(“Big Data”)是指那些足够大的数据，以至于无法再使用传统的方法进行处理。在过去，一直是Web搜索引擎的创建者们首当 …</p>
+							
+                        </div>
+                        						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>大数据</p>
+                            <p class='family-chinese size-chinese'>...screen;1简介编辑进入2012年，大数据（big data）一词越来越多地被提及，人们用它来描述和定义信息爆炸时代产生的海量数-mask use-picture-dialog&quot; target=&quot;_blank&quot; style=&quot;width:220px;height:155px;left: 20p.</p>
+							
+                        </div>
+                        					</div>
+				</div>
+            </div>
+            			<div class='section-prep'>
+                <i class='prep-order-icon'>4</i>
+				<div class='prep-order'>
+                    <p class='family-chinese size-chinese'>big shot</p>
+                    <div class='text-sentence'>
+                        						<div class='sentence-item no-icon'>
+                            <p class='family-chinese size-chinese'>大人物</p>
+                            <p class='family-chinese size-chinese'>暗里着迷 ... Don't ask is also at his wit's end. 不要问他了，他也不知道。 big shot 大人物，大亨 black sheep 败家子，害群之马.</p>
+							
+                        </div>
+                        					</div>
+				</div>
+            </div>
+                    </div>
+        	</div>
+</div>
+<!-- 网络释义 end -->
+            <!-- 更多资料 start -->
+<div class='info-article'>
+	<ul class='article-list'>
+		<li class='current'>更多资料</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article'>
+		<div class='moreinfo-section'>
+			<!--h2>相关词</h2>
+			<p class="family-chinese size-chinese">
+				<a href="#">picture</a>
+				<a href="#">reminiscence</a>
+				<a href="#">image</a>
+				<a href="#">vision</a>
+				<a href="#">recollection</a>
+				<a href="#">remembrance</a>
+				<a href="#">retrospect</a>
+				<a href="#">reminder</a>
+				<a href="#">thought</a>
+			</p>
+			<div class='h-line'></div-->
+			<h2>语源</h2>
+            <p class="family-english size-english">
+                        Middle English  (in the sense 'strong, mighty'): of unknown origin<br/>
+                        </p>
+			<!--div class='h-line'></div>
+			<h2>图片</h2>
+			<img class='img-moreinfo' src='./src/images/img_moreinfo.jpg' /-->
+		</div>
+	</div>
+</div>
+<!-- 更多资料 end -->
+            <style type='text/css'>
+	.hotwords .hotwords-section li{
+		float:left;
+		width:130px;
+	  margin-right:15px;
+	  margin-bottom:10px;
+	  font-size:16px;
+	  color:#2398f2;
+	  overflow:hidden;
+	  white-space:nowrap; 
+    text-overflow:ellipsis;
+    cursor:pointer;  }
+    .hotwords .hotwords-section li:hover{
+      color:#57b7fc; }
+  .hotwords .hotwords-section .section-more{
+    margin-top:0px!important; }
+</style>
+<div class='ad_bottom' style='margin-bottom:20px;' onclick="_czc.push(['_trackEvent','查词结果','底部广告','页面底部','','']);">
+	<script type="text/javascript"> 
+		var cpro_id="u2549408"; 
+		(window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"960",rsi1:"100",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"0",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"120",pih:"70",ptp:"0"}
+	</script> 
+	<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class='info-article info-hotwords'>
+	<ul class='article-list'>
+		<li class='current'>今日热词</li>
+		<li>热门搜索</li>
+		<p class='info-display'><span class='text-display'>收起</span><i class='ico-display'></i></p>
+		<div class='clear'></div>
+	</ul>
+	<div class='article hotwords'>
+    <div class='hotwords-section'>
+    	<ul class='word-list' id="hotword">
+	    </ul>
+    	<div class='section-more'><a href='#'>查看更多</a></div>
+    </div>
+    <div class='hotwords-section' style='display:none;'>
+    	<ul class='word-list' id="todaynews">
+    	</ul>
+    	<div class='section-more'><a href='#'>查看更多</a></div>
+    </div>
+	</div>
+</div>	
+<p style='margin-top:-10px;margin-bottom:40px;font-size:14px;color:#a9adb1;text-align:center;'>爱词霸查词为您提供在线翻译、英语翻译、英文翻译、英译汉、汉译英、fanyi等权威在线翻译服务！</p>
+	                                    		</div>	
+	</div>
+    
+	<!-- 查询结果 end -->
+</div>
+<div class="back-top w1380" onclick="_czc.push(['_trackEvent','查词结果','返回顶部','查词右下方','','']);"><i></i></div>
+
+<script>
+(function(window, $){
+	//新读音动画演示
+	var $new_speak_step = $('.new-speak-step');
+	function speakAnimation(speakItem){
+		speakItem.addClass('step1');
+		setTimeout(function(){
+			speakItem.removeClass('step1').addClass('step2');
+			setTimeout(function(){
+				speakItem.removeClass('step2').addClass('step3');
+				setTimeout(function(){
+					speakItem.removeClass('step3');
+				}, 400);
+			}, 400);
+		}, 400);		
+	}
+	$new_speak_step.each(function(index, element){
+		var $element = $(element);
+		$(element).mouseover(function(){
+			speakAnimation($element);
+		}).mouseout(function(){
+			$element.removeClass('step1');
+		});
+	});
+	//读音动画演示
+	var $speak_step = $('.speak-step');
+	function speakAnimation(speakItem){
+		speakItem.addClass('step1');
+		setTimeout(function(){
+			speakItem.removeClass('step1').addClass('step2');
+			setTimeout(function(){
+				speakItem.removeClass('step2').addClass('step3');
+				setTimeout(function(){
+					speakItem.removeClass('step3');
+				}, 400);
+			}, 400);
+		}, 400);		
+	}
+	$speak_step.each(function(index, element){
+		var $element = $(element);
+		$(element).mouseover(function(){
+			speakAnimation($element);
+		}).mouseout(function(){
+			$element.removeClass('step1');
+		});
+	});
+	//每日一句部分tab切换
+	var $edsentence_tab_lis = $('.info-edsentence .article-list li');
+	var $edsentence_tab_secs = $('.info-edsentence .edsentence-section');
+	$edsentence_tab_lis.each(function(index, element){
+		$(element).click(function() {
+			$edsentence_tab_lis.removeClass('current');
+			$(this).addClass('current');
+			$edsentence_tab_secs.hide();
+			$($edsentence_tab_secs[index]).show();
+		});
+	});
+	//双语例句部分tab切换
+	var $article_tab_lis = $('.article-tab .article-list li');
+	var $article_tab_secs = $('.article-tab .article-section');
+	$article_tab_lis.each(function(index, element){
+		$(element).click(function() {
+			$article_tab_lis.removeClass('current');
+			$(this).addClass('current');
+			$article_tab_secs.hide();
+			$($article_tab_secs[index]).show();
+		});
+	});
+	//新快速导航展开隐藏
+	var $nav = $('.nav');
+	var $nav_section = $('.nav-section');
+	$nav.each(function(index, element){
+		var $nav_head_ico = $(element).find('.nav-head-ico');
+		var $nav_section = $(element).find('.nav-section');
+		$nav_head_ico.click(function(){
+			if (!$nav_head_ico.hasClass('nav-show')) {
+				$nav_head_ico.addClass('nav-show');
+				$nav_section.hide();
+			}else {
+				$nav_head_ico.removeClass('nav-show');
+				$nav_section.show();
+			}
+		});
+	});
+	//快速导航控制模块div上浮,scroll快速导航自动定位
+	var $quick_nav_lis = $('.quick-nav li');
+	var $result_info_secs = $('.result-info .info-article');
+	$quick_nav_lis.each(function(index, element){
+		$(element).click(function(event){
+            $(window).scrollTop($($result_info_secs[index]).offset().top - 170);
+            $quick_nav_lis.removeClass('current');
+            $(element).addClass('current');  
+		});
+	});
+	$(window).scroll(function(){
+		for(var i = 0; i < $quick_nav_lis.length; i++){
+			var sec_top = $($result_info_secs[i]).offset().top;
+			var sec_height = $($result_info_secs[i]).height();
+			if($(window).scrollTop() >= sec_top - 170 && $(window).scrollTop() < sec_top + sec_height) {
+				$quick_nav_lis.removeClass('current');
+				$($quick_nav_lis[i]).addClass('current');
+			}
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                $quick_nav_lis.removeClass('current');
+				$($quick_nav_lis[$quick_nav_lis.length - 1]).addClass('current');
+            }
+		}
+	});
+	$(window).scroll(function(){
+		if($(window).scrollTop()>118){
+			$('.quick-nav').css("position","fixed");
+			$('.quick-nav').css("margin-top","-44px");
+		}else{
+			$('.quick-nav').css("position","absolute");
+			$('.quick-nav').css("margin-top","20px");
+		}
+	});
+    //返回顶部按钮
+	var $backTop = $('.back-top');
+	$backTop.click(function(){
+		$('body, html').animate({scrollTop: 0}, 500);
+	});
+	if($(window).scrollTop() > 600) {
+			$backTop.show();
+		}else {
+			$backTop.hide();
+		}
+	$(window).scroll(function(){
+		if($(window).scrollTop() > 600) {
+			$backTop.show();
+		}else {
+			$backTop.hide();
+		}
+	});
+	if($(window).width() < 1380) {
+		$backTop.removeClass('w1380').addClass('w1000');
+	}
+	$(window).resize(function(){
+		if($(window).width() > 1380) {
+			$backTop.removeClass('w1000').addClass('w1380');
+		}else {
+			$backTop.removeClass('w1380').addClass('w1000');
+		}
+	});
+	//模块展开和隐藏
+	var $info_article_secs = $('.info-article').slice(1);
+	$info_article_secs.each(function(index, element){
+		var show_icon = $(element).find('.info-display');
+		var wenzi = $(element).find('.text-display');
+		var icon = $(element).find('.ico-display');
+		var article = $(element).find('.article');
+		show_icon.click(function(){
+			if (!show_icon.hasClass('show')) {
+				show_icon.addClass('show');
+				article.hide();
+				wenzi.text("展开");
+				icon.addClass('selected');
+			}else {
+				show_icon.removeClass('show');
+				article.show();
+				wenzi.text("收起");
+				icon.removeClass('selected');
+			}
+		});
+	});
+	//今日receivedtab切换
+	var $hotwords_tab_lis = $('.info-hotwords .article-list li');
+	var $hotwords_tab_secs = $('.info-hotwords .hotwords-section');
+	$hotwords_tab_lis.each(function(index, element){
+		$(element).click(function() {
+			$hotwords_tab_lis.removeClass('current');
+			$(this).addClass('current');
+			$hotwords_tab_secs.hide();
+			$($hotwords_tab_secs[index]).show();
+		});
+	});
+  //取词划译
+	var $getwords = $('.nav-list .getwords');
+	var $getwords_ico = $('.nav-list .getwords i');
+	$getwords.click(function() {
+		if (!$getwords_ico.hasClass('show')) {
+				$getwords_ico.addClass('show');
+			}else {
+				$getwords_ico.removeClass('show');
+			}
+	});
+	//牛津词典新提示
+	if(window.localStorage.getItem('point') == 1){
+		$('.oxford_i').css("display","none");
+	}else{
+		$('.oxford_i').css("display","inline-block");
+	}
+	$('.oxford').click(function(){
+		window.localStorage.setItem('point', '1');
+		$('.oxford_i').css("display","none");
+	});
+	
+		
+	
+	
+	
+	
+}(window, jQuery));
+</script>
+
+	<!-- 页面主体 end -->
+    
+<script type="text/javascript">
+$.ajax({
+    url:"./index.php?c=search&a=hotword",
+    type:"get",
+    dataType:"json",
+    success:function(res){
+        if (res.status == 1) {
+            var msg = res.message;
+            var html = "";
+            for (var i=0;i<msg.length;i++) {
+                html += '<li><a title="'+msg[i].word+'" href="/'+msg[i].word+'" target="_blank">'+msg[i].word+'</a></li>';
+            }
+            html += '<div class="clear"></div>'
+            $("#hotword").html(html);
+        }
+    }
+});
+$.ajax({
+    url:"./index.php?c=search&a=todaynews",
+    type:"get",
+    dataType:"json",
+    success:function(res){
+        var msg = res;
+        var html = "";
+        for (var i=0;i<msg.length;i++) {
+            html += '<li><a title="'+msg[i]+'"href="/'+msg[i]+'" target="_blank">'+msg[i]+'</a></li>';
+        }
+        html += '<div class="clear"></div>'
+        $("#todaynews").html(html);
+    }
+});
+</script>
+    <div class="footer" id="footer">
+    <div class="footer_main">
+        <a href="http://www.kingsoft.com/licence/001.jpg" class="blank">京ICP证100054号</a>
+        <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202010082000006"><img align="absmiddle" border="0" alt="备案" src="http://cdn.iciba.com/web/static/images/ico_ft.gif"></a>
+        <a href="http://www.kingsoft.com/licence/002.jpg" class="blank">新出网证&lt;京&gt;字011号</a>
+        <span title="京公网安备110108400997号">京公网安备110108400997号</span>
+        <a href="http://www.kingsoft.com/licence/003.jpg" class="blank">京网文【2011】0509-172号</a>
+        <a href="http://www.miibeian.gov.cn/" class="blank">京ICP备06025896号</a>
+        <span title="京公网安备110108400997号">©2015 Kingsoft Corp</span>
+		<script src="http://s11.cnzz.com/z_stat.php?id=1256556802&web_id=1256556802" language="JavaScript"></script>
+    </div>
+</div>    <div class='scb-mask'>
+	<div class='scb-win'>
+		<h3>创建新的生词本</h3>
+		<div class='scb-name'>
+			<div class='text-wrap error' id='text-wrap'>
+                <input id="textarea" class='scb-n-input' type='text' placeholder='输入要创建的生词本名称' />
+				<p class='text tip1'><span>i</span>该生词本已经创建啦!</p>
+				<p class='text tip2'><span>i</span>不可以出现中文，英文，数字之外的符号哒!</p>
+				<p class='text tip3'><span>i</span>生词本名称长度不能大于24字符!</p>
+                <p class='text tip4'><span>i</span>请填写生词本名称!</p>
+			</div>
+			<a class='scb-cancel' id='scb_cancel' href='javascript:void(0);'>取消</a>
+			<a class='scb-sure' id='scb_create' href='javascript:void(0);'>创建</a>
+			<div class='clear'></div>
+		</div>
+	</div>
+</div>
+<script type='text/javascript'>
+$(document).ready(function(){
+    window.lib = new localStorageDB('scbLib_0', localStorage);
+    (function(window, $){
+        //获取全局变量中的线上生词本名数组
+        var ScbName = window.ScbName;
+        //创建数据库
+        //初始化生词本table, 生词table
+        if(lib.isNew()){
+            lib.createTable("books", ["n"]);
+            lib.createTable("words", ["w", "p", "i"]);
+            lib.commit();
+        }
+        $('#textarea').keyup(function(event){
+            $('.tip1').hide();
+            $('.tip2').hide();
+            $('.tip3').hide();
+            $('.tip4').hide();
+            event.stopPropagation();
+        });
+        function checkDiffName(value){
+            //检测从线上获取到的生词本名称是否有重名
+            for(var i = 0; i < ScbName.length; i++){
+                if(ScbName[i] == value){
+                    $('.tip1').show();
+                    return false;
+                }
+            }
+            //检测localstorage里面是否存在生词本，如果存在检测本地生词本名称是否有重名
+            if(window.localStorage.getItem("db_scbLib_0")){
+                var LSScbObj = JSON.parse(window.localStorage.getItem("db_scbLib_0"));
+                var bookObj = LSScbObj.data.books;
+                bookArr = $.map(bookObj, function(value){ return value; });
+                //console.log(bookArr);
+                for(var i = 0; i < bookArr.length; i++){
+                    if(bookArr[i].n == value){
+                        $('.tip1').show();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        //检测生词本命名是否合法，名称应只包含字母数字和汉字
+        function checkValidName(value){
+            if (value == "") {
+                $('.tip4').show();
+                return false;
+            } else if(!(/^[A-Za-z0-9\u4e00-\u9fa5]+$/).test(value)){
+                $('.tip2').show();
+                return false;
+            } else if (value.length > 24) {
+                $('.tip3').show();
+                return false;
+            }else {
+                return true;
+            }
+        }
+        $('#scb_cancel').click(function(){
+            $('.scb-mask').hide();
+        });
+        $('.scb-mask').click(function(event){
+            event.stopPropagation();
+        });
+        //如果新创建的生词本名无重名并合法，将生词本名记录插入到localstorage生词本table，并加入页面生词本控件中
+        (function(){
+            var i = 0;
+            $('#scb_create').click(function(){
+                var value = $('#textarea').val();
+                var diff = checkDiffName(value);
+                var valid = checkValidName(value);   
+                if(diff && valid){
+                    //console.log("The name " + value +" is ok");
+                    lib.insert("books", {n: value});
+                    lib.commit();
+                    $('.scb-list').prepend("<li class='color-" + i % 7 + "'>" + "<i class='circle'></i><span class='name'>" + value + "</span>" + "<i class='check'></i>" + "</li>");
+                    i++;
+                    box.update();
+                    $('#textarea').val('');
+                    $('.scb-mask').hide();
+                }
+            });
+        })();
+        
+    })(window, jQuery);
+})
+
+
+
+</script>
+<script type='text/javascript' src='http://open.iciba.com/huaci_new/huaci.js'></script>
+</body>
+</html>
+
+
+

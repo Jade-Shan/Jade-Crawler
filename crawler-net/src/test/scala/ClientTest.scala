@@ -7,23 +7,25 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 
+import jadeutils.common.Logging
+
 @RunWith(classOf[JUnitRunner])
-class ClientIntegrationTest extends FunSuite {
+class ClientIntegrationTest extends FunSuite with Logging{
 
 	test("Test-HTTP-Get") {
 		// val response = HTTPUtil.doGet("http://www.yyets.com/eresourcelist?page=1&channel=&area=&category=&format=&year=&sort=", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
 		// val response = HTTPUtil.doGet("http://www.yyets.com/eresourcelist?page=2&channel=&area=&category=&format=&year=&sort=", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
 		// val response = HTTPUtil.doGet("http://www.yyets.com/resource/30010", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
 		val response = HTTPUtil.doGet("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"))
-		ClientIntegrationTest.logger.debug(response.toString)
-		ClientIntegrationTest.logger.debug(new String(response.content))
+		logDebug(response.toString)
+		logDebug(new String(response.content))
 	}
 
 	test("Test-HTTP-Post") {
 		val response = HTTPUtil.doPost("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"), ("aaa", "bbb") :: Nil)
 		// val response = HTTPUtil.doPost("http://localhost:8080/jadeutils-cdn/test-session.jsp", HTTPUtil.firefoxParams, ("aaa", "bbb") :: Nil)
-		ClientIntegrationTest.logger.debug(response.toString)
-		ClientIntegrationTest.logger.debug(new String(response.content))
+		logDebug(response.toString)
+		logDebug(new String(response.content))
 	}
 
 }

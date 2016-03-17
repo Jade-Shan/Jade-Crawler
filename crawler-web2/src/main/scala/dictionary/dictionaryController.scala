@@ -10,8 +10,8 @@ import jadeutils.common.Logging
 
 import jadeutils.web.BasicController
 import jadeutils.web.Method._
-import jadeutils.web.Foward
-import jadeutils.web.Redirect
+import jadeutils.web.DispatherServlet.Foward
+import jadeutils.web.DispatherServlet.Redirect
 
 import jadecrawler.website.IcibaCrawler
 
@@ -73,19 +73,21 @@ object IcibaApiController extends BasicController with Logging {
 		val cache = IcibaCrawler.loadLocal(dao, word)
 
 		val data = if (null != cache) { cache } else {
-			// val rec = jadecrawler.website.IcibaCrawler.process(word)
-			// IcibaCrawler.saveLocal(dao, rec)
-			// rec
-			new jadecrawler.dto.website.IcibaDto(word, 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
-				new java.util.ArrayList[(jadecrawler.dto.website.IcibaS2Dto)](), 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS2Dto](),
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
-				new java.util.ArrayList[jadecrawler.dto.website.IcibaHomoDto]())
+			val rec = jadecrawler.website.IcibaCrawler.process(word)
+			IcibaCrawler.saveLocal(dao, rec)
+			rec
+			// new jadecrawler.dto.website.IcibaDto(word, 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
+			// 	new java.util.ArrayList[(jadecrawler.dto.website.IcibaS2Dto)](), 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS2Dto](),
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
+			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaHomoDto]())
 		}
 
+		logInfo("-------{}", data)
+
 		("result" -> 
-			("word" -> data.word) ~ 
+			("word" -> word) ~ 
 			("pronunciations" -> (for (i <- 0 until data.pronunciations.size) yield 
 				data.pronunciations.get(i)).map(p => 
 				(("str1" -> p.str1) ~ ("str2" -> p.str2) ~ ("str3" -> p.str3)))) ~ 
@@ -101,8 +103,21 @@ object IcibaApiController extends BasicController with Logging {
 			("homoionyms" -> (for (i <- 0 until data.homoionyms.size) yield 
 				data.homoionyms.get(i)).map(p => 
 				(("str" -> p.str) ~ ("s2dto" -> (for (i <- 0 until p.s2dto.size) yield 
-					p.s2dto.get(i)).map( d => (("str1" -> d.str1) ~ ("str2" -> d.str2)))))))
-			): JValue
+					p.s2dto.get(i)).map( d => (("str1" -> d.str1) ~ ("str2" -> d.str2))))))) ~
+			("sameWrds" -> (for (i <- 0 until data.sameWrds.size) yield
+				data.sameWrds.get(i)).map(p =>
+				(("str" -> p.str) ~ ("words" -> (for (i <- 0 until p.words.size) yield
+					p.words.get(i)))))) ~
+			("oppsites" -> (for (i <- 0 until data.oppsites.size) yield
+				data.oppsites.get(i)).map(p =>
+				(("str" -> p.str) ~ ("words" -> (for (i <- 0 until p.words.size) yield
+					p.words.get(i)))))) ~
+			("phrases" -> (for (i <- 0 until data.phrases.size) yield
+				data.phrases.get(i)).map(p =>
+				(("str1" -> p.str1) ~ ("str3" -> p.str3) ~ ("str2" -> p.str2)))) ~
+			("slangys" -> (for (i <- 0 until data.slangys.size) yield
+				data.slangys.get(i)).map(p =>
+				(("str1" -> p.str1) ~ ("str3" -> p.str3) ~ ("str2" -> p.str2))))): JValue
 	}}
 
 	service("/api/dictionary/removenewword/test") {(info) => {

@@ -34,7 +34,7 @@ object K1Parser extends Logging {
 			(doc select "div.sy_k21>h2").text).replaceAll(""" ""","-")
 		logger debug ("title:{}", title)
 		val lines = doc select "div#cp_a1>ul.sy_nr1>li"
-		val vols = for (line <- lines; item = genVolFromBook(line) if item != None) yield item
+		val vols = for (line <- lines; item = genVolFromBook(line)) yield item
 		(bookId, title, vols)
 	}
 
