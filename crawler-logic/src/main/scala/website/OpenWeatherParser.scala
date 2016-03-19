@@ -51,25 +51,25 @@ object OpenWeatherParser extends Logging {
 
 		for (i <- 1 to 4) {
 			val str = getDayOfWeek(data._5(i)("day"), timeZone, local)
-			if (i < 4) sb.append("%-20s" format str) else sb.append(str)
+			if (i > 1) sb.append("%12s" format str) else sb.append("%5s" format str)
 		} 
 		sb.append("\n")
 
 		for (i <- 1 to 4) {
 			val str = iconMap.getOrElse(data._5(i)("smbVar"), "b")
-			if (i < 4) sb.append("%-5s" format str) else sb.append(str)
+			if (i > 1) sb.append("%4s" format str) else sb.append("%2s" format str)
 		}
 		sb.append("\n")
 
 		for (i <- 1 to 4) {
 			val str = data._5(i)("humVal") +  data._5(i)("humUnt")
-			if (i == 1) sb.append("%8s" format str) else sb.append("%19s" format str)
+			if (i == 1) sb.append("%7s" format str) else sb.append("%12s" format str)
 		}
 		sb.append("\n")
 
 		for (i <- 1 to 4) {
 			val str = data._5(i)("wndMps") + "Mps"
-			if (i == 1) sb.append("%10s" format str) else sb.append("%15s" format str)
+			if (i == 1) sb.append("%9s" format str) else sb.append("%12s" format str)
 		}
 		sb.append("\n")
 
@@ -79,13 +79,13 @@ object OpenWeatherParser extends Logging {
 
 		for (i <- 1 to 4) {
 			val str = data._5(i)("tmpMax") + "°C"
-			if (i == 1) sb.append("%9s" format str) else sb.append("%17s" format str)
+			if (i == 1) sb.append("%11s" format str) else sb.append("%11s" format str)
 		}
 		sb.append("\n")
 
 		for (i <- 1 to 4) {
 			val str = data._5(i)("tmpMin") + "°C"
-			if (i == 1) sb.append("%9s" format str) else sb.append("%17s" format str)
+			if (i == 1) sb.append("%11s" format str) else sb.append("%11s" format str)
 		}
 		sb.append("\n")
 
