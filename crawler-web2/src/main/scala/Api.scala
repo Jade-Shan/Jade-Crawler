@@ -9,6 +9,8 @@ import jadeutils.web.BasicController
 import jadeutils.web.Method
 import jadeutils.web.Method
 
+import net.jadedungeon.forecast.ForecastController
+
 import net.jadedungeon.dictionary.IcibaApiController
 
 import net.jadedungeon.workout.WorkoutAppCtx
@@ -20,7 +22,7 @@ import net.jadedungeon.blog.BlogRecController
 class ApiDispather extends jadeutils.web.DispatherServlet with WorkoutAppCtx
 { 
 	ApiDispather.controllers = IcibaApiController :: WorkoutRecController :: 
-		WorkoutAuthController :: BlogRecController :: Nil 
+		WorkoutAuthController :: BlogRecController :: ForecastController :: Nil 
 
 	@throws(classOf[IOException])
 	@throws(classOf[ServletException])
