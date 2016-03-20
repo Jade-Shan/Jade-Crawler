@@ -231,6 +231,11 @@ trait DispatherServlet extends HttpServlet with Logging {
 					response.setHeader("Content-disposition", "inline")
 					response.getWriter.println(compact(render(json)))
 				}
+				case textStr: String => {
+					response.setContentType("text/plain")
+					response.setHeader("Content-disposition", "inline")
+					response.getWriter.println(textStr)
+				}
 				case _ => logError("Unknow Dispath result")
 			}
 		}
