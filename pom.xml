@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>jadelibs-scala</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>crawler-parent</artifactId>
@@ -27,10 +27,10 @@
 	<properties>
 		<jadeutils.version>0.1.12</jadeutils.version>
 		<jadescalautils.version>0.1.14</jadescalautils.version>
-		<crawler-dto.version>0.1.10</crawler-dto.version>
-		<crawler-net.version>0.1.10</crawler-net.version>
-		<crawler-logic.version>0.1.10</crawler-logic.version>
-		<crawler-web2.version>0.1.10</crawler-web2.version>
+		<crawler-dto.version>0.1.11-SNAPSHOT</crawler-dto.version>
+		<crawler-net.version>0.1.11-SNAPSHOT</crawler-net.version>
+		<crawler-logic.version>0.1.11-SNAPSHOT</crawler-logic.version>
+		<crawler-web2.version>0.1.11-SNAPSHOT</crawler-web2.version>
 	</properties>
 
 	<dependencyManagement>
