@@ -15,7 +15,7 @@ import java.util.Properties
 class OpenWeatherTest extends FunSuite with Logging {
 
 	test("Test-16days") {
-		val result = OpenWeatherCrawler.get16dayByCityName("Shanghai,cn", "GMT+8")
+		val result = OpenWeatherCrawler.get16dayByCityName("Shanghai,cn", "GMT+8", "b1b15e88fa797225412429c1c50c122a")
 		logDebug("{}", result)
 		val str = OpenWeatherParser.formatConkyWeather("Asia/Shanghai", "zh_CN", result)
 		logDebug("\n{}", str)
