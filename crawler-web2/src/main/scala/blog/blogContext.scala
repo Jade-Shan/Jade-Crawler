@@ -7,13 +7,17 @@ trait BlogRecDaoCompoment extends Logging {
 	this: EnvPropsComponent =>
 
 	object RecDaos {
+
+		import scala.collection.JavaConversions._
+
 		val host: String = getProperty("mongo.host")
 		val port: Int    = Integer.parseInt(getProperty("mongo.port"))
+		val auth = getProperty("mongo.authList.jadedungeon").split("`") :: Nil
 
-		logDebug("----------- Creating jounaryRecordDao: {}, {}", host, port)
-		val journalDao = new JournalDao(host, port)
-		logDebug("----------- Creating galleryRecordDao: {}, {}", host, port)
-		val galleryDao = new GalleryDao(host, port)
+		logDebug("----------- Creating jounaryRecordDao: {}, {}, {}", host, port, auth)
+		val journalDao = new JournalDao(host, port, auth)
+		logDebug("----------- Creating galleryRecordDao: {}, {}, {}", host, port, auth)
+		val galleryDao = new GalleryDao(host, port, auth)
 	}
 }
 

@@ -27,6 +27,10 @@
 			<groupId>net.jade-dungeon</groupId>
 			<artifactId>crawler-net</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>net.jade-dungeon</groupId>
+			<artifactId>jadeutils-mongo</artifactId>
+		</dependency>
 		<!-- -->
 		<dependency>
 			<groupId>commons-lang</groupId>

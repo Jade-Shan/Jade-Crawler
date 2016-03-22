@@ -25,7 +25,7 @@
 	</modules>
 
 	<properties>
-		<jadeutils.version>0.1.12</jadeutils.version>
+		<jadeutils.version>0.1.13</jadeutils.version>
 		<jadescalautils.version>0.1.14</jadescalautils.version>
 		<crawler-dto.version>0.1.11-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.11-SNAPSHOT</crawler-net.version>

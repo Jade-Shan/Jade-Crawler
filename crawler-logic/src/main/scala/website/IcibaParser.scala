@@ -18,6 +18,13 @@ import jadecrawler.dto.website.IcibaS3Dto
 import jadecrawler.dto.website.IcibaHomoDto
 import jadecrawler.dto.website.Opposite
 
+import jadeutils.mongo.MongoServer
+import jadeutils.mongo.BaseMongoDao
+import jadeutils.mongo.Condition.newCondition
+
+import jadecrawler.dto.website.NewWordBook
+import jadecrawler.dto.website.NewWord
+
 import jadeutils.common.JsoupUtils._
 
 import scala.collection.JavaConversions._
@@ -192,8 +199,40 @@ object WebIcibaParser extends Logging {
 
 }
 
-object IcibaCrawler extends Logging {
+class IcibaDao(serverList: java.util.List[MongoServer]) 
+	extends BaseMongoDao[IcibaDto](serverList)
+{
+	def this(host: String, port: Int, auth: List[Array[String]]) = this(new MongoServer(host, port, auth) :: Nil)
+}
+
+
+class NewWordBookDao(serverList: java.util.List[MongoServer]) 
+	extends BaseMongoDao[NewWordBook](serverList)
+{
+	def this(host: String, port: Int, auth: List[Array[String]]) = this(new MongoServer(host, port, auth) :: Nil)
+}
+
+class IcibaCrawler(host: String, port: Int, dbAuth: List[Array[String]]) extends Logging {
 	import scala.collection.JavaConversions._
+
+	// def getDao(host: String, port: Int, auth: List[Array[String]]) = 
+	val s1 = new MongoServer(host, port, dbAuth)
+	val s2 = new MongoServer(host, port, dbAuth)
+	val icibaDao = new IcibaDao(s1 :: Nil)
+	val newWordDao = new NewWordBookDao(s2 :: Nil)
+
+	def saveLocal(result: IcibaDto) {
+		if (null != result) {
+			logger debug ("iciba page parse OK: {}", result.word)
+			try { 
+				icibaDao insert result 
+				logger debug ("iciba page save OK: {}", result.word)
+			} catch {
+				case e: Throwable => logger error ("iciba-save error: {}, {}", 
+					Array(result.word, e))
+			}
+		}
+	}
 
 	val site = "www.iciba.com"
 
@@ -222,38 +261,9 @@ object IcibaCrawler extends Logging {
 		} else { null }
 	}
 
-	import jadeutils.mongo.MongoServer
-	import jadeutils.mongo.BaseMongoDao
-	import jadeutils.mongo.Condition.newCondition
 
-	import jadecrawler.dto.website.NewWordBook
-	import jadecrawler.dto.website.NewWord
-
-	class IcibaDao(serverList: java.util.List[MongoServer]) 
-	extends BaseMongoDao[IcibaDto](serverList)
-
-	class NewWordBookDao(serverList: java.util.List[MongoServer]) 
-	extends BaseMongoDao[NewWordBook](serverList)
-
-	def getDao(host: String, port: Int) = 
-	new IcibaDao(new MongoServer(host, port) :: Nil)
-
-
-	def saveLocal(dao: IcibaDao, result: IcibaDto) {
-		if (null != result) {
-			logger debug ("iciba page parse OK: {}", result.word)
-			try { 
-				dao insert result 
-				logger debug ("iciba page save OK: {}", result.word)
-			} catch {
-				case e: Throwable => logger error ("iciba-save error: {}, {}", 
-					Array(result.word, e))
-			}
-		}
-	}
-
-	def loadLocal(dao: IcibaDao, word: String) = try {
-		val rs = dao.findByCondition(newCondition("word", word))
+	def loadLocal(word: String) = try {
+		val rs = icibaDao.findByCondition(newCondition("word", word))
 		if (rs.hasNext) rs.next else null
 	} catch { case e: Throwable => {
 		logger warn ("iciba load local err: {}, {}", Array(word, e)); null}
@@ -262,9 +272,8 @@ object IcibaCrawler extends Logging {
 	def loadNewWords(host: String, port: Int, username: String, 
 		password: String): java.util.List[NewWord] =
 	{
-		val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
 		val user = try {
-			val rs = dao.findByCondition(newCondition("username", username))
+			val rs = newWordDao.findByCondition(newCondition("username", username))
 			if (rs.hasNext) rs.next else null
 		} catch { case e: Throwable => {
 			logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
@@ -278,9 +287,8 @@ object IcibaCrawler extends Logging {
 		password: String, word: String, 
 		handler: (String, java.util.List[NewWord]) => java.util.List[NewWord])
 	{
-		val dao = new NewWordBookDao(new MongoServer(host, port) :: Nil)
 		val user = try {
-			val rs = dao.findByCondition(newCondition("username", username))
+			val rs = newWordDao.findByCondition(newCondition("username", username))
 			if (rs.hasNext) rs.next else null
 		} catch { case e: Throwable => {
 			logger warn ("find iciba user eror: {}, {}", Array(username, e)); null}
@@ -288,7 +296,7 @@ object IcibaCrawler extends Logging {
 
 		if (null != user && user.password == password) {
 			user.words = handler(word, user.words)
-			dao.updateOne(newCondition("username", user.username), 
+			newWordDao.updateOne(newCondition("username", user.username), 
 				newCondition("$set", newCondition("words", user.words)))
 		}
 	}
@@ -335,11 +343,11 @@ object IcibaCrawler extends Logging {
 
 import jadecrawler.website.IcibaCrawler
 import scala.io.Source
-val dao = IcibaCrawler.getDao("www.jade-dungeon.net", 27017)
+val icibaDao = IcibaCrawler.getDao("www.jade-dungeon.net", 27017)
 def transWord(word: String) {
-  if (null == IcibaCrawler.loadLocal(dao, word)) { 
+  if (null == IcibaCrawler.loadLocal(icibaDao, word)) { 
  	 val rec = jadecrawler.website.IcibaCrawler.process(word)
- 	 if (null != rec) IcibaCrawler.saveLocal(dao, rec)
+ 	 if (null != rec) IcibaCrawler.saveLocal(icibaDao, rec)
  	 }
 }
 scala.io.Source.fromFile("/home/morgan/GRE.txt").getLines.foreach((s) =>{transWord(s);Thread.sleep(200)})

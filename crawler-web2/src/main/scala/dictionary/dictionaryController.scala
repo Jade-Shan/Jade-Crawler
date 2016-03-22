@@ -24,15 +24,16 @@ object IcibaApiController extends BasicController with Logging {
 		.getResourceAsStream("workout.properties"))
 	val dbHost = envProps.getProperty("mongo.host")
 	val dbPort = Integer.parseInt(envProps.getProperty("mongo.port"))
+	val dbAuth = envProps.getProperty("mongo.authList.crawler").split("`") :: Nil
 
-	val dao = IcibaCrawler.getDao(dbHost , dbPort)
+	val crawler = new IcibaCrawler(dbHost, dbPort, dbAuth)
 
 	service("/api/dictionary/addnewword/${word}") {(info) => {
 		val auth = decodeHttpBasicAuth(info.request.getHeader("Authorization"))
 		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
-			IcibaCrawler.addNewWord(dbHost, dbPort, auth._2, auth._3, 
+			crawler.addNewWord(dbHost, dbPort, auth._2, auth._3, 
 				info.params("word")(0))
 			("status" -> "success"): JValue
 		} else {
@@ -45,7 +46,7 @@ object IcibaApiController extends BasicController with Logging {
 		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
-			IcibaCrawler.removeNewWord(dbHost, dbPort, auth._2, auth._3, 
+			crawler.removeNewWord(dbHost, dbPort, auth._2, auth._3, 
 				info.params("word")(0))
 			("status" -> "success"): JValue
 		} else {
@@ -58,7 +59,7 @@ object IcibaApiController extends BasicController with Logging {
 		logDebug("after auth check: {}", auth)
 
 		if (auth._1) {
-			val ll = IcibaCrawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)
+			val ll = crawler.loadNewWords(dbHost, dbPort, auth._2, auth._3)
 			("status" -> "success") ~ 
 			("result" -> (
 					if (null != ll) for (i <- 0 until ll.size) yield ll.get(i) else Nil
@@ -70,11 +71,11 @@ object IcibaApiController extends BasicController with Logging {
 
 	service("/api/dictionary/eng2chs/${word}") {(info) => {
 		val word = info.params("word")(0)
-		val cache = IcibaCrawler.loadLocal(dao, word)
+		val cache = crawler.loadLocal(word)
 
 		val data = if (null != cache) { cache } else {
-			val rec = jadecrawler.website.IcibaCrawler.process(word)
-			IcibaCrawler.saveLocal(dao, rec)
+			val rec = crawler.process(word)
+			crawler.saveLocal(rec)
 			rec
 			// new jadecrawler.dto.website.IcibaDto(word, 
 			// 	new java.util.ArrayList[jadecrawler.dto.website.IcibaS3Dto](), 
