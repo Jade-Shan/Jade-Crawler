@@ -14,7 +14,7 @@ import jadeutils.mongo.Condition.newCondition
 class UserAuthDao(serverList: java.util.List[MongoServer]) 
 extends BaseMongoDao[UserAuth](serverList) with Logging 
 {
-	def this(host: String, port: Int) = this(new MongoServer(host, port) :: Nil)
+	def this(host: String, port: Int, auth: List[Array[String]]) = this(new MongoServer(host, port, auth) :: Nil)
 
 	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findAuth(user: String): List[UserAuth] = {
@@ -29,7 +29,7 @@ extends BaseMongoDao[UserAuth](serverList) with Logging
 class AerobicRecordDao(serverList: java.util.List[MongoServer]) 
 extends BaseMongoDao[AerobicRecord](serverList) with Logging 
 {
-	def this(host: String, port: Int) = this(new MongoServer(host, port) :: Nil)
+	def this(host: String, port: Int, auth: List[Array[String]]) = this(new MongoServer(host, port, auth) :: Nil)
 
 	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findAerobicRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 
@@ -51,7 +51,7 @@ class StrengthRecordDao(serverList: java.util.List[MongoServer])
 extends BaseMongoDao[StrengthRecord](serverList) with Logging 
 {
 
-	def this(server: (String, Int)) = this(new MongoServer(server._1, server._2) :: Nil)
+	def this(host: String, port: Int, auth: List[Array[String]]) = this(new MongoServer(host, port, auth) :: Nil)
 
 	/* {user:"user2",item:"strength8",logTime:{$gte:1442304625000, $lt:1442304630000}} */
 	def findStrengthRecs(user: String, item: String, logTimeFloor: Long, logTimeCeil: Long): 

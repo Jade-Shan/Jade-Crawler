@@ -26,6 +26,7 @@ object ForecastController extends BasicController with Logging {
 			logDebug("{}", data)
 			val result = OpenWeatherParser.formatConkyWeather(timeLocal, local, data)
 			logDebug("{}", result)
+			info.response.setCharacterEncoding ("UTF-8")
 			result
 		}
 	}
