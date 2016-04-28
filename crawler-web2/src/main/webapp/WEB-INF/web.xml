@@ -18,15 +18,6 @@
     </context-param>
 
     <servlet>
-      <servlet-name>welcome</servlet-name>
-      <servlet-class>net.jadedungeon.Welcome</servlet-class>
-    </servlet>
-    <servlet-mapping>
-      <servlet-name>welcome</servlet-name>
-			<url-pattern>/welcome.html</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
       <servlet-name>apiDispather</servlet-name>
       <servlet-class>net.jadedungeon.ApiDispather</servlet-class>
     </servlet>

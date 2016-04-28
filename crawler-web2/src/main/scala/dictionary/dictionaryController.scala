@@ -21,7 +21,7 @@ object IcibaApiController extends BasicController with Logging {
 
 	val envProps = new java.util.Properties()
 	envProps.load(Thread.currentThread().getContextClassLoader()
-		.getResourceAsStream("workout.properties"))
+		.getResourceAsStream("crawler.properties"))
 	val dbHost = envProps.getProperty("mongo.host")
 	val dbPort = Integer.parseInt(envProps.getProperty("mongo.port"))
 	val dbAuth = envProps.getProperty("mongo.authList.crawler").split("`") :: Nil
