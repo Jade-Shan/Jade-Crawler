@@ -21,7 +21,7 @@
 		</dependency>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
-				<artifactId>jadeutils-mongo</artifactId>
+				<artifactId>javautils-mongo</artifactId>
 			</dependency>
 	</dependencies>
 

@@ -21,7 +21,11 @@
 			</dependency>
 			<dependency>
 				<groupId>net.jade-dungeon</groupId>
-				<artifactId>jadeutils-base</artifactId>
+				<artifactId>javautils-base</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>net.jade-dungeon</groupId>
+				<artifactId>javautils-web</artifactId>
 			</dependency>
 			<!-- -->
 			<dependency>
