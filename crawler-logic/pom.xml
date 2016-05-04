@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
-			<artifactId>jade-scala-utils</artifactId>
+			<artifactId>scalautils</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
