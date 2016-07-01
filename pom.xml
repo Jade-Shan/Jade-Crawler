@@ -25,7 +25,7 @@
 	</modules>
 
 	<properties>
-		<javautils.version>0.1.14</javautils.version>
+		<javautils.version>0.1.18</javautils.version>
 		<scalautils.version>1.0.2</scalautils.version>
 		<crawler-dto.version>0.1.13-SNAPSHOT</crawler-dto.version>
 		<crawler-net.version>0.1.13-SNAPSHOT</crawler-net.version>
