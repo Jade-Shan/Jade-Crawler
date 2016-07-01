@@ -3,6 +3,9 @@ package jadecrawler.net
 import jadeutils.common.Logging
 
 
+/**
+	* Jade HTTP Response
+	*/
 case class JadeHTTPResponse(cookies: List[Map[String, String]], content: Array[Byte])
 
 object HTTPUtil extends Logging{

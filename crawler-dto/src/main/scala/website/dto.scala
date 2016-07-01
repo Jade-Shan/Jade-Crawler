@@ -6,6 +6,9 @@ import jadeutils.mongo._
 /*                  Modles for iciba crawler                         */
 /* ================================================================= */
 
+/**
+	* iciba model
+	*/
 case class IcibaS2Dto(s1: String, s2: String) {
 	def this() = this(null, null)
 
