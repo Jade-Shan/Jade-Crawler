@@ -3,6 +3,9 @@ package jadecrawler.net
 import jadeutils.common.Logging
 
 
+/**
+	* Jade HTTP Response
+	*/
 case class JadeHTTPResponse(cookies: List[Map[String, String]], content: Array[Byte])
 
 object HTTPUtil extends Logging{
@@ -22,7 +25,7 @@ object HTTPUtil extends Logging{
 	import org.apache.http.impl.conn.PoolingHttpClientConnectionManager
 
 	import jadeutils.base.FileOperater
-	import jadeutils.net.FakeDnsResolver
+	import jadeutils.net.dns
 	import jadeutils.net.ProxySSLSocketFactory
 	import jadeutils.net.ProxySocketFactory
 
@@ -134,7 +137,7 @@ object HTTPUtil extends Logging{
 			val reg = RegistryBuilder.create[ConnectionSocketFactory].register(
 				"http", new ProxySocketFactory()).register(
 				"https",new ProxySSLSocketFactory(SSLContexts.createSystemDefault())).build()
-			var cm = new PoolingHttpClientConnectionManager(reg, new FakeDnsResolver())
+			var cm = new PoolingHttpClientConnectionManager(reg, new jadeutils.net.dns.FakeDnsResolver())
 			var client = HttpClients.custom().setConnectionManager(
 				cm).setDefaultCookieStore(cookieStore).build()
 			var context = HttpClientContext.create()

@@ -8,7 +8,7 @@
 		<groupId>net.jade-dungeon</groupId>
 		<artifactId>crawler-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1.12</version>
+		<version>0.1.13</version>
 	</parent>
 
 	<artifactId>crawler-web2</artifactId>
@@ -33,22 +33,22 @@
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
-			<artifactId>jadeutils-base</artifactId>
+			<artifactId>javautils-base</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
-			<artifactId>jadeutils-web</artifactId>
+			<artifactId>javautils-web</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
-			<artifactId>jade-scala-utils</artifactId>
+			<artifactId>scalautils</artifactId>
 			<scope>${profiles.scope.compile}</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.jade-dungeon</groupId>
-			<artifactId>jadeutils-mongo</artifactId>
+			<artifactId>javautils-mongo</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.scala-lang</groupId>

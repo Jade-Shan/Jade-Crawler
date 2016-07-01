@@ -16,16 +16,17 @@ class ClientIntegrationTest extends FunSuite with Logging{
 		// val response = HTTPUtil.doGet("http://www.yyets.com/eresourcelist?page=1&channel=&area=&category=&format=&year=&sort=", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
 		// val response = HTTPUtil.doGet("http://www.yyets.com/eresourcelist?page=2&channel=&area=&category=&format=&year=&sort=", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
 		// val response = HTTPUtil.doGet("http://www.yyets.com/resource/30010", HTTPUtil.firefoxParams + ("Host" -> "www.yyets.com"))
-		val response = HTTPUtil.doGet("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"))
-		logDebug(response.toString)
-		logDebug(new String(response.content))
+
+	//	val response = HTTPUtil.doGet("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"))
+	//	logDebug(response.toString)
+	//	logDebug(new String(response.content))
 	}
 
 	test("Test-HTTP-Post") {
-		val response = HTTPUtil.doPost("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"), ("aaa", "bbb") :: Nil)
-		// val response = HTTPUtil.doPost("http://localhost:8080/jadeutils-cdn/test-session.jsp", HTTPUtil.firefoxParams, ("aaa", "bbb") :: Nil)
-		logDebug(response.toString)
-		logDebug(new String(response.content))
+	//	val response = HTTPUtil.doPost("http://www.iciba.com/intellectual", HTTPUtil.firefoxParams + ("Host" -> "www.iciba.com"), ("aaa", "bbb") :: Nil)
+	//	// val response = HTTPUtil.doPost("http://localhost:8080/jadeutils-cdn/test-session.jsp", HTTPUtil.firefoxParams, ("aaa", "bbb") :: Nil)
+	//	logDebug(response.toString)
+	//	logDebug(new String(response.content))
 	}
 
 }
