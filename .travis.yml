@@ -1,0 +1,20 @@
+language: scala
+jdk:
+  - oraclejdk8
+
+env:
+  global:
+    - CODECOV_TOKEN=27dc1b6a-208d-4190-9c46-a654a4e99a4f
+
+branches:
+  only:
+    - master
+
+before_install:
+  - pip install --user codecov
+
+script:
+  - mvn clean compile test-compile resources:resources resources:testResources surefire:test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
